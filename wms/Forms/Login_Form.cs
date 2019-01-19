@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace wms
 {
-    public partial class Form1 : Form
+    public partial class Login_Form : Form
     {
-        public Form1()
+        public Login_Form()
         {
             InitializeComponent();
         }
