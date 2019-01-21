@@ -99,6 +99,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Entity Class\" />
     <Folder Include="Forms\Administration\Customer\" />
   </ItemGroup>
   <ItemGroup>
