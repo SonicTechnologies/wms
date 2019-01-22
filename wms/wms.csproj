@@ -58,6 +58,12 @@
     <Compile Include="Forms\Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Select_Server_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Select_Server_Form.Designer.cs">
+      <DependentUpon>Select_Server_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Login_Form.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Select_Server_Form.resx">
+      <DependentUpon>Select_Server_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

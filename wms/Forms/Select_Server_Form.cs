@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace wms
+namespace wms.Forms
 {
-    public partial class Login_Form : Form
+    public partial class Select_Server_Form : Form
     {
-        public Login_Form()
+        public Select_Server_Form()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Main_Form mf = new Main_Form();
-            mf.Show();
         }
     }
 }

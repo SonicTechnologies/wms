@@ -16,5 +16,19 @@ namespace wms
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (panel1.Width == 30)
+            {
+                panel1.Width = 330;
+                button1.Text = "<<";
+            }
+            else
+            {
+                panel1.Width = 30;
+                button1.Text = ">>";
+            }
+        }
     }
 }
