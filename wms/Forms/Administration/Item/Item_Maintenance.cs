@@ -571,20 +571,20 @@ namespace wms.Forms.Administration.Item
                         foreach (var row in items)
                         {
                             dataGridView1.Rows.Add(row.invty_id,
-                                                   row.invty_desc,
-                                                   row.invty_barcode,
-                                                   row.invty_casecode,
-                                                   row.invty_ppu,
-                                                   row.invty_cat1,
-                                                   row.invty_cat2,
-                                                   row.invty_cat3,
-                                                   row.invty_cat4,
-                                                   row.invty_brand,
-                                                   row.stat_desc,
-                                                   row.invty_datecrtd.ToString("yyyy-MM-dd hh:mm:ss tt"),
-                                                   row.crtdby,
-                                                   row.invty_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
-                                                   row.uptdby);
+                                row.invty_desc,
+                                row.invty_barcode,
+                                row.invty_casecode,
+                                row.invty_ppu,
+                                row.invty_cat1,
+                                row.invty_cat2,
+                                row.invty_cat3,
+                                row.invty_cat4,
+                                row.invty_brand,
+                                row.stat_desc,
+                                row.invty_datecrtd.ToString("yyyy-MM-dd hh:mm:ss tt"),
+                                row.crtdby,
+                                row.invty_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
+                                row.uptdby);
                         }
                     }
                     else
@@ -622,20 +622,20 @@ namespace wms.Forms.Administration.Item
                 foreach (var row in items)
                 {
                     dataGridView1.Rows.Add(row.invty_id,
-                                                   row.invty_desc,
-                                                   row.invty_barcode,
-                                                   row.invty_casecode,
-                                                   row.invty_ppu,
-                                                   row.invty_cat1,
-                                                   row.invty_cat2,
-                                                   row.invty_cat3,
-                                                   row.invty_cat4,
-                                                   row.invty_brand,
-                                                   row.stat_desc,
-                                                   row.invty_datecrtd.ToString("yyyy-MM-dd hh:mm:ss tt"),
-                                                   row.crtdby,
-                                                   row.invty_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
-                                                   row.uptdby);
+                        row.invty_desc,
+                        row.invty_barcode,
+                        row.invty_casecode,
+                        row.invty_ppu,
+                        row.invty_cat1,
+                        row.invty_cat2,
+                        row.invty_cat3,
+                        row.invty_cat4,
+                        row.invty_brand,
+                        row.stat_desc,
+                        row.invty_datecrtd.ToString("yyyy-MM-dd hh:mm:ss tt"),
+                        row.crtdby,
+                        row.invty_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
+                        row.uptdby);
                 }
             }
             else
@@ -725,9 +725,7 @@ namespace wms.Forms.Administration.Item
             else
             {
                 if (searchComboBox.Text == "" && searchTxtBox.Text.Trim() != "")
-                {
-
-                }
+                {  }
                 else
                 {
                     searchItem();
@@ -950,7 +948,6 @@ namespace wms.Forms.Administration.Item
             }
             else if (saveBtn.Text == "Update")
             {
-
                 if (textBox3.Text.Trim() != "")
                 {
                     if (textBox6.Text.Trim() != "")
@@ -1055,11 +1052,9 @@ namespace wms.Forms.Administration.Item
                                     searchTxtBox.Text = "";
                                     searchTxtBox.Text = textBox2.Text.Trim();
                                     disableAddControls();
-
                                 }
                                 else if (dialog == DialogResult.No)
                                 {
-
                                 }
                             }
                             else
