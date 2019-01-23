@@ -35,7 +35,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.userToolStrip = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox6 = new System.Windows.Forms.ToolStripTextBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.takeABreakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +71,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox3,
             this.toolStripTextBox1,
-            this.toolStripTextBox2,
+            this.userToolStrip,
             this.toolStripTextBox6,
             this.fileToolStripMenuItem,
             this.modulesToolStripMenuItem,
@@ -101,15 +101,15 @@
             this.toolStripTextBox1.Size = new System.Drawing.Size(35, 21);
             this.toolStripTextBox1.Text = "User: ";
             // 
-            // toolStripTextBox2
+            // userToolStrip
             // 
-            this.toolStripTextBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toolStripTextBox2.Enabled = false;
-            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 21);
-            this.toolStripTextBox2.Text = "admin";
+            this.userToolStrip.BackColor = System.Drawing.SystemColors.Control;
+            this.userToolStrip.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.userToolStrip.Enabled = false;
+            this.userToolStrip.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userToolStrip.Name = "userToolStrip";
+            this.userToolStrip.Size = new System.Drawing.Size(100, 21);
+            this.userToolStrip.Text = "admin";
             // 
             // toolStripTextBox6
             // 
@@ -179,13 +179,14 @@
             // customerMasterToolStripMenuItem
             // 
             this.customerMasterToolStripMenuItem.Name = "customerMasterToolStripMenuItem";
-            this.customerMasterToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.customerMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.customerMasterToolStripMenuItem.Text = "&Customers";
+            this.customerMasterToolStripMenuItem.Click += new System.EventHandler(this.customerMasterToolStripMenuItem_Click);
             // 
             // itemMasterToolStripMenuItem
             // 
             this.itemMasterToolStripMenuItem.Name = "itemMasterToolStripMenuItem";
-            this.itemMasterToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.itemMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.itemMasterToolStripMenuItem.Text = "&Items";
             // 
             // salesmanMasterToolStripMenuItem
@@ -194,7 +195,7 @@
             this.bookingSalesmToolStripMenuItem,
             this.deliverySalesmanToolStripMenuItem});
             this.salesmanMasterToolStripMenuItem.Name = "salesmanMasterToolStripMenuItem";
-            this.salesmanMasterToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.salesmanMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salesmanMasterToolStripMenuItem.Text = "S&alesman";
             // 
             // bookingSalesmToolStripMenuItem
@@ -212,19 +213,19 @@
             // siteMasterToolStripMenuItem
             // 
             this.siteMasterToolStripMenuItem.Name = "siteMasterToolStripMenuItem";
-            this.siteMasterToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.siteMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.siteMasterToolStripMenuItem.Text = "S&ites";
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usersToolStripMenuItem.Text = "&Users";
             // 
             // devicesToolStripMenuItem
             // 
             this.devicesToolStripMenuItem.Name = "devicesToolStripMenuItem";
-            this.devicesToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.devicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.devicesToolStripMenuItem.Text = "De&vices";
             // 
             // helpToolStripMenuItem
@@ -360,7 +361,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripTextBox userToolStrip;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox6;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem takeABreakToolStripMenuItem;

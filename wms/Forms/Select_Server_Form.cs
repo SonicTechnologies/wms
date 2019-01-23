@@ -1,9 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.SqlServer.Management.Smo;
+
 namespace wms.Forms
 {
     public partial class Select_Server_Form : Form
@@ -80,18 +86,29 @@ namespace wms.Forms
             Login_Form.GetInstance().get_server();
             Login_Form.GetInstance().Show();
         }
+
         public static void setdbconn()
         {
-            dbconn = @"data source=" + xip + ";initial catalog = " + xdbname + "; user id =" + xuser + "; password=" + xpass + "; MultipleActiveResultSets=True;App=EntityFramework";
+            dbconn = "metadata=res://*/Entity Class.wmsdb.csdl|res://*/Entity Class.wmsdb.ssdl|res://*/Entity Class.wmsdb.msl;" +
+                   "provider=System.Data.SqlClient;provider connection string='data source=" + xip + ",1433;" +
+                   "initial catalog=" + xdbname + ";user id=" + xuser + ";password=" + xpass + ";MultipleActiveResultSets=True;App=EntityFramework'";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void Execute()
         {
-           this.dataGridView1.Rows.Clear();
+            //this.dataGridView1.Rows.Clear();
+            //this.dataGridView1.Rows.Add("Obtaining server list.. Please wait..");
+            this.dataGridView1.Rows.Clear();
             label1.Text = "Obtaining feeder database(s).. Please wait..";
             dbcount = 0;
             preserverList.Reset();
@@ -108,16 +125,17 @@ namespace wms.Forms
         {
             Execute();
         }
+
         public static void read_default_server()
         {
 
             if (Environment.Is64BitProcess)
             {
-                default_server_file = @"C:\\Program Files\Sonic Sales & Distribution Inc\epicklistwv\default_server.txt";
+                default_server_file = @"C:\\Program Files\Sonic Sales & Distribution Inc\wms\default_server.txt";
             }
             else
             {
-                default_server_file = @"C:\\Program Files (x86)\\Sonic Sales & Distribution Inc\\epicklistwv\\default_server.txt";
+                default_server_file = @"C:\\Program Files (x86)\\Sonic Sales & Distribution Inc\\wms\\default_server.txt";
             }
 
 
@@ -137,8 +155,8 @@ namespace wms.Forms
 
         private void BGworker1_DoWork(object sender, DoWorkEventArgs e)
         {
-
-    
+            //serverList.Reset();
+            //serverList = servers.GetDataSources();
 
             int scount;
             dbcount = 0;
@@ -147,12 +165,20 @@ namespace wms.Forms
                      .Select(x => x.Split('='))
                      .Where(x => x.Length > 1)
                      .ToDictionary(x => x[0].Trim(), x => x[1]);
-             scount = data.Count / 5;
+            //MessageBox.Show("Main Server:\n\n" + "ip: " + data["mip"].ToString().Trim() + "\n" + "name: " + data["mserver"].ToString().Trim());
+            //MessageBox.Show("Test Server:\n\n" + "ip: " + data["tip"].ToString().Trim() + "\n" + "name: " + data["tserver"].ToString().Trim());
+            scount = data.Count / 5;
 
             for (int i = 1; i <= scount; i++)
             {
 
                 Microsoft.SqlServer.Management.Smo.Server server = new Microsoft.SqlServer.Management.Smo.Server(data[i.ToString() + "server"].ToString().Trim());
+
+                //MessageBox.Show(data[i.ToString() + "ip"].ToString().Trim() + "\n"
+                //+ data[i.ToString() + "server"].ToString().Trim() + "\n"
+                //+ data[i.ToString() + "user"].ToString().Trim() + "\n"
+                //+ data[i.ToString() + "pass"].ToString().Trim());
+
                 server.ConnectionContext.LoginSecure = false;
                 server.ConnectionContext.Login = data[i.ToString() + "user"].ToString().Trim();
                 server.ConnectionContext.Password = data[i.ToString() + "pass"].ToString().Trim();
@@ -160,7 +186,7 @@ namespace wms.Forms
                 foreach (Microsoft.SqlServer.Management.Smo.Database db in server.Databases)
                 {
 
-                    if (db.Name.Contains("Feeder"))
+                    if (db.Name.Contains("WMS"))
                     {
 
 
@@ -170,7 +196,10 @@ namespace wms.Forms
                         xrow["dbname"] = db.Name;
                         xrow["user"] = data[i.ToString() + "user"].ToString().Trim();
                         xrow["pass"] = data[i.ToString() + "pass"].ToString().Trim();
-                
+                        //this.dataGridView1.Rows.Add(data[i.ToString() + "ip"].ToString().Trim(),
+                        //data[i.ToString() + "server"].ToString().Trim(), db.Name,
+                        //data[i.ToString() + "user"].ToString().Trim(),
+                        //data[i.ToString() + "pass"].ToString().Trim());
                         dbcount = dbcount + 1;
                         preserverList.Rows.Add(xrow);
 
@@ -180,7 +209,6 @@ namespace wms.Forms
                     {
 
                     }
-
 
                 }
             }
@@ -201,7 +229,27 @@ namespace wms.Forms
                                             rowServer["pass"].ToString());
             }
 
-         
+            //foreach (DataRow rowServer in serverList.Rows)
+            //{
+            //IPHostEntry host;
+            //host = Dns.GetHostEntry(rowServer["ServerName"].ToString());
+
+            //foreach (IPAddress ip in host.AddressList)
+            //{
+            //if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            //{
+
+            //this.dataGridView1.Rows.Add(ip.ToString() + " - " + rowServer["ServerName"].ToString());
+
+            //}
+            //else
+            //{
+
+            //}
+
+            //}
+
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -209,6 +257,7 @@ namespace wms.Forms
             setserverproperties();
             this.Close();
         }
+
         private void setserverproperties()
         {
             xip = dataGridView1.CurrentRow.Cells[0].Value.ToString();
