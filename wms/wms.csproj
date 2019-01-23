@@ -39,9 +39,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.SqlEnum, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +59,175 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\loggedin_user.cs" />
+    <Compile Include="Entity Class\ActivityPerformance_Result.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\C__MigrationHistory.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_BARCODE.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_CO_HEADER.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_CO_LINES.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_CO_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_CRRDET_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_CRR_DENO.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_CUST_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_DEV_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_GATEPASS_VIEW1.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_GPHEADER_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_GPLINES_TMP_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_GPLINES_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_GP_HEADER.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_GP_LINES.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_GP_LINES_TMP.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_INVOICE_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_INVTY_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_ITMGUIDE_VIEW1.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_ITMGUIDE_VIEW2.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_JRSLSMAN_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_MSTR_CUST.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_MSTR_DEV.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_MSTR_INVOICE.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_MSTR_INVTY.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_MSTR_JRSLSMAN.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_MSTR_SITE.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_MSTR_SLSMAN.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_MSTR_USRS.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_ORDNUMBER_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_ORDSTAT_VIEW1.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_ORDSTAT_VIEW2.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_ORD_HEADER.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_ORD_LINES.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_ORD_STATUS_LOG.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_PRCNT_VIEW1.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_PRCNT_VIEW2.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_PRCNT_VIEW3.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_SITE_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_SLSMAN_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_TYPE_CO.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_TYPE_DEL.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_TYPE_GPSTAT.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_TYPE_LOG.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_TYPE_RCVD.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_TYPE_SLSMAN.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_TYPE_STAT.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_TYPE_UOM.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_TYPE_USRS.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FDR_USRS_VIEW.cs">
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FeederMasterDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeederMasterDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FeederMasterDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeederMasterDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\FeederMasterDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeederMasterDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +267,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="Entity Class\FeederMasterDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FeederMasterDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="Entity Class\FeederMasterDB.edmx.diagram">
+      <DependentUpon>FeederMasterDB.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -104,14 +287,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entity Class\" />
     <Folder Include="Forms\Administration\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity Class\FeederMasterDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FeederMasterDB.edmx</DependentUpon>
+      <LastGenOutput>FeederMasterDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity Class\FeederMasterDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FeederMasterDB.edmx</DependentUpon>
+      <LastGenOutput>FeederMasterDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.exitBtn = new System.Windows.Forms.Button();
+            this.loginBtn = new System.Windows.Forms.Button();
+            this.optionBtn = new System.Windows.Forms.Button();
+            this.servernameBox = new System.Windows.Forms.TextBox();
+            this.clearPassBtn = new System.Windows.Forms.Button();
+            this.clearUserBtn = new System.Windows.Forms.Button();
+            this.passwordBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.usernameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.databaseBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,105 +49,109 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // exitBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(104, 396);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 34);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Exit";
-            this.button2.UseVisualStyleBackColor = false;
+            this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.exitBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.ForeColor = System.Drawing.Color.White;
+            this.exitBtn.Location = new System.Drawing.Point(104, 396);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(75, 34);
+            this.exitBtn.TabIndex = 23;
+            this.exitBtn.Text = "Exit";
+            this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
-            // button1
+            // loginBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(227, 396);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 34);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.loginBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.ForeColor = System.Drawing.Color.White;
+            this.loginBtn.Location = new System.Drawing.Point(227, 396);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(75, 34);
+            this.loginBtn.TabIndex = 22;
+            this.loginBtn.Text = "Login";
+            this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
-            // button3
+            // optionBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(265, 231);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(37, 44);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "...";
-            this.button3.UseVisualStyleBackColor = false;
+            this.optionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.optionBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.optionBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.optionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.optionBtn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionBtn.ForeColor = System.Drawing.Color.White;
+            this.optionBtn.Location = new System.Drawing.Point(265, 231);
+            this.optionBtn.Name = "optionBtn";
+            this.optionBtn.Size = new System.Drawing.Size(37, 44);
+            this.optionBtn.TabIndex = 24;
+            this.optionBtn.Text = "...";
+            this.optionBtn.UseVisualStyleBackColor = false;
+            this.optionBtn.Click += new System.EventHandler(this.optionBtn_Click);
             // 
-            // textBox4
+            // servernameBox
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(105, 232);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(160, 22);
-            this.textBox4.TabIndex = 28;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.servernameBox.BackColor = System.Drawing.SystemColors.Info;
+            this.servernameBox.Enabled = false;
+            this.servernameBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servernameBox.Location = new System.Drawing.Point(105, 232);
+            this.servernameBox.Name = "servernameBox";
+            this.servernameBox.ReadOnly = true;
+            this.servernameBox.Size = new System.Drawing.Size(160, 22);
+            this.servernameBox.TabIndex = 28;
+            this.servernameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button5
+            // clearPassBtn
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(265, 362);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(37, 25);
-            this.button5.TabIndex = 26;
-            this.button5.Text = "x";
-            this.button5.UseVisualStyleBackColor = false;
+            this.clearPassBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.clearPassBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.clearPassBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.clearPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearPassBtn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearPassBtn.ForeColor = System.Drawing.Color.White;
+            this.clearPassBtn.Location = new System.Drawing.Point(265, 362);
+            this.clearPassBtn.Name = "clearPassBtn";
+            this.clearPassBtn.Size = new System.Drawing.Size(37, 25);
+            this.clearPassBtn.TabIndex = 26;
+            this.clearPassBtn.Text = "x";
+            this.clearPassBtn.UseVisualStyleBackColor = false;
+            this.clearPassBtn.Click += new System.EventHandler(this.clearPassBtn_Click);
             // 
-            // button4
+            // clearUserBtn
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(265, 308);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(37, 25);
-            this.button4.TabIndex = 25;
-            this.button4.Text = "x";
-            this.button4.UseVisualStyleBackColor = false;
+            this.clearUserBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.clearUserBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
+            this.clearUserBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.clearUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearUserBtn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearUserBtn.ForeColor = System.Drawing.Color.White;
+            this.clearUserBtn.Location = new System.Drawing.Point(265, 308);
+            this.clearUserBtn.Name = "clearUserBtn";
+            this.clearUserBtn.Size = new System.Drawing.Size(37, 25);
+            this.clearUserBtn.TabIndex = 25;
+            this.clearUserBtn.Text = "x";
+            this.clearUserBtn.UseVisualStyleBackColor = false;
+            this.clearUserBtn.Click += new System.EventHandler(this.clearUserBtn_Click);
             // 
-            // textBox3
+            // passwordBox
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(105, 363);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 22);
-            this.textBox3.TabIndex = 21;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.UseSystemPasswordChar = true;
+            this.passwordBox.BackColor = System.Drawing.SystemColors.Info;
+            this.passwordBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.passwordBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordBox.Location = new System.Drawing.Point(105, 363);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.Size = new System.Drawing.Size(160, 22);
+            this.passwordBox.TabIndex = 21;
+            this.passwordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passwordBox.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -159,16 +163,16 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Password:";
             // 
-            // textBox2
+            // usernameBox
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(105, 309);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 22);
-            this.textBox2.TabIndex = 19;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.usernameBox.BackColor = System.Drawing.SystemColors.Info;
+            this.usernameBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.usernameBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameBox.Location = new System.Drawing.Point(105, 309);
+            this.usernameBox.Name = "usernameBox";
+            this.usernameBox.Size = new System.Drawing.Size(160, 22);
+            this.usernameBox.TabIndex = 19;
+            this.usernameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -180,17 +184,17 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "Username:";
             // 
-            // textBox1
+            // databaseBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(105, 253);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(160, 22);
-            this.textBox1.TabIndex = 17;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.databaseBox.BackColor = System.Drawing.SystemColors.Info;
+            this.databaseBox.Enabled = false;
+            this.databaseBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.databaseBox.Location = new System.Drawing.Point(105, 253);
+            this.databaseBox.Name = "databaseBox";
+            this.databaseBox.ReadOnly = true;
+            this.databaseBox.Size = new System.Drawing.Size(160, 22);
+            this.databaseBox.TabIndex = 17;
+            this.databaseBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -252,17 +256,17 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(412, 516);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.exitBtn);
+            this.Controls.Add(this.loginBtn);
+            this.Controls.Add(this.optionBtn);
+            this.Controls.Add(this.servernameBox);
+            this.Controls.Add(this.clearPassBtn);
+            this.Controls.Add(this.clearUserBtn);
+            this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.usernameBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.databaseBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -271,6 +275,8 @@
             this.Name = "Login_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WMS - Login Form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_Form_FormClosing);
+            this.Load += new System.EventHandler(this.Login_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -282,17 +288,17 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Button loginBtn;
+        private System.Windows.Forms.Button optionBtn;
+        private System.Windows.Forms.TextBox servernameBox;
+        private System.Windows.Forms.Button clearPassBtn;
+        private System.Windows.Forms.Button clearUserBtn;
+        private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox usernameBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox databaseBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6e02092a6200446688bc7aa8d78af1cc" Name="Diagram1">
+        <EntityTypeShape EntityType="FeederMasterDBModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_BARCODE" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_CO_HEADER" Width="1.5" PointX="11.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_CO_LINES" Width="1.5" PointX="16.5" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_CRR_DENO" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_GP_HEADER" Width="1.5" PointX="14.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_GP_LINES" Width="1.5" PointX="19.5" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_GP_LINES_TMP" Width="1.5" PointX="16.5" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_MSTR_CUST" Width="1.5" PointX="3" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_MSTR_DEV" Width="1.5" PointX="6" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_MSTR_INVOICE" Width="1.5" PointX="14.25" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_MSTR_INVTY" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_MSTR_JRSLSMAN" Width="1.5" PointX="13.5" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_MSTR_SITE" Width="1.5" PointX="11.25" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_MSTR_SLSMAN" Width="1.5" PointX="16.5" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_MSTR_USRS" Width="1.5" PointX="9" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_ORD_HEADER" Width="1.5" PointX="5.25" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_ORD_LINES" Width="1.5" PointX="11.5" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_ORD_STATUS_LOG" Width="1.5" PointX="11.25" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_TYPE_CO" Width="1.5" PointX="14.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_TYPE_DEL" Width="1.5" PointX="17.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_TYPE_GPSTAT" Width="1.5" PointX="12" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_TYPE_LOG" Width="1.5" PointX="9" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_TYPE_RCVD" Width="1.5" PointX="17.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_TYPE_SLSMAN" Width="1.5" PointX="14.25" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_TYPE_STAT" Width="1.5" PointX="0.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_TYPE_UOM" Width="1.5" PointX="14.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_TYPE_USRS" Width="1.5" PointX="6.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_CO_VIEW" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_CRRDET_VIEW" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_CUST_VIEW" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_DEV_VIEW" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_GATEPASS_VIEW1" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_GPHEADER_VIEW" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_GPLINES_TMP_VIEW" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_GPLINES_VIEW" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_INVOICE_VIEW" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_INVTY_VIEW" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_ITMGUIDE_VIEW1" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_ITMGUIDE_VIEW2" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_JRSLSMAN_VIEW" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_ORDNUMBER_VIEW" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_ORDSTAT_VIEW1" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_ORDSTAT_VIEW2" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_PRCNT_VIEW1" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_PRCNT_VIEW2" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_PRCNT_VIEW3" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_SITE_VIEW" Width="1.5" PointX="5.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_SLSMAN_VIEW" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FeederMasterDBModel.FDR_USRS_VIEW" Width="1.5" PointX="18.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_CO_HEADER_FDR_MSTR_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_CO_HEADER_FDR_ORD_HEADER" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_CO_LINES_FDR_CO_HEADER" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_CO_LINES_FDR_MSTR_INVTY" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_CO_LINES_FDR_TYPE_CO" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_CO_LINES_FDR_TYPE_UOM" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_GP_HEADER_FDR_MSTR_JRSLSMAN" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_GP_HEADER_FDR_MSTR_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_GP_HEADER_FDR_TYPE_GPSTAT" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_GP_LINES_FDR_GP_HEADER" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_GP_LINES_TMP_FDR_GP_HEADER" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_GP_LINES_FDR_MSTR_INVOICE" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_GP_LINES_FDR_TYPE_DEL" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_GP_LINES_FDR_TYPE_RCVD" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_GP_LINES_TMP_FDR_MSTR_INVOICE" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_CUST_FDR_MSTR_SITE" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_CUST_FDR_MSTR_SLSMAN" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_CUST_FDR_MSTR_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_CUST_FDR_MSTR_USRS1" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_CUST_FDR_TYPE_STAT" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_ORD_HEADER_FDR_MSTR_CUST" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_DEV_FDR_MSTR_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_DEV_FDR_MSTR_USRS1" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_DEV_FDR_TYPE_STAT" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_INVOICE_FDR_MSTR_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_INVOICE_FDR_ORD_HEADER" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_INVTY_FDR_MSTR_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_INVTY_FDR_MSTR_USRS1" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_INVTY_FDR_TYPE_STAT" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_ORD_LINES_FDR_MSTR_INVTY" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_JRSLSMAN_FDR_MSTR_SITE" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_JRSLSMAN_FDR_MSTR_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_JRSLSMAN_FDR_MSTR_USRS1" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_JRSLSMAN_FDR_MSTR_USRS2" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_JRSLSMAN_FDR_TYPE_SLSMAN" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_SITE_FDR_MSTR_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_SITE_FDR_MSTR_USRS1" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_SLSMAN_FDR_MSTR_SITE" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_SLSMAN_FDR_MSTR_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_SLSMAN_FDR_MSTR_USRS1" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_SLSMAN_FDR_TYPE_SLSMAN" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_USRS_FDR_TYPE_STAT" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_MSTR_USRS_FDR_TYPE_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_ORD_STATUS_LOG_FDR_MSTR_USRS" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_ORD_LINES_FDR_ORD_HEADER" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_ORD_STATUS_LOG_FDR_ORD_HEADER" ManuallyRouted="false" />
+        <AssociationConnector Association="FeederMasterDBModel.FK_FDR_ORD_STATUS_LOG_FDR_TYPE_LOG" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
