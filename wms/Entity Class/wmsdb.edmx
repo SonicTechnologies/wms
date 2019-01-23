@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="wmsdbmodel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="WMS_MSTR_CUST">
+          <Key>
+            <PropertyRef Name="cust_id" />
+          </Key>
+          <Property Name="cust_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="cust_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cust_address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="salesman_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="site_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="cust_latitude" Type="float" />
+          <Property Name="cust_longitude" Type="float" />
+          <Property Name="stat_id" Type="int" Nullable="false" />
+          <Property Name="cust_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="cust_dateuptd" Type="datetime" />
+          <Property Name="cust_crtdby" Type="int" Nullable="false" />
+          <Property Name="cust_uptdby" Type="int" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_INVTY">
+          <Key>
+            <PropertyRef Name="invty_id" />
+          </Key>
+          <Property Name="invty_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="invty_desc" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="invty_barcode" Type="nvarchar" MaxLength="100" />
+          <Property Name="invty_casecode" Type="nvarchar" MaxLength="100" />
+          <Property Name="invty_ppu" Type="int" Nullable="false" />
+          <Property Name="invty_cat1" Type="nvarchar" MaxLength="50" />
+          <Property Name="invty_cat2" Type="nvarchar" MaxLength="50" />
+          <Property Name="invty_cat3" Type="nvarchar" MaxLength="50" />
+          <Property Name="invty_cat4" Type="nvarchar" MaxLength="50" />
+          <Property Name="invty_brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="stat_id" Type="int" Nullable="false" />
+          <Property Name="invty_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="invty_dateuptd" Type="datetime" />
+          <Property Name="invty_crtdby" Type="int" Nullable="false" />
+          <Property Name="invty_uptdby" Type="int" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_SITE">
+          <Key>
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="site_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="site_name" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="site_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="site_dateuptd" Type="datetime" />
+          <Property Name="site_crtdby" Type="int" Nullable="false" />
+          <Property Name="site_uptdby" Type="int" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_SLSMAN">
+          <Key>
+            <PropertyRef Name="salesman_id" />
+          </Key>
+          <Property Name="salesman_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="salesman_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="salesman_type_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="nvarchar" MaxLength="15" />
+          <Property Name="salesman_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="salesman_dateuptd" Type="datetime" />
+          <Property Name="salesman_crtdby" Type="int" Nullable="false" />
+          <Property Name="salesman_uptdby" Type="int" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_USRS">
+          <Key>
+            <PropertyRef Name="usr_id" />
+          </Key>
+          <Property Name="usr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usr_username" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="usr_password" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="usr_fname" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="usr_lname" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="usr_type_id" Type="int" Nullable="false" />
+          <Property Name="stat_id" Type="int" Nullable="false" />
+          <Property Name="usr_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="usr_dateuptd" Type="datetime" />
+          <Property Name="usr_crtdby" Type="int" Nullable="false" />
+          <Property Name="usr_uptdby" Type="int" />
+        </EntityType>
+        <EntityType Name="WMS_TYPE_SLSMAN">
+          <Key>
+            <PropertyRef Name="salesman_type_id" />
+          </Key>
+          <Property Name="salesman_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="salesman_type_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMS_TYPE_STAT">
+          <Key>
+            <PropertyRef Name="stat_id" />
+          </Key>
+          <Property Name="stat_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stat_desc" Type="nvarchar" MaxLength="26" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMS_TYPE_USRS">
+          <Key>
+            <PropertyRef Name="usr_type_id" />
+          </Key>
+          <Property Name="usr_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usr_type_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WMS_USRS_VIEW">
+          <Key>
+            <PropertyRef Name="usr_id" />
+            <PropertyRef Name="usr_username" />
+            <PropertyRef Name="usr_password" />
+            <PropertyRef Name="usr_fname" />
+            <PropertyRef Name="usr_lname" />
+            <PropertyRef Name="usr_type_id" />
+            <PropertyRef Name="stat_id" />
+            <PropertyRef Name="stat_desc" />
+            <PropertyRef Name="usr_datecrtd" />
+            <PropertyRef Name="usr_crtdby" />
+            <PropertyRef Name="crtdby" />
+          </Key>
+          <Property Name="usr_id" Type="int" Nullable="false" />
+          <Property Name="usr_username" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="usr_password" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="usr_fname" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="usr_lname" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="usr_type_id" Type="int" Nullable="false" />
+          <Property Name="stat_id" Type="int" Nullable="false" />
+          <Property Name="usr_type_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="stat_desc" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="usr_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="usr_dateuptd" Type="datetime" />
+          <Property Name="usr_crtdby" Type="int" Nullable="false" />
+          <Property Name="usr_uptdby" Type="int" />
+          <Property Name="crtdby" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="uptdby" Type="nvarchar" MaxLength="26" />
+        </EntityType>
+        <EntityContainer Name="wmsdbmodelStoreContainer">
+          <EntitySet Name="WMS_MSTR_CUST" EntityType="Self.WMS_MSTR_CUST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_INVTY" EntityType="Self.WMS_MSTR_INVTY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_SITE" EntityType="Self.WMS_MSTR_SITE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_SLSMAN" EntityType="Self.WMS_MSTR_SLSMAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_USRS" EntityType="Self.WMS_MSTR_USRS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_TYPE_SLSMAN" EntityType="Self.WMS_TYPE_SLSMAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_TYPE_STAT" EntityType="Self.WMS_TYPE_STAT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_TYPE_USRS" EntityType="Self.WMS_TYPE_USRS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_USRS_VIEW" EntityType="Self.WMS_USRS_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WMS_USRS_VIEW].[usr_id] AS [usr_id], 
+    [WMS_USRS_VIEW].[usr_username] AS [usr_username], 
+    [WMS_USRS_VIEW].[usr_password] AS [usr_password], 
+    [WMS_USRS_VIEW].[usr_fname] AS [usr_fname], 
+    [WMS_USRS_VIEW].[usr_lname] AS [usr_lname], 
+    [WMS_USRS_VIEW].[usr_type_id] AS [usr_type_id], 
+    [WMS_USRS_VIEW].[stat_id] AS [stat_id], 
+    [WMS_USRS_VIEW].[usr_type_name] AS [usr_type_name], 
+    [WMS_USRS_VIEW].[stat_desc] AS [stat_desc], 
+    [WMS_USRS_VIEW].[usr_datecrtd] AS [usr_datecrtd], 
+    [WMS_USRS_VIEW].[usr_dateuptd] AS [usr_dateuptd], 
+    [WMS_USRS_VIEW].[usr_crtdby] AS [usr_crtdby], 
+    [WMS_USRS_VIEW].[usr_uptdby] AS [usr_uptdby], 
+    [WMS_USRS_VIEW].[crtdby] AS [crtdby], 
+    [WMS_USRS_VIEW].[uptdby] AS [uptdby]
+    FROM [dbo].[WMS_USRS_VIEW] AS [WMS_USRS_VIEW]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="wmsdbmodel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="WMS_MSTR_CUST">
+          <Key>
+            <PropertyRef Name="cust_id" />
+          </Key>
+          <Property Name="cust_id" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cust_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cust_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="salesman_id" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="site_id" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cust_latitude" Type="Double" />
+          <Property Name="cust_longitude" Type="Double" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
+          <Property Name="cust_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cust_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="cust_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="cust_uptdby" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_INVTY">
+          <Key>
+            <PropertyRef Name="invty_id" />
+          </Key>
+          <Property Name="invty_id" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="invty_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="invty_barcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="invty_casecode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="invty_ppu" Type="Int32" Nullable="false" />
+          <Property Name="invty_cat1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invty_cat2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invty_cat3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invty_cat4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invty_brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
+          <Property Name="invty_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="invty_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="invty_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="invty_uptdby" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_SITE">
+          <Key>
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="site_id" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="site_name" Type="String" MaxLength="26" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="site_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="site_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="site_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="site_uptdby" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_SLSMAN">
+          <Key>
+            <PropertyRef Name="salesman_id" />
+          </Key>
+          <Property Name="salesman_id" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="salesman_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="salesman_type_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="salesman_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="salesman_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="salesman_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="salesman_uptdby" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_USRS">
+          <Key>
+            <PropertyRef Name="usr_id" />
+          </Key>
+          <Property Name="usr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usr_username" Type="String" MaxLength="26" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="usr_password" Type="String" MaxLength="26" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="usr_fname" Type="String" MaxLength="26" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="usr_lname" Type="String" MaxLength="26" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="usr_type_id" Type="Int32" Nullable="false" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
+          <Property Name="usr_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="usr_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="usr_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="usr_uptdby" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_TYPE_SLSMAN">
+          <Key>
+            <PropertyRef Name="salesman_type_id" />
+          </Key>
+          <Property Name="salesman_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="salesman_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMS_TYPE_USRS">
+          <Key>
+            <PropertyRef Name="usr_type_id" />
+          </Key>
+          <Property Name="usr_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usr_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="wmsdb" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="WMS_MSTR_CUST" EntityType="Self.WMS_MSTR_CUST" />
+          <EntitySet Name="WMS_MSTR_INVTY" EntityType="Self.WMS_MSTR_INVTY" />
+          <EntitySet Name="WMS_MSTR_SITE" EntityType="Self.WMS_MSTR_SITE" />
+          <EntitySet Name="WMS_MSTR_SLSMAN" EntityType="Self.WMS_MSTR_SLSMAN" />
+          <EntitySet Name="WMS_MSTR_USRS" EntityType="Self.WMS_MSTR_USRS" />
+          <EntitySet Name="WMS_TYPE_SLSMAN" EntityType="Self.WMS_TYPE_SLSMAN" />
+          <EntitySet Name="WMS_TYPE_USRS" EntityType="Self.WMS_TYPE_USRS" />
+          <EntitySet Name="WMS_TYPE_STAT" EntityType="wmsdbmodel.WMS_TYPE_STAT" />
+          <EntitySet Name="WMS_USRS_VIEW" EntityType="wmsdbmodel.WMS_USRS_VIEW" />
+        </EntityContainer>
+        <EntityType Name="WMS_TYPE_STAT">
+          <Key>
+            <PropertyRef Name="stat_id" />
+          </Key>
+          <Property Name="stat_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stat_desc" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_USRS_VIEW">
+          <Key>
+            <PropertyRef Name="usr_id" />
+            <PropertyRef Name="usr_username" />
+            <PropertyRef Name="usr_password" />
+            <PropertyRef Name="usr_fname" />
+            <PropertyRef Name="usr_lname" />
+            <PropertyRef Name="usr_type_id" />
+            <PropertyRef Name="stat_id" />
+            <PropertyRef Name="stat_desc" />
+            <PropertyRef Name="usr_datecrtd" />
+            <PropertyRef Name="usr_crtdby" />
+            <PropertyRef Name="crtdby" />
+          </Key>
+          <Property Name="usr_id" Type="Int32" Nullable="false" />
+          <Property Name="usr_username" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="usr_password" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="usr_fname" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="usr_lname" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="usr_type_id" Type="Int32" Nullable="false" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
+          <Property Name="usr_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stat_desc" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="usr_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="usr_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="usr_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="usr_uptdby" Type="Int32" />
+          <Property Name="crtdby" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="uptdby" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="wmsdbmodelStoreContainer" CdmEntityContainer="wmsdb">
+          <EntitySetMapping Name="WMS_MSTR_CUST">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_CUST">
+              <MappingFragment StoreEntitySet="WMS_MSTR_CUST">
+                <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+                <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+                <ScalarProperty Name="cust_address" ColumnName="cust_address" />
+                <ScalarProperty Name="salesman_id" ColumnName="salesman_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="cust_latitude" ColumnName="cust_latitude" />
+                <ScalarProperty Name="cust_longitude" ColumnName="cust_longitude" />
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="cust_datecrtd" ColumnName="cust_datecrtd" />
+                <ScalarProperty Name="cust_dateuptd" ColumnName="cust_dateuptd" />
+                <ScalarProperty Name="cust_crtdby" ColumnName="cust_crtdby" />
+                <ScalarProperty Name="cust_uptdby" ColumnName="cust_uptdby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_INVTY">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_INVTY">
+              <MappingFragment StoreEntitySet="WMS_MSTR_INVTY">
+                <ScalarProperty Name="invty_id" ColumnName="invty_id" />
+                <ScalarProperty Name="invty_desc" ColumnName="invty_desc" />
+                <ScalarProperty Name="invty_barcode" ColumnName="invty_barcode" />
+                <ScalarProperty Name="invty_casecode" ColumnName="invty_casecode" />
+                <ScalarProperty Name="invty_ppu" ColumnName="invty_ppu" />
+                <ScalarProperty Name="invty_cat1" ColumnName="invty_cat1" />
+                <ScalarProperty Name="invty_cat2" ColumnName="invty_cat2" />
+                <ScalarProperty Name="invty_cat3" ColumnName="invty_cat3" />
+                <ScalarProperty Name="invty_cat4" ColumnName="invty_cat4" />
+                <ScalarProperty Name="invty_brand" ColumnName="invty_brand" />
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="invty_datecrtd" ColumnName="invty_datecrtd" />
+                <ScalarProperty Name="invty_dateuptd" ColumnName="invty_dateuptd" />
+                <ScalarProperty Name="invty_crtdby" ColumnName="invty_crtdby" />
+                <ScalarProperty Name="invty_uptdby" ColumnName="invty_uptdby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_SITE">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_SITE">
+              <MappingFragment StoreEntitySet="WMS_MSTR_SITE">
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="site_name" ColumnName="site_name" />
+                <ScalarProperty Name="site_datecrtd" ColumnName="site_datecrtd" />
+                <ScalarProperty Name="site_dateuptd" ColumnName="site_dateuptd" />
+                <ScalarProperty Name="site_crtdby" ColumnName="site_crtdby" />
+                <ScalarProperty Name="site_uptdby" ColumnName="site_uptdby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_SLSMAN">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_SLSMAN">
+              <MappingFragment StoreEntitySet="WMS_MSTR_SLSMAN">
+                <ScalarProperty Name="salesman_id" ColumnName="salesman_id" />
+                <ScalarProperty Name="salesman_name" ColumnName="salesman_name" />
+                <ScalarProperty Name="salesman_type_id" ColumnName="salesman_type_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="salesman_datecrtd" ColumnName="salesman_datecrtd" />
+                <ScalarProperty Name="salesman_dateuptd" ColumnName="salesman_dateuptd" />
+                <ScalarProperty Name="salesman_crtdby" ColumnName="salesman_crtdby" />
+                <ScalarProperty Name="salesman_uptdby" ColumnName="salesman_uptdby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_USRS">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_USRS">
+              <MappingFragment StoreEntitySet="WMS_MSTR_USRS">
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+                <ScalarProperty Name="usr_username" ColumnName="usr_username" />
+                <ScalarProperty Name="usr_password" ColumnName="usr_password" />
+                <ScalarProperty Name="usr_fname" ColumnName="usr_fname" />
+                <ScalarProperty Name="usr_lname" ColumnName="usr_lname" />
+                <ScalarProperty Name="usr_type_id" ColumnName="usr_type_id" />
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="usr_datecrtd" ColumnName="usr_datecrtd" />
+                <ScalarProperty Name="usr_dateuptd" ColumnName="usr_dateuptd" />
+                <ScalarProperty Name="usr_crtdby" ColumnName="usr_crtdby" />
+                <ScalarProperty Name="usr_uptdby" ColumnName="usr_uptdby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_TYPE_SLSMAN">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_TYPE_SLSMAN">
+              <MappingFragment StoreEntitySet="WMS_TYPE_SLSMAN">
+                <ScalarProperty Name="salesman_type_id" ColumnName="salesman_type_id" />
+                <ScalarProperty Name="salesman_type_name" ColumnName="salesman_type_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_TYPE_USRS">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_TYPE_USRS">
+              <MappingFragment StoreEntitySet="WMS_TYPE_USRS">
+                <ScalarProperty Name="usr_type_id" ColumnName="usr_type_id" />
+                <ScalarProperty Name="usr_type_name" ColumnName="usr_type_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_TYPE_STAT">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_TYPE_STAT">
+              <MappingFragment StoreEntitySet="WMS_TYPE_STAT">
+                <ScalarProperty Name="stat_desc" ColumnName="stat_desc" />
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_USRS_VIEW">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_USRS_VIEW">
+              <MappingFragment StoreEntitySet="WMS_USRS_VIEW">
+                <ScalarProperty Name="uptdby" ColumnName="uptdby" />
+                <ScalarProperty Name="crtdby" ColumnName="crtdby" />
+                <ScalarProperty Name="usr_uptdby" ColumnName="usr_uptdby" />
+                <ScalarProperty Name="usr_crtdby" ColumnName="usr_crtdby" />
+                <ScalarProperty Name="usr_dateuptd" ColumnName="usr_dateuptd" />
+                <ScalarProperty Name="usr_datecrtd" ColumnName="usr_datecrtd" />
+                <ScalarProperty Name="stat_desc" ColumnName="stat_desc" />
+                <ScalarProperty Name="usr_type_name" ColumnName="usr_type_name" />
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="usr_type_id" ColumnName="usr_type_id" />
+                <ScalarProperty Name="usr_lname" ColumnName="usr_lname" />
+                <ScalarProperty Name="usr_fname" ColumnName="usr_fname" />
+                <ScalarProperty Name="usr_password" ColumnName="usr_password" />
+                <ScalarProperty Name="usr_username" ColumnName="usr_username" />
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
