@@ -30,5 +30,10 @@ namespace wms
                 button1.Text = ">>";
             }
         }
+
+        private void Main_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

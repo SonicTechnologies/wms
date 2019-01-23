@@ -54,13 +54,13 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -160,7 +160,7 @@
             this.masterfileMaintenanceToolStripMenuItem});
             this.administrationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
-            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.administrationToolStripMenuItem.Text = "&Administration";
             // 
             // masterfileMaintenanceToolStripMenuItem
@@ -266,6 +266,14 @@
             this.treeView1.Size = new System.Drawing.Size(290, 583);
             this.treeView1.TabIndex = 4;
             // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(10, 25);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(290, 14);
+            this.panel6.TabIndex = 5;
+            // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -273,6 +281,14 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(290, 14);
             this.panel5.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 611);
+            this.panel2.TabIndex = 0;
             // 
             // panel4
             // 
@@ -314,22 +330,6 @@
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // panel6
-            // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(10, 25);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(290, 14);
-            this.panel6.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 25);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 611);
-            this.panel2.TabIndex = 0;
-            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,6 +345,7 @@
             this.Name = "Main_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WMS - Main Form";
+            this.Load += new System.EventHandler(this.Main_Form_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);

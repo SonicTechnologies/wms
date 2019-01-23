@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BGworker1 = new System.ComponentModel.BackgroundWorker();
             this.button1 = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -47,6 +47,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -55,7 +56,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,6 +64,11 @@
             this.panel12.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // BGworker1
+            // 
+            this.BGworker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BGworker1_DoWork);
+            this.BGworker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGworker1_RunWorkerCompleted);
             // 
             // button1
             // 
@@ -78,6 +83,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Select";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel13
             // 
@@ -101,6 +107,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel14
             // 
@@ -113,8 +120,8 @@
             // 
             // pwd
             // 
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pwd.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwd.DefaultCellStyle = dataGridViewCellStyle36;
             this.pwd.HeaderText = "Password";
             this.pwd.Name = "pwd";
             this.pwd.ReadOnly = true;
@@ -122,8 +129,8 @@
             // 
             // uname
             // 
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uname.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uname.DefaultCellStyle = dataGridViewCellStyle37;
             this.uname.HeaderText = "Username";
             this.uname.Name = "uname";
             this.uname.ReadOnly = true;
@@ -131,24 +138,24 @@
             // 
             // db
             // 
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.db.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.db.DefaultCellStyle = dataGridViewCellStyle38;
             this.db.HeaderText = "Database";
             this.db.Name = "db";
             this.db.ReadOnly = true;
             // 
             // srvr
             // 
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.srvr.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.srvr.DefaultCellStyle = dataGridViewCellStyle39;
             this.srvr.HeaderText = "Server Name";
             this.srvr.Name = "srvr";
             this.srvr.ReadOnly = true;
             // 
             // ip
             // 
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ip.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ip.DefaultCellStyle = dataGridViewCellStyle40;
             this.ip.HeaderText = "IP Address";
             this.ip.Name = "ip";
             this.ip.ReadOnly = true;
@@ -208,6 +215,14 @@
             this.panel17.Size = new System.Drawing.Size(501, 34);
             this.panel17.TabIndex = 2;
             // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(501, 5);
+            this.panel6.TabIndex = 20;
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
@@ -221,6 +236,7 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "Refresh";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel18
             // 
@@ -284,14 +300,6 @@
             this.panel1.Size = new System.Drawing.Size(14, 450);
             this.panel1.TabIndex = 14;
             // 
-            // panel6
-            // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(501, 5);
-            this.panel6.TabIndex = 20;
-            // 
             // Select_Server_Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -309,6 +317,8 @@
             this.Name = "Select_Server_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Server";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Select_Server_Form_FormClosing);
+            this.Load += new System.EventHandler(this.Select_Server_Form_Load);
             this.panel13.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
