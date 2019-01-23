@@ -22,8 +22,7 @@ namespace wms
         {
             InitializeComponent();
         }
-
-
+        
         public static Login_Form GetInstance()
         {
             if (Login_Form.loginFormInstance == null)
@@ -48,29 +47,25 @@ namespace wms
 
         public void set_default_server()
         {
-
             Select_Server_Form.read_default_server();
             textBox4.Text = Select_Server_Form.xserver_name;
             textBox1.Text = Select_Server_Form.xdbname;
             Select_Server_Form.setdbconn();
-
         }
 
         public void get_server()
         {
-
             textBox4.Text = Select_Server_Form.xserver_name;
             textBox1.Text = Select_Server_Form.xdbname;
             Select_Server_Form.setdbconn();
-
         }
+
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
             Select_Server_Form ssf = new Select_Server_Form();
             ssf.Show();
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -95,16 +90,12 @@ namespace wms
             }
             else
             {
-
-
                 wmsdb obj = new wmsdb();
-
                 var cc = (from c in obj.WMS_USRS_VIEW
                           where c.usr_username == textBox2.Text.Trim()
                           select c.usr_username).FirstOrDefault();
                 if (cc != null)
                 {
-
                     var dd = (from c in obj.WMS_USRS_VIEW
                               where c.usr_username == textBox2.Text.Trim()
                               select new
@@ -117,8 +108,7 @@ namespace wms
                                   c.usr_type_id,
                                   c.usr_type_name
                               }).FirstOrDefault();
-
-
+                    
                     if (textBox3.Text.Trim() == dd.usr_password)
                     {
                         loggedin_user.userId = dd.usr_id;
@@ -129,50 +119,54 @@ namespace wms
                         loggedin_user.userTypeName = dd.usr_type_name;
 
                         label1.Focus();
-
                         Thread.Sleep(1);
                         this.Hide();
-
                         textBox2.Text = "";
                         textBox3.Text = "";
-
-
                         Form xmf = Application.OpenForms["Main_Form"];
                         if (xmf != null)
                         {
                             Main_Form.GetInstance().Show();
-
                         }
                         else
                         {
-
                            Main_Form.GetInstance().Show();
                         }
-
-
-
                     }
                     else
                     {
-
                         MessageBox.Show("You have entered invalid password.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     }
-
-
-
                 }
-
                 else
                 {
-
                     MessageBox.Show("You are not registered, Please contact administrator.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
 
             }
         }
 
-        
+        private void textBox_Enter(object sender, EventArgs e)
+        {
+            var tb = sender as TextBox;
+            if (tb != null)
+            {
+                tb.BackColor = Color.Orange;
+            }
+        }
+
+        private void textBox_Leave(object sender, EventArgs e)
+        {
+            var tb = sender as TextBox;
+            if (tb != null)
+            {
+                tb.BackColor = System.Drawing.SystemColors.Info;
+            }
+        }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }
