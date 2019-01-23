@@ -14,6 +14,12 @@
         <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_USRS" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_STAT" Width="1.5" PointX="3.375" PointY="7.75" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_USRS_VIEW" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_INVTY_VIEW" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_SLSMAN_VIEW" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_CUST_VIEW" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_SITE_VIEW" Width="1.5" PointX="9.375" PointY="5.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_JRSLSMAN" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_JRSLSMAN_VIEW" Width="1.5" PointX="11.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -160,7 +160,7 @@
             this.masterfileMaintenanceToolStripMenuItem});
             this.administrationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
-            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.administrationToolStripMenuItem.Text = "&Administration";
             // 
             // masterfileMaintenanceToolStripMenuItem
@@ -203,18 +203,21 @@
             this.bookingSalesmToolStripMenuItem.Name = "bookingSalesmToolStripMenuItem";
             this.bookingSalesmToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.bookingSalesmToolStripMenuItem.Text = "Booking Salesman";
+            this.bookingSalesmToolStripMenuItem.Click += new System.EventHandler(this.bookingSalesmToolStripMenuItem_Click);
             // 
             // deliverySalesmanToolStripMenuItem
             // 
             this.deliverySalesmanToolStripMenuItem.Name = "deliverySalesmanToolStripMenuItem";
             this.deliverySalesmanToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.deliverySalesmanToolStripMenuItem.Text = "Delivery Salesman";
+            this.deliverySalesmanToolStripMenuItem.Click += new System.EventHandler(this.deliverySalesmanToolStripMenuItem_Click);
             // 
             // siteMasterToolStripMenuItem
             // 
             this.siteMasterToolStripMenuItem.Name = "siteMasterToolStripMenuItem";
             this.siteMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.siteMasterToolStripMenuItem.Text = "S&ites";
+            this.siteMasterToolStripMenuItem.Click += new System.EventHandler(this.siteMasterToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 

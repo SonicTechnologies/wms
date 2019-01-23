@@ -87,10 +87,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>wmsdb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_CUST_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_INVTY_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_JRSLSMAN_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_MSTR_CUST.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_INVTY.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_JRSLSMAN.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_SITE.cs">
@@ -100,6 +112,12 @@
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_USRS.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_SITE_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_SLSMAN_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_TYPE_SLSMAN.cs">
@@ -113,6 +131,54 @@
     </Compile>
     <Compile Include="Entity Class\WMS_USRS_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Customer\CM_Upload_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Customer\CM_Upload_Data.Designer.cs">
+      <DependentUpon>CM_Upload_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Customer\Customer_Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Customer\Customer_Maintenance.Designer.cs">
+      <DependentUpon>Customer_Maintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\SALESMAN\SB_Booking_Upload_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\SALESMAN\SB_Booking_Upload_Data.Designer.cs">
+      <DependentUpon>SB_Booking_Upload_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\SALESMAN\SD_Delivery_Upload_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\SALESMAN\SD_Delivery_Upload_Data.Designer.cs">
+      <DependentUpon>SD_Delivery_Upload_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\SALESMAN\SM_Booking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\SALESMAN\SM_Booking.Designer.cs">
+      <DependentUpon>SM_Booking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\SALESMAN\SM_Delivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\SALESMAN\SM_Delivery.Designer.cs">
+      <DependentUpon>SM_Delivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\SITE\Site_Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\SITE\Site_Maintenance.Designer.cs">
+      <DependentUpon>Site_Maintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\SITE\ST_Upload_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\SITE\ST_Upload_Data.Designer.cs">
+      <DependentUpon>ST_Upload_Data.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login_Form.cs">
       <SubType>Form</SubType>
@@ -134,6 +200,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Administration\Customer\CM_Upload_Data.resx">
+      <DependentUpon>CM_Upload_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Customer\Customer_Maintenance.resx">
+      <DependentUpon>Customer_Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\SALESMAN\SB_Booking_Upload_Data.resx">
+      <DependentUpon>SB_Booking_Upload_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\SALESMAN\SD_Delivery_Upload_Data.resx">
+      <DependentUpon>SD_Delivery_Upload_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\SALESMAN\SM_Booking.resx">
+      <DependentUpon>SM_Booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\SALESMAN\SM_Delivery.resx">
+      <DependentUpon>SM_Delivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\SITE\Site_Maintenance.resx">
+      <DependentUpon>Site_Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\SITE\ST_Upload_Data.resx">
+      <DependentUpon>ST_Upload_Data.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,7 +265,33 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\Administration\Customer\" />
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.png" />
@@ -195,5 +311,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
