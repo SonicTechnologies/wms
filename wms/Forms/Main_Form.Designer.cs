@@ -160,7 +160,7 @@
             this.masterfileMaintenanceToolStripMenuItem});
             this.administrationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
-            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.administrationToolStripMenuItem.Text = "&Administration";
             // 
             // masterfileMaintenanceToolStripMenuItem
