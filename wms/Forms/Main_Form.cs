@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using wms.Forms.Administration.Item;
 
 namespace wms
 {
@@ -54,24 +55,16 @@ namespace wms
 
         }
 
-        public static Main_Form GetInstance()
-        {
-            if (Main_Form.MainFormInstance == null)
-            {
-                Main_Form.MainFormInstance = new Main_Form();
-                Main_Form.MainFormInstance.FormClosed += new FormClosedEventHandler(MainFormInstance_FormClosed);
-            }
-            return Main_Form.MainFormInstance;
-        }
-
-        static void MainFormInstance_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Main_Form.MainFormInstance = null;
-        }
-
         private void customerMasterToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void itemMasterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Item_Maintenance newform = new Item_Maintenance();
+            newform.MdiParent = this;
+            newform.Show();
         }
     }
 }

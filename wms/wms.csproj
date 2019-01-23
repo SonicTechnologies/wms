@@ -87,6 +87,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>wmsdb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_INVTY_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_MSTR_CUST.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
@@ -114,6 +117,18 @@
     <Compile Include="Entity Class\WMS_USRS_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Administration\Item\IM_Upload_data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Item\IM_Upload_data.Designer.cs">
+      <DependentUpon>IM_Upload_data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Item\Item_Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Item\Item_Maintenance.Designer.cs">
+      <DependentUpon>Item_Maintenance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +149,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Administration\Item\IM_Upload_data.resx">
+      <DependentUpon>IM_Upload_data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Item\Item_Maintenance.resx">
+      <DependentUpon>Item_Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>

@@ -107,6 +107,8 @@
             this.textBox4.Size = new System.Drawing.Size(160, 22);
             this.textBox4.TabIndex = 28;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox4.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // button5
             // 
@@ -149,6 +151,8 @@
             this.textBox3.TabIndex = 21;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.UseSystemPasswordChar = true;
+            this.textBox3.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox3.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // label3
             // 
@@ -170,6 +174,8 @@
             this.textBox2.Size = new System.Drawing.Size(160, 22);
             this.textBox2.TabIndex = 19;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox2.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // label2
             // 
@@ -192,6 +198,8 @@
             this.textBox1.Size = new System.Drawing.Size(160, 22);
             this.textBox1.TabIndex = 17;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // label1
             // 

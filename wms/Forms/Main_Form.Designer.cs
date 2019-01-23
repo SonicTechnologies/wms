@@ -188,6 +188,7 @@
             this.itemMasterToolStripMenuItem.Name = "itemMasterToolStripMenuItem";
             this.itemMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.itemMasterToolStripMenuItem.Text = "&Items";
+            this.itemMasterToolStripMenuItem.Click += new System.EventHandler(this.itemMasterToolStripMenuItem_Click);
             // 
             // salesmanMasterToolStripMenuItem
             // 

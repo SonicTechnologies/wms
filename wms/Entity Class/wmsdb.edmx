@@ -104,6 +104,36 @@
           <Property Name="usr_type_name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'WMS.dbo.WMS_INVTY_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WMS_INVTY_VIEW">
+          <Key>
+            <PropertyRef Name="invty_id" />
+            <PropertyRef Name="invty_desc" />
+            <PropertyRef Name="invty_ppu" />
+            <PropertyRef Name="crtdby" />
+            <PropertyRef Name="invty_datecrtd" />
+            <PropertyRef Name="invty_crtdby" />
+          </Key>
+          <Property Name="invty_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="invty_desc" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="invty_barcode" Type="nvarchar" MaxLength="100" />
+          <Property Name="invty_casecode" Type="nvarchar" MaxLength="100" />
+          <Property Name="invty_ppu" Type="int" Nullable="false" />
+          <Property Name="invty_cat1" Type="nvarchar" MaxLength="50" />
+          <Property Name="invty_cat2" Type="nvarchar" MaxLength="50" />
+          <Property Name="invty_cat3" Type="nvarchar" MaxLength="50" />
+          <Property Name="invty_cat4" Type="nvarchar" MaxLength="50" />
+          <Property Name="invty_brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="stat_id" Type="int" />
+          <Property Name="stat_desc" Type="nvarchar" MaxLength="26" />
+          <Property Name="crtdby" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="uptdby" Type="nvarchar" MaxLength="26" />
+          <Property Name="invty_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="invty_dateuptd" Type="datetime" />
+          <Property Name="invty_crtdby" Type="int" Nullable="false" />
+          <Property Name="invty_uptdby" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="WMS_USRS_VIEW">
           <Key>
@@ -144,6 +174,28 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySet Name="WMS_TYPE_SLSMAN" EntityType="Self.WMS_TYPE_SLSMAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_TYPE_STAT" EntityType="Self.WMS_TYPE_STAT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_TYPE_USRS" EntityType="Self.WMS_TYPE_USRS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_INVTY_VIEW" EntityType="Self.WMS_INVTY_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WMS_INVTY_VIEW].[invty_id] AS [invty_id], 
+    [WMS_INVTY_VIEW].[invty_desc] AS [invty_desc], 
+    [WMS_INVTY_VIEW].[invty_barcode] AS [invty_barcode], 
+    [WMS_INVTY_VIEW].[invty_casecode] AS [invty_casecode], 
+    [WMS_INVTY_VIEW].[invty_ppu] AS [invty_ppu], 
+    [WMS_INVTY_VIEW].[invty_cat1] AS [invty_cat1], 
+    [WMS_INVTY_VIEW].[invty_cat2] AS [invty_cat2], 
+    [WMS_INVTY_VIEW].[invty_cat3] AS [invty_cat3], 
+    [WMS_INVTY_VIEW].[invty_cat4] AS [invty_cat4], 
+    [WMS_INVTY_VIEW].[invty_brand] AS [invty_brand], 
+    [WMS_INVTY_VIEW].[stat_id] AS [stat_id], 
+    [WMS_INVTY_VIEW].[stat_desc] AS [stat_desc], 
+    [WMS_INVTY_VIEW].[crtdby] AS [crtdby], 
+    [WMS_INVTY_VIEW].[uptdby] AS [uptdby], 
+    [WMS_INVTY_VIEW].[invty_datecrtd] AS [invty_datecrtd], 
+    [WMS_INVTY_VIEW].[invty_dateuptd] AS [invty_dateuptd], 
+    [WMS_INVTY_VIEW].[invty_crtdby] AS [invty_crtdby], 
+    [WMS_INVTY_VIEW].[invty_uptdby] AS [invty_uptdby]
+    FROM [dbo].[WMS_INVTY_VIEW] AS [WMS_INVTY_VIEW]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="WMS_USRS_VIEW" EntityType="Self.WMS_USRS_VIEW" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [WMS_USRS_VIEW].[usr_id] AS [usr_id], 
@@ -269,6 +321,7 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySet Name="WMS_TYPE_USRS" EntityType="Self.WMS_TYPE_USRS" />
           <EntitySet Name="WMS_TYPE_STAT" EntityType="wmsdbmodel.WMS_TYPE_STAT" />
           <EntitySet Name="WMS_USRS_VIEW" EntityType="wmsdbmodel.WMS_USRS_VIEW" />
+          <EntitySet Name="WMS_INVTY_VIEW" EntityType="wmsdbmodel.WMS_INVTY_VIEW" />
         </EntityContainer>
         <EntityType Name="WMS_TYPE_STAT">
           <Key>
@@ -306,6 +359,34 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="usr_uptdby" Type="Int32" />
           <Property Name="crtdby" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
           <Property Name="uptdby" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_INVTY_VIEW">
+          <Key>
+            <PropertyRef Name="invty_id" />
+            <PropertyRef Name="invty_desc" />
+            <PropertyRef Name="invty_ppu" />
+            <PropertyRef Name="crtdby" />
+            <PropertyRef Name="invty_datecrtd" />
+            <PropertyRef Name="invty_crtdby" />
+          </Key>
+          <Property Name="invty_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="invty_desc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="invty_barcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="invty_casecode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="invty_ppu" Type="Int32" Nullable="false" />
+          <Property Name="invty_cat1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invty_cat2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invty_cat3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invty_cat4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invty_brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stat_id" Type="Int32" />
+          <Property Name="stat_desc" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="crtdby" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="uptdby" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="invty_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="invty_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="invty_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="invty_uptdby" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -437,6 +518,30 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
                 <ScalarProperty Name="usr_password" ColumnName="usr_password" />
                 <ScalarProperty Name="usr_username" ColumnName="usr_username" />
                 <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_INVTY_VIEW">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_INVTY_VIEW">
+              <MappingFragment StoreEntitySet="WMS_INVTY_VIEW">
+                <ScalarProperty Name="invty_uptdby" ColumnName="invty_uptdby" />
+                <ScalarProperty Name="invty_crtdby" ColumnName="invty_crtdby" />
+                <ScalarProperty Name="invty_dateuptd" ColumnName="invty_dateuptd" />
+                <ScalarProperty Name="invty_datecrtd" ColumnName="invty_datecrtd" />
+                <ScalarProperty Name="uptdby" ColumnName="uptdby" />
+                <ScalarProperty Name="crtdby" ColumnName="crtdby" />
+                <ScalarProperty Name="stat_desc" ColumnName="stat_desc" />
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="invty_brand" ColumnName="invty_brand" />
+                <ScalarProperty Name="invty_cat4" ColumnName="invty_cat4" />
+                <ScalarProperty Name="invty_cat3" ColumnName="invty_cat3" />
+                <ScalarProperty Name="invty_cat2" ColumnName="invty_cat2" />
+                <ScalarProperty Name="invty_cat1" ColumnName="invty_cat1" />
+                <ScalarProperty Name="invty_ppu" ColumnName="invty_ppu" />
+                <ScalarProperty Name="invty_casecode" ColumnName="invty_casecode" />
+                <ScalarProperty Name="invty_barcode" ColumnName="invty_barcode" />
+                <ScalarProperty Name="invty_desc" ColumnName="invty_desc" />
+                <ScalarProperty Name="invty_id" ColumnName="invty_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
