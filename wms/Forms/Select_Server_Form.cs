@@ -203,6 +203,7 @@ namespace wms.Forms
                         dbcount = dbcount + 1;
                         preserverList.Rows.Add(xrow);
 
+
                     }
 
                     else
@@ -217,8 +218,6 @@ namespace wms.Forms
         private void BGworker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             label1.Text = "Found Database (" + dbcount.ToString() + "):";
-
-
 
             foreach (DataRow rowServer in preserverList.Rows)
             {
@@ -266,5 +265,7 @@ namespace wms.Forms
             xuser = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             xpass = dataGridView1.CurrentRow.Cells[4].Value.ToString();
         }
+
+
     }
 }

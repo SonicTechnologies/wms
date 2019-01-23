@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using wms.Forms.Administration.Modules;
 namespace wms
 {
     public partial class Main_Form : Form
@@ -47,6 +47,13 @@ namespace wms
                 panel1.Width = 30;
                 button1.Text = ">>";
             }
+        }
+
+        private void formMaintenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {           
+            Form_Maintenance fm = new Form_Maintenance();
+            fm.MdiParent = this;
+            fm.Show();
         }
     }
 }

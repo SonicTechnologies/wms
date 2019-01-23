@@ -51,16 +51,18 @@
             this.siteMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.warehouseManagementSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.formMaintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -148,7 +150,8 @@
             // modulesToolStripMenuItem
             // 
             this.modulesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.administrationToolStripMenuItem});
+            this.administrationToolStripMenuItem,
+            this.warehouseManagementSystemToolStripMenuItem});
             this.modulesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modulesToolStripMenuItem.Name = "modulesToolStripMenuItem";
             this.modulesToolStripMenuItem.Size = new System.Drawing.Size(72, 21);
@@ -157,10 +160,11 @@
             // administrationToolStripMenuItem
             // 
             this.administrationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.masterfileMaintenanceToolStripMenuItem});
+            this.masterfileMaintenanceToolStripMenuItem,
+            this.formMaintenanceToolStripMenuItem});
             this.administrationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
-            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.administrationToolStripMenuItem.Text = "&Administration";
             // 
             // masterfileMaintenanceToolStripMenuItem
@@ -227,6 +231,13 @@
             this.devicesToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.devicesToolStripMenuItem.Text = "De&vices";
             // 
+            // warehouseManagementSystemToolStripMenuItem
+            // 
+            this.warehouseManagementSystemToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warehouseManagementSystemToolStripMenuItem.Name = "warehouseManagementSystemToolStripMenuItem";
+            this.warehouseManagementSystemToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
+            this.warehouseManagementSystemToolStripMenuItem.Text = "Warehouse Management System";
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Checked = true;
@@ -266,6 +277,14 @@
             this.treeView1.Size = new System.Drawing.Size(290, 583);
             this.treeView1.TabIndex = 4;
             // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(10, 25);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(290, 14);
+            this.panel6.TabIndex = 5;
+            // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -273,6 +292,14 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(290, 14);
             this.panel5.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 611);
+            this.panel2.TabIndex = 0;
             // 
             // panel4
             // 
@@ -314,21 +341,12 @@
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // panel6
+            // formMaintenanceToolStripMenuItem
             // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(10, 25);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(290, 14);
-            this.panel6.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 25);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 611);
-            this.panel2.TabIndex = 0;
+            this.formMaintenanceToolStripMenuItem.Name = "formMaintenanceToolStripMenuItem";
+            this.formMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.formMaintenanceToolStripMenuItem.Text = "Form Maintenance";
+            this.formMaintenanceToolStripMenuItem.Click += new System.EventHandler(this.formMaintenanceToolStripMenuItem_Click);
             // 
             // Main_Form
             // 
@@ -385,5 +403,7 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ToolStripMenuItem warehouseManagementSystemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formMaintenanceToolStripMenuItem;
     }
 }

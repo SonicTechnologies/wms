@@ -114,6 +114,18 @@
     <Compile Include="Entity Class\WMS_USRS_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Administration\Modules\Form_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Modules\Form_List.Designer.cs">
+      <DependentUpon>Form_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Modules\Form_Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Modules\Form_Maintenance.Designer.cs">
+      <DependentUpon>Form_Maintenance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Administration\Modules\Form_List.resx">
+      <DependentUpon>Form_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Modules\Form_Maintenance.resx">
+      <DependentUpon>Form_Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
