@@ -35,7 +35,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.userToolStrip = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox6 = new System.Windows.Forms.ToolStripTextBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.takeABreakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +51,6 @@
             this.siteMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.warehouseManagementSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -62,7 +61,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.formMaintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,7 +71,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox3,
             this.toolStripTextBox1,
-            this.toolStripTextBox2,
+            this.userToolStrip,
             this.toolStripTextBox6,
             this.fileToolStripMenuItem,
             this.modulesToolStripMenuItem,
@@ -103,15 +101,15 @@
             this.toolStripTextBox1.Size = new System.Drawing.Size(35, 21);
             this.toolStripTextBox1.Text = "User: ";
             // 
-            // toolStripTextBox2
+            // userToolStrip
             // 
-            this.toolStripTextBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toolStripTextBox2.Enabled = false;
-            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 21);
-            this.toolStripTextBox2.Text = "admin";
+            this.userToolStrip.BackColor = System.Drawing.SystemColors.Control;
+            this.userToolStrip.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.userToolStrip.Enabled = false;
+            this.userToolStrip.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userToolStrip.Name = "userToolStrip";
+            this.userToolStrip.Size = new System.Drawing.Size(100, 21);
+            this.userToolStrip.Text = "admin";
             // 
             // toolStripTextBox6
             // 
@@ -150,8 +148,7 @@
             // modulesToolStripMenuItem
             // 
             this.modulesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.administrationToolStripMenuItem,
-            this.warehouseManagementSystemToolStripMenuItem});
+            this.administrationToolStripMenuItem});
             this.modulesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modulesToolStripMenuItem.Name = "modulesToolStripMenuItem";
             this.modulesToolStripMenuItem.Size = new System.Drawing.Size(72, 21);
@@ -160,11 +157,10 @@
             // administrationToolStripMenuItem
             // 
             this.administrationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.masterfileMaintenanceToolStripMenuItem,
-            this.formMaintenanceToolStripMenuItem});
+            this.masterfileMaintenanceToolStripMenuItem});
             this.administrationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.administrationToolStripMenuItem.Name = "administrationToolStripMenuItem";
-            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
+            this.administrationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.administrationToolStripMenuItem.Text = "&Administration";
             // 
             // masterfileMaintenanceToolStripMenuItem
@@ -183,14 +179,16 @@
             // customerMasterToolStripMenuItem
             // 
             this.customerMasterToolStripMenuItem.Name = "customerMasterToolStripMenuItem";
-            this.customerMasterToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.customerMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.customerMasterToolStripMenuItem.Text = "&Customers";
+            this.customerMasterToolStripMenuItem.Click += new System.EventHandler(this.customerMasterToolStripMenuItem_Click);
             // 
             // itemMasterToolStripMenuItem
             // 
             this.itemMasterToolStripMenuItem.Name = "itemMasterToolStripMenuItem";
-            this.itemMasterToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.itemMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.itemMasterToolStripMenuItem.Text = "&Items";
+            this.itemMasterToolStripMenuItem.Click += new System.EventHandler(this.itemMasterToolStripMenuItem_Click);
             // 
             // salesmanMasterToolStripMenuItem
             // 
@@ -198,7 +196,7 @@
             this.bookingSalesmToolStripMenuItem,
             this.deliverySalesmanToolStripMenuItem});
             this.salesmanMasterToolStripMenuItem.Name = "salesmanMasterToolStripMenuItem";
-            this.salesmanMasterToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.salesmanMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salesmanMasterToolStripMenuItem.Text = "S&alesman";
             // 
             // bookingSalesmToolStripMenuItem
@@ -206,37 +204,33 @@
             this.bookingSalesmToolStripMenuItem.Name = "bookingSalesmToolStripMenuItem";
             this.bookingSalesmToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.bookingSalesmToolStripMenuItem.Text = "Booking Salesman";
+            this.bookingSalesmToolStripMenuItem.Click += new System.EventHandler(this.bookingSalesmToolStripMenuItem_Click);
             // 
             // deliverySalesmanToolStripMenuItem
             // 
             this.deliverySalesmanToolStripMenuItem.Name = "deliverySalesmanToolStripMenuItem";
             this.deliverySalesmanToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.deliverySalesmanToolStripMenuItem.Text = "Delivery Salesman";
+            this.deliverySalesmanToolStripMenuItem.Click += new System.EventHandler(this.deliverySalesmanToolStripMenuItem_Click);
             // 
             // siteMasterToolStripMenuItem
             // 
             this.siteMasterToolStripMenuItem.Name = "siteMasterToolStripMenuItem";
-            this.siteMasterToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.siteMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.siteMasterToolStripMenuItem.Text = "S&ites";
+            this.siteMasterToolStripMenuItem.Click += new System.EventHandler(this.siteMasterToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usersToolStripMenuItem.Text = "&Users";
             // 
             // devicesToolStripMenuItem
             // 
             this.devicesToolStripMenuItem.Name = "devicesToolStripMenuItem";
-            this.devicesToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.devicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.devicesToolStripMenuItem.Text = "De&vices";
-            // 
-            // warehouseManagementSystemToolStripMenuItem
-            // 
-            this.warehouseManagementSystemToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.warehouseManagementSystemToolStripMenuItem.Name = "warehouseManagementSystemToolStripMenuItem";
-            this.warehouseManagementSystemToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
-            this.warehouseManagementSystemToolStripMenuItem.Text = "Warehouse Management System";
             // 
             // helpToolStripMenuItem
             // 
@@ -341,13 +335,6 @@
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // formMaintenanceToolStripMenuItem
-            // 
-            this.formMaintenanceToolStripMenuItem.Name = "formMaintenanceToolStripMenuItem";
-            this.formMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.formMaintenanceToolStripMenuItem.Text = "Form Maintenance";
-            this.formMaintenanceToolStripMenuItem.Click += new System.EventHandler(this.formMaintenanceToolStripMenuItem_Click);
-            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +350,7 @@
             this.Name = "Main_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WMS - Main Form";
+            this.Load += new System.EventHandler(this.Main_Form_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -377,7 +365,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripTextBox userToolStrip;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox6;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem takeABreakToolStripMenuItem;
@@ -403,7 +391,5 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ToolStripMenuItem warehouseManagementSystemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formMaintenanceToolStripMenuItem;
     }
 }

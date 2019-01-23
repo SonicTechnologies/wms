@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using wms.Forms.Administration.Modules;
+using wms.Forms.Administration.Item;
+
 namespace wms
 {
     public partial class Main_Form : Form
@@ -49,11 +50,21 @@ namespace wms
             }
         }
 
-        private void formMaintenanceToolStripMenuItem_Click(object sender, EventArgs e)
-        {           
-            Form_Maintenance fm = new Form_Maintenance();
-            fm.MdiParent = this;
-            fm.Show();
+        private void Main_Form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customerMasterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void itemMasterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Item_Maintenance newform = new Item_Maintenance();
+            newform.MdiParent = this;
+            newform.Show();
         }
     }
 }
