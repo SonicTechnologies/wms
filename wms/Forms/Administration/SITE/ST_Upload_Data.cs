@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using wms.Class;
 using wms.Entity_Class;
-
 namespace wms.Forms.Administration.SITE
 {
     public partial class ST_Upload_Data : Form
@@ -28,7 +27,7 @@ namespace wms.Forms.Administration.SITE
         OleDbDataAdapter adapt1 = new OleDbDataAdapter();
 
         wmsdb obj = new wmsdb();
-
+       
         string strConnectionString;
 
         int max;

@@ -14,9 +14,9 @@ namespace wms.Entity_Class
     using System.Data.Entity.Infrastructure;
     using wms.Forms;
 
-    public partial class Entities : DbContext
+    public partial class wmsdb : DbContext
     {
-        public Entities()
+        public wmsdb()
             : base(Select_Server_Form.dbconn)
         {
         }

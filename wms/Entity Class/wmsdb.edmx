@@ -696,7 +696,7 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="crtdby" Type="String" MaxLength="26" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="uptdby" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="wmsdb" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="WMS_MSTR_CUST" EntityType="Self.WMS_MSTR_CUST" />
           <EntitySet Name="WMS_MSTR_INVTY" EntityType="Self.WMS_MSTR_INVTY" />
           <EntitySet Name="WMS_MSTR_JRSLSMAN" EntityType="Self.WMS_MSTR_JRSLSMAN" />
@@ -718,7 +718,7 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WMSModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="WMSModelStoreContainer" CdmEntityContainer="wmsdb">
           <EntitySetMapping Name="WMS_MSTR_CUST">
             <EntityTypeMapping TypeName="WMSModel.WMS_MSTR_CUST">
               <MappingFragment StoreEntitySet="WMS_MSTR_CUST">
