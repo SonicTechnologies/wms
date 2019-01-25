@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using wms.Entity_Class;
 using wms.Forms.Administration.Item;
-using wms.Forms.Administration.Customer;
 using wms.Forms.Administration.SALESMAN;
+using wms.Forms.Administration.SITE;
+using wms.Forms.Administration.Customer;
 
 namespace wms
 {
     public partial class Main_Form : Form
     {
         public static Main_Form MainFormInstance = null;
+        wmsdb obj = new wmsdb();
         public Main_Form()
         {
             InitializeComponent();
@@ -40,6 +43,11 @@ namespace wms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            togglemenu();
+        }
+
+        private void togglemenu()
+        {
             if (panel1.Width == 30)
             {
                 panel1.Width = 330;
@@ -57,33 +65,184 @@ namespace wms
 
         }
 
-        private void customerMasterToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Main_Form_KeyDown(object sender, KeyEventArgs e)
         {
-            Customer_Maintenance cm = new Customer_Maintenance();
-            cm.MdiParent = this;
-            cm.Show();
+            if (e.KeyCode == Keys.F1)
+            {
+                togglemenu();
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                
+            }
         }
 
-        private void itemMasterToolStripMenuItem_Click(object sender, EventArgs e)
+        private void getlvl1Node(string nodelvl1)
         {
-            Item_Maintenance newform = new Item_Maintenance();
-            newform.MdiParent = this;
-            newform.Show();
+     
+            TreeNode main_node_lvl1;
+            TreeNode child_node_lvl2;
+            TreeNode child_node_lvl3;
+
+            treeView1.Nodes.Clear();
+
+            main_node_lvl1 = treeView1.Nodes.Add(nodelvl1.ToString().Replace("&",""));
+
+            int lvl1nodeid = getlvl1id(nodelvl1.Replace("&", ""));
+
+            var lvl2nodes = (from c in obj.WMS_MSTR_S1MODULE
+                             where c.mod_id == lvl1nodeid
+                             select new
+                             {
+                                 c.s1mod_id,
+                                 c.s1mod_name
+
+                             }).OrderBy(c => new { c.s1mod_id }).ToList();
+            if (lvl2nodes.Count != 0)
+            {
+
+                foreach (var xnode1 in lvl2nodes)
+                {
+                    child_node_lvl2 = main_node_lvl1.Nodes.Add(xnode1.s1mod_name);
+                    
+                    int lvl2nodeid = getlvl2id(xnode1.s1mod_name);
+
+                    var lvl3nodes = (from c in obj.WMS_MSTR_S2MODULE
+                                     where c.s1mod_id == lvl2nodeid
+                                     select new
+                                     {
+                                         c.s2mod_id,
+                                         c.s2mod_name
+
+                                     }).OrderBy(c => new { c.s2mod_id }).ToList();
+                    if (lvl3nodes.Count != 0)
+                    {
+
+                        foreach (var xnode2 in lvl3nodes)
+                        {
+                            child_node_lvl3 = child_node_lvl2.Nodes.Add(xnode2.s2mod_name);
+                            child_node_lvl3.NodeFont = new Font("Segoe UI", 8.75F, FontStyle.Regular);
+
+                        }
+                    }
+                    else
+                    {
+
+                    }
+
+
+                }
+            }
+            else
+            {
+            
+            }
         }
 
-        private void bookingSalesmToolStripMenuItem_Click(object sender, EventArgs e)
+        private void getAccess(object sender, EventArgs e)
         {
-           SM_Booking booking = new SM_Booking();
-            booking.MdiParent = this;
-            booking.Show();
-
+            togglemenu();
+            var xmod = sender as ToolStripMenuItem;
+            getlvl1Node(xmod.Text);
         }
 
-        private void deliverySalesmanToolStripMenuItem_Click(object sender, EventArgs e)
+        private int getlvl1id(string nodelvl1)
+        {   
+            var lvl1nodeid = (from c in obj.WMS_MSTR_MODULE
+                          where c.mod_name == nodelvl1
+                          select c.mod_id).FirstOrDefault();
+            return lvl1nodeid;
+        }
+
+        private int getlvl2id(string nodelvl2)
         {
-            SM_Delivery delivery = new SM_Delivery();
-            delivery.MdiParent = this;
-            delivery.Show();
+            var lvl2nodeid = (from c in obj.WMS_MSTR_S1MODULE
+                          where c.s1mod_name == nodelvl2
+                          select c.s1mod_id).FirstOrDefault();
+            return lvl2nodeid;
+        }
+
+        private void treeView1_DoubleClick(object sender, EventArgs e)
+        {
+            
+            var xformname = (from c in obj.WMS_MSTR_S2MODULE
+                             where c.s2mod_name == treeView1.SelectedNode.Text
+                             select new
+                             {
+                                 c.s2mod_form_name,
+                                 c.stat_id
+
+                             }).OrderBy(c => new { c.s2mod_form_name }).ToList();
+            if (xformname.Count != 0)
+            {
+                foreach (var xform in xformname)
+                {
+                    if (xform.stat_id == 1)
+                    {
+                        OpenForm(xform.s2mod_form_name);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Module access: " + treeView1.SelectedNode.Text + " under maintenance", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+               
+            }
+        }
+
+        private void OpenForm(String form_name)
+        {
+            if (form_name == "")
+            {
+
+            }
+            else
+            {
+                Type xform;
+                try
+                {
+
+                    System.Reflection.Assembly MyAssembly = System.Reflection.Assembly.LoadFrom(Application.ExecutablePath);
+                    foreach (Type xforms in MyAssembly.GetTypes())
+                    {
+                        if (xforms.Name == form_name)
+                        {
+                            xform = xforms;
+
+                            if (xform != null)
+                            {
+                               
+
+                                if (xform.BaseType == typeof(Form))
+                                {
+                                    Form frm = (Form)Activator.CreateInstance(xform);
+                                    frm.MdiParent = this;
+                                    frm.Show();
+                                }
+                            }
+                            else
+                            {
+
+                            }
+
+                        }
+                        else
+                        {
+
+                        }
+
+                        
+                    }
+                }
+                catch
+                {
+
+                }
+
+            }
         }
     }
 }

@@ -105,6 +105,15 @@
     <Compile Include="Entity Class\WMS_MSTR_JRSLSMAN.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_MODULE.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_S1MODULE.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_S2MODULE.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_MSTR_SITE.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
@@ -168,40 +177,28 @@
     <Compile Include="Forms\Administration\Modules\Form_Maintenance.Designer.cs">
       <DependentUpon>Form_Maintenance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Administration\SALESMAN\SB_Booking_Upload_Data.cs">
+    <Compile Include="Forms\Administration\Salesman\SB_Booking_Upload_Data.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Administration\SALESMAN\SB_Booking_Upload_Data.Designer.cs">
+    <Compile Include="Forms\Administration\Salesman\SB_Booking_Upload_Data.Designer.cs">
       <DependentUpon>SB_Booking_Upload_Data.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Administration\SALESMAN\SD_Delivery_Upload_Data.cs">
+    <Compile Include="Forms\Administration\Salesman\SM_Booking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Administration\SALESMAN\SD_Delivery_Upload_Data.Designer.cs">
-      <DependentUpon>SD_Delivery_Upload_Data.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Administration\SALESMAN\SM_Booking.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Administration\SALESMAN\SM_Booking.Designer.cs">
+    <Compile Include="Forms\Administration\Salesman\SM_Booking.Designer.cs">
       <DependentUpon>SM_Booking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Administration\SALESMAN\SM_Delivery.cs">
+    <Compile Include="Forms\Administration\Site\Site_Maintenance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Administration\SALESMAN\SM_Delivery.Designer.cs">
-      <DependentUpon>SM_Delivery.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Administration\SITE\Site_Maintenance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Administration\SITE\Site_Maintenance.Designer.cs">
+    <Compile Include="Forms\Administration\Site\Site_Maintenance.Designer.cs">
       <DependentUpon>Site_Maintenance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Administration\SITE\ST_Upload_Data.cs">
+    <Compile Include="Forms\Administration\Site\ST_Upload_Data.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Administration\SITE\ST_Upload_Data.Designer.cs">
+    <Compile Include="Forms\Administration\Site\ST_Upload_Data.Designer.cs">
       <DependentUpon>ST_Upload_Data.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login_Form.cs">
@@ -242,22 +239,16 @@
     <EmbeddedResource Include="Forms\Administration\Modules\Form_Maintenance.resx">
       <DependentUpon>Form_Maintenance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Administration\SALESMAN\SB_Booking_Upload_Data.resx">
+    <EmbeddedResource Include="Forms\Administration\Salesman\SB_Booking_Upload_Data.resx">
       <DependentUpon>SB_Booking_Upload_Data.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Administration\SALESMAN\SD_Delivery_Upload_Data.resx">
-      <DependentUpon>SD_Delivery_Upload_Data.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Administration\SALESMAN\SM_Booking.resx">
+    <EmbeddedResource Include="Forms\Administration\Salesman\SM_Booking.resx">
       <DependentUpon>SM_Booking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Administration\SALESMAN\SM_Delivery.resx">
-      <DependentUpon>SM_Delivery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Administration\SITE\Site_Maintenance.resx">
+    <EmbeddedResource Include="Forms\Administration\Site\Site_Maintenance.resx">
       <DependentUpon>Site_Maintenance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Administration\SITE\ST_Upload_Data.resx">
+    <EmbeddedResource Include="Forms\Administration\Site\ST_Upload_Data.resx">
       <DependentUpon>ST_Upload_Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login_Form.resx">

@@ -12,16 +12,15 @@ namespace wms.Entity_Class
     using System;
     using System.Collections.Generic;
     
-    public partial class FDR_INVOICE_VIEW
+    public partial class WMS_MSTR_S1MODULE
     {
-        public string inv_number { get; set; }
-        public System.DateTime inv_date { get; set; }
-        public string ord_number { get; set; }
-        public string cust_id { get; set; }
-        public string cust_name { get; set; }
-        public double inv_amount { get; set; }
-        public System.DateTime inv_uplddate { get; set; }
-        public string salesman_name { get; set; }
-        public string upldby { get; set; }
+        public int s1mod_id { get; set; }
+        public int mod_id { get; set; }
+        public string s1mod_name { get; set; }
+        public System.DateTime s1mod_datecrtd { get; set; }
+        public int s1mod_crtdby { get; set; }
+        public Nullable<System.DateTime> s1mod_dateuptd { get; set; }
+        public Nullable<System.DateTime> s1mod_uptdby { get; set; }
+        public int stat_id { get; set; }
     }
 }

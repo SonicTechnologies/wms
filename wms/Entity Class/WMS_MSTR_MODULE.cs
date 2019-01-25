@@ -12,9 +12,14 @@ namespace wms.Entity_Class
     using System;
     using System.Collections.Generic;
     
-    public partial class FDR_BARCODE
+    public partial class WMS_MSTR_MODULE
     {
-        public decimal bag_barcode_id { get; set; }
-        public int bag_barcode_prntd { get; set; }
+        public int mod_id { get; set; }
+        public string mod_name { get; set; }
+        public System.DateTime mod_datecrtd { get; set; }
+        public int mod_crtdby { get; set; }
+        public Nullable<System.DateTime> mod_dateuptd { get; set; }
+        public Nullable<System.DateTime> mod_uptdby { get; set; }
+        public int stat_id { get; set; }
     }
 }

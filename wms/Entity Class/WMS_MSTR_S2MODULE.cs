@@ -12,8 +12,16 @@ namespace wms.Entity_Class
     using System;
     using System.Collections.Generic;
     
-    public partial class FDR_ORDNUMBER_VIEW
+    public partial class WMS_MSTR_S2MODULE
     {
-        public string ord_number { get; set; }
+        public int s2mod_id { get; set; }
+        public int s1mod_id { get; set; }
+        public string s2mod_name { get; set; }
+        public string s2mod_form_name { get; set; }
+        public System.DateTime s2mod_datecrtd { get; set; }
+        public int s2mod_crtdby { get; set; }
+        public Nullable<System.DateTime> s2mod_dateuptd { get; set; }
+        public Nullable<System.DateTime> s2mod_uptdby { get; set; }
+        public int stat_id { get; set; }
     }
 }
