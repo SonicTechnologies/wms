@@ -57,6 +57,36 @@
           <Property Name="drvr_uptdby" Type="int" />
           <Property Name="site_id" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
+        <EntityType Name="WMS_MSTR_LVL1M">
+          <Key>
+            <PropertyRef Name="lvl1mod_id" />
+          </Key>
+          <Property Name="lvl1mod_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mod_id" Type="int" />
+          <Property Name="usr_id" Type="int" />
+          <Property Name="date_added" Type="datetime" />
+          <Property Name="added_by" Type="int" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_LVL2M">
+          <Key>
+            <PropertyRef Name="lvl2mod_id" />
+          </Key>
+          <Property Name="lvl2mod_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="s1mod_id" Type="int" />
+          <Property Name="usr_id" Type="int" />
+          <Property Name="date_added" Type="datetime" />
+          <Property Name="added_by" Type="int" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_LVL3M">
+          <Key>
+            <PropertyRef Name="lvl3mod_id" />
+          </Key>
+          <Property Name="lvl3mod_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="s2mod_id" Type="int" />
+          <Property Name="usr_id" Type="int" />
+          <Property Name="date_added" Type="datetime" />
+          <Property Name="added_by" Type="int" />
+        </EntityType>
         <EntityType Name="WMS_MSTR_MODULE">
           <Key>
             <PropertyRef Name="mod_id" />
@@ -66,7 +96,7 @@
           <Property Name="mod_datecrtd" Type="datetime" Nullable="false" />
           <Property Name="mod_crtdby" Type="int" Nullable="false" />
           <Property Name="mod_dateuptd" Type="datetime" />
-          <Property Name="mod_uptdby" Type="datetime" />
+          <Property Name="mod_uptdby" Type="int" />
           <Property Name="stat_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="WMS_MSTR_S1MODULE">
@@ -256,6 +286,24 @@ warning 6002: The table/view 'WMS.dbo.WMS_JRSLSMAN_VIEW' does not have a primary
           <Property Name="site_name" Type="nvarchar" MaxLength="26" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'WMS.dbo.WMS_LVL1M_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WMS_LVL1M_VIEW">
+          <Key>
+            <PropertyRef Name="user_name" />
+            <PropertyRef Name="mod_name" />
+            <PropertyRef Name="stat_desc" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="usr_id" Type="int" />
+          <Property Name="user_name" Type="nvarchar" MaxLength="53" Nullable="false" />
+          <Property Name="mod_id" Type="int" />
+          <Property Name="mod_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="stat_desc" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="date_added" Type="datetime" />
+          <Property Name="added_by" Type="int" />
+          <Property Name="Expr1" Type="nvarchar" MaxLength="53" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'WMS.dbo.WMS_SITE_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="WMS_SITE_VIEW">
           <Key>
@@ -337,6 +385,9 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySet Name="WMS_MSTR_CUST" EntityType="Self.WMS_MSTR_CUST" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_INVTY" EntityType="Self.WMS_MSTR_INVTY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_JRSLSMAN" EntityType="Self.WMS_MSTR_JRSLSMAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_LVL1M" EntityType="Self.WMS_MSTR_LVL1M" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_LVL2M" EntityType="Self.WMS_MSTR_LVL2M" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_LVL3M" EntityType="Self.WMS_MSTR_LVL3M" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_MODULE" EntityType="Self.WMS_MSTR_MODULE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_S1MODULE" EntityType="Self.WMS_MSTR_S1MODULE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_S2MODULE" EntityType="Self.WMS_MSTR_S2MODULE" Schema="dbo" store:Type="Tables" />
@@ -407,6 +458,18 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
     [WMS_JRSLSMAN_VIEW].[site_id] AS [site_id], 
     [WMS_JRSLSMAN_VIEW].[site_name] AS [site_name]
     FROM [dbo].[WMS_JRSLSMAN_VIEW] AS [WMS_JRSLSMAN_VIEW]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WMS_LVL1M_VIEW" EntityType="Self.WMS_LVL1M_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WMS_LVL1M_VIEW].[usr_id] AS [usr_id], 
+    [WMS_LVL1M_VIEW].[user_name] AS [user_name], 
+    [WMS_LVL1M_VIEW].[mod_id] AS [mod_id], 
+    [WMS_LVL1M_VIEW].[mod_name] AS [mod_name], 
+    [WMS_LVL1M_VIEW].[stat_desc] AS [stat_desc], 
+    [WMS_LVL1M_VIEW].[date_added] AS [date_added], 
+    [WMS_LVL1M_VIEW].[added_by] AS [added_by], 
+    [WMS_LVL1M_VIEW].[Expr1] AS [Expr1]
+    FROM [dbo].[WMS_LVL1M_VIEW] AS [WMS_LVL1M_VIEW]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="WMS_SITE_VIEW" EntityType="Self.WMS_SITE_VIEW" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -567,9 +630,13 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySet Name="WMS_SITE_VIEW" EntityType="wmsdbmodel.WMS_SITE_VIEW" />
           <EntitySet Name="WMS_SLSMAN_VIEW" EntityType="wmsdbmodel.WMS_SLSMAN_VIEW" />
           <EntitySet Name="WMS_MSTR_JRSLSMAN" EntityType="wmsdbmodel.WMS_MSTR_JRSLSMAN" />
-          <EntitySet Name="WMS_MSTR_MODULE" EntityType="wmsdbmodel.WMS_MSTR_MODULE" />
           <EntitySet Name="WMS_MSTR_S1MODULE" EntityType="wmsdbmodel.WMS_MSTR_S1MODULE" />
           <EntitySet Name="WMS_MSTR_S2MODULE" EntityType="wmsdbmodel.WMS_MSTR_S2MODULE" />
+          <EntitySet Name="WMS_MSTR_LVL1M" EntityType="wmsdbmodel.WMS_MSTR_LVL1M" />
+          <EntitySet Name="WMS_MSTR_LVL2M" EntityType="wmsdbmodel.WMS_MSTR_LVL2M" />
+          <EntitySet Name="WMS_MSTR_LVL3M" EntityType="wmsdbmodel.WMS_MSTR_LVL3M" />
+          <EntitySet Name="WMS_LVL1M_VIEW" EntityType="wmsdbmodel.WMS_LVL1M_VIEW" />
+          <EntitySet Name="WMS_MSTR_MODULE" EntityType="wmsdbmodel.WMS_MSTR_MODULE" />
         </EntityContainer>
         <EntityType Name="WMS_TYPE_STAT">
           <Key>
@@ -757,18 +824,6 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="drvr_uptdby" Type="Int32" />
           <Property Name="site_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="WMS_MSTR_MODULE">
-          <Key>
-            <PropertyRef Name="mod_id" />
-          </Key>
-          <Property Name="mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="mod_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="mod_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="mod_crtdby" Type="Int32" Nullable="false" />
-          <Property Name="mod_dateuptd" Type="DateTime" Precision="3" />
-          <Property Name="mod_uptdby" Type="DateTime" Precision="3" />
-          <Property Name="stat_id" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="WMS_MSTR_S1MODULE">
           <Key>
             <PropertyRef Name="s1mod_id" />
@@ -794,6 +849,64 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="s2mod_crtdby" Type="Int32" Nullable="false" />
           <Property Name="s2mod_dateuptd" Type="DateTime" Precision="3" />
           <Property Name="s2mod_uptdby" Type="DateTime" Precision="3" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_LVL1M">
+          <Key>
+            <PropertyRef Name="lvl1mod_id" />
+          </Key>
+          <Property Name="lvl1mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mod_id" Type="Int32" />
+          <Property Name="usr_id" Type="Int32" />
+          <Property Name="date_added" Type="DateTime" Precision="3" />
+          <Property Name="added_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_LVL2M">
+          <Key>
+            <PropertyRef Name="lvl2mod_id" />
+          </Key>
+          <Property Name="lvl2mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="s1mod_id" Type="Int32" />
+          <Property Name="usr_id" Type="Int32" />
+          <Property Name="date_added" Type="DateTime" Precision="3" />
+          <Property Name="added_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_LVL3M">
+          <Key>
+            <PropertyRef Name="lvl3mod_id" />
+          </Key>
+          <Property Name="lvl3mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="s2mod_id" Type="Int32" />
+          <Property Name="usr_id" Type="Int32" />
+          <Property Name="date_added" Type="DateTime" Precision="3" />
+          <Property Name="added_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_LVL1M_VIEW">
+          <Key>
+            <PropertyRef Name="user_name" />
+            <PropertyRef Name="mod_name" />
+            <PropertyRef Name="stat_desc" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="usr_id" Type="Int32" />
+          <Property Name="user_name" Type="String" Nullable="false" MaxLength="53" FixedLength="false" Unicode="true" />
+          <Property Name="mod_id" Type="Int32" />
+          <Property Name="mod_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stat_desc" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="date_added" Type="DateTime" Precision="3" />
+          <Property Name="added_by" Type="Int32" />
+          <Property Name="Expr1" Type="String" Nullable="false" MaxLength="53" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_MODULE">
+          <Key>
+            <PropertyRef Name="mod_id" />
+          </Key>
+          <Property Name="mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mod_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mod_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="mod_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="mod_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="mod_uptdby" Type="Int32" />
           <Property Name="stat_id" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
@@ -1045,19 +1158,6 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="WMS_MSTR_MODULE">
-            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_MODULE">
-              <MappingFragment StoreEntitySet="WMS_MSTR_MODULE">
-                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
-                <ScalarProperty Name="mod_uptdby" ColumnName="mod_uptdby" />
-                <ScalarProperty Name="mod_dateuptd" ColumnName="mod_dateuptd" />
-                <ScalarProperty Name="mod_crtdby" ColumnName="mod_crtdby" />
-                <ScalarProperty Name="mod_datecrtd" ColumnName="mod_datecrtd" />
-                <ScalarProperty Name="mod_name" ColumnName="mod_name" />
-                <ScalarProperty Name="mod_id" ColumnName="mod_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="WMS_MSTR_S1MODULE">
             <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_S1MODULE">
               <MappingFragment StoreEntitySet="WMS_MSTR_S1MODULE">
@@ -1084,6 +1184,66 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
                 <ScalarProperty Name="s2mod_name" ColumnName="s2mod_name" />
                 <ScalarProperty Name="s1mod_id" ColumnName="s1mod_id" />
                 <ScalarProperty Name="s2mod_id" ColumnName="s2mod_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_LVL1M">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_LVL1M">
+              <MappingFragment StoreEntitySet="WMS_MSTR_LVL1M">
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+                <ScalarProperty Name="mod_id" ColumnName="mod_id" />
+                <ScalarProperty Name="lvl1mod_id" ColumnName="lvl1mod_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_LVL2M">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_LVL2M">
+              <MappingFragment StoreEntitySet="WMS_MSTR_LVL2M">
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+                <ScalarProperty Name="s1mod_id" ColumnName="s1mod_id" />
+                <ScalarProperty Name="lvl2mod_id" ColumnName="lvl2mod_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_LVL3M">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_LVL3M">
+              <MappingFragment StoreEntitySet="WMS_MSTR_LVL3M">
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+                <ScalarProperty Name="s2mod_id" ColumnName="s2mod_id" />
+                <ScalarProperty Name="lvl3mod_id" ColumnName="lvl3mod_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_LVL1M_VIEW">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_LVL1M_VIEW">
+              <MappingFragment StoreEntitySet="WMS_LVL1M_VIEW">
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="stat_desc" ColumnName="stat_desc" />
+                <ScalarProperty Name="mod_name" ColumnName="mod_name" />
+                <ScalarProperty Name="mod_id" ColumnName="mod_id" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_MODULE">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_MODULE">
+              <MappingFragment StoreEntitySet="WMS_MSTR_MODULE">
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="mod_uptdby" ColumnName="mod_uptdby" />
+                <ScalarProperty Name="mod_dateuptd" ColumnName="mod_dateuptd" />
+                <ScalarProperty Name="mod_crtdby" ColumnName="mod_crtdby" />
+                <ScalarProperty Name="mod_datecrtd" ColumnName="mod_datecrtd" />
+                <ScalarProperty Name="mod_name" ColumnName="mod_name" />
+                <ScalarProperty Name="mod_id" ColumnName="mod_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

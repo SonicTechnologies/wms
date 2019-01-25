@@ -12,14 +12,15 @@ namespace wms.Entity_Class
     using System;
     using System.Collections.Generic;
     
-    public partial class WMS_MSTR_MODULE
+    public partial class WMS_LVL1M_VIEW
     {
-        public int mod_id { get; set; }
+        public Nullable<int> usr_id { get; set; }
+        public string user_name { get; set; }
+        public Nullable<int> mod_id { get; set; }
         public string mod_name { get; set; }
-        public System.DateTime mod_datecrtd { get; set; }
-        public int mod_crtdby { get; set; }
-        public Nullable<System.DateTime> mod_dateuptd { get; set; }
-        public Nullable<int> mod_uptdby { get; set; }
-        public int stat_id { get; set; }
+        public string stat_desc { get; set; }
+        public Nullable<System.DateTime> date_added { get; set; }
+        public Nullable<int> added_by { get; set; }
+        public string Expr1 { get; set; }
     }
 }
