@@ -218,7 +218,6 @@
             this.siteMasterToolStripMenuItem.Name = "siteMasterToolStripMenuItem";
             this.siteMasterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.siteMasterToolStripMenuItem.Text = "S&ites";
-            this.siteMasterToolStripMenuItem.Click += new System.EventHandler(this.siteMasterToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 

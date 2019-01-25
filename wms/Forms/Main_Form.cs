@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using wms.Forms.Administration.Item;
+using wms.Forms.Administration.Customer;
+using wms.Forms.Administration.SALESMAN;
 
 namespace wms
 {
@@ -57,7 +59,9 @@ namespace wms
 
         private void customerMasterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Customer_Maintenance cm = new Customer_Maintenance();
+            cm.MdiParent = this;
+            cm.Show();
         }
 
         private void itemMasterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +69,21 @@ namespace wms
             Item_Maintenance newform = new Item_Maintenance();
             newform.MdiParent = this;
             newform.Show();
+        }
+
+        private void bookingSalesmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           SM_Booking booking = new SM_Booking();
+            booking.MdiParent = this;
+            booking.Show();
+
+        }
+
+        private void deliverySalesmanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SM_Delivery delivery = new SM_Delivery();
+            delivery.MdiParent = this;
+            delivery.Show();
         }
     }
 }
