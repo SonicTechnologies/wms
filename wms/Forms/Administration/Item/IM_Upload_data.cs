@@ -43,7 +43,7 @@ namespace wms.Forms.Administration.Item
             {
                 itemTxtBox.Text = "";
                 itemTxtBox.Text = openFileDialog1.FileName;
-                this.Height = 177;
+                
             }
         }
 
@@ -373,5 +373,7 @@ namespace wms.Forms.Administration.Item
                 tb.BackColor = System.Drawing.SystemColors.Info;
             }
         }
+
+      
     }
 }

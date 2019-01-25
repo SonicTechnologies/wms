@@ -39,12 +39,14 @@ namespace wms.Forms.Administration.Item
 
             if (status.Count != 0)
             {
+
                 foreach (var row in status)
                 {
                     comboBox4.Items.Add(row.stat_desc);
                 }
                 comboBox4.SelectedIndex = -1;
             }
+           
         }
         
         private void searchTxtBox_TextChanged(object sender, EventArgs e)

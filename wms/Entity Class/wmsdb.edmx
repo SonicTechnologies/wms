@@ -42,6 +42,60 @@
           <Property Name="invty_crtdby" Type="int" Nullable="false" />
           <Property Name="invty_uptdby" Type="int" />
         </EntityType>
+        <EntityType Name="WMS_MSTR_JRSLSMAN">
+          <Key>
+            <PropertyRef Name="drvr_id" />
+          </Key>
+          <Property Name="drvr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="drvr_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="drvr_plate" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="usr_id" Type="int" Nullable="false" />
+          <Property Name="salesman_type_id" Type="int" Nullable="false" />
+          <Property Name="drvr_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="drvr_dateuptd" Type="datetime" />
+          <Property Name="drvr_crtdby" Type="int" Nullable="false" />
+          <Property Name="drvr_uptdby" Type="int" />
+          <Property Name="site_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_MODULE">
+          <Key>
+            <PropertyRef Name="mod_id" />
+          </Key>
+          <Property Name="mod_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mod_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mod_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="mod_crtdby" Type="int" Nullable="false" />
+          <Property Name="mod_dateuptd" Type="datetime" />
+          <Property Name="mod_uptdby" Type="datetime" />
+          <Property Name="stat_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_S1MODULE">
+          <Key>
+            <PropertyRef Name="s1mod_id" />
+          </Key>
+          <Property Name="s1mod_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mod_id" Type="int" Nullable="false" />
+          <Property Name="s1mod_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="s1mod_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="s1mod_crtdby" Type="int" Nullable="false" />
+          <Property Name="s1mod_dateuptd" Type="datetime" />
+          <Property Name="s1mod_uptdby" Type="datetime" />
+          <Property Name="stat_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_S2MODULE">
+          <Key>
+            <PropertyRef Name="s2mod_id" />
+          </Key>
+          <Property Name="s2mod_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="s1mod_id" Type="int" Nullable="false" />
+          <Property Name="s2mod_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="s2mod_form_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="s2mod_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="s2mod_crtdby" Type="int" Nullable="false" />
+          <Property Name="s2mod_dateuptd" Type="datetime" />
+          <Property Name="s2mod_uptdby" Type="datetime" />
+          <Property Name="stat_id" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="WMS_MSTR_SITE">
           <Key>
             <PropertyRef Name="site_id" />
@@ -104,6 +158,41 @@
           <Property Name="usr_type_name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'WMS.dbo.WMS_CUST_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WMS_CUST_VIEW">
+          <Key>
+            <PropertyRef Name="cust_id" />
+            <PropertyRef Name="cust_name" />
+            <PropertyRef Name="cust_address" />
+            <PropertyRef Name="salesman_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="stat_id" />
+            <PropertyRef Name="salesman_name" />
+            <PropertyRef Name="stat_desc" />
+            <PropertyRef Name="site_name" />
+            <PropertyRef Name="cust_datecrtd" />
+            <PropertyRef Name="cust_crtdby" />
+            <PropertyRef Name="crtdby" />
+          </Key>
+          <Property Name="cust_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="cust_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cust_address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="salesman_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="site_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="cust_latitude" Type="float" />
+          <Property Name="cust_longitude" Type="float" />
+          <Property Name="stat_id" Type="int" Nullable="false" />
+          <Property Name="salesman_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="stat_desc" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="site_name" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="cust_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="cust_dateuptd" Type="datetime" />
+          <Property Name="cust_crtdby" Type="int" Nullable="false" />
+          <Property Name="cust_uptdby" Type="int" />
+          <Property Name="crtdby" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="uptdby" Type="nvarchar" MaxLength="26" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'WMS.dbo.WMS_INVTY_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="WMS_INVTY_VIEW">
           <Key>
@@ -132,6 +221,85 @@ warning 6002: The table/view 'WMS.dbo.WMS_INVTY_VIEW' does not have a primary ke
           <Property Name="invty_dateuptd" Type="datetime" />
           <Property Name="invty_crtdby" Type="int" Nullable="false" />
           <Property Name="invty_uptdby" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WMS.dbo.WMS_JRSLSMAN_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WMS_JRSLSMAN_VIEW">
+          <Key>
+            <PropertyRef Name="drvr_id" />
+            <PropertyRef Name="drvr_name" />
+            <PropertyRef Name="drvr_plate" />
+            <PropertyRef Name="salesman_type_id" />
+            <PropertyRef Name="salesman_type_name" />
+            <PropertyRef Name="usr_id" />
+            <PropertyRef Name="usr_username" />
+            <PropertyRef Name="crtdby" />
+            <PropertyRef Name="drvr_datecrtd" />
+            <PropertyRef Name="drvr_crtdby" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="site_name" />
+          </Key>
+          <Property Name="drvr_id" Type="int" Nullable="false" />
+          <Property Name="drvr_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="drvr_plate" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="salesman_type_id" Type="int" Nullable="false" />
+          <Property Name="salesman_type_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="usr_id" Type="int" Nullable="false" />
+          <Property Name="usr_username" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="crtdby" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="uptdby" Type="nvarchar" MaxLength="26" />
+          <Property Name="drvr_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="drvr_dateuptd" Type="datetime" />
+          <Property Name="drvr_crtdby" Type="int" Nullable="false" />
+          <Property Name="drvr_uptdby" Type="int" />
+          <Property Name="site_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="site_name" Type="nvarchar" MaxLength="26" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WMS.dbo.WMS_SITE_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WMS_SITE_VIEW">
+          <Key>
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="site_name" />
+            <PropertyRef Name="site_datecrtd" />
+            <PropertyRef Name="site_crtdby" />
+            <PropertyRef Name="crtdby" />
+          </Key>
+          <Property Name="site_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="site_name" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="site_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="site_dateuptd" Type="datetime" />
+          <Property Name="site_crtdby" Type="int" Nullable="false" />
+          <Property Name="site_uptdby" Type="int" />
+          <Property Name="crtdby" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="uptdby" Type="nvarchar" MaxLength="26" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WMS.dbo.WMS_SLSMAN_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WMS_SLSMAN_VIEW">
+          <Key>
+            <PropertyRef Name="salesman_id" />
+            <PropertyRef Name="salesman_name" />
+            <PropertyRef Name="salesman_type_id" />
+            <PropertyRef Name="salesman_type_name" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="site_name" />
+            <PropertyRef Name="salesman_datecrtd" />
+            <PropertyRef Name="salesman_crtdby" />
+            <PropertyRef Name="crtdby" />
+          </Key>
+          <Property Name="salesman_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="salesman_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="salesman_type_id" Type="int" Nullable="false" />
+          <Property Name="salesman_type_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="site_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="site_name" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="salesman_datecrtd" Type="datetime" Nullable="false" />
+          <Property Name="salesman_dateuptd" Type="datetime" />
+          <Property Name="salesman_crtdby" Type="int" Nullable="false" />
+          <Property Name="salesman_uptdby" Type="int" />
+          <Property Name="crtdby" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="uptdby" Type="nvarchar" MaxLength="26" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -168,12 +336,37 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
         <EntityContainer Name="wmsdbmodelStoreContainer">
           <EntitySet Name="WMS_MSTR_CUST" EntityType="Self.WMS_MSTR_CUST" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_INVTY" EntityType="Self.WMS_MSTR_INVTY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_JRSLSMAN" EntityType="Self.WMS_MSTR_JRSLSMAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_MODULE" EntityType="Self.WMS_MSTR_MODULE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_S1MODULE" EntityType="Self.WMS_MSTR_S1MODULE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_S2MODULE" EntityType="Self.WMS_MSTR_S2MODULE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_SITE" EntityType="Self.WMS_MSTR_SITE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_SLSMAN" EntityType="Self.WMS_MSTR_SLSMAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_USRS" EntityType="Self.WMS_MSTR_USRS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_TYPE_SLSMAN" EntityType="Self.WMS_TYPE_SLSMAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_TYPE_STAT" EntityType="Self.WMS_TYPE_STAT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_TYPE_USRS" EntityType="Self.WMS_TYPE_USRS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_CUST_VIEW" EntityType="Self.WMS_CUST_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WMS_CUST_VIEW].[cust_id] AS [cust_id], 
+    [WMS_CUST_VIEW].[cust_name] AS [cust_name], 
+    [WMS_CUST_VIEW].[cust_address] AS [cust_address], 
+    [WMS_CUST_VIEW].[salesman_id] AS [salesman_id], 
+    [WMS_CUST_VIEW].[site_id] AS [site_id], 
+    [WMS_CUST_VIEW].[cust_latitude] AS [cust_latitude], 
+    [WMS_CUST_VIEW].[cust_longitude] AS [cust_longitude], 
+    [WMS_CUST_VIEW].[stat_id] AS [stat_id], 
+    [WMS_CUST_VIEW].[salesman_name] AS [salesman_name], 
+    [WMS_CUST_VIEW].[stat_desc] AS [stat_desc], 
+    [WMS_CUST_VIEW].[site_name] AS [site_name], 
+    [WMS_CUST_VIEW].[cust_datecrtd] AS [cust_datecrtd], 
+    [WMS_CUST_VIEW].[cust_dateuptd] AS [cust_dateuptd], 
+    [WMS_CUST_VIEW].[cust_crtdby] AS [cust_crtdby], 
+    [WMS_CUST_VIEW].[cust_uptdby] AS [cust_uptdby], 
+    [WMS_CUST_VIEW].[crtdby] AS [crtdby], 
+    [WMS_CUST_VIEW].[uptdby] AS [uptdby]
+    FROM [dbo].[WMS_CUST_VIEW] AS [WMS_CUST_VIEW]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="WMS_INVTY_VIEW" EntityType="Self.WMS_INVTY_VIEW" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [WMS_INVTY_VIEW].[invty_id] AS [invty_id], 
@@ -195,6 +388,53 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
     [WMS_INVTY_VIEW].[invty_crtdby] AS [invty_crtdby], 
     [WMS_INVTY_VIEW].[invty_uptdby] AS [invty_uptdby]
     FROM [dbo].[WMS_INVTY_VIEW] AS [WMS_INVTY_VIEW]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WMS_JRSLSMAN_VIEW" EntityType="Self.WMS_JRSLSMAN_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WMS_JRSLSMAN_VIEW].[drvr_id] AS [drvr_id], 
+    [WMS_JRSLSMAN_VIEW].[drvr_name] AS [drvr_name], 
+    [WMS_JRSLSMAN_VIEW].[drvr_plate] AS [drvr_plate], 
+    [WMS_JRSLSMAN_VIEW].[salesman_type_id] AS [salesman_type_id], 
+    [WMS_JRSLSMAN_VIEW].[salesman_type_name] AS [salesman_type_name], 
+    [WMS_JRSLSMAN_VIEW].[usr_id] AS [usr_id], 
+    [WMS_JRSLSMAN_VIEW].[usr_username] AS [usr_username], 
+    [WMS_JRSLSMAN_VIEW].[crtdby] AS [crtdby], 
+    [WMS_JRSLSMAN_VIEW].[uptdby] AS [uptdby], 
+    [WMS_JRSLSMAN_VIEW].[drvr_datecrtd] AS [drvr_datecrtd], 
+    [WMS_JRSLSMAN_VIEW].[drvr_dateuptd] AS [drvr_dateuptd], 
+    [WMS_JRSLSMAN_VIEW].[drvr_crtdby] AS [drvr_crtdby], 
+    [WMS_JRSLSMAN_VIEW].[drvr_uptdby] AS [drvr_uptdby], 
+    [WMS_JRSLSMAN_VIEW].[site_id] AS [site_id], 
+    [WMS_JRSLSMAN_VIEW].[site_name] AS [site_name]
+    FROM [dbo].[WMS_JRSLSMAN_VIEW] AS [WMS_JRSLSMAN_VIEW]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WMS_SITE_VIEW" EntityType="Self.WMS_SITE_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WMS_SITE_VIEW].[site_id] AS [site_id], 
+    [WMS_SITE_VIEW].[site_name] AS [site_name], 
+    [WMS_SITE_VIEW].[site_datecrtd] AS [site_datecrtd], 
+    [WMS_SITE_VIEW].[site_dateuptd] AS [site_dateuptd], 
+    [WMS_SITE_VIEW].[site_crtdby] AS [site_crtdby], 
+    [WMS_SITE_VIEW].[site_uptdby] AS [site_uptdby], 
+    [WMS_SITE_VIEW].[crtdby] AS [crtdby], 
+    [WMS_SITE_VIEW].[uptdby] AS [uptdby]
+    FROM [dbo].[WMS_SITE_VIEW] AS [WMS_SITE_VIEW]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WMS_SLSMAN_VIEW" EntityType="Self.WMS_SLSMAN_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WMS_SLSMAN_VIEW].[salesman_id] AS [salesman_id], 
+    [WMS_SLSMAN_VIEW].[salesman_name] AS [salesman_name], 
+    [WMS_SLSMAN_VIEW].[salesman_type_id] AS [salesman_type_id], 
+    [WMS_SLSMAN_VIEW].[salesman_type_name] AS [salesman_type_name], 
+    [WMS_SLSMAN_VIEW].[site_id] AS [site_id], 
+    [WMS_SLSMAN_VIEW].[site_name] AS [site_name], 
+    [WMS_SLSMAN_VIEW].[salesman_datecrtd] AS [salesman_datecrtd], 
+    [WMS_SLSMAN_VIEW].[salesman_dateuptd] AS [salesman_dateuptd], 
+    [WMS_SLSMAN_VIEW].[salesman_crtdby] AS [salesman_crtdby], 
+    [WMS_SLSMAN_VIEW].[salesman_uptdby] AS [salesman_uptdby], 
+    [WMS_SLSMAN_VIEW].[crtdby] AS [crtdby], 
+    [WMS_SLSMAN_VIEW].[uptdby] AS [uptdby]
+    FROM [dbo].[WMS_SLSMAN_VIEW] AS [WMS_SLSMAN_VIEW]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="WMS_USRS_VIEW" EntityType="Self.WMS_USRS_VIEW" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -322,6 +562,14 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySet Name="WMS_TYPE_STAT" EntityType="wmsdbmodel.WMS_TYPE_STAT" />
           <EntitySet Name="WMS_USRS_VIEW" EntityType="wmsdbmodel.WMS_USRS_VIEW" />
           <EntitySet Name="WMS_INVTY_VIEW" EntityType="wmsdbmodel.WMS_INVTY_VIEW" />
+          <EntitySet Name="WMS_CUST_VIEW" EntityType="wmsdbmodel.WMS_CUST_VIEW" />
+          <EntitySet Name="WMS_JRSLSMAN_VIEW" EntityType="wmsdbmodel.WMS_JRSLSMAN_VIEW" />
+          <EntitySet Name="WMS_SITE_VIEW" EntityType="wmsdbmodel.WMS_SITE_VIEW" />
+          <EntitySet Name="WMS_SLSMAN_VIEW" EntityType="wmsdbmodel.WMS_SLSMAN_VIEW" />
+          <EntitySet Name="WMS_MSTR_JRSLSMAN" EntityType="wmsdbmodel.WMS_MSTR_JRSLSMAN" />
+          <EntitySet Name="WMS_MSTR_MODULE" EntityType="wmsdbmodel.WMS_MSTR_MODULE" />
+          <EntitySet Name="WMS_MSTR_S1MODULE" EntityType="wmsdbmodel.WMS_MSTR_S1MODULE" />
+          <EntitySet Name="WMS_MSTR_S2MODULE" EntityType="wmsdbmodel.WMS_MSTR_S2MODULE" />
         </EntityContainer>
         <EntityType Name="WMS_TYPE_STAT">
           <Key>
@@ -387,6 +635,166 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="invty_dateuptd" Type="DateTime" Precision="3" />
           <Property Name="invty_crtdby" Type="Int32" Nullable="false" />
           <Property Name="invty_uptdby" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_CUST_VIEW">
+          <Key>
+            <PropertyRef Name="cust_id" />
+            <PropertyRef Name="cust_name" />
+            <PropertyRef Name="cust_address" />
+            <PropertyRef Name="salesman_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="stat_id" />
+            <PropertyRef Name="salesman_name" />
+            <PropertyRef Name="stat_desc" />
+            <PropertyRef Name="site_name" />
+            <PropertyRef Name="cust_datecrtd" />
+            <PropertyRef Name="cust_crtdby" />
+            <PropertyRef Name="crtdby" />
+          </Key>
+          <Property Name="cust_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="cust_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cust_address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="salesman_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="site_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="cust_latitude" Type="Double" />
+          <Property Name="cust_longitude" Type="Double" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
+          <Property Name="salesman_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stat_desc" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="site_name" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="cust_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cust_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="cust_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="cust_uptdby" Type="Int32" />
+          <Property Name="crtdby" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="uptdby" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_JRSLSMAN_VIEW">
+          <Key>
+            <PropertyRef Name="drvr_id" />
+            <PropertyRef Name="drvr_name" />
+            <PropertyRef Name="drvr_plate" />
+            <PropertyRef Name="salesman_type_id" />
+            <PropertyRef Name="salesman_type_name" />
+            <PropertyRef Name="usr_id" />
+            <PropertyRef Name="usr_username" />
+            <PropertyRef Name="crtdby" />
+            <PropertyRef Name="drvr_datecrtd" />
+            <PropertyRef Name="drvr_crtdby" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="site_name" />
+          </Key>
+          <Property Name="drvr_id" Type="Int32" Nullable="false" />
+          <Property Name="drvr_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="drvr_plate" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="salesman_type_id" Type="Int32" Nullable="false" />
+          <Property Name="salesman_type_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="usr_id" Type="Int32" Nullable="false" />
+          <Property Name="usr_username" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="crtdby" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="uptdby" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="drvr_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="drvr_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="drvr_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="drvr_uptdby" Type="Int32" />
+          <Property Name="site_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="site_name" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_SITE_VIEW">
+          <Key>
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="site_name" />
+            <PropertyRef Name="site_datecrtd" />
+            <PropertyRef Name="site_crtdby" />
+            <PropertyRef Name="crtdby" />
+          </Key>
+          <Property Name="site_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="site_name" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="site_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="site_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="site_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="site_uptdby" Type="Int32" />
+          <Property Name="crtdby" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="uptdby" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_SLSMAN_VIEW">
+          <Key>
+            <PropertyRef Name="salesman_id" />
+            <PropertyRef Name="salesman_name" />
+            <PropertyRef Name="salesman_type_id" />
+            <PropertyRef Name="salesman_type_name" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="site_name" />
+            <PropertyRef Name="salesman_datecrtd" />
+            <PropertyRef Name="salesman_crtdby" />
+            <PropertyRef Name="crtdby" />
+          </Key>
+          <Property Name="salesman_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="salesman_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salesman_type_id" Type="Int32" Nullable="false" />
+          <Property Name="salesman_type_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="site_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="site_name" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="salesman_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="salesman_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="salesman_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="salesman_uptdby" Type="Int32" />
+          <Property Name="crtdby" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="uptdby" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_JRSLSMAN">
+          <Key>
+            <PropertyRef Name="drvr_id" />
+          </Key>
+          <Property Name="drvr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="drvr_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="drvr_plate" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="usr_id" Type="Int32" Nullable="false" />
+          <Property Name="salesman_type_id" Type="Int32" Nullable="false" />
+          <Property Name="drvr_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="drvr_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="drvr_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="drvr_uptdby" Type="Int32" />
+          <Property Name="site_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_MODULE">
+          <Key>
+            <PropertyRef Name="mod_id" />
+          </Key>
+          <Property Name="mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mod_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mod_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="mod_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="mod_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="mod_uptdby" Type="DateTime" Precision="3" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_S1MODULE">
+          <Key>
+            <PropertyRef Name="s1mod_id" />
+          </Key>
+          <Property Name="s1mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mod_id" Type="Int32" Nullable="false" />
+          <Property Name="s1mod_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="s1mod_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="s1mod_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="s1mod_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="s1mod_uptdby" Type="DateTime" Precision="3" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_S2MODULE">
+          <Key>
+            <PropertyRef Name="s2mod_id" />
+          </Key>
+          <Property Name="s2mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="s1mod_id" Type="Int32" Nullable="false" />
+          <Property Name="s2mod_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="s2mod_form_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="s2mod_datecrtd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="s2mod_crtdby" Type="Int32" Nullable="false" />
+          <Property Name="s2mod_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="s2mod_uptdby" Type="DateTime" Precision="3" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -542,6 +950,140 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
                 <ScalarProperty Name="invty_barcode" ColumnName="invty_barcode" />
                 <ScalarProperty Name="invty_desc" ColumnName="invty_desc" />
                 <ScalarProperty Name="invty_id" ColumnName="invty_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_CUST_VIEW">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_CUST_VIEW">
+              <MappingFragment StoreEntitySet="WMS_CUST_VIEW">
+                <ScalarProperty Name="uptdby" ColumnName="uptdby" />
+                <ScalarProperty Name="crtdby" ColumnName="crtdby" />
+                <ScalarProperty Name="cust_uptdby" ColumnName="cust_uptdby" />
+                <ScalarProperty Name="cust_crtdby" ColumnName="cust_crtdby" />
+                <ScalarProperty Name="cust_dateuptd" ColumnName="cust_dateuptd" />
+                <ScalarProperty Name="cust_datecrtd" ColumnName="cust_datecrtd" />
+                <ScalarProperty Name="site_name" ColumnName="site_name" />
+                <ScalarProperty Name="stat_desc" ColumnName="stat_desc" />
+                <ScalarProperty Name="salesman_name" ColumnName="salesman_name" />
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="cust_longitude" ColumnName="cust_longitude" />
+                <ScalarProperty Name="cust_latitude" ColumnName="cust_latitude" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="salesman_id" ColumnName="salesman_id" />
+                <ScalarProperty Name="cust_address" ColumnName="cust_address" />
+                <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+                <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_JRSLSMAN_VIEW">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_JRSLSMAN_VIEW">
+              <MappingFragment StoreEntitySet="WMS_JRSLSMAN_VIEW">
+                <ScalarProperty Name="site_name" ColumnName="site_name" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="drvr_uptdby" ColumnName="drvr_uptdby" />
+                <ScalarProperty Name="drvr_crtdby" ColumnName="drvr_crtdby" />
+                <ScalarProperty Name="drvr_dateuptd" ColumnName="drvr_dateuptd" />
+                <ScalarProperty Name="drvr_datecrtd" ColumnName="drvr_datecrtd" />
+                <ScalarProperty Name="uptdby" ColumnName="uptdby" />
+                <ScalarProperty Name="crtdby" ColumnName="crtdby" />
+                <ScalarProperty Name="usr_username" ColumnName="usr_username" />
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+                <ScalarProperty Name="salesman_type_name" ColumnName="salesman_type_name" />
+                <ScalarProperty Name="salesman_type_id" ColumnName="salesman_type_id" />
+                <ScalarProperty Name="drvr_plate" ColumnName="drvr_plate" />
+                <ScalarProperty Name="drvr_name" ColumnName="drvr_name" />
+                <ScalarProperty Name="drvr_id" ColumnName="drvr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_SITE_VIEW">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_SITE_VIEW">
+              <MappingFragment StoreEntitySet="WMS_SITE_VIEW">
+                <ScalarProperty Name="uptdby" ColumnName="uptdby" />
+                <ScalarProperty Name="crtdby" ColumnName="crtdby" />
+                <ScalarProperty Name="site_uptdby" ColumnName="site_uptdby" />
+                <ScalarProperty Name="site_crtdby" ColumnName="site_crtdby" />
+                <ScalarProperty Name="site_dateuptd" ColumnName="site_dateuptd" />
+                <ScalarProperty Name="site_datecrtd" ColumnName="site_datecrtd" />
+                <ScalarProperty Name="site_name" ColumnName="site_name" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_SLSMAN_VIEW">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_SLSMAN_VIEW">
+              <MappingFragment StoreEntitySet="WMS_SLSMAN_VIEW">
+                <ScalarProperty Name="uptdby" ColumnName="uptdby" />
+                <ScalarProperty Name="crtdby" ColumnName="crtdby" />
+                <ScalarProperty Name="salesman_uptdby" ColumnName="salesman_uptdby" />
+                <ScalarProperty Name="salesman_crtdby" ColumnName="salesman_crtdby" />
+                <ScalarProperty Name="salesman_dateuptd" ColumnName="salesman_dateuptd" />
+                <ScalarProperty Name="salesman_datecrtd" ColumnName="salesman_datecrtd" />
+                <ScalarProperty Name="site_name" ColumnName="site_name" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="salesman_type_name" ColumnName="salesman_type_name" />
+                <ScalarProperty Name="salesman_type_id" ColumnName="salesman_type_id" />
+                <ScalarProperty Name="salesman_name" ColumnName="salesman_name" />
+                <ScalarProperty Name="salesman_id" ColumnName="salesman_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_JRSLSMAN">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_JRSLSMAN">
+              <MappingFragment StoreEntitySet="WMS_MSTR_JRSLSMAN">
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="drvr_uptdby" ColumnName="drvr_uptdby" />
+                <ScalarProperty Name="drvr_crtdby" ColumnName="drvr_crtdby" />
+                <ScalarProperty Name="drvr_dateuptd" ColumnName="drvr_dateuptd" />
+                <ScalarProperty Name="drvr_datecrtd" ColumnName="drvr_datecrtd" />
+                <ScalarProperty Name="salesman_type_id" ColumnName="salesman_type_id" />
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+                <ScalarProperty Name="drvr_plate" ColumnName="drvr_plate" />
+                <ScalarProperty Name="drvr_name" ColumnName="drvr_name" />
+                <ScalarProperty Name="drvr_id" ColumnName="drvr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_MODULE">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_MODULE">
+              <MappingFragment StoreEntitySet="WMS_MSTR_MODULE">
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="mod_uptdby" ColumnName="mod_uptdby" />
+                <ScalarProperty Name="mod_dateuptd" ColumnName="mod_dateuptd" />
+                <ScalarProperty Name="mod_crtdby" ColumnName="mod_crtdby" />
+                <ScalarProperty Name="mod_datecrtd" ColumnName="mod_datecrtd" />
+                <ScalarProperty Name="mod_name" ColumnName="mod_name" />
+                <ScalarProperty Name="mod_id" ColumnName="mod_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_S1MODULE">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_S1MODULE">
+              <MappingFragment StoreEntitySet="WMS_MSTR_S1MODULE">
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="s1mod_uptdby" ColumnName="s1mod_uptdby" />
+                <ScalarProperty Name="s1mod_dateuptd" ColumnName="s1mod_dateuptd" />
+                <ScalarProperty Name="s1mod_crtdby" ColumnName="s1mod_crtdby" />
+                <ScalarProperty Name="s1mod_datecrtd" ColumnName="s1mod_datecrtd" />
+                <ScalarProperty Name="s1mod_name" ColumnName="s1mod_name" />
+                <ScalarProperty Name="mod_id" ColumnName="mod_id" />
+                <ScalarProperty Name="s1mod_id" ColumnName="s1mod_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_S2MODULE">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_S2MODULE">
+              <MappingFragment StoreEntitySet="WMS_MSTR_S2MODULE">
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="s2mod_uptdby" ColumnName="s2mod_uptdby" />
+                <ScalarProperty Name="s2mod_dateuptd" ColumnName="s2mod_dateuptd" />
+                <ScalarProperty Name="s2mod_crtdby" ColumnName="s2mod_crtdby" />
+                <ScalarProperty Name="s2mod_datecrtd" ColumnName="s2mod_datecrtd" />
+                <ScalarProperty Name="s2mod_form_name" ColumnName="s2mod_form_name" />
+                <ScalarProperty Name="s2mod_name" ColumnName="s2mod_name" />
+                <ScalarProperty Name="s1mod_id" ColumnName="s1mod_id" />
+                <ScalarProperty Name="s2mod_id" ColumnName="s2mod_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
