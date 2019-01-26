@@ -105,6 +105,15 @@
     <Compile Include="Entity Class\WMS_MSTR_JRSLSMAN.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_LVL1M.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_LVL2M.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_LVL3M.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_MSTR_MODULE.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>

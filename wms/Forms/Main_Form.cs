@@ -43,10 +43,10 @@ namespace wms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            togglemenu();
+            togglemenu1();
         }
 
-        private void togglemenu()
+        private void togglemenu1()
         {
             if (panel1.Width == 30)
             {
@@ -60,6 +60,19 @@ namespace wms
             }
         }
 
+        private void togglemenu2()
+        {
+            if (panel1.Width == 30)
+            {
+                panel1.Width = 330;
+                button1.Text = "<<";
+            }
+            else
+            {
+
+            }
+        }
+
         private void Main_Form_Load(object sender, EventArgs e)
         {
 
@@ -69,7 +82,7 @@ namespace wms
         {
             if (e.KeyCode == Keys.F1)
             {
-                togglemenu();
+                togglemenu1();
             }
             else if (e.KeyCode == Keys.Down)
             {
@@ -141,7 +154,7 @@ namespace wms
 
         private void getAccess(object sender, EventArgs e)
         {
-            togglemenu();
+            togglemenu2();
             var xmod = sender as ToolStripMenuItem;
             getlvl1Node(xmod.Text);
         }
