@@ -39,6 +39,7 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.warehoseManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -49,7 +50,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.warehoseManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -130,14 +130,14 @@
             // 
             this.takeABreakToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.takeABreakToolStripMenuItem.Name = "takeABreakToolStripMenuItem";
-            this.takeABreakToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.takeABreakToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.takeABreakToolStripMenuItem.Text = "Take a Break";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // modulesToolStripMenuItem
@@ -159,6 +159,15 @@
             this.administrationToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.administrationToolStripMenuItem.Text = "&Administration";
             this.administrationToolStripMenuItem.Click += new System.EventHandler(this.getAccess);
+            // 
+            // warehoseManagementToolStripMenuItem
+            // 
+            this.warehoseManagementToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warehoseManagementToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.warehoseManagementToolStripMenuItem.Name = "warehoseManagementToolStripMenuItem";
+            this.warehoseManagementToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.warehoseManagementToolStripMenuItem.Text = "Warehouse Management";
+            this.warehoseManagementToolStripMenuItem.Click += new System.EventHandler(this.getAccess);
             // 
             // helpToolStripMenuItem
             // 
@@ -262,15 +271,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(1241, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // warehoseManagementToolStripMenuItem
-            // 
-            this.warehoseManagementToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.warehoseManagementToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.warehoseManagementToolStripMenuItem.Name = "warehoseManagementToolStripMenuItem";
-            this.warehoseManagementToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.warehoseManagementToolStripMenuItem.Text = "Warehouse Management";
-            this.warehoseManagementToolStripMenuItem.Click += new System.EventHandler(this.getAccess);
             // 
             // Main_Form
             // 
