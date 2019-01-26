@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using wms.Entity_Class;
+using wms.Class;
 using wms.Forms.Administration.Item;
 using wms.Forms.Administration.SALESMAN;
 using wms.Forms.Administration.SITE;
@@ -19,9 +20,51 @@ namespace wms
     {
         public static Main_Form MainFormInstance = null;
         wmsdb obj = new wmsdb();
+
         public Main_Form()
         {
             InitializeComponent();
+            AddItemsToModule();
+        }
+
+        void AddItemsToModule()
+        {
+            var modules = (from m in obj.WMS_LVL1M_VIEW where m.usr_id == loggedin_user.userId select new { m.mod_name, m.stat_desc });
+            int i = 0;
+            foreach (var mod in modules)
+            {
+                if (mod.stat_desc == "Active")
+                {
+                    modulesToolStripMenuItem.DropDownItems.Add(mod.mod_name);
+                    modulesToolStripMenuItem.DropDownItems[i].Click += Main_Form_Click_Active;
+                }
+                else
+                {
+                    modulesToolStripMenuItem.DropDownItems.Add(mod.mod_name);
+                    modulesToolStripMenuItem.DropDownItems[i].Click += Main_Form_Click_Inactive;
+                }
+                i = i + 1;
+            }
+        }
+
+        private void Main_Form_Click_Active(object sender, EventArgs e)
+        {
+            if (sender.ToString().Contains("Inactive"))
+            {
+                MessageBox.Show("Inactive Module");
+            }
+            else
+            {
+                togglemenu();
+                var xmod = sender as ToolStripMenuItem;
+                getlvl1Node(xmod.Text);
+            }
+        }
+
+        private void Main_Form_Click_Inactive(object sender, EventArgs e)
+        {
+            MessageBox.Show("Inactive Module");
+       
         }
 
         public static Main_Form GetInstance()
@@ -62,7 +105,6 @@ namespace wms
 
         private void Main_Form_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Main_Form_KeyDown(object sender, KeyEventArgs e)
@@ -79,7 +121,6 @@ namespace wms
 
         private void getlvl1Node(string nodelvl1)
         {
-     
             TreeNode main_node_lvl1;
             TreeNode child_node_lvl2;
             TreeNode child_node_lvl3;
@@ -125,25 +166,8 @@ namespace wms
 
                         }
                     }
-                    else
-                    {
-
-                    }
-
-
                 }
             }
-            else
-            {
-            
-            }
-        }
-
-        private void getAccess(object sender, EventArgs e)
-        {
-            togglemenu();
-            var xmod = sender as ToolStripMenuItem;
-            getlvl1Node(xmod.Text);
         }
 
         private int getlvl1id(string nodelvl1)
@@ -204,7 +228,6 @@ namespace wms
                 Type xform;
                 try
                 {
-
                     System.Reflection.Assembly MyAssembly = System.Reflection.Assembly.LoadFrom(Application.ExecutablePath);
                     foreach (Type xforms in MyAssembly.GetTypes())
                     {
@@ -214,8 +237,6 @@ namespace wms
 
                             if (xform != null)
                             {
-                               
-
                                 if (xform.BaseType == typeof(Form))
                                 {
                                     Form frm = (Form)Activator.CreateInstance(xform);
@@ -223,25 +244,13 @@ namespace wms
                                     frm.Show();
                                 }
                             }
-                            else
-                            {
-
-                            }
-
                         }
-                        else
-                        {
-
-                        }
-
-                        
                     }
                 }
                 catch
                 {
 
                 }
-
             }
         }
     }
