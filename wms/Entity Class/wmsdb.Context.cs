@@ -45,6 +45,7 @@ namespace wms.Entity_Class
         public virtual DbSet<WMS_MSTR_LVL1M> WMS_MSTR_LVL1M { get; set; }
         public virtual DbSet<WMS_MSTR_LVL2M> WMS_MSTR_LVL2M { get; set; }
         public virtual DbSet<WMS_MSTR_LVL3M> WMS_MSTR_LVL3M { get; set; }
+        public virtual DbSet<WMS_LVL1M_VIEW> WMS_LVL1M_VIEW { get; set; }
         public virtual DbSet<WMS_MSTR_MODULE> WMS_MSTR_MODULE { get; set; }
     }
 }
