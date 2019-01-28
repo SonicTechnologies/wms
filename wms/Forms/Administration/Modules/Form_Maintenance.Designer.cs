@@ -36,6 +36,9 @@
             this.modid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
@@ -75,20 +78,18 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.panel25 = new System.Windows.Forms.Panel();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel16.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel33.SuspendLayout();
             this.panel35.SuspendLayout();
@@ -104,7 +105,6 @@
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel16.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
             this.SuspendLayout();
@@ -167,13 +167,13 @@
             this.modname,
             this.status});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 116);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 270);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(400, 507);
+            this.dataGridView1.Size = new System.Drawing.Size(400, 353);
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -199,11 +199,44 @@
             this.status.ReadOnly = true;
             this.status.Width = 5;
             // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.White;
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel15.Location = new System.Drawing.Point(0, 623);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(400, 8);
+            this.panel15.TabIndex = 29;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.White;
+            this.panel16.Controls.Add(this.button2);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel16.Location = new System.Drawing.Point(0, 631);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(400, 30);
+            this.panel16.TabIndex = 30;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(195, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(205, 30);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Edit Sub-Modules (Level 2)";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.White;
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 108);
+            this.panel10.Location = new System.Drawing.Point(0, 262);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(400, 8);
             this.panel10.TabIndex = 17;
@@ -214,7 +247,7 @@
             this.panel21.Controls.Add(this.panel33);
             this.panel21.Controls.Add(this.panel35);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(0, 80);
+            this.panel21.Location = new System.Drawing.Point(0, 234);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(400, 28);
             this.panel21.TabIndex = 16;
@@ -290,7 +323,7 @@
             this.panel32.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel32.Location = new System.Drawing.Point(0, 80);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(400, 0);
+            this.panel32.Size = new System.Drawing.Size(400, 154);
             this.panel32.TabIndex = 15;
             // 
             // panel14
@@ -604,6 +637,15 @@
             this.panel5.Size = new System.Drawing.Size(400, 661);
             this.panel5.TabIndex = 7;
             // 
+            // panel25
+            // 
+            this.panel25.BackColor = System.Drawing.Color.White;
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel25.Location = new System.Drawing.Point(0, 34);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(400, 8);
+            this.panel25.TabIndex = 13;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -635,39 +677,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(398, 6);
             this.panel8.TabIndex = 11;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.White;
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(0, 623);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(400, 8);
-            this.panel15.TabIndex = 29;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.White;
-            this.panel16.Controls.Add(this.button2);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel16.Location = new System.Drawing.Point(0, 631);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(400, 30);
-            this.panel16.TabIndex = 30;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(195, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(205, 30);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Edit Sub-Modules (Level 2)";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // panel17
             // 
@@ -719,15 +728,6 @@
             this.panel24.Size = new System.Drawing.Size(398, 6);
             this.panel24.TabIndex = 11;
             // 
-            // panel25
-            // 
-            this.panel25.BackColor = System.Drawing.Color.White;
-            this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel25.Location = new System.Drawing.Point(0, 34);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(400, 8);
-            this.panel25.TabIndex = 13;
-            // 
             // Module_Maintenance
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -750,6 +750,7 @@
             this.Load += new System.EventHandler(this.Form_Maintenance_Load);
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel16.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel33.ResumeLayout(false);
             this.panel33.PerformLayout();
@@ -772,7 +773,6 @@
             this.panel5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel16.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
