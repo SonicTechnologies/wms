@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel36 = new System.Windows.Forms.Panel();
@@ -308,6 +308,8 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(95, 22);
             this.textBox2.TabIndex = 14;
+            this.textBox2.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox2.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel31
             // 
@@ -443,6 +445,8 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(268, 22);
             this.textBox3.TabIndex = 14;
+            this.textBox3.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox3.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel50
             // 
@@ -504,6 +508,8 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(161, 22);
             this.textBox5.TabIndex = 14;
+            this.textBox5.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox5.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel43
             // 
@@ -573,6 +579,8 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(161, 22);
             this.textBox4.TabIndex = 14;
+            this.textBox4.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox4.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel38
             // 
@@ -722,8 +730,8 @@
             // 
             // itemcode
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.itemcode.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.itemcode.DefaultCellStyle = dataGridViewCellStyle1;
             this.itemcode.HeaderText = "ID";
             this.itemcode.Name = "itemcode";
             this.itemcode.ReadOnly = true;
@@ -752,8 +760,8 @@
             // 
             // ppu
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ppu.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ppu.DefaultCellStyle = dataGridViewCellStyle2;
             this.ppu.HeaderText = "Ppu";
             this.ppu.Name = "ppu";
             this.ppu.ReadOnly = true;
@@ -761,8 +769,8 @@
             // 
             // cat1
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cat1.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cat1.DefaultCellStyle = dataGridViewCellStyle3;
             this.cat1.HeaderText = "Category 1";
             this.cat1.Name = "cat1";
             this.cat1.ReadOnly = true;
@@ -770,8 +778,8 @@
             // 
             // cat2
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cat2.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cat2.DefaultCellStyle = dataGridViewCellStyle4;
             this.cat2.HeaderText = "Category 2";
             this.cat2.Name = "cat2";
             this.cat2.ReadOnly = true;
@@ -800,8 +808,8 @@
             // 
             // status
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.status.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.status.DefaultCellStyle = dataGridViewCellStyle5;
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             this.status.ReadOnly = true;
@@ -928,6 +936,8 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(95, 22);
             this.textBox6.TabIndex = 14;
+            this.textBox6.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox6.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel6
             // 
@@ -1128,6 +1138,8 @@
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(161, 22);
             this.textBox14.TabIndex = 14;
+            this.textBox14.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox14.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel87
             // 
@@ -1208,6 +1220,8 @@
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(161, 22);
             this.textBox15.TabIndex = 14;
+            this.textBox15.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox15.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel102
             // 
@@ -1441,6 +1455,8 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(161, 22);
             this.textBox12.TabIndex = 14;
+            this.textBox12.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox12.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel97
             // 
@@ -1510,6 +1526,8 @@
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(161, 22);
             this.textBox13.TabIndex = 14;
+            this.textBox13.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox13.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel92
             // 
@@ -1560,6 +1578,8 @@
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(161, 22);
             this.textBox11.TabIndex = 14;
+            this.textBox11.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox11.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel74
             // 
@@ -1630,6 +1650,8 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(268, 22);
             this.textBox10.TabIndex = 14;
+            this.textBox10.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox10.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel69
             // 
@@ -1700,6 +1722,8 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(268, 22);
             this.textBox9.TabIndex = 14;
+            this.textBox9.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox9.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel64
             // 
@@ -1770,6 +1794,8 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(268, 22);
             this.textBox8.TabIndex = 14;
+            this.textBox8.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox8.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel59
             // 
@@ -1840,6 +1866,8 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(268, 22);
             this.textBox7.TabIndex = 14;
+            this.textBox7.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox7.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel54
             // 

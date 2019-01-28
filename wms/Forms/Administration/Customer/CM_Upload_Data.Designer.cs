@@ -44,14 +44,23 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel24 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel11.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel11
@@ -59,9 +68,9 @@
             this.panel11.Controls.Add(this.label1);
             this.panel11.Controls.Add(this.label2);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(14, 95);
+            this.panel11.Location = new System.Drawing.Point(14, 98);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(712, 29);
+            this.panel11.Size = new System.Drawing.Size(682, 29);
             this.panel11.TabIndex = 24;
             // 
             // label1
@@ -69,7 +78,7 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(618, 0);
+            this.label1.Location = new System.Drawing.Point(588, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 17);
             this.label1.TabIndex = 13;
@@ -85,7 +94,6 @@
             this.label2.Size = new System.Drawing.Size(130, 17);
             this.label2.TabIndex = 14;
             this.label2.Text = "Validating Salesman..";
-            this.label2.Visible = false;
             // 
             // backgroundWorker3
             // 
@@ -114,9 +122,9 @@
             this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Location = new System.Drawing.Point(81, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(512, 34);
+            this.panel6.Size = new System.Drawing.Size(401, 30);
             this.panel6.TabIndex = 13;
             // 
             // textBox1
@@ -126,23 +134,25 @@
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(0, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(512, 25);
+            this.textBox1.Size = new System.Drawing.Size(401, 25);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel9
             // 
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(512, 5);
+            this.panel9.Size = new System.Drawing.Size(401, 5);
             this.panel9.TabIndex = 9;
             // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(512, 0);
+            this.panel7.Location = new System.Drawing.Point(482, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(5, 34);
+            this.panel7.Size = new System.Drawing.Size(5, 30);
             this.panel7.TabIndex = 12;
             // 
             // button1
@@ -150,11 +160,11 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(517, 0);
+            this.button1.Location = new System.Drawing.Point(487, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 34);
+            this.button1.Size = new System.Drawing.Size(95, 30);
             this.button1.TabIndex = 11;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = false;
@@ -163,50 +173,81 @@
             // progressBar1
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressBar1.Location = new System.Drawing.Point(14, 72);
+            this.progressBar1.Location = new System.Drawing.Point(14, 127);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(712, 23);
+            this.progressBar1.Size = new System.Drawing.Size(682, 23);
             this.progressBar1.TabIndex = 22;
             // 
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(612, 0);
+            this.panel8.Location = new System.Drawing.Point(582, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(5, 34);
+            this.panel8.Size = new System.Drawing.Size(5, 30);
             this.panel8.TabIndex = 10;
             // 
             // panel10
             // 
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(14, 48);
+            this.panel10.Location = new System.Drawing.Point(14, 84);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(712, 24);
+            this.panel10.Size = new System.Drawing.Size(682, 14);
             this.panel10.TabIndex = 23;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.panel13);
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.button2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(14, 14);
+            this.panel5.Location = new System.Drawing.Point(14, 54);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(712, 34);
+            this.panel5.Size = new System.Drawing.Size(682, 30);
             this.panel5.TabIndex = 21;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.label4);
+            this.panel13.Controls.Add(this.panel24);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(81, 30);
+            this.panel13.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(0, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 17);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Choose File:";
+            // 
+            // panel24
+            // 
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel24.Location = new System.Drawing.Point(0, 0);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(81, 5);
+            this.panel24.TabIndex = 16;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
             this.button2.Dock = System.Windows.Forms.DockStyle.Right;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(617, 0);
+            this.button2.Location = new System.Drawing.Point(587, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 34);
+            this.button2.Size = new System.Drawing.Size(95, 30);
             this.button2.TabIndex = 2;
             this.button2.Text = "Upload";
             this.button2.UseVisualStyleBackColor = false;
@@ -215,9 +256,9 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(14, 45);
+            this.panel4.Location = new System.Drawing.Point(14, 163);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(712, 14);
+            this.panel4.Size = new System.Drawing.Size(682, 14);
             this.panel4.TabIndex = 20;
             // 
             // panel3
@@ -225,15 +266,15 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(14, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(712, 14);
+            this.panel3.Size = new System.Drawing.Size(682, 14);
             this.panel3.TabIndex = 19;
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(726, 0);
+            this.panel2.Location = new System.Drawing.Point(696, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(14, 59);
+            this.panel2.Size = new System.Drawing.Size(14, 177);
             this.panel2.TabIndex = 18;
             // 
             // panel1
@@ -241,25 +282,70 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(14, 59);
+            this.panel1.Size = new System.Drawing.Size(14, 177);
             this.panel1.TabIndex = 17;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel17.Controls.Add(this.label3);
+            this.panel17.Controls.Add(this.panel18);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(14, 14);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(682, 34);
+            this.panel17.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(0, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(279, 21);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Item Maintenance - Upload Excel File";
+            // 
+            // panel18
+            // 
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel18.Location = new System.Drawing.Point(0, 24);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(680, 8);
+            this.panel18.TabIndex = 9;
+            // 
+            // panel12
+            // 
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(14, 48);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(682, 6);
+            this.panel12.TabIndex = 35;
             // 
             // CM_Upload_Data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 59);
-            this.Controls.Add(this.panel11);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(710, 177);
             this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel12);
+            this.Controls.Add(this.panel17);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CM_Upload_Data";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Upload Data - Excel File";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CM_Upload_Data_FormClosing);
             this.Load += new System.EventHandler(this.CM_Upload_Data_Load);
             this.panel11.ResumeLayout(false);
@@ -267,6 +353,10 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -294,5 +384,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Panel panel12;
     }
 }

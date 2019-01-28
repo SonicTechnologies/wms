@@ -111,6 +111,8 @@
             this.itemTxtBox.Name = "itemTxtBox";
             this.itemTxtBox.Size = new System.Drawing.Size(401, 22);
             this.itemTxtBox.TabIndex = 2;
+            this.itemTxtBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.itemTxtBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel9
             // 
@@ -275,6 +277,7 @@
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel17.Controls.Add(this.label1);
             this.panel17.Controls.Add(this.panel18);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
@@ -289,7 +292,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(0, 5);
+            this.label1.Location = new System.Drawing.Point(0, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(279, 21);
             this.label1.TabIndex = 8;
@@ -298,9 +301,9 @@
             // panel18
             // 
             this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel18.Location = new System.Drawing.Point(0, 26);
+            this.panel18.Location = new System.Drawing.Point(0, 24);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(682, 8);
+            this.panel18.Size = new System.Drawing.Size(680, 8);
             this.panel18.TabIndex = 9;
             // 
             // panel12

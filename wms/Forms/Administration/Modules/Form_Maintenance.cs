@@ -240,7 +240,7 @@ namespace wms.Forms.Administration.Modules
                             MessageBox.Show("Successfully saved Module.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             clearFieldslvl1();
                             ModuleList();
-
+                            Main_Form.GetInstance().AddItemsToModule();
                         }
                         else if (dialog == DialogResult.No)
                         {
@@ -275,7 +275,7 @@ namespace wms.Forms.Administration.Modules
                             MessageBox.Show("Successfully updated Module.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             clearFieldslvl1();
                             ModuleList();
-
+                            Main_Form.GetInstance().AddItemsToModule();
                         }
                         else if (dialog == DialogResult.No)
                         {
