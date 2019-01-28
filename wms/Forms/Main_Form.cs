@@ -49,22 +49,17 @@ namespace wms
 
         private void Main_Form_Click_Active(object sender, EventArgs e)
         {
-            if (sender.ToString().Contains("Inactive"))
-            {
-                MessageBox.Show("Inactive Module");
-            }
-            else
-            {
-                togglemenu();
+ 
+                togglemenu2();
                 var xmod = sender as ToolStripMenuItem;
                 getlvl1Node(xmod.Text);
-            }
+    
         }
 
         private void Main_Form_Click_Inactive(object sender, EventArgs e)
         {
-            MessageBox.Show("Inactive Module");
-       
+            MessageBox.Show("Module access: '" + sender.ToString() + "' currently under maintenance.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         public static Main_Form GetInstance()
@@ -86,10 +81,10 @@ namespace wms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            togglemenu();
+            togglemenu1();
         }
 
-        private void togglemenu()
+        private void togglemenu1()
         {
             if (panel1.Width == 30)
             {
@@ -103,6 +98,19 @@ namespace wms
             }
         }
 
+        private void togglemenu2()
+        {
+            if (panel1.Width == 30)
+            {
+                panel1.Width = 330;
+                button1.Text = "<<";
+            }
+            else
+            {
+
+            }
+        }
+
         private void Main_Form_Load(object sender, EventArgs e)
         {
         }
@@ -111,7 +119,7 @@ namespace wms
         {
             if (e.KeyCode == Keys.F1)
             {
-                togglemenu();
+                togglemenu1();
             }
             else if (e.KeyCode == Keys.Down)
             {
@@ -207,7 +215,7 @@ namespace wms
                     }
                     else
                     {
-                        MessageBox.Show("Module access: " + treeView1.SelectedNode.Text + " under maintenance", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Sub-module access: '" + treeView1.SelectedNode.Text + "' currently under maintenance", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
