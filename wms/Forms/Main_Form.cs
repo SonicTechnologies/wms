@@ -27,8 +27,9 @@ namespace wms
             AddItemsToModule();
         }
 
-        void AddItemsToModule()
+        public void AddItemsToModule()
         {
+            modulesToolStripMenuItem.DropDownItems.Clear();
             var modules = (from m in obj.WMS_LVL1M_VIEW where m.usr_id == loggedin_user.userId select new { m.mod_name, m.stat_desc });
             int i = 0;
             foreach (var mod in modules)
