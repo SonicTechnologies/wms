@@ -30,6 +30,7 @@ namespace wms.Forms.Administration.Users.Authorizations
                 int userID = Convert.ToInt32(textBox7.Text);
                 var users = (from c in obj.WMS_MSTR_USRS
                              join o  in obj.WMS_TYPE_USRS on c.usr_type_id equals o.usr_type_id
+                             join s in obj.WMS_TYPE_STAT on c.stat_id equals s.stat_id
                              where c.usr_id == userID
                              select new
                              {
@@ -38,7 +39,7 @@ namespace wms.Forms.Administration.Users.Authorizations
                                  c.usr_fname,
                                  c.usr_lname,
                                  o.usr_type_name,
-                                 c.stat_id,
+                                 s.stat_desc,
 
                              }).OrderBy(c => new { c.usr_id }).ToList();
 
@@ -51,12 +52,12 @@ namespace wms.Forms.Administration.Users.Authorizations
                     {
 
                         dataGridView4.Rows.Add(row.usr_id,
-                                 row.usr_id,
+                          
                                  row.usr_username,
                                  row.usr_fname,
                                  row.usr_lname,
                                  row.usr_type_name,
-                                 row.stat_id
+                                 row.stat_desc
                                     );
                     }
                 }
