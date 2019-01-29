@@ -20,7 +20,7 @@ namespace wms.Entity_Class
         public System.DateTime s1mod_datecrtd { get; set; }
         public int s1mod_crtdby { get; set; }
         public Nullable<System.DateTime> s1mod_dateuptd { get; set; }
-        public Nullable<System.DateTime> s1mod_uptdby { get; set; }
+        public Nullable<int> s1mod_uptdby { get; set; }
         public int stat_id { get; set; }
     }
 }

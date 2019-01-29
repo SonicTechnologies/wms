@@ -197,33 +197,41 @@ namespace wms
 
         private void treeView1_DoubleClick(object sender, EventArgs e)
         {
-            
-            var xformname = (from c in obj.WMS_MSTR_S2MODULE
-                             where c.s2mod_name == treeView1.SelectedNode.Text
-                             select new
-                             {
-                                 c.s2mod_form_name,
-                                 c.stat_id
-
-                             }).OrderBy(c => new { c.s2mod_form_name }).ToList();
-            if (xformname.Count != 0)
+            try
             {
-                foreach (var xform in xformname)
+                var xformname = (from c in obj.WMS_MSTR_S2MODULE
+                                 where c.s2mod_name == treeView1.SelectedNode.Text
+                                 select new
+                                 {
+                                     c.s2mod_form_name,
+                                     c.stat_id
+
+                                 }).OrderBy(c => new { c.s2mod_form_name }).ToList();
+                if (xformname.Count != 0)
                 {
-                    if (xform.stat_id == 1)
+                    foreach (var xform in xformname)
                     {
-                        OpenForm(xform.s2mod_form_name);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sub-module access: '" + treeView1.SelectedNode.Text + "' currently under maintenance", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (xform.stat_id == 1)
+                        {
+                            OpenForm(xform.s2mod_form_name);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sub-module access: '" + treeView1.SelectedNode.Text + "' currently under maintenance", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
+                else
+                {
+
+                }
             }
-            else
+            catch
             {
-               
+
             }
+            
+            
         }
 
         private void OpenForm(String form_name)

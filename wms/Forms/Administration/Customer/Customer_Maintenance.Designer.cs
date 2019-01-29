@@ -274,6 +274,7 @@
             this.textBox2.BackColor = System.Drawing.SystemColors.Info;
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox2.Enabled = false;
+            this.textBox2.ForeColor = System.Drawing.Color.Black;
             this.textBox2.Location = new System.Drawing.Point(0, 5);
             this.textBox2.MaxLength = 15;
             this.textBox2.Name = "textBox2";
@@ -333,6 +334,7 @@
             this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox3.Enabled = false;
+            this.textBox3.ForeColor = System.Drawing.Color.Black;
             this.textBox3.Location = new System.Drawing.Point(0, 5);
             this.textBox3.MaxLength = 100;
             this.textBox3.Name = "textBox3";
@@ -475,6 +477,7 @@
             this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Enabled = false;
+            this.comboBox2.ForeColor = System.Drawing.Color.Black;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(0, 5);
             this.comboBox2.Name = "comboBox2";
@@ -546,6 +549,7 @@
             this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox4.Enabled = false;
+            this.textBox4.ForeColor = System.Drawing.Color.Black;
             this.textBox4.Location = new System.Drawing.Point(0, 5);
             this.textBox4.MaxLength = 100;
             this.textBox4.Name = "textBox4";
@@ -730,6 +734,7 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.Info;
             this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
             this.textBox1.Location = new System.Drawing.Point(0, 5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(456, 22);
@@ -785,6 +790,7 @@
             this.comboBox1.BackColor = System.Drawing.Color.Orange;
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.ForeColor = System.Drawing.Color.Black;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "All",
@@ -861,6 +867,7 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(0, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 17);
@@ -1017,6 +1024,7 @@
             this.textBox11.BackColor = System.Drawing.SystemColors.Info;
             this.textBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox11.Enabled = false;
+            this.textBox11.ForeColor = System.Drawing.Color.Black;
             this.textBox11.Location = new System.Drawing.Point(0, 5);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(161, 22);
@@ -1056,6 +1064,7 @@
             this.textBox10.BackColor = System.Drawing.SystemColors.Info;
             this.textBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox10.Enabled = false;
+            this.textBox10.ForeColor = System.Drawing.Color.Black;
             this.textBox10.Location = new System.Drawing.Point(0, 5);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(161, 22);
@@ -1124,6 +1133,7 @@
             this.textBox9.BackColor = System.Drawing.SystemColors.Info;
             this.textBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox9.Enabled = false;
+            this.textBox9.ForeColor = System.Drawing.Color.Black;
             this.textBox9.Location = new System.Drawing.Point(0, 5);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(161, 22);
@@ -1339,6 +1349,7 @@
             this.textBox12.BackColor = System.Drawing.SystemColors.Info;
             this.textBox12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox12.Enabled = false;
+            this.textBox12.ForeColor = System.Drawing.Color.Black;
             this.textBox12.Location = new System.Drawing.Point(0, 5);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(161, 22);
@@ -1419,6 +1430,7 @@
             this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.Enabled = false;
+            this.comboBox4.ForeColor = System.Drawing.Color.Black;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(0, 5);
             this.comboBox4.Name = "comboBox4";
@@ -1488,6 +1500,7 @@
             this.textBox8.BackColor = System.Drawing.SystemColors.Info;
             this.textBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox8.Enabled = false;
+            this.textBox8.ForeColor = System.Drawing.Color.Black;
             this.textBox8.Location = new System.Drawing.Point(0, 5);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(161, 22);
@@ -1556,6 +1569,7 @@
             this.textBox7.BackColor = System.Drawing.SystemColors.Info;
             this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox7.Enabled = false;
+            this.textBox7.ForeColor = System.Drawing.Color.Black;
             this.textBox7.Location = new System.Drawing.Point(0, 5);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(161, 22);
@@ -1625,6 +1639,7 @@
             this.textBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox6.Enabled = false;
+            this.textBox6.ForeColor = System.Drawing.Color.Black;
             this.textBox6.Location = new System.Drawing.Point(0, 5);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(268, 22);
@@ -1682,6 +1697,7 @@
             this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.Enabled = false;
+            this.comboBox3.ForeColor = System.Drawing.Color.Black;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(0, 5);
             this.comboBox3.Name = "comboBox3";
@@ -1753,6 +1769,7 @@
             this.textBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox5.Enabled = false;
+            this.textBox5.ForeColor = System.Drawing.Color.Black;
             this.textBox5.Location = new System.Drawing.Point(0, 5);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(268, 22);
@@ -1790,6 +1807,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Customer_Maintenance";
             this.ShowIcon = false;
             this.Text = "Customer Maintenance";
