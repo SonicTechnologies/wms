@@ -13,6 +13,7 @@ using wms.Forms.Administration.Item;
 using wms.Forms.Administration.SALESMAN;
 using wms.Forms.Administration.SITE;
 using wms.Forms.Administration.Customer;
+using wms.Forms.Administration.Modules;
 
 namespace wms
 {
@@ -258,7 +259,7 @@ namespace wms
                                 {
                                     Form frm = (Form)Activator.CreateInstance(xform);
                                     frm.MdiParent = this; 
-                                    frm.Show();
+                                    frm.Show();                                  
                                 }
                             }
                         }
@@ -270,5 +271,6 @@ namespace wms
                 }
             }
         }
+
     }
 }

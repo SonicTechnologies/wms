@@ -16,15 +16,18 @@ namespace wms.Forms.Administration.Modules
     public partial class Module_Maintenance : Form
     {
         wmsdb obj = new wmsdb();
+
+
         public Module_Maintenance()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
 
         private void Form_Maintenance_Load(object sender, EventArgs e)
         {
             getStatus1();
             getStatus2();
+            getStatus3();
             ModuleList();
             
         }
@@ -73,6 +76,30 @@ namespace wms.Forms.Administration.Modules
                     comboBox1.Items.Add(row.stat_desc);
                 }
                 comboBox1.SelectedIndex = -1;
+            }
+
+        }
+
+        public void getStatus3()
+        {
+            var status = (from c in obj.WMS_TYPE_STAT
+                          select new
+                          {
+                              c.stat_id,
+                              c.stat_desc,
+
+                          }).OrderBy(c => new { c.stat_desc }).ToList();
+
+            comboBox2.Items.Clear();
+
+            if (status.Count != 0)
+            {
+
+                foreach (var row in status)
+                {
+                    comboBox2.Items.Add(row.stat_desc);
+                }
+                comboBox2.SelectedIndex = -1;
             }
 
         }
@@ -168,6 +195,57 @@ namespace wms.Forms.Administration.Modules
             dataGridView2.ClearSelection();
         }
 
+        private void SearchModlvl3()
+        {
+            string xsmodname = textBox7.Text;
+            int? xsmodid = null;
+            var smodid = (from c in obj.WMS_MSTR_S1MODULE
+                         where c.s1mod_name == xsmodname
+                         select c.s1mod_id).FirstOrDefault();
+            xsmodid = smodid;
+
+            var modname = textBox9.Text.Trim();
+            var modules = (from c in obj.WMS_MSTR_S2MODULE
+                           where c.s2mod_name.StartsWith(modname) && c.s1mod_id == xsmodid
+                           select new
+                           {
+                               c.s2mod_id,
+                               c.s2mod_name,
+                               c.s2mod_form_name,
+                               c.stat_id
+
+                           }).OrderBy(c => new { c.s2mod_id }).ToList();
+
+            dataGridView3.Rows.Clear();
+
+            if (modules.Count != 0)
+            {
+                dataGridView3.ColumnHeadersVisible = true;
+                foreach (var row in modules)
+                {
+                    string xstatus;
+                    if (row.stat_id == 1)
+                    {
+                        xstatus = "Active";
+                    }
+                    else
+                    {
+                        xstatus = "Inactive";
+                    }
+                    dataGridView3.Rows.Add(row.s2mod_id,
+                                           row.s2mod_name,
+                                           row.s2mod_form_name,
+                                           xstatus,
+                                           "Edit");
+                }
+            }
+            else
+            {
+                dataGridView3.ColumnHeadersVisible = false;
+            }
+            dataGridView3.ClearSelection();
+        }
+
         private void ModuleList()
         {
 
@@ -211,8 +289,14 @@ namespace wms.Forms.Administration.Modules
 
         private void ModuleListlvl2()
         {
-           
-            int xmodid = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+            string smodname = textBox2.Text;
+            int? xmodid = null;
+            var modid = (from c in obj.WMS_MSTR_MODULE
+                          where c.mod_name == smodname
+                          select c.mod_id).FirstOrDefault();
+            xmodid = modid;
+
             var modules = (from c in obj.WMS_MSTR_S1MODULE 
                            where c.mod_id == xmodid
                            select new
@@ -252,7 +336,56 @@ namespace wms.Forms.Administration.Modules
             dataGridView2.ClearSelection();
         }
 
+        private void ModuleListlvl3()
+        {
 
+            string smodname = textBox7.Text;
+            int? xsmodid = null;
+            var smodid = (from c in obj.WMS_MSTR_S1MODULE
+                          where c.s1mod_name == smodname
+                          select c.s1mod_id).FirstOrDefault();
+            xsmodid = smodid;
+
+            var modules = (from c in obj.WMS_MSTR_S2MODULE
+                           where c.s1mod_id == xsmodid
+                           select new
+                           {
+                               c.s2mod_id,
+                               c.s2mod_name,
+                               c.s2mod_form_name,
+                               c.stat_id
+
+                           }).OrderBy(c => new { c.s2mod_id }).ToList();
+
+            dataGridView3.Rows.Clear();
+
+            if (modules.Count != 0)
+            {
+                dataGridView3.ColumnHeadersVisible = true;
+                foreach (var row in modules)
+                {
+                    string xstatus;
+                    if (row.stat_id == 1)
+                    {
+                        xstatus = "Active";
+                    }
+                    else
+                    {
+                        xstatus = "Inactive";
+                    }
+                    dataGridView3.Rows.Add(row.s2mod_id,
+                                           row.s2mod_name,
+                                           row.s2mod_form_name,
+                                           xstatus,
+                                           "Edit");
+                }
+            }
+            else
+            {
+                dataGridView3.ColumnHeadersVisible = false;
+            }
+            dataGridView3.ClearSelection();
+        }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
@@ -275,8 +408,16 @@ namespace wms.Forms.Administration.Modules
             comboBox1.SelectedIndex = -1;
             textBox4.Focus();
             button3.Text = "Save";
-            togglelvl2();
+          
+        }
 
+        private void clearFieldslvl3()
+        {
+            textBox8.Text = "";
+            textBox10.Text = "";
+            comboBox2.SelectedIndex = -1;
+            textBox8.Focus();
+            button6.Text = "Save";
         }
 
         private void togglelvl1()
@@ -300,6 +441,18 @@ namespace wms.Forms.Administration.Modules
             else
             {
                 panelvl2.Height = 110;
+            }
+        }
+
+        private void togglelvl3()
+        {
+            if (panelvl3.Height == 138)
+            {
+
+            }
+            else
+            {
+                panelvl3.Height = 138;
             }
         }
 
@@ -349,9 +502,15 @@ namespace wms.Forms.Administration.Modules
                 {
                     if (saveBtn.Text == "Save")
                     {
-                        DialogResult dialog = MessageBox.Show("Are you sure you want to save Module?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult dialog = MessageBox.Show("Are you sure you want to save Module (Level 1)?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (dialog == DialogResult.Yes)
                         {
+                            string xstatdesc = comboBox4.Text;
+                            int xstatid = 1;
+                            var statid = (from c in obj.WMS_TYPE_STAT
+                                          where c.stat_desc == xstatdesc
+                                          select c.stat_id).FirstOrDefault();
+                            xstatid = statid;
 
                             var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
                             DateTime serverDate = dateQuery.AsEnumerable().First();
@@ -362,6 +521,7 @@ namespace wms.Forms.Administration.Modules
                             {
                                 mod_name = textBox1.Text.Trim(),
                                 mod_datecrtd = serverDate,
+                                stat_id = xstatid,
                                 mod_crtdby = loggedin_user.userId
 
                             });
@@ -369,6 +529,7 @@ namespace wms.Forms.Administration.Modules
 
                             MessageBox.Show("Successfully saved Module.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             clearFieldslvl1();
+                            panelvl1.Height = 0;
                             ModuleList();
                             Main_Form.GetInstance().AddItemsToModule();
                         }
@@ -379,7 +540,7 @@ namespace wms.Forms.Administration.Modules
                     }
                     else
                     {
-                        DialogResult dialog = MessageBox.Show("Are you sure you want to update Module?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        DialogResult dialog = MessageBox.Show("Are you sure you want to update Module (Level 1)?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (dialog == DialogResult.Yes)
                         {
                             string xstatdesc = comboBox4.Text;
@@ -404,6 +565,7 @@ namespace wms.Forms.Administration.Modules
 
                             MessageBox.Show("Successfully updated Module.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             clearFieldslvl1();
+                            panelvl1.Height = 0;
                             ModuleList();
                             Main_Form.GetInstance().AddItemsToModule();
                         }
@@ -449,8 +611,24 @@ namespace wms.Forms.Administration.Modules
 
                 }
             }
-            
-            
+            else if (dgv.Name == "dataGridView3")
+            {
+                if (e.ColumnIndex == 4)
+                {
+                    textBox8.Text = dataGridView3.CurrentRow.Cells[1].Value.ToString();
+                    textBox10.Text = dataGridView3.CurrentRow.Cells[2].Value.ToString();
+                    comboBox2.Text = dataGridView3.CurrentRow.Cells[3].Value.ToString();
+                    textBox8.Focus();
+                    togglelvl3();
+                    button6.Text = "Update";
+                }
+                else
+                {
+
+                }
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -462,6 +640,7 @@ namespace wms.Forms.Administration.Modules
             else
             {
                 clearFieldslvl2();
+                togglelvl2();
             }
             
         }
@@ -504,7 +683,7 @@ namespace wms.Forms.Administration.Modules
                     {
                         if (button3.Text == "Save")
                         {
-                            DialogResult dialog = MessageBox.Show("Are you sure you want to save Sub-Module?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            DialogResult dialog = MessageBox.Show("Are you sure you want to save Sub-Module (Level 2)?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialog == DialogResult.Yes)
                             {
                                 string modname = textBox2.Text;
@@ -538,6 +717,7 @@ namespace wms.Forms.Administration.Modules
 
                                 MessageBox.Show("Successfully saved Sub-Module.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 clearFieldslvl2();
+                                panelvl2.Height = 0;
                                 ModuleListlvl2();
 
                             }
@@ -548,9 +728,17 @@ namespace wms.Forms.Administration.Modules
                         }
                         else
                         {
-                            DialogResult dialog = MessageBox.Show("Are you sure you want to update Sub-Module?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            DialogResult dialog = MessageBox.Show("Are you sure you want to update Sub-Module (Level 2)?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialog == DialogResult.Yes)
                             {
+                              
+                                string smodname = textBox4.Text;
+                                int? xsmodid = null;
+                                var smodid = (from c in obj.WMS_MSTR_S1MODULE
+                                               where c.s1mod_name == smodname
+                                               select c.s1mod_id).FirstOrDefault();
+                                xsmodid = smodid;
+
                                 string xstatdesc = comboBox1.Text;
                                 int xstatid = 1;
                                 var statid = (from c in obj.WMS_TYPE_STAT
@@ -560,8 +748,6 @@ namespace wms.Forms.Administration.Modules
 
                                 var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
                                 DateTime serverDate = dateQuery.AsEnumerable().First();
-
-                                int xsmodid = Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value);
 
                                 obj.WMS_MSTR_S1MODULE.Where(c => c.s1mod_id == xsmodid).ToList().ForEach(x =>
                                 {
@@ -574,6 +760,7 @@ namespace wms.Forms.Administration.Modules
 
                                 MessageBox.Show("Successfully updated Module.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 clearFieldslvl2();
+                                panelvl2.Height = 0;
                                 ModuleListlvl2();
                             }
                             else if (dialog == DialogResult.No)
@@ -590,6 +777,167 @@ namespace wms.Forms.Administration.Modules
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             SearchModlvl2();
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox6.Text = textBox2.Text;
+            textBox7.Text = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+            textBox9.Enabled = true;
+            panelvl3.Height = 0;
+            clearFieldslvl3();
+            ModuleListlvl3();
+        }
+
+
+        private void textBox10_Click(object sender, EventArgs e)
+        {
+            Form_List fm = new Form_List();
+            fm.Show();
+           
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox8.Text.Trim() == "")
+            {
+
+            }
+            else
+            {
+                if (textBox10.Text.Trim() == "")
+                {
+
+                }
+                else
+                {
+                    if (comboBox2.Text == "")
+                    {
+
+                    }
+                    else
+                    {
+                        if (button6.Text == "Save")
+                        {
+                            DialogResult dialog = MessageBox.Show("Are you sure you want to save Sub-Module (Level3)?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialog == DialogResult.Yes)
+                            {
+                                string smodname = textBox7.Text;
+                                int? xsmodid = null;
+                                var smodid = (from c in obj.WMS_MSTR_S1MODULE
+                                             where c.s1mod_name == smodname
+                                             select c.s1mod_id).FirstOrDefault();
+                                xsmodid = smodid;
+
+                                string xstatdesc = comboBox2.Text;
+                                int xstatid = 1;
+                                var statid = (from c in obj.WMS_TYPE_STAT
+                                              where c.stat_desc == xstatdesc
+                                              select c.stat_id).FirstOrDefault();
+                                xstatid = statid;
+
+                                var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
+                                DateTime serverDate = dateQuery.AsEnumerable().First();
+
+
+                                var xmodule = obj.Set<WMS_MSTR_S2MODULE>();
+                                xmodule.Add(new WMS_MSTR_S2MODULE
+                                {
+                                    s1mod_id = Convert.ToInt32(xsmodid),
+                                    s2mod_name = textBox8.Text.Trim(),
+                                    s2mod_form_name = textBox10.Text.Trim(),
+                                    s2mod_datecrtd = serverDate,
+                                    s2mod_crtdby = loggedin_user.userId,
+                                    stat_id = xstatid
+                                });
+                                obj.SaveChanges();
+
+                                MessageBox.Show("Successfully saved Sub-Module (Level 3).", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                clearFieldslvl3();
+                                panelvl3.Height = 0;
+                                ModuleListlvl3();
+
+                            }
+                            else if (dialog == DialogResult.No)
+                            {
+
+                            }
+                        }
+                        else
+                        {
+                            DialogResult dialog = MessageBox.Show("Are you sure you want to update Sub-Module (Level 3)?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialog == DialogResult.Yes)
+                            {
+                                string smodname = textBox8.Text;
+                                int? xsmodid = null;
+                                var smodid = (from c in obj.WMS_MSTR_S2MODULE
+                                              where c.s2mod_name == smodname
+                                              select c.s2mod_id).FirstOrDefault();
+                                xsmodid = smodid;
+
+        
+                                string xstatdesc = comboBox2.Text;
+                                int xstatid = 1;
+                                var statid = (from c in obj.WMS_TYPE_STAT
+                                              where c.stat_desc == xstatdesc
+                                              select c.stat_id).FirstOrDefault();
+                                xstatid = statid;
+
+                                var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
+                                DateTime serverDate = dateQuery.AsEnumerable().First();
+
+                                obj.WMS_MSTR_S2MODULE.Where(c => c.s2mod_id == xsmodid).ToList().ForEach(x =>
+                                {
+                                    x.s2mod_name = textBox8.Text.ToString().Replace("'", "''");
+                                    x.s2mod_form_name = textBox10.Text.ToString().Replace("'", "''");
+                                    x.s2mod_dateuptd = serverDate;
+                                    x.s2mod_uptdby = loggedin_user.userId;
+                                    x.stat_id = xstatid;
+                                });
+                                obj.SaveChanges();
+
+                                MessageBox.Show("Successfully updated Module.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                clearFieldslvl3();
+                                panelvl3.Height = 0;
+                                ModuleListlvl3();
+                            }
+                            else if (dialog == DialogResult.No)
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        public void placeFormName(string xformname)
+        {
+            textBox10.Text = xformname;
+            comboBox2.Focus();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (textBox6.Text.Trim() == "" || textBox7.Text.Trim() == "")
+            {
+                MessageBox.Show("Please select 'Sub-Module (Level 2)'.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {               
+                clearFieldslvl3();
+                togglelvl3();              
+            }
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panelvl3.Height = 0;
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            SearchModlvl3();
         }
     }
 }
