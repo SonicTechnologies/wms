@@ -21,7 +21,7 @@ namespace wms.Entity_Class
         public System.DateTime s2mod_datecrtd { get; set; }
         public int s2mod_crtdby { get; set; }
         public Nullable<System.DateTime> s2mod_dateuptd { get; set; }
-        public Nullable<System.DateTime> s2mod_uptdby { get; set; }
+        public Nullable<int> s2mod_uptdby { get; set; }
         public int stat_id { get; set; }
     }
 }

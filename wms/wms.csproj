@@ -99,6 +99,12 @@
     <Compile Include="Entity Class\WMS_LVL1M_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_LVL2M_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_LVL3M_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_MSTR_CUST.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
@@ -130,6 +136,18 @@
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_SLSMAN.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_UGRP.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_UGRPLVL1.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_UGRPLVL2.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_UGRPLVL3.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_USRS.cs">
@@ -213,6 +231,24 @@
     <Compile Include="Forms\Administration\Site\ST_Upload_Data.Designer.cs">
       <DependentUpon>ST_Upload_Data.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lv2_Module.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lv2_Module.Designer.cs">
+      <DependentUpon>Add_Lv2_Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lv3_Module.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lv3_Module.Designer.cs">
+      <DependentUpon>Add_Lv3_Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lvl1_Module.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lvl1_Module.Designer.cs">
+      <DependentUpon>Add_Lvl1_Module.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Administration\Users\Authorizations\US_Authorization_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +310,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administration\Site\ST_Upload_Data.resx">
       <DependentUpon>ST_Upload_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Authorizations\Add_Lv2_Module.resx">
+      <DependentUpon>Add_Lv2_Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Authorizations\Add_Lv3_Module.resx">
+      <DependentUpon>Add_Lv3_Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Authorizations\Add_Lvl1_Module.resx">
+      <DependentUpon>Add_Lvl1_Module.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administration\Users\Authorizations\US_Authorization_Form.resx">
       <DependentUpon>US_Authorization_Form.cs</DependentUpon>
@@ -354,6 +399,9 @@
     <None Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Entity Class\wmsdb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>wmsdb.edmx</DependentUpon>
@@ -364,9 +412,6 @@
       <DependentUpon>wmsdb.edmx</DependentUpon>
       <LastGenOutput>wmsdb.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

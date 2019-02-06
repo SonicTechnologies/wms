@@ -628,6 +628,7 @@ namespace wms.Forms.Administration.Customer
         private void CM_Upload_Data_Load(object sender, EventArgs e)
         {
             Main_Form.GetInstance().Enabled = false;
+            
         }
 
         private void CM_Upload_Data_FormClosing(object sender, FormClosingEventArgs e)
