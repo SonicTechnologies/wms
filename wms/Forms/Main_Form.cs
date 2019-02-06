@@ -13,6 +13,7 @@ using wms.Forms.Administration.Item;
 using wms.Forms.Administration.SALESMAN;
 using wms.Forms.Administration.SITE;
 using wms.Forms.Administration.Customer;
+using wms.Forms.Administration.Modules;
 
 namespace wms
 {
@@ -197,33 +198,41 @@ namespace wms
 
         private void treeView1_DoubleClick(object sender, EventArgs e)
         {
-            
-            var xformname = (from c in obj.WMS_MSTR_S2MODULE
-                             where c.s2mod_name == treeView1.SelectedNode.Text
-                             select new
-                             {
-                                 c.s2mod_form_name,
-                                 c.stat_id
-
-                             }).OrderBy(c => new { c.s2mod_form_name }).ToList();
-            if (xformname.Count != 0)
+            try
             {
-                foreach (var xform in xformname)
+                var xformname = (from c in obj.WMS_MSTR_S2MODULE
+                                 where c.s2mod_name == treeView1.SelectedNode.Text
+                                 select new
+                                 {
+                                     c.s2mod_form_name,
+                                     c.stat_id
+
+                                 }).OrderBy(c => new { c.s2mod_form_name }).ToList();
+                if (xformname.Count != 0)
                 {
-                    if (xform.stat_id == 1)
+                    foreach (var xform in xformname)
                     {
-                        OpenForm(xform.s2mod_form_name);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sub-module access: '" + treeView1.SelectedNode.Text + "' currently under maintenance", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (xform.stat_id == 1)
+                        {
+                            OpenForm(xform.s2mod_form_name);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sub-module access: '" + treeView1.SelectedNode.Text + "' currently under maintenance", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
+                else
+                {
+
+                }
             }
-            else
+            catch
             {
-               
+
             }
+            
+            
         }
 
         private void OpenForm(String form_name)
@@ -250,7 +259,7 @@ namespace wms
                                 {
                                     Form frm = (Form)Activator.CreateInstance(xform);
                                     frm.MdiParent = this; 
-                                    frm.Show();
+                                    frm.Show();                                  
                                 }
                             }
                         }
@@ -262,5 +271,6 @@ namespace wms
                 }
             }
         }
+
     }
 }
