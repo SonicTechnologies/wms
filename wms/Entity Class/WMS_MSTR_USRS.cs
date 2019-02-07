@@ -25,5 +25,6 @@ namespace wms.Entity_Class
         public Nullable<System.DateTime> usr_dateuptd { get; set; }
         public int usr_crtdby { get; set; }
         public Nullable<int> usr_uptdby { get; set; }
+        public int grp_id { get; set; }
     }
 }

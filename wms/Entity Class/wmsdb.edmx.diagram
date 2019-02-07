@@ -13,7 +13,6 @@
         <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_SLSMAN" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_USRS" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_STAT" Width="1.5" PointX="3.375" PointY="7.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_USRS_VIEW" Width="1.5" PointX="5.375" PointY="7.75" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_INVTY_VIEW" Width="1.5" PointX="7.375" PointY="6.75" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_CUST_VIEW" Width="1.5" PointX="9.75" PointY="0.75" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_JRSLSMAN_VIEW" Width="1.5" PointX="0.75" PointY="9.75" />
@@ -21,19 +20,39 @@
         <EntityTypeShape EntityType="wmsdbmodel.WMS_SLSMAN_VIEW" Width="1.5" PointX="2.75" PointY="10.75" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_JRSLSMAN" Width="1.5" PointX="9.375" PointY="10.75" />
 <<<<<<< HEAD
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL1M" Width="1.75" PointX="11.375" PointY="10.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL2M" Width="1.5" PointX="5.375" PointY="12.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL3M" Width="1.5" PointX="12" PointY="3.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_MODULE" Width="1.5" PointX="12" PointY="6.125" />
+        
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_MODULE" Width="2.25" PointX="12" PointY="6.125" />
 =======
         
         
         
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL1M_VIEW" Width="1.5" PointX="11.75" PointY="0.75" />
+        
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_S1MODULE" Width="1.5" PointX="11.656237603936454" PointY="7.4509983097440555" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_S2MODULE" Width="1.5" PointX="5.3348433865862166" PointY="5.3913885678124558" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_S2MODULE" Width="1.5" PointX="14.375" PointY="9.875" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL1M_VIEW" Width="2.5" PointX="10.25" PointY="15.125" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL2M_VIEW" Width="2.125" PointX="3.125" PointY="15.5" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL3M_VIEW" Width="1.5" PointX="5" PointY="22.5" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRP" Width="1.5" PointX="8" PointY="23.25" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL1" Width="1.5" PointX="15.375" PointY="4.875" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL2" Width="2" PointX="12.25" PointY="3.25" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL3" Width="1.5" PointX="6.6825822716032075" PointY="14.929185397424355" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL1M" Width="1.5" PointX="10.375" PointY="19.875" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL2M" Width="1.5" PointX="11.125" PointY="24.125" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL3M" Width="1.5" PointX="2.875" PointY="23.875" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL1_VIEW" Width="2.5" PointX="3.5" PointY="19.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL2_VIEW" Width="2.5" PointX="6.25" PointY="12.25" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL3_VIEW" Width="1.5" PointX="3" PointY="27.25" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_USRS_VIEW" Width="1.5" PointX="6.5272127215411571" PointY="11.242072423567098" />
+        
+        
+        
         
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; 856a62ee5eae841c09164bf7f6898c0c0d0f76f4
+      &gt;&gt;&gt;&gt;&gt;&gt;&gt; 856a62ee5eae841c09164bf7f6898c0c0d0f76f4
+      &gt;&gt;&gt;&gt;&gt;&gt;&gt; 856a62ee5eae841c09164bf7f6898c0c0d0f76f4
+      &gt;&gt;&gt;&gt;&gt;&gt;&gt; 856a62ee5eae841c09164bf7f6898c0c0d0f76f4
+      &gt;&gt;&gt;&gt;&gt;&gt;&gt; 856a62ee5eae841c09164bf7f6898c0c0d0f76f4
+      &gt;&gt;&gt;&gt;&gt;&gt;&gt; 856a62ee5eae841c09164bf7f6898c0c0d0f76f4
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

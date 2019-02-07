@@ -90,6 +90,15 @@
     <Compile Include="Entity Class\WMS_CUST_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_GRPLVL1_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_GRPLVL2_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_GRPLVL3_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_INVTY_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
@@ -97,6 +106,12 @@
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_LVL1M_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_LVL2M_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_LVL3M_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_CUST.cs">
@@ -130,6 +145,18 @@
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_SLSMAN.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_UGRP.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_UGRPLVL1.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_UGRPLVL2.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_UGRPLVL3.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_USRS.cs">
@@ -219,6 +246,36 @@
     <Compile Include="Forms\Administration\Users\Authorizations\US_Authorization_Form.Designer.cs">
       <DependentUpon>US_Authorization_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl1Module_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl1Module_Form.Designer.cs">
+      <DependentUpon>lvl1Module_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl2Module_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl2Module_Form.Designer.cs">
+      <DependentUpon>lvl2Module_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl3Module_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl3Module_Form.Designer.cs">
+      <DependentUpon>lvl3Module_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\US_Groups_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\US_Groups_Form.Designer.cs">
+      <DependentUpon>US_Groups_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Users_Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Users_Maintenance.Designer.cs">
+      <DependentUpon>Users_Maintenance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Administration\Users\US_Upload_Data.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +334,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administration\Users\Authorizations\US_Authorization_Form.resx">
       <DependentUpon>US_Authorization_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Groups\lvl1Module_Form.resx">
+      <DependentUpon>lvl1Module_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Groups\lvl2Module_Form.resx">
+      <DependentUpon>lvl2Module_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Groups\lvl3Module_Form.resx">
+      <DependentUpon>lvl3Module_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Groups\US_Groups_Form.resx">
+      <DependentUpon>US_Groups_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Users_Maintenance.resx">
+      <DependentUpon>Users_Maintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administration\Users\US_Upload_Data.resx">
       <DependentUpon>US_Upload_Data.cs</DependentUpon>
@@ -367,6 +439,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Administration\Users\Type\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

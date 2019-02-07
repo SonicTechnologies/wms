@@ -12,13 +12,14 @@ namespace wms.Entity_Class
     using System;
     using System.Collections.Generic;
     
-    public partial class WMS_MSTR_LVL2M
+    public partial class WMS_GRPLVL3_VIEW
     {
-        public int lvl2mod_id { get; set; }
-        public Nullable<int> s1mod_id { get; set; }
-        public Nullable<int> usr_id { get; set; }
-        public Nullable<System.DateTime> date_added { get; set; }
-        public Nullable<int> added_by { get; set; }
-        public int lvl1mod_id { get; set; }
+        public int grpdl3_id { get; set; }
+        public int grp_id { get; set; }
+        public string grp_name { get; set; }
+        public int s2mod_id { get; set; }
+        public string s2mod_name { get; set; }
+        public string stat_desc { get; set; }
+        public int s1mod_id { get; set; }
     }
 }
