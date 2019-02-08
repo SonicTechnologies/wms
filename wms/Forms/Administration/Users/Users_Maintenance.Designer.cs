@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel37 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -126,6 +126,13 @@
             this.panel76 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel77 = new System.Windows.Forms.Panel();
+            this.panel59 = new System.Windows.Forms.Panel();
+            this.panel60 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.panel61 = new System.Windows.Forms.Panel();
+            this.panel62 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel64 = new System.Windows.Forms.Panel();
             this.panel53 = new System.Windows.Forms.Panel();
             this.panel54 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -151,13 +158,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel59 = new System.Windows.Forms.Panel();
-            this.panel60 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.panel61 = new System.Windows.Forms.Panel();
-            this.panel62 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel64 = new System.Windows.Forms.Panel();
             this.usrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usrname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usrpassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -207,6 +207,9 @@
             this.panel73.SuspendLayout();
             this.panel74.SuspendLayout();
             this.panel76.SuspendLayout();
+            this.panel59.SuspendLayout();
+            this.panel60.SuspendLayout();
+            this.panel62.SuspendLayout();
             this.panel53.SuspendLayout();
             this.panel54.SuspendLayout();
             this.panel56.SuspendLayout();
@@ -217,9 +220,6 @@
             this.panel48.SuspendLayout();
             this.panel50.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel59.SuspendLayout();
-            this.panel60.SuspendLayout();
-            this.panel62.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel37
@@ -1208,6 +1208,76 @@
             this.panel77.Size = new System.Drawing.Size(90, 5);
             this.panel77.TabIndex = 11;
             // 
+            // panel59
+            // 
+            this.panel59.BackColor = System.Drawing.Color.White;
+            this.panel59.Controls.Add(this.panel60);
+            this.panel59.Controls.Add(this.panel62);
+            this.panel59.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel59.Location = new System.Drawing.Point(0, 248);
+            this.panel59.Name = "panel59";
+            this.panel59.Size = new System.Drawing.Size(377, 28);
+            this.panel59.TabIndex = 44;
+            // 
+            // panel60
+            // 
+            this.panel60.Controls.Add(this.comboBox3);
+            this.panel60.Controls.Add(this.panel61);
+            this.panel60.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel60.Location = new System.Drawing.Point(90, 0);
+            this.panel60.Name = "panel60";
+            this.panel60.Size = new System.Drawing.Size(148, 28);
+            this.panel60.TabIndex = 15;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.Color.Orange;
+            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Enabled = false;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(0, 5);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(148, 21);
+            this.comboBox3.TabIndex = 14;
+            // 
+            // panel61
+            // 
+            this.panel61.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel61.Location = new System.Drawing.Point(0, 0);
+            this.panel61.Name = "panel61";
+            this.panel61.Size = new System.Drawing.Size(148, 5);
+            this.panel61.TabIndex = 13;
+            // 
+            // panel62
+            // 
+            this.panel62.Controls.Add(this.label16);
+            this.panel62.Controls.Add(this.panel64);
+            this.panel62.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel62.Location = new System.Drawing.Point(0, 0);
+            this.panel62.Name = "panel62";
+            this.panel62.Size = new System.Drawing.Size(90, 28);
+            this.panel62.TabIndex = 11;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(0, 5);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(79, 17);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "User Group:";
+            // 
+            // panel64
+            // 
+            this.panel64.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel64.Location = new System.Drawing.Point(0, 0);
+            this.panel64.Name = "panel64";
+            this.panel64.Size = new System.Drawing.Size(90, 5);
+            this.panel64.TabIndex = 11;
+            // 
             // panel53
             // 
             this.panel53.BackColor = System.Drawing.Color.White;
@@ -1481,80 +1551,10 @@
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // panel59
-            // 
-            this.panel59.BackColor = System.Drawing.Color.White;
-            this.panel59.Controls.Add(this.panel60);
-            this.panel59.Controls.Add(this.panel62);
-            this.panel59.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel59.Location = new System.Drawing.Point(0, 248);
-            this.panel59.Name = "panel59";
-            this.panel59.Size = new System.Drawing.Size(377, 28);
-            this.panel59.TabIndex = 44;
-            // 
-            // panel60
-            // 
-            this.panel60.Controls.Add(this.comboBox3);
-            this.panel60.Controls.Add(this.panel61);
-            this.panel60.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel60.Location = new System.Drawing.Point(90, 0);
-            this.panel60.Name = "panel60";
-            this.panel60.Size = new System.Drawing.Size(148, 28);
-            this.panel60.TabIndex = 15;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.Orange;
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Enabled = false;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(0, 5);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(148, 21);
-            this.comboBox3.TabIndex = 14;
-            // 
-            // panel61
-            // 
-            this.panel61.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel61.Location = new System.Drawing.Point(0, 0);
-            this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(148, 5);
-            this.panel61.TabIndex = 13;
-            // 
-            // panel62
-            // 
-            this.panel62.Controls.Add(this.label16);
-            this.panel62.Controls.Add(this.panel64);
-            this.panel62.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel62.Location = new System.Drawing.Point(0, 0);
-            this.panel62.Name = "panel62";
-            this.panel62.Size = new System.Drawing.Size(90, 28);
-            this.panel62.TabIndex = 11;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(0, 5);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 17);
-            this.label16.TabIndex = 9;
-            this.label16.Text = "User Group:";
-            // 
-            // panel64
-            // 
-            this.panel64.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel64.Location = new System.Drawing.Point(0, 0);
-            this.panel64.Name = "panel64";
-            this.panel64.Size = new System.Drawing.Size(90, 5);
-            this.panel64.TabIndex = 11;
-            // 
             // usrid
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.usrid.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.usrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.usrid.HeaderText = "ID";
             this.usrid.Name = "usrid";
             this.usrid.ReadOnly = true;
@@ -1599,8 +1599,8 @@
             // 
             // usertype
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.usertype.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.usertype.DefaultCellStyle = dataGridViewCellStyle2;
             this.usertype.HeaderText = "User Type";
             this.usertype.Name = "usertype";
             this.usertype.ReadOnly = true;
@@ -1623,8 +1623,8 @@
             // 
             // statid
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.statid.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.statid.DefaultCellStyle = dataGridViewCellStyle3;
             this.statid.HeaderText = "Status ID";
             this.statid.Name = "statid";
             this.statid.ReadOnly = true;
@@ -1633,8 +1633,8 @@
             // 
             // status
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.status.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.status.DefaultCellStyle = dataGridViewCellStyle4;
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             this.status.ReadOnly = true;
@@ -1750,6 +1750,10 @@
             this.panel74.ResumeLayout(false);
             this.panel76.ResumeLayout(false);
             this.panel76.PerformLayout();
+            this.panel59.ResumeLayout(false);
+            this.panel60.ResumeLayout(false);
+            this.panel62.ResumeLayout(false);
+            this.panel62.PerformLayout();
             this.panel53.ResumeLayout(false);
             this.panel54.ResumeLayout(false);
             this.panel56.ResumeLayout(false);
@@ -1765,10 +1769,6 @@
             this.panel50.ResumeLayout(false);
             this.panel50.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel59.ResumeLayout(false);
-            this.panel60.ResumeLayout(false);
-            this.panel62.ResumeLayout(false);
-            this.panel62.PerformLayout();
             this.ResumeLayout(false);
 
         }

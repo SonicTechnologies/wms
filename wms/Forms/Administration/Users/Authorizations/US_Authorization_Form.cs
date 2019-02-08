@@ -77,7 +77,7 @@ namespace wms.Forms.Administration.Users.Authorizations
                 var users = (from c in obj.WMS_MSTR_USRS
                              join o in obj.WMS_TYPE_USRS on c.usr_type_id equals o.usr_type_id
                              join s in obj.WMS_TYPE_STAT on c.stat_id equals s.stat_id
-                             where c.usr_id.ToString().StartsWith(userID)
+                             where c.usr_id.ToString()==(userID)
                              select new
                              {
                                  c.usr_id,
@@ -316,13 +316,10 @@ namespace wms.Forms.Administration.Users.Authorizations
             textBox6.Text = "";
             togglelvl1();
             panel7.Height = 0;
-
             dataGridView1.Rows.Clear();
             dataGridView1.ColumnHeadersVisible = false;
-
             dataGridView2.Rows.Clear();
             dataGridView2.ColumnHeadersVisible = false;
-
             dataGridView3.Rows.Clear();
             dataGridView3.ColumnHeadersVisible = false;
             button1.Enabled = false;
@@ -332,11 +329,27 @@ namespace wms.Forms.Administration.Users.Authorizations
 
         }
 
+        public void getModuleId()
+        {
+            var items = (from c in obj.WMS_MSTR_MODULE
+                         join m in obj.WMS_MSTR_LVL1M on c.mod_id equals m.mod_id
+                         
+                         where c.mod_name == textBox8.Text.Trim() && c.stat_id == 1
+
+                         select new
+                         {
+                             m.mod_id,
+           
+
+                         }).ToList();
+
+
+        }
 
         public void listItem()
         {
 
-      try {
+
                   userId = Convert.ToInt32(textBox1.Text.Trim());
 
                     var items = (from c in obj.WMS_MSTR_LVL1M
@@ -379,7 +392,7 @@ namespace wms.Forms.Administration.Users.Authorizations
                     var items1 = (from c in obj.WMS_MSTR_S1MODULE
                                  join o in obj.WMS_MSTR_LVL2M on c.s1mod_id equals o.s1mod_id
                                  join m in obj.WMS_MSTR_MODULE on c.mod_id equals m.mod_id
-                                 where o.usr_id == userId && c.stat_id==1 && m.stat_id==1
+                                 where o.usr_id == userId && c.stat_id==1 && m.stat_id==1 && m.mod_name== textBox8.Text.Trim()
                                  
 
                                  select new
@@ -423,7 +436,7 @@ namespace wms.Forms.Administration.Users.Authorizations
                                  join c in obj.WMS_MSTR_S2MODULE on  m.s2mod_id equals c.s2mod_id
                                  join o in obj.WMS_MSTR_S1MODULE on c.s1mod_id equals o.s1mod_id
                                  join module1 in obj.WMS_MSTR_MODULE on o.mod_id equals module1.mod_id
-                                 where m.usr_id == userId &&  c.stat_id==1 && o.stat_id==1 && module1.stat_id==1
+                                 where m.usr_id == userId &&  c.stat_id==1 && o.stat_id==1 && module1.stat_id==1 && o.s1mod_name == textBox9.Text.Trim()
 
                                  select new
                                  {
@@ -462,12 +475,9 @@ namespace wms.Forms.Administration.Users.Authorizations
                     }
    
                 tabControl1.Refresh();
-        }
+        
 
-        catch(Exception e)
-            {
-               
-            }
+     
 
         }
 
@@ -489,10 +499,6 @@ namespace wms.Forms.Administration.Users.Authorizations
         {
             listItem();
         }
-
-
-
-      
 
         private void textBox7_Enter(object sender, EventArgs e)
         {
@@ -561,55 +567,64 @@ namespace wms.Forms.Administration.Users.Authorizations
 
         private void Lvl1DeleteModule()
         {
-            int lvl1modId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+            userId = Convert.ToInt32(textBox1.Text.Trim());
+
+
+            int lvl1modId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             
             obj.WMS_MSTR_LVL1M.RemoveRange(from lvl1 in obj.WMS_MSTR_LVL1M
-                                         
-                                           where lvl1.lvl1mod_id == lvl1modId
+
+                                           where lvl1.mod_id == lvl1modId && lvl1.usr_id == userId
                                            select lvl1);
 
-            obj.WMS_MSTR_LVL2M.RemoveRange(from lvl2 in obj.WMS_MSTR_LVL2M
-                                           join lvl1 in obj.WMS_MSTR_LVL1M on lvl2.lvl1mod_id equals lvl1.lvl1mod_id
-                                           where lvl1.lvl1mod_id == lvl1modId
-                                           select lvl2);
+            obj.WMS_MSTR_LVL2M.RemoveRange(from lvl in obj.WMS_MSTR_LVL2M
+                                           join lvl2 in obj.WMS_LVL2M_VIEW on lvl.s1mod_id equals lvl2.s1mod_id
+                                           join lvl1 in obj.WMS_LVL1M_VIEW on lvl2.mod_id equals lvl1.mod_id
+                                           where lvl1.mod_id == lvl1modId && lvl1.usr_id== userId
+                                           select lvl);
 
-            obj.WMS_MSTR_LVL3M.RemoveRange(from lvl3 in obj.WMS_MSTR_LVL3M
-                                           join lvl2 in obj.WMS_MSTR_LVL2M on lvl3.lvl2mod_id equals lvl2.lvl2mod_id
-                                           join lvl1 in obj.WMS_MSTR_LVL1M on lvl2.lvl1mod_id equals lvl1.lvl1mod_id
-                                           where lvl1.lvl1mod_id == lvl1modId
-                                           select lvl3);
+            obj.WMS_MSTR_LVL3M.RemoveRange(from lvl in obj.WMS_MSTR_LVL3M
+                                           join lvl3 in obj.WMS_LVL3M_VIEW on lvl.s2mod_id equals lvl3.s2mod_id
+                                           join lvl2 in obj.WMS_LVL2M_VIEW on lvl3.s1mod_id equals lvl2.s1mod_id
+                                           join lvl1 in obj.WMS_LVL1M_VIEW on lvl2.mod_id equals lvl1.mod_id
+                                           where lvl1.mod_id == lvl1modId && lvl1.usr_id == userId
+                                           select lvl);
+
             obj.SaveChanges();
         }
 
 
         private void Lvl2DeleteModule()
         {
-            int lvl2modId = Convert.ToInt32(dataGridView2.CurrentRow.Cells[5].Value.ToString());
+            //int s1mod_id = Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString());
 
-       
-            obj.WMS_MSTR_LVL2M.RemoveRange(from lvl2 in obj.WMS_MSTR_LVL2M   
-                                           where lvl2.lvl2mod_id == lvl2modId
-                                           select lvl2);
 
-            obj.WMS_MSTR_LVL3M.RemoveRange(from lvl3 in obj.WMS_MSTR_LVL3M
-                                           join lvl2 in obj.WMS_MSTR_LVL2M on lvl3.lvl2mod_id equals lvl2.lvl2mod_id
-                                           where lvl2.lvl2mod_id == lvl2modId
-                                           select lvl3);
-            obj.SaveChanges();
+            //obj.WMS_MSTR_LVL2M.RemoveRange(from lvl2 in obj.WMS_MSTR_LVL2M
+                                           
+            //                               where lvl2.s1mod_id == s1mod_id
+            //                               select lvl2);
+
+            //obj.WMS_MSTR_LVL3M.RemoveRange(from lvl3 in obj.WMS_MSTR_LVL3M
+            //                               join  lvl2View in obj.WMS_LVL2M_VIEW on lvl3.s2mod_id equals lvl2View.
+            //                               join lvl2 in obj.WMS_LVL2M_VIEW on lvl3.s2mod_id equals lvl2.
+            //                               where lvl2.lvl2mod_id == lvl2modId
+            //                               select lvl3);
+            //obj.SaveChanges();
+
         }
 
 
         private void Lvl3DeleteModule()
         {
-            int lvl3modId = Convert.ToInt32(dataGridView3.CurrentRow.Cells[6].Value.ToString());
+            //int lvl3modId = Convert.ToInt32(dataGridView3.CurrentRow.Cells[6].Value.ToString());
 
 
-            obj.WMS_MSTR_LVL3M.RemoveRange(from lvl3 in obj.WMS_MSTR_LVL3M
+            //obj.WMS_MSTR_LVL3M.RemoveRange(from lvl3 in obj.WMS_MSTR_LVL3M
                                          
-                                           where lvl3.lvl3mod_id == lvl3modId
-                                           select lvl3);
+            //                               where lvl3.lvl3mod_id == lvl3modId
+            //                               select lvl3);
 
-            obj.SaveChanges();
+            //obj.SaveChanges();
         }
 
 
@@ -619,13 +634,13 @@ namespace wms.Forms.Administration.Users.Authorizations
             if(e.ColumnIndex==4)
             {
 
-                DialogResult dialog = MessageBox.Show("Are you sure you want to remove " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + "? " , "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dialog = MessageBox.Show("Are you sure you want to remove " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + "?" , "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialog == DialogResult.Yes)
                 {
 
                     Lvl1DeleteModule();
 
-                    MessageBox.Show("Successfully deleted " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully removed " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     listItem();
                 }
@@ -648,7 +663,7 @@ namespace wms.Forms.Administration.Users.Authorizations
 
                     Lvl2DeleteModule();
 
-                    MessageBox.Show("Successfully deleted " + dataGridView2.CurrentRow.Cells[3].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully removed " + dataGridView2.CurrentRow.Cells[3].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     listItem();
@@ -674,7 +689,7 @@ namespace wms.Forms.Administration.Users.Authorizations
 
                     Lvl3DeleteModule();
 
-                    MessageBox.Show("Successfully deleted " + dataGridView3.CurrentRow.Cells[3].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully removed " + dataGridView3.CurrentRow.Cells[3].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     listItem();
@@ -691,6 +706,24 @@ namespace wms.Forms.Administration.Users.Authorizations
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             searchUser();
+        }
+
+ 
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string ModuleName = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textBox8.Text = ModuleName;
+            TabPage tabpage2 = tabControl1.TabPages[1];
+            tabControl1.SelectedTab = tabpage2;
+
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string ModuleName = dataGridView2.CurrentRow.Cells[3].Value.ToString();
+            textBox9.Text = ModuleName;
+            TabPage tabpage3 = tabControl1.TabPages[2];
+            tabControl1.SelectedTab = tabpage3;
         }
     }
 }

@@ -318,6 +318,9 @@
     <Compile Include="Forms\Select_Server_Form.Designer.cs">
       <DependentUpon>Select_Server_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Administration\Customer\CM_Upload_Data.resx">
@@ -389,6 +392,30 @@
     <EmbeddedResource Include="Forms\Select_Server_Form.resx">
       <DependentUpon>Select_Server_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Customer.CM_Upload_Data.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Customer.Customer_Maintenance.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Item.IM_Upload_data.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Item.Item_Maintenance.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Modules.Form_List.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Modules.Module_Maintenance.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.SALESMAN.SB_Booking_Upload_Data.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.SALESMAN.SM_Booking.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.SITE.Site_Maintenance.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.SITE.ST_Upload_Data.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Users.Authorizations.Add_Lv2_Module.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Users.Authorizations.Add_Lv3_Module.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Users.Authorizations.Add_Lvl1_Module.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Users.Authorizations.US_Authorization_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Users.Groups.lvl1Module_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Users.Groups.lvl2Module_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Users.Groups.lvl3Module_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Users.Groups.US_Groups_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Users.Users_Maintenance.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Users.US_Upload_Data.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Forms.Select_Server_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Login_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Main_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\wms.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -399,6 +426,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\wms.exe.config" />
     <EntityDeploy Include="Entity Class\wmsdb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>wmsdb.Designer.cs</LastGenOutput>
@@ -406,6 +434,17 @@
     <None Include="Entity Class\wmsdb.edmx.diagram">
       <DependentUpon>wmsdb.edmx</DependentUpon>
     </None>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\Entity Class\wmsdb.csdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\Entity Class\wmsdb.msl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\Entity Class\wmsdb.ssdl" />
+    <None Include="obj\Debug\wms.csproj.CopyComplete" />
+    <None Include="obj\Debug\wms.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\wms.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\wms.csproj.ResolveComReference.cache" />
+    <None Include="obj\Release\wms.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\wms.csproj.ResolveComReference.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -418,7 +457,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
@@ -453,6 +494,18 @@
     <None Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.Dmf.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.Smo.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.SqlEnum.dll" />
+    <Content Include="bin\Debug\wms.exe" />
+    <Content Include="bin\Debug\wms.pdb" />
     <Content Include="Entity Class\wmsdb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>wmsdb.edmx</DependentUpon>
@@ -463,11 +516,22 @@
       <DependentUpon>wmsdb.edmx</DependentUpon>
       <LastGenOutput>wmsdb.cs</LastGenOutput>
     </Content>
+    <Content Include="obj\Debug\TempPE\Entity Class.Model1.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Entity Class.Model1.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Entity Class.Model1.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Entity Class.wmsdb.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Entity Class.wmsdb.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Entity Class.wmsdb.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Debug\wms.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\wms.exe" />
+    <Content Include="obj\Debug\wms.pdb" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Release\" />
     <Folder Include="Forms\Administration\Users\Type\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

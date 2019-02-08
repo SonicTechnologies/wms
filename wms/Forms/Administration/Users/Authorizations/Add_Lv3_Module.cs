@@ -122,8 +122,8 @@ namespace wms.Forms.Administration.Users.Authorizations
                             s2mod_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString()),
                             date_added = serverDate,
                             added_by = loggedin_user.userId,
-                            lvl2mod_id=UserValidation1.lvl2mod_id,
-                      //      s1mod_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()),
+ 
+                      //s1mod_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString()),
 
                         });
                         obj.SaveChanges();
