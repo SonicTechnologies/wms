@@ -90,7 +90,7 @@ namespace wms.Forms.Administration.Users.Authorizations
                                 obj.SaveChanges();
                                 MessageBox.Show("Successfully saved " + dataGridView1.CurrentRow.Cells[3].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                  uaf.listItem();
-                                  GetModuleData();
+                                 GetModuleData();
 
                             }
                      

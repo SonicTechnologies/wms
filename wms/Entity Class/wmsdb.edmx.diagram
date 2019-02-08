@@ -31,18 +31,18 @@
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_S2MODULE" Width="1.5" PointX="14.375" PointY="9.875" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL1M_VIEW" Width="2.5" PointX="10.25" PointY="15.125" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL2M_VIEW" Width="2.125" PointX="3.125" PointY="15.5" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL3M_VIEW" Width="1.5" PointX="5" PointY="22.5" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL3M_VIEW" Width="2.25" PointX="5" PointY="22.5" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRP" Width="1.5" PointX="8" PointY="23.25" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL1" Width="1.5" PointX="15.375" PointY="4.875" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL2" Width="2" PointX="12.25" PointY="3.25" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL3" Width="1.5" PointX="6.6825822716032075" PointY="14.929185397424355" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL1M" Width="1.5" PointX="10.375" PointY="19.875" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL2M" Width="1.5" PointX="11.125" PointY="24.125" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL3M" Width="1.5" PointX="2.875" PointY="23.875" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL1_VIEW" Width="2.5" PointX="3.5" PointY="19.75" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL2_VIEW" Width="2.5" PointX="6.25" PointY="12.25" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL3_VIEW" Width="1.5" PointX="3" PointY="27.25" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_USRS_VIEW" Width="1.5" PointX="6.5272127215411571" PointY="11.242072423567098" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL2M" Width="1.5" PointX="11.422967344253774" PointY="20.390506202536869" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL3M" Width="1.5" PointX="1.0057711885337584" PointY="8.3280210980810327" />
         
         
         

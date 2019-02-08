@@ -30,6 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.custid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AccessModuleLevel2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel56 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -50,12 +56,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.custid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.custname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AccessModuleLevel2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel20.SuspendLayout();
             this.panel56.SuspendLayout();
@@ -93,6 +93,57 @@
             this.dataGridView1.Size = new System.Drawing.Size(586, 304);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // custid
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.custid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.custid.HeaderText = "ID";
+            this.custid.Name = "custid";
+            this.custid.ReadOnly = true;
+            this.custid.Visible = false;
+            this.custid.Width = 5;
+            // 
+            // custname
+            // 
+            this.custname.HeaderText = "Module ID";
+            this.custname.Name = "custname";
+            this.custname.ReadOnly = true;
+            this.custname.Visible = false;
+            this.custname.Width = 5;
+            // 
+            // moduleName
+            // 
+            this.moduleName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.moduleName.HeaderText = "Module Name";
+            this.moduleName.Name = "moduleName";
+            this.moduleName.ReadOnly = true;
+            this.moduleName.Visible = false;
+            // 
+            // AccessModuleLevel2
+            // 
+            this.AccessModuleLevel2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AccessModuleLevel2.HeaderText = "Access Module (Level 2)";
+            this.AccessModuleLevel2.Name = "AccessModuleLevel2";
+            this.AccessModuleLevel2.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Date Created";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Add
+            // 
+            this.Add.HeaderText = "Action";
+            this.Add.Name = "Add";
+            this.Add.ReadOnly = true;
+            this.Add.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Add.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Add.Text = "Add";
+            this.Add.UseColumnTextForButtonValue = true;
+            this.Add.Width = 5;
             // 
             // panel20
             // 
@@ -288,57 +339,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(586, 10);
             this.panel8.TabIndex = 37;
-            // 
-            // custid
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.custid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.custid.HeaderText = "ID";
-            this.custid.Name = "custid";
-            this.custid.ReadOnly = true;
-            this.custid.Visible = false;
-            this.custid.Width = 5;
-            // 
-            // custname
-            // 
-            this.custname.HeaderText = "Module ID";
-            this.custname.Name = "custname";
-            this.custname.ReadOnly = true;
-            this.custname.Visible = false;
-            this.custname.Width = 5;
-            // 
-            // moduleName
-            // 
-            this.moduleName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.moduleName.HeaderText = "Module Name";
-            this.moduleName.Name = "moduleName";
-            this.moduleName.ReadOnly = true;
-            this.moduleName.Visible = false;
-            // 
-            // AccessModuleLevel2
-            // 
-            this.AccessModuleLevel2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AccessModuleLevel2.HeaderText = "Access Module (Level 2)";
-            this.AccessModuleLevel2.Name = "AccessModuleLevel2";
-            this.AccessModuleLevel2.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Date Created";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Add
-            // 
-            this.Add.HeaderText = "Action";
-            this.Add.Name = "Add";
-            this.Add.ReadOnly = true;
-            this.Add.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Add.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Add.Text = "Add";
-            this.Add.UseColumnTextForButtonValue = true;
-            this.Add.Width = 5;
             // 
             // Add_Lv2_Module
             // 
