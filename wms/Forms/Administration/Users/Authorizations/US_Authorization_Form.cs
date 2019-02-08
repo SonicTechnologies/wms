@@ -334,7 +334,7 @@ namespace wms.Forms.Administration.Users.Authorizations
             var items = (from c in obj.WMS_MSTR_MODULE
                          join m in obj.WMS_MSTR_LVL1M on c.mod_id equals m.mod_id
                          
-                         where c.mod_name == textBox8.Text.Trim() && c.stat_id == 1
+                         where c.stat_id == 1
 
                          select new
                          {
@@ -392,7 +392,7 @@ namespace wms.Forms.Administration.Users.Authorizations
                     var items1 = (from c in obj.WMS_MSTR_S1MODULE
                                  join o in obj.WMS_MSTR_LVL2M on c.s1mod_id equals o.s1mod_id
                                  join m in obj.WMS_MSTR_MODULE on c.mod_id equals m.mod_id
-                                 where o.usr_id == userId && c.stat_id==1 && m.stat_id==1 && m.mod_name== textBox8.Text.Trim()
+                                 where o.usr_id == userId && c.stat_id==1 && m.stat_id==1 
                                  
 
                                  select new
@@ -436,7 +436,7 @@ namespace wms.Forms.Administration.Users.Authorizations
                                  join c in obj.WMS_MSTR_S2MODULE on  m.s2mod_id equals c.s2mod_id
                                  join o in obj.WMS_MSTR_S1MODULE on c.s1mod_id equals o.s1mod_id
                                  join module1 in obj.WMS_MSTR_MODULE on o.mod_id equals module1.mod_id
-                                 where m.usr_id == userId &&  c.stat_id==1 && o.stat_id==1 && module1.stat_id==1 && o.s1mod_name == textBox9.Text.Trim()
+                                 where m.usr_id == userId &&  c.stat_id==1 && o.stat_id==1 && module1.stat_id==1 
 
                                  select new
                                  {
@@ -711,19 +711,19 @@ namespace wms.Forms.Administration.Users.Authorizations
  
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string ModuleName = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBox8.Text = ModuleName;
-            TabPage tabpage2 = tabControl1.TabPages[1];
-            tabControl1.SelectedTab = tabpage2;
+            //string ModuleName = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            //textBox8.Text = ModuleName;
+            //TabPage tabpage2 = tabControl1.TabPages[1];
+            //tabControl1.SelectedTab = tabpage2;
 
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string ModuleName = dataGridView2.CurrentRow.Cells[3].Value.ToString();
-            textBox9.Text = ModuleName;
-            TabPage tabpage3 = tabControl1.TabPages[2];
-            tabControl1.SelectedTab = tabpage3;
+            //string ModuleName = dataGridView2.CurrentRow.Cells[3].Value.ToString();
+            //textBox9.Text = ModuleName;
+            //TabPage tabpage3 = tabControl1.TabPages[2];
+            //tabControl1.SelectedTab = tabpage3;
         }
     }
 }

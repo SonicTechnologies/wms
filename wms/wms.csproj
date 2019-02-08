@@ -210,6 +210,7 @@
     <Compile Include="Forms\Administration\Modules\Form_List.Designer.cs">
       <DependentUpon>Form_List.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Administration\Modules\Form_Maintenance.Designer.cs" />
     <Compile Include="Forms\Administration\Modules\Module_Maintenance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,6 +339,7 @@
     <EmbeddedResource Include="Forms\Administration\Modules\Form_List.resx">
       <DependentUpon>Form_List.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Modules\Form_Maintenance.resx" />
     <EmbeddedResource Include="Forms\Administration\Modules\Module_Maintenance.resx">
       <DependentUpon>Module_Maintenance.cs</DependentUpon>
     </EmbeddedResource>
