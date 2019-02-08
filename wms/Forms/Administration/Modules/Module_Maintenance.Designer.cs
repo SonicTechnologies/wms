@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -123,6 +126,11 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel92 = new System.Windows.Forms.Panel();
             this.panel42 = new System.Windows.Forms.Panel();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -175,11 +183,6 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel21.SuspendLayout();
@@ -235,23 +238,23 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(14, 689);
+            this.panel1.Size = new System.Drawing.Size(14, 693);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1612, 0);
+            this.panel2.Location = new System.Drawing.Point(1446, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(14, 689);
+            this.panel2.Size = new System.Drawing.Size(14, 693);
             this.panel2.TabIndex = 1;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(14, 675);
+            this.panel4.Location = new System.Drawing.Point(14, 679);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1598, 14);
+            this.panel4.Size = new System.Drawing.Size(1432, 14);
             this.panel4.TabIndex = 3;
             // 
             // panel12
@@ -268,7 +271,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel12.Location = new System.Drawing.Point(14, 14);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(400, 661);
+            this.panel12.Size = new System.Drawing.Size(400, 665);
             this.panel12.TabIndex = 4;
             // 
             // dataGridView1
@@ -294,17 +297,18 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(400, 545);
+            this.dataGridView1.Size = new System.Drawing.Size(400, 549);
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // modid
             // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.modid.DefaultCellStyle = dataGridViewCellStyle7;
             this.modid.HeaderText = "ID";
             this.modid.Name = "modid";
             this.modid.ReadOnly = true;
-            this.modid.Visible = false;
             this.modid.Width = 5;
             // 
             // modname
@@ -650,9 +654,9 @@
             this.addBtn.ForeColor = System.Drawing.Color.White;
             this.addBtn.Location = new System.Drawing.Point(0, 0);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(100, 30);
+            this.addBtn.Size = new System.Drawing.Size(48, 30);
             this.addBtn.TabIndex = 6;
-            this.addBtn.Text = "Add New";
+            this.addBtn.Text = "+";
             this.addBtn.UseVisualStyleBackColor = false;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
@@ -703,7 +707,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel13.Location = new System.Drawing.Point(414, 14);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(8, 661);
+            this.panel13.Size = new System.Drawing.Size(8, 665);
             this.panel13.TabIndex = 5;
             // 
             // panel6
@@ -711,7 +715,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(14, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1598, 14);
+            this.panel6.Size = new System.Drawing.Size(1432, 14);
             this.panel6.TabIndex = 6;
             // 
             // panel5
@@ -728,7 +732,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(422, 14);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(497, 661);
+            this.panel5.Size = new System.Drawing.Size(497, 665);
             this.panel5.TabIndex = 7;
             // 
             // dataGridView2
@@ -754,17 +758,18 @@
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 30;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(497, 517);
+            this.dataGridView2.Size = new System.Drawing.Size(497, 521);
             this.dataGridView2.TabIndex = 29;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
             // idlvl2
             // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idlvl2.DefaultCellStyle = dataGridViewCellStyle8;
             this.idlvl2.HeaderText = "ID";
             this.idlvl2.Name = "idlvl2";
             this.idlvl2.ReadOnly = true;
-            this.idlvl2.Visible = false;
             this.idlvl2.Width = 5;
             // 
             // smodulenamelvl2
@@ -1159,9 +1164,9 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
+            this.button1.Size = new System.Drawing.Size(48, 30);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Add New";
+            this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -1212,7 +1217,7 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel17.Location = new System.Drawing.Point(919, 14);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(8, 661);
+            this.panel17.Size = new System.Drawing.Size(8, 665);
             this.panel17.TabIndex = 8;
             // 
             // panel22
@@ -1230,7 +1235,7 @@
             this.panel22.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel22.Location = new System.Drawing.Point(927, 14);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(497, 661);
+            this.panel22.Size = new System.Drawing.Size(497, 665);
             this.panel22.TabIndex = 9;
             // 
             // dataGridView3
@@ -1257,9 +1262,46 @@
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.RowTemplate.Height = 30;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(497, 489);
+            this.dataGridView3.Size = new System.Drawing.Size(497, 493);
             this.dataGridView3.TabIndex = 30;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Sub-Module Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 5;
+            // 
+            // formname
+            // 
+            this.formname.HeaderText = "Form Name";
+            this.formname.Name = "formname";
+            this.formname.ReadOnly = true;
+            this.formname.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 5;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.HeaderText = "Actions";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Width = 5;
             // 
             // panel92
             // 
@@ -1655,9 +1697,9 @@
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(0, 5);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 17);
+            this.label11.Size = new System.Drawing.Size(135, 17);
             this.label11.TabIndex = 9;
-            this.label11.Text = "Main Module (Level 2):";
+            this.label11.Text = "Sub-Module (Level 2):";
             // 
             // panel67
             // 
@@ -1744,6 +1786,7 @@
             this.panel61.Name = "panel61";
             this.panel61.Size = new System.Drawing.Size(497, 30);
             this.panel61.TabIndex = 15;
+            this.panel61.Paint += new System.Windows.Forms.PaintEventHandler(this.panel61_Paint);
             // 
             // button4
             // 
@@ -1754,9 +1797,9 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(0, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 30);
+            this.button4.Size = new System.Drawing.Size(48, 30);
             this.button4.TabIndex = 6;
-            this.button4.Text = "Add New";
+            this.button4.Text = "+";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -1801,47 +1844,11 @@
             this.panel24.Size = new System.Drawing.Size(495, 6);
             this.panel24.TabIndex = 11;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Sub-Module Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 5;
-            // 
-            // formname
-            // 
-            this.formname.HeaderText = "Form Name";
-            this.formname.Name = "formname";
-            this.formname.ReadOnly = true;
-            this.formname.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 5;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "Actions";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Width = 5;
-            // 
             // Module_Maintenance
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1626, 689);
+            this.ClientSize = new System.Drawing.Size(1460, 693);
             this.Controls.Add(this.panel22);
             this.Controls.Add(this.panel17);
             this.Controls.Add(this.panel5);
@@ -2016,20 +2023,12 @@
         private System.Windows.Forms.Panel panel55;
         private System.Windows.Forms.Panel panel54;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idlvl2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn smodulenamelvl2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statuslvl2;
-        private System.Windows.Forms.DataGridViewButtonColumn actionslvl2;
         private System.Windows.Forms.Panel panel46;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Panel panel56;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel57;
         private System.Windows.Forms.Panel panel60;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewButtonColumn xaction;
         private System.Windows.Forms.Panel panel34;
         private System.Windows.Forms.Panel panel59;
         private System.Windows.Forms.Panel panel43;
@@ -2084,10 +2083,18 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idlvl2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn smodulenamelvl2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statuslvl2;
+        private System.Windows.Forms.DataGridViewButtonColumn actionslvl2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn formname;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewButtonColumn xaction;
     }
 }

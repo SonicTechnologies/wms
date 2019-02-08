@@ -29,5 +29,7 @@ namespace wms.Entity_Class
         public Nullable<int> usr_uptdby { get; set; }
         public string crtdby { get; set; }
         public string uptdby { get; set; }
+        public Nullable<int> grp_id { get; set; }
+        public string grp_name { get; set; }
     }
 }
