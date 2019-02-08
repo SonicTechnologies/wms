@@ -240,29 +240,41 @@
     <Compile Include="Forms\Administration\Site\ST_Upload_Data.Designer.cs">
       <DependentUpon>ST_Upload_Data.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lv2_Module.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lv2_Module.Designer.cs">
-      <DependentUpon>Add_Lv2_Module.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lv3_Module.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lv3_Module.Designer.cs">
-      <DependentUpon>Add_Lv3_Module.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lvl1_Module.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Administration\Users\Authorizations\Add_Lvl1_Module.Designer.cs">
-      <DependentUpon>Add_Lvl1_Module.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Administration\Users\Authorizations\US_Authorization_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Administration\Users\Authorizations\US_Authorization_Form.Designer.cs">
       <DependentUpon>US_Authorization_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl1Module_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl1Module_Form.Designer.cs">
+      <DependentUpon>lvl1Module_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl2Module_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl2Module_Form.Designer.cs">
+      <DependentUpon>lvl2Module_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl3Module_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\lvl3Module_Form.Designer.cs">
+      <DependentUpon>lvl3Module_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\US_Groups_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Groups\US_Groups_Form.Designer.cs">
+      <DependentUpon>US_Groups_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Users_Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Users\Users_Maintenance.Designer.cs">
+      <DependentUpon>Users_Maintenance.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Administration\Users\US_Upload_Data.cs">
       <SubType>Form</SubType>
@@ -320,17 +332,23 @@
     <EmbeddedResource Include="Forms\Administration\Site\ST_Upload_Data.resx">
       <DependentUpon>ST_Upload_Data.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Administration\Users\Authorizations\Add_Lv2_Module.resx">
-      <DependentUpon>Add_Lv2_Module.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Administration\Users\Authorizations\Add_Lv3_Module.resx">
-      <DependentUpon>Add_Lv3_Module.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Administration\Users\Authorizations\Add_Lvl1_Module.resx">
-      <DependentUpon>Add_Lvl1_Module.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administration\Users\Authorizations\US_Authorization_Form.resx">
       <DependentUpon>US_Authorization_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Groups\lvl1Module_Form.resx">
+      <DependentUpon>lvl1Module_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Groups\lvl2Module_Form.resx">
+      <DependentUpon>lvl2Module_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Groups\lvl3Module_Form.resx">
+      <DependentUpon>lvl3Module_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Groups\US_Groups_Form.resx">
+      <DependentUpon>US_Groups_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Users\Users_Maintenance.resx">
+      <DependentUpon>Users_Maintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administration\Users\US_Upload_Data.resx">
       <DependentUpon>US_Upload_Data.cs</DependentUpon>
@@ -410,9 +428,6 @@
     <None Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Entity Class\wmsdb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>wmsdb.edmx</DependentUpon>
@@ -423,6 +438,12 @@
       <DependentUpon>wmsdb.edmx</DependentUpon>
       <LastGenOutput>wmsdb.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Administration\Users\Type\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

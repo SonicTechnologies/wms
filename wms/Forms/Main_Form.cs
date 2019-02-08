@@ -141,12 +141,13 @@ namespace wms
 
             int lvl1nodeid = getlvl1id(nodelvl1.Replace("&", ""));
 
-            var lvl2nodes = (from c in obj.WMS_MSTR_S1MODULE
-                             where c.mod_id == lvl1nodeid
+            var lvl2nodes = (from c in obj.WMS_LVL2M_VIEW
+                             where c.mod_id == lvl1nodeid && c.usr_id == loggedin_user.userId
                              select new
                              {
                                  c.s1mod_id,
-                                 c.s1mod_name
+                                 c.s1mod_name,
+                                 c.stat_desc
 
                              }).OrderBy(c => new { c.s1mod_id }).ToList();
             if (lvl2nodes.Count != 0)
@@ -158,8 +159,8 @@ namespace wms
                     
                     int lvl2nodeid = getlvl2id(xnode1.s1mod_name);
 
-                    var lvl3nodes = (from c in obj.WMS_MSTR_S2MODULE
-                                     where c.s1mod_id == lvl2nodeid
+                    var lvl3nodes = (from c in obj.WMS_LVL3M_VIEW
+                                     where c.s1mod_id == lvl2nodeid && c.usr_id == loggedin_user.userId
                                      select new
                                      {
                                          c.s2mod_id,

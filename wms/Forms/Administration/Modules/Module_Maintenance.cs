@@ -243,7 +243,7 @@ namespace wms.Forms.Administration.Modules
             {
                 dataGridView3.ColumnHeadersVisible = false;
             }
-            dataGridView3.ClearSelection();
+            dataGridView2.ClearSelection();
         }
 
         private void ModuleList()
@@ -938,6 +938,11 @@ namespace wms.Forms.Administration.Modules
         private void textBox9_TextChanged(object sender, EventArgs e)
         {
             SearchModlvl3();
+        }
+
+        private void panel61_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
