@@ -648,7 +648,7 @@ namespace wms.Forms.Administration.Users.Groups
 
                             foreach (var row in s1modid)
                             {
-                                var xs1modid = obj.WMS_MSTR_UGRPLVL2.Where(c => c.s1mod_id == row.s1mod_id).First();
+                                var xs1modid = obj.WMS_MSTR_UGRPLVL2.Where(c => c.s1mod_id == row.s1mod_id && c.grp_id == groupid).First();
                                 obj.WMS_MSTR_UGRPLVL2.Remove(xs1modid);
 
                                 var s2modid = (from c in obj.WMS_GRPLVL3_VIEW
@@ -664,7 +664,7 @@ namespace wms.Forms.Administration.Users.Groups
 
                                     foreach (var xrow in s2modid)
                                     {
-                                        var xs2modid = obj.WMS_MSTR_UGRPLVL3.Where(c => c.s2mod_id == xrow.s2mod_id).First();
+                                        var xs2modid = obj.WMS_MSTR_UGRPLVL3.Where(c => c.s2mod_id == xrow.s2mod_id && c.grp_id == groupid).First();
                                         obj.WMS_MSTR_UGRPLVL3.Remove(xs2modid);
                                     }
                                   
