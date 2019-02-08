@@ -16,7 +16,7 @@ namespace wms.Forms.Administration.Users.Authorizations
     public partial class Add_Lvl1_Module : Form
     {
         wmsdb obj = new wmsdb();
-       US_Authorization_Form uaf = (US_Authorization_Form)Application.OpenForms["US_Authorization_Form"];
+      
         public Add_Lvl1_Module()
         {
             InitializeComponent();
@@ -91,8 +91,9 @@ namespace wms.Forms.Administration.Users.Authorizations
                     MessageBox.Show("Successfully saved " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     getModule();
+                    var uaf = Application.OpenForms.OfType<US_Authorization_Form>().Single();
                     uaf.listItem();
-                    
+
 
                 }
                 else

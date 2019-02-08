@@ -82,8 +82,8 @@ namespace wms.Forms.Administration.Users.Authorizations
                                     usr_id = userId,
                                     s1mod_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString()),
                                     date_added = serverDate,
-                                    added_by = loggedin_user.userId,
-                                    lvl1mod_id=UserValidation.lvl1mod_id,
+                                    added_by = loggedin_user.userId
+                                
                                
 
                                  });
@@ -107,8 +107,9 @@ namespace wms.Forms.Administration.Users.Authorizations
         {
             int ID = Convert.ToInt32(comboBox1.SelectedValue.ToString());
 
-
+           
             var userId = US_Authorization_Form.userId;
+    
 
             var items = (from c in obj.WMS_MSTR_S1MODULE
                          join m in obj.WMS_MSTR_MODULE on c.mod_id equals m.mod_id

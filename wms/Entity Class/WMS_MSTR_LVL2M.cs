@@ -19,6 +19,5 @@ namespace wms.Entity_Class
         public Nullable<int> usr_id { get; set; }
         public Nullable<System.DateTime> date_added { get; set; }
         public Nullable<int> added_by { get; set; }
-        public int lvl1mod_id { get; set; }
     }
 }

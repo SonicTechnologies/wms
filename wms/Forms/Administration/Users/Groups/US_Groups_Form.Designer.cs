@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -87,6 +87,12 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panelB = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.grplvl1id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modidlvl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modnamelvl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpstatlvl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lvlaction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel49 = new System.Windows.Forms.Panel();
             this.panel45 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -103,6 +109,12 @@
             this.panel25 = new System.Windows.Forms.Panel();
             this.panelA = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.grpdl2id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpid2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s1modidlvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s1modnamelvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpstatlvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actionslvl2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel59 = new System.Windows.Forms.Panel();
             this.panel55 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -125,6 +137,12 @@
             this.panel30 = new System.Windows.Forms.Panel();
             this.panelC = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.grpdl3id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpid3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s2modidlvl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s2modnamelvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpstatlvl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actionslvl3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel69 = new System.Windows.Forms.Panel();
             this.panel70 = new System.Windows.Forms.Panel();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -154,24 +172,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel74 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.grplvl1id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grpid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modidlvl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modnamelvl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grpstatlvl1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lvlaction = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.grpdl2id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grpid2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s1modidlvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s1modnamelvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grpstatlvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actionslvl2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.grpdl3id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grpid3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s2modidlvl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s2modnamelvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grpstatlvl3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actionslvl3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel21.SuspendLayout();
@@ -219,7 +219,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(14, 1061);
+            this.panel12.Size = new System.Drawing.Size(14, 881);
             this.panel12.TabIndex = 4;
             // 
             // panel2
@@ -228,7 +228,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(1454, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(14, 1061);
+            this.panel2.Size = new System.Drawing.Size(14, 881);
             this.panel2.TabIndex = 15;
             // 
             // panel14
@@ -244,7 +244,7 @@
             // 
             this.panel15.BackColor = System.Drawing.Color.White;
             this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(14, 1047);
+            this.panel15.Location = new System.Drawing.Point(14, 867);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1440, 14);
             this.panel15.TabIndex = 17;
@@ -263,7 +263,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(14, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(370, 1033);
+            this.panel1.Size = new System.Drawing.Size(370, 853);
             this.panel1.TabIndex = 18;
             // 
             // dataGridView1
@@ -289,15 +289,15 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(370, 922);
+            this.dataGridView1.Size = new System.Drawing.Size(370, 742);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // modid
             // 
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.modid.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.modid.DefaultCellStyle = dataGridViewCellStyle1;
             this.modid.HeaderText = "ID";
             this.modid.Name = "modid";
             this.modid.ReadOnly = true;
@@ -312,8 +312,8 @@
             // 
             // status
             // 
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.status.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.status.DefaultCellStyle = dataGridViewCellStyle2;
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             this.status.ReadOnly = true;
@@ -692,7 +692,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel13.Location = new System.Drawing.Point(384, 14);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(8, 1033);
+            this.panel13.Size = new System.Drawing.Size(8, 853);
             this.panel13.TabIndex = 19;
             // 
             // panel5
@@ -781,6 +781,54 @@
             this.dataGridView2.TabIndex = 30;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
+            // 
+            // grplvl1id
+            // 
+            this.grplvl1id.HeaderText = "id";
+            this.grplvl1id.Name = "grplvl1id";
+            this.grplvl1id.ReadOnly = true;
+            this.grplvl1id.Visible = false;
+            this.grplvl1id.Width = 5;
+            // 
+            // grpid
+            // 
+            this.grpid.HeaderText = "grpid";
+            this.grpid.Name = "grpid";
+            this.grpid.ReadOnly = true;
+            this.grpid.Visible = false;
+            this.grpid.Width = 5;
+            // 
+            // modidlvl1
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.modidlvl1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.modidlvl1.HeaderText = "ID";
+            this.modidlvl1.Name = "modidlvl1";
+            this.modidlvl1.ReadOnly = true;
+            this.modidlvl1.Width = 5;
+            // 
+            // modnamelvl1
+            // 
+            this.modnamelvl1.HeaderText = "Module Name";
+            this.modnamelvl1.Name = "modnamelvl1";
+            this.modnamelvl1.ReadOnly = true;
+            this.modnamelvl1.Width = 5;
+            // 
+            // grpstatlvl1
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grpstatlvl1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.grpstatlvl1.HeaderText = "Status";
+            this.grpstatlvl1.Name = "grpstatlvl1";
+            this.grpstatlvl1.ReadOnly = true;
+            this.grpstatlvl1.Width = 5;
+            // 
+            // lvlaction
+            // 
+            this.lvlaction.HeaderText = "Actions";
+            this.lvlaction.Name = "lvlaction";
+            this.lvlaction.ReadOnly = true;
+            this.lvlaction.Width = 5;
             // 
             // panel49
             // 
@@ -974,6 +1022,54 @@
             this.dataGridView3.TabIndex = 31;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
+            // 
+            // grpdl2id
+            // 
+            this.grpdl2id.HeaderText = "grpdl2id";
+            this.grpdl2id.Name = "grpdl2id";
+            this.grpdl2id.ReadOnly = true;
+            this.grpdl2id.Visible = false;
+            this.grpdl2id.Width = 5;
+            // 
+            // grpid2
+            // 
+            this.grpid2.HeaderText = "grpid2";
+            this.grpid2.Name = "grpid2";
+            this.grpid2.ReadOnly = true;
+            this.grpid2.Visible = false;
+            this.grpid2.Width = 5;
+            // 
+            // s1modidlvl2
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.s1modidlvl2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.s1modidlvl2.HeaderText = "ID";
+            this.s1modidlvl2.Name = "s1modidlvl2";
+            this.s1modidlvl2.ReadOnly = true;
+            this.s1modidlvl2.Width = 5;
+            // 
+            // s1modnamelvl2
+            // 
+            this.s1modnamelvl2.HeaderText = "Sub Module";
+            this.s1modnamelvl2.Name = "s1modnamelvl2";
+            this.s1modnamelvl2.ReadOnly = true;
+            this.s1modnamelvl2.Width = 5;
+            // 
+            // grpstatlvl2
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grpstatlvl2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.grpstatlvl2.HeaderText = "Status";
+            this.grpstatlvl2.Name = "grpstatlvl2";
+            this.grpstatlvl2.ReadOnly = true;
+            this.grpstatlvl2.Width = 5;
+            // 
+            // actionslvl2
+            // 
+            this.actionslvl2.HeaderText = "Actions";
+            this.actionslvl2.Name = "actionslvl2";
+            this.actionslvl2.ReadOnly = true;
+            this.actionslvl2.Width = 5;
             // 
             // panel59
             // 
@@ -1227,6 +1323,54 @@
             this.dataGridView4.Size = new System.Drawing.Size(574, 171);
             this.dataGridView4.TabIndex = 34;
             this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
+            // 
+            // grpdl3id
+            // 
+            this.grpdl3id.HeaderText = "grpdl2id";
+            this.grpdl3id.Name = "grpdl3id";
+            this.grpdl3id.ReadOnly = true;
+            this.grpdl3id.Visible = false;
+            this.grpdl3id.Width = 5;
+            // 
+            // grpid3
+            // 
+            this.grpid3.HeaderText = "grpid3";
+            this.grpid3.Name = "grpid3";
+            this.grpid3.ReadOnly = true;
+            this.grpid3.Visible = false;
+            this.grpid3.Width = 5;
+            // 
+            // s2modidlvl3
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.s2modidlvl3.DefaultCellStyle = dataGridViewCellStyle7;
+            this.s2modidlvl3.HeaderText = "ID";
+            this.s2modidlvl3.Name = "s2modidlvl3";
+            this.s2modidlvl3.ReadOnly = true;
+            this.s2modidlvl3.Width = 5;
+            // 
+            // s2modnamelvl2
+            // 
+            this.s2modnamelvl2.HeaderText = "Sub Module";
+            this.s2modnamelvl2.Name = "s2modnamelvl2";
+            this.s2modnamelvl2.ReadOnly = true;
+            this.s2modnamelvl2.Width = 5;
+            // 
+            // grpstatlvl3
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grpstatlvl3.DefaultCellStyle = dataGridViewCellStyle8;
+            this.grpstatlvl3.HeaderText = "Status";
+            this.grpstatlvl3.Name = "grpstatlvl3";
+            this.grpstatlvl3.ReadOnly = true;
+            this.grpstatlvl3.Width = 5;
+            // 
+            // actionslvl3
+            // 
+            this.actionslvl3.HeaderText = "Actions";
+            this.actionslvl3.Name = "actionslvl3";
+            this.actionslvl3.ReadOnly = true;
+            this.actionslvl3.Width = 5;
             // 
             // panel69
             // 
@@ -1506,7 +1650,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(392, 56);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(591, 991);
+            this.panel9.Size = new System.Drawing.Size(591, 811);
             this.panel9.TabIndex = 27;
             // 
             // panel74
@@ -1527,155 +1671,11 @@
             this.panel22.Size = new System.Drawing.Size(574, 8);
             this.panel22.TabIndex = 23;
             // 
-            // grplvl1id
-            // 
-            this.grplvl1id.HeaderText = "id";
-            this.grplvl1id.Name = "grplvl1id";
-            this.grplvl1id.ReadOnly = true;
-            this.grplvl1id.Visible = false;
-            this.grplvl1id.Width = 5;
-            // 
-            // grpid
-            // 
-            this.grpid.HeaderText = "grpid";
-            this.grpid.Name = "grpid";
-            this.grpid.ReadOnly = true;
-            this.grpid.Visible = false;
-            this.grpid.Width = 5;
-            // 
-            // modidlvl1
-            // 
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.modidlvl1.DefaultCellStyle = dataGridViewCellStyle51;
-            this.modidlvl1.HeaderText = "ID";
-            this.modidlvl1.Name = "modidlvl1";
-            this.modidlvl1.ReadOnly = true;
-            this.modidlvl1.Width = 5;
-            // 
-            // modnamelvl1
-            // 
-            this.modnamelvl1.HeaderText = "Module Name";
-            this.modnamelvl1.Name = "modnamelvl1";
-            this.modnamelvl1.ReadOnly = true;
-            this.modnamelvl1.Width = 5;
-            // 
-            // grpstatlvl1
-            // 
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grpstatlvl1.DefaultCellStyle = dataGridViewCellStyle52;
-            this.grpstatlvl1.HeaderText = "Status";
-            this.grpstatlvl1.Name = "grpstatlvl1";
-            this.grpstatlvl1.ReadOnly = true;
-            this.grpstatlvl1.Width = 5;
-            // 
-            // lvlaction
-            // 
-            this.lvlaction.HeaderText = "Actions";
-            this.lvlaction.Name = "lvlaction";
-            this.lvlaction.ReadOnly = true;
-            this.lvlaction.Width = 5;
-            // 
-            // grpdl2id
-            // 
-            this.grpdl2id.HeaderText = "grpdl2id";
-            this.grpdl2id.Name = "grpdl2id";
-            this.grpdl2id.ReadOnly = true;
-            this.grpdl2id.Visible = false;
-            this.grpdl2id.Width = 5;
-            // 
-            // grpid2
-            // 
-            this.grpid2.HeaderText = "grpid2";
-            this.grpid2.Name = "grpid2";
-            this.grpid2.ReadOnly = true;
-            this.grpid2.Visible = false;
-            this.grpid2.Width = 5;
-            // 
-            // s1modidlvl2
-            // 
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.s1modidlvl2.DefaultCellStyle = dataGridViewCellStyle53;
-            this.s1modidlvl2.HeaderText = "ID";
-            this.s1modidlvl2.Name = "s1modidlvl2";
-            this.s1modidlvl2.ReadOnly = true;
-            this.s1modidlvl2.Width = 5;
-            // 
-            // s1modnamelvl2
-            // 
-            this.s1modnamelvl2.HeaderText = "Sub Module";
-            this.s1modnamelvl2.Name = "s1modnamelvl2";
-            this.s1modnamelvl2.ReadOnly = true;
-            this.s1modnamelvl2.Width = 5;
-            // 
-            // grpstatlvl2
-            // 
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grpstatlvl2.DefaultCellStyle = dataGridViewCellStyle54;
-            this.grpstatlvl2.HeaderText = "Status";
-            this.grpstatlvl2.Name = "grpstatlvl2";
-            this.grpstatlvl2.ReadOnly = true;
-            this.grpstatlvl2.Width = 5;
-            // 
-            // actionslvl2
-            // 
-            this.actionslvl2.HeaderText = "Actions";
-            this.actionslvl2.Name = "actionslvl2";
-            this.actionslvl2.ReadOnly = true;
-            this.actionslvl2.Width = 5;
-            // 
-            // grpdl3id
-            // 
-            this.grpdl3id.HeaderText = "grpdl2id";
-            this.grpdl3id.Name = "grpdl3id";
-            this.grpdl3id.ReadOnly = true;
-            this.grpdl3id.Visible = false;
-            this.grpdl3id.Width = 5;
-            // 
-            // grpid3
-            // 
-            this.grpid3.HeaderText = "grpid3";
-            this.grpid3.Name = "grpid3";
-            this.grpid3.ReadOnly = true;
-            this.grpid3.Visible = false;
-            this.grpid3.Width = 5;
-            // 
-            // s2modidlvl3
-            // 
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.s2modidlvl3.DefaultCellStyle = dataGridViewCellStyle55;
-            this.s2modidlvl3.HeaderText = "ID";
-            this.s2modidlvl3.Name = "s2modidlvl3";
-            this.s2modidlvl3.ReadOnly = true;
-            this.s2modidlvl3.Width = 5;
-            // 
-            // s2modnamelvl2
-            // 
-            this.s2modnamelvl2.HeaderText = "Sub Module";
-            this.s2modnamelvl2.Name = "s2modnamelvl2";
-            this.s2modnamelvl2.ReadOnly = true;
-            this.s2modnamelvl2.Width = 5;
-            // 
-            // grpstatlvl3
-            // 
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grpstatlvl3.DefaultCellStyle = dataGridViewCellStyle56;
-            this.grpstatlvl3.HeaderText = "Status";
-            this.grpstatlvl3.Name = "grpstatlvl3";
-            this.grpstatlvl3.ReadOnly = true;
-            this.grpstatlvl3.Width = 5;
-            // 
-            // actionslvl3
-            // 
-            this.actionslvl3.HeaderText = "Actions";
-            this.actionslvl3.Name = "actionslvl3";
-            this.actionslvl3.ReadOnly = true;
-            this.actionslvl3.Width = 5;
-            // 
             // US_Groups_Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1468, 1061);
+            this.ClientSize = new System.Drawing.Size(1468, 881);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
