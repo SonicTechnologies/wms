@@ -78,7 +78,6 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(588, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 17);
@@ -133,7 +132,6 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.Info;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
             this.textBox1.Location = new System.Drawing.Point(0, 5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(401, 25);
@@ -307,9 +305,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(0, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(316, 21);
+            this.label3.Size = new System.Drawing.Size(279, 21);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Customer Maintenance - Upload Excel File";
+            this.label3.Text = "Item Maintenance - Upload Excel File";
             // 
             // panel18
             // 
@@ -343,7 +341,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CM_Upload_Data";

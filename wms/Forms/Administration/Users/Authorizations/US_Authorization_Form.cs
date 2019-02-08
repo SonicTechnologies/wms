@@ -316,13 +316,10 @@ namespace wms.Forms.Administration.Users.Authorizations
             textBox6.Text = "";
             togglelvl1();
             panel7.Height = 0;
-
             dataGridView1.Rows.Clear();
             dataGridView1.ColumnHeadersVisible = false;
-
             dataGridView2.Rows.Clear();
             dataGridView2.ColumnHeadersVisible = false;
-
             dataGridView3.Rows.Clear();
             dataGridView3.ColumnHeadersVisible = false;
             button1.Enabled = false;
@@ -490,10 +487,6 @@ namespace wms.Forms.Administration.Users.Authorizations
             listItem();
         }
 
-
-
-      
-
         private void textBox7_Enter(object sender, EventArgs e)
         {
             var tb = sender as TextBox;
@@ -619,13 +612,13 @@ namespace wms.Forms.Administration.Users.Authorizations
             if(e.ColumnIndex==4)
             {
 
-                DialogResult dialog = MessageBox.Show("Are you sure you want to remove " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + "? " , "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dialog = MessageBox.Show("Are you sure you want to remove " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + "?" , "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialog == DialogResult.Yes)
                 {
 
                     Lvl1DeleteModule();
 
-                    MessageBox.Show("Successfully deleted " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully removed " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     listItem();
                 }
@@ -648,7 +641,7 @@ namespace wms.Forms.Administration.Users.Authorizations
 
                     Lvl2DeleteModule();
 
-                    MessageBox.Show("Successfully deleted " + dataGridView2.CurrentRow.Cells[3].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully removed " + dataGridView2.CurrentRow.Cells[3].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     listItem();
@@ -674,7 +667,7 @@ namespace wms.Forms.Administration.Users.Authorizations
 
                     Lvl3DeleteModule();
 
-                    MessageBox.Show("Successfully deleted " + dataGridView3.CurrentRow.Cells[3].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully removed " + dataGridView3.CurrentRow.Cells[3].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     listItem();
