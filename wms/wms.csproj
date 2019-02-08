@@ -90,6 +90,15 @@
     <Compile Include="Entity Class\WMS_CUST_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_GRPLVL1_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_GRPLVL2_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_GRPLVL3_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_INVTY_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
