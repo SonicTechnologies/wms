@@ -12,11 +12,11 @@ namespace wms.Entity_Class
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using wms.Forms;
+    
     public partial class wmsdb : DbContext
     {
         public wmsdb()
-            : base(Select_Server_Form.dbconn)
+            : base("name=wmsdb")
         {
         }
     
@@ -50,11 +50,11 @@ namespace wms.Entity_Class
         public virtual DbSet<WMS_MSTR_UGRPLVL2> WMS_MSTR_UGRPLVL2 { get; set; }
         public virtual DbSet<WMS_MSTR_UGRPLVL3> WMS_MSTR_UGRPLVL3 { get; set; }
         public virtual DbSet<WMS_MSTR_LVL1M> WMS_MSTR_LVL1M { get; set; }
-        public virtual DbSet<WMS_MSTR_LVL2M> WMS_MSTR_LVL2M { get; set; }
-        public virtual DbSet<WMS_MSTR_LVL3M> WMS_MSTR_LVL3M { get; set; }
         public virtual DbSet<WMS_GRPLVL1_VIEW> WMS_GRPLVL1_VIEW { get; set; }
         public virtual DbSet<WMS_GRPLVL2_VIEW> WMS_GRPLVL2_VIEW { get; set; }
         public virtual DbSet<WMS_GRPLVL3_VIEW> WMS_GRPLVL3_VIEW { get; set; }
         public virtual DbSet<WMS_USRS_VIEW> WMS_USRS_VIEW { get; set; }
+        public virtual DbSet<WMS_MSTR_LVL2M> WMS_MSTR_LVL2M { get; set; }
+        public virtual DbSet<WMS_MSTR_LVL3M> WMS_MSTR_LVL3M { get; set; }
     }
 }

@@ -76,7 +76,6 @@
           <Property Name="usr_id" Type="int" />
           <Property Name="date_added" Type="datetime" />
           <Property Name="added_by" Type="int" />
-          <Property Name="lvl1mod_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="WMS_MSTR_LVL3M">
           <Key>
@@ -87,7 +86,6 @@
           <Property Name="usr_id" Type="int" />
           <Property Name="date_added" Type="datetime" />
           <Property Name="added_by" Type="int" />
-          <Property Name="lvl2mod_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="WMS_MSTR_MODULE">
           <Key>
@@ -845,12 +843,12 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySet Name="WMS_MSTR_UGRPLVL2" EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL2" />
           <EntitySet Name="WMS_MSTR_UGRPLVL3" EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL3" />
           <EntitySet Name="WMS_MSTR_LVL1M" EntityType="wmsdbmodel.WMS_MSTR_LVL1M" />
-          <EntitySet Name="WMS_MSTR_LVL2M" EntityType="wmsdbmodel.WMS_MSTR_LVL2M" />
-          <EntitySet Name="WMS_MSTR_LVL3M" EntityType="wmsdbmodel.WMS_MSTR_LVL3M" />
           <EntitySet Name="WMS_GRPLVL1_VIEW" EntityType="wmsdbmodel.WMS_GRPLVL1_VIEW" />
           <EntitySet Name="WMS_GRPLVL2_VIEW" EntityType="wmsdbmodel.WMS_GRPLVL2_VIEW" />
           <EntitySet Name="WMS_GRPLVL3_VIEW" EntityType="wmsdbmodel.WMS_GRPLVL3_VIEW" />
           <EntitySet Name="WMS_USRS_VIEW" EntityType="wmsdbmodel.WMS_USRS_VIEW" />
+          <EntitySet Name="WMS_MSTR_LVL2M" EntityType="wmsdbmodel.WMS_MSTR_LVL2M" />
+          <EntitySet Name="WMS_MSTR_LVL3M" EntityType="wmsdbmodel.WMS_MSTR_LVL3M" />
         </EntityContainer>
         <EntityType Name="WMS_TYPE_STAT">
           <Key>
@@ -1145,28 +1143,6 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="date_added" Type="DateTime" Precision="3" />
           <Property Name="added_by" Type="Int32" />
         </EntityType>
-        <EntityType Name="WMS_MSTR_LVL2M">
-          <Key>
-            <PropertyRef Name="lvl2mod_id" />
-          </Key>
-          <Property Name="lvl2mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="s1mod_id" Type="Int32" />
-          <Property Name="usr_id" Type="Int32" />
-          <Property Name="date_added" Type="DateTime" Precision="3" />
-          <Property Name="added_by" Type="Int32" />
-          <Property Name="lvl1mod_id" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="WMS_MSTR_LVL3M">
-          <Key>
-            <PropertyRef Name="lvl3mod_id" />
-          </Key>
-          <Property Name="lvl3mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="s2mod_id" Type="Int32" />
-          <Property Name="usr_id" Type="Int32" />
-          <Property Name="date_added" Type="DateTime" Precision="3" />
-          <Property Name="added_by" Type="Int32" />
-          <Property Name="lvl2mod_id" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="WMS_GRPLVL1_VIEW">
           <Key>
             <PropertyRef Name="grpdl1_id" />
@@ -1251,6 +1227,26 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="uptdby" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
           <Property Name="grp_id" Type="Int32" />
           <Property Name="grp_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_LVL2M">
+          <Key>
+            <PropertyRef Name="lvl2mod_id" />
+          </Key>
+          <Property Name="lvl2mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="s1mod_id" Type="Int32" />
+          <Property Name="usr_id" Type="Int32" />
+          <Property Name="date_added" Type="DateTime" Precision="3" />
+          <Property Name="added_by" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_LVL3M">
+          <Key>
+            <PropertyRef Name="lvl3mod_id" />
+          </Key>
+          <Property Name="lvl3mod_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="s2mod_id" Type="Int32" />
+          <Property Name="usr_id" Type="Int32" />
+          <Property Name="date_added" Type="DateTime" Precision="3" />
+          <Property Name="added_by" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1618,30 +1614,6 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="WMS_MSTR_LVL2M">
-            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_LVL2M">
-              <MappingFragment StoreEntitySet="WMS_MSTR_LVL2M">
-                <ScalarProperty Name="lvl1mod_id" ColumnName="lvl1mod_id" />
-                <ScalarProperty Name="added_by" ColumnName="added_by" />
-                <ScalarProperty Name="date_added" ColumnName="date_added" />
-                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
-                <ScalarProperty Name="s1mod_id" ColumnName="s1mod_id" />
-                <ScalarProperty Name="lvl2mod_id" ColumnName="lvl2mod_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="WMS_MSTR_LVL3M">
-            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_LVL3M">
-              <MappingFragment StoreEntitySet="WMS_MSTR_LVL3M">
-                <ScalarProperty Name="lvl2mod_id" ColumnName="lvl2mod_id" />
-                <ScalarProperty Name="added_by" ColumnName="added_by" />
-                <ScalarProperty Name="date_added" ColumnName="date_added" />
-                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
-                <ScalarProperty Name="s2mod_id" ColumnName="s2mod_id" />
-                <ScalarProperty Name="lvl3mod_id" ColumnName="lvl3mod_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="WMS_GRPLVL1_VIEW">
             <EntityTypeMapping TypeName="wmsdbmodel.WMS_GRPLVL1_VIEW">
               <MappingFragment StoreEntitySet="WMS_GRPLVL1_VIEW">
@@ -1700,6 +1672,28 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
                 <ScalarProperty Name="usr_password" ColumnName="usr_password" />
                 <ScalarProperty Name="usr_username" ColumnName="usr_username" />
                 <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_LVL2M">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_LVL2M">
+              <MappingFragment StoreEntitySet="WMS_MSTR_LVL2M">
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+                <ScalarProperty Name="s1mod_id" ColumnName="s1mod_id" />
+                <ScalarProperty Name="lvl2mod_id" ColumnName="lvl2mod_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_LVL3M">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_LVL3M">
+              <MappingFragment StoreEntitySet="WMS_MSTR_LVL3M">
+                <ScalarProperty Name="added_by" ColumnName="added_by" />
+                <ScalarProperty Name="date_added" ColumnName="date_added" />
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+                <ScalarProperty Name="s2mod_id" ColumnName="s2mod_id" />
+                <ScalarProperty Name="lvl3mod_id" ColumnName="lvl3mod_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -689,6 +689,7 @@ namespace wms.Forms.Administration.Users
             }
         }
 
+        int group_id = 0;
         private void button4_Click(object sender, EventArgs e)
         {
             if (button4.Text == "Save")
@@ -743,6 +744,7 @@ namespace wms.Forms.Administration.Users
                                                             select c.usr_username).FirstOrDefault();
                                                 if (user == null)
                                                 {
+                                                    group_id = Convert.ToInt32(xusergroupid);
                                                     var customer = obj.Set<WMS_MSTR_USRS>();
                                                     customer.Add(new WMS_MSTR_USRS
                                                     {
@@ -755,9 +757,9 @@ namespace wms.Forms.Administration.Users
                                                         stat_id = Convert.ToInt32(xstatid),
                                                         usr_datecrtd = serverDate,
                                                         usr_crtdby = loggedin_user.userId
-
                                                     });
                                                     obj.SaveChanges();
+                                                    AddDefaultModuleLvl1();
                                                     MessageBox.Show("Successfully saved User.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                     comboBox1.Text = "Username";
                                                     textBox1.Text = "";
@@ -883,7 +885,6 @@ namespace wms.Forms.Administration.Users
                                                     x.stat_id = Convert.ToInt32(xstatid);
                                                     x.usr_dateuptd = serverDate;
                                                     x.usr_uptdby = loggedin_user.userId;
-
                                                 });
                                                 obj.SaveChanges();
                                                 MessageBox.Show("Successfully updated User.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -891,7 +892,6 @@ namespace wms.Forms.Administration.Users
                                                 textBox1.Text = "";
                                                 textBox1.Text = textBox2.Text.Trim();
                                                 disableAddControls();
-
                                             }
                                             else if (dialog == DialogResult.No)
                                             {
@@ -943,6 +943,85 @@ namespace wms.Forms.Administration.Users
             }
         }
 
+        public void AddDefaultModuleLvl1()
+        {
+            string username = textBox3.Text.Trim();
+            var getUserId = obj.WMS_MSTR_USRS.Where(u => u.usr_username == username).SingleOrDefault();
+            var userid = getUserId.usr_id;
+            var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
+            DateTime serverDate = dateQuery.AsEnumerable().First();
+
+            var lvl1GrpMod = (from m in obj.WMS_GRPLVL1_VIEW where m.grp_id == group_id select new { m.mod_id, m.stat_desc });
+            foreach (var mod in lvl1GrpMod)
+            {
+                var users = obj.Set<WMS_MSTR_LVL1M>();
+                users.Add(new WMS_MSTR_LVL1M
+                {
+                    usr_id = userid,
+                    mod_id = mod.mod_id,
+                    date_added = serverDate,
+                    added_by = loggedin_user.userId
+                });
+            }
+            obj.SaveChanges();
+            AddDefaultModuleLvl2();
+        }
+
+        public List<int> lvl1IdArray = new List<int>();
+        public void AddDefaultModuleLvl2()
+        {
+            string username = textBox3.Text.Trim();
+            var getUserId = obj.WMS_MSTR_USRS.Where(u => u.usr_username == username).SingleOrDefault();
+            var userid = getUserId.usr_id;
+
+            var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
+            DateTime serverDate = dateQuery.AsEnumerable().First();
+
+            var lvl2GrpMod = (from m in obj.WMS_GRPLVL2_VIEW where m.grp_id == group_id select new { m.s1mod_id, m.stat_desc });
+            int x = 0;
+            foreach (var mod in lvl2GrpMod)
+            {
+                var users = obj.Set<WMS_MSTR_LVL2M>();
+                users.Add(new WMS_MSTR_LVL2M
+                {
+                    usr_id = userid,
+                    s1mod_id = mod.s1mod_id,
+                    date_added = serverDate,
+                    added_by = loggedin_user.userId
+                });
+                x++;
+            }
+            obj.SaveChanges();
+            AddDefaultModuleLvl3();
+        }
+
+        public List<int> lvl2IdArray = new List<int>();
+        public void AddDefaultModuleLvl3()
+        {
+            string username = textBox3.Text.Trim();
+            var getUserId = obj.WMS_MSTR_USRS.Where(u => u.usr_username == username).SingleOrDefault();
+            var userid = getUserId.usr_id;
+
+            var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
+            DateTime serverDate = dateQuery.AsEnumerable().First();
+
+            var lvl3GrpMod = (from m in obj.WMS_GRPLVL3_VIEW where m.grp_id == group_id select new { m.s2mod_id, m.stat_desc });
+            foreach (var mod in lvl3GrpMod)
+            {
+                var users = obj.Set<WMS_MSTR_LVL3M>();
+                users.Add(new WMS_MSTR_LVL3M
+                {
+                    usr_id = userid,
+                    s2mod_id = mod.s2mod_id,
+                    date_added = serverDate,
+                    added_by = loggedin_user.userId
+                });
+            }
+            obj.SaveChanges();
+            lvl1IdArray.Clear();
+            lvl2IdArray.Clear();
+            MessageBox.Show("Successfully Added Default User Module.");
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             US_Upload_Data usup = new US_Upload_Data();
