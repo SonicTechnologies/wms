@@ -210,12 +210,23 @@
     <Compile Include="Forms\Administration\Modules\Form_List.Designer.cs">
       <DependentUpon>Form_List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Administration\Modules\Form_Maintenance.Designer.cs" />
     <Compile Include="Forms\Administration\Modules\Module_Maintenance.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Administration\Modules\Module_Maintenance.Designer.cs">
       <DependentUpon>Module_Maintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Salesman\SB_Booking_Upload_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Salesman\SB_Booking_Upload_Data.Designer.cs">
+      <DependentUpon>SB_Booking_Upload_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\Salesman\SM_Booking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\Salesman\SM_Booking.Designer.cs">
+      <DependentUpon>SM_Booking.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Administration\Site\Site_Maintenance.cs">
       <SubType>Form</SubType>
@@ -327,9 +338,14 @@
     <EmbeddedResource Include="Forms\Administration\Modules\Form_List.resx">
       <DependentUpon>Form_List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Administration\Modules\Form_Maintenance.resx" />
     <EmbeddedResource Include="Forms\Administration\Modules\Module_Maintenance.resx">
       <DependentUpon>Module_Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Salesman\SB_Booking_Upload_Data.resx">
+      <DependentUpon>SB_Booking_Upload_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\Salesman\SM_Booking.resx">
+      <DependentUpon>SM_Booking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Administration\Site\Site_Maintenance.resx">
       <DependentUpon>Site_Maintenance.cs</DependentUpon>
@@ -516,7 +532,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
-    <Folder Include="Forms\Administration\Salesman\" />
     <Folder Include="Forms\Administration\Users\Type\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
