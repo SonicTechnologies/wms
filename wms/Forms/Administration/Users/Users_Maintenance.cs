@@ -690,6 +690,7 @@ namespace wms.Forms.Administration.Users
         }
 
         int group_id = 0;
+        bool isUpdate = false;
         private void button4_Click(object sender, EventArgs e)
         {
             if (button4.Text == "Save")
@@ -711,7 +712,7 @@ namespace wms.Forms.Administration.Users
                                             DialogResult dialog = MessageBox.Show("Are you sure you want to save User?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                             if (dialog == DialogResult.Yes)
                                             {
-
+                                                isUpdate = false;
                                                 string xstatdesc = comboBox4.Text;
                                                 int? xstatid = null;
                                                 var statid = (from c in obj.WMS_TYPE_STAT
@@ -758,9 +759,7 @@ namespace wms.Forms.Administration.Users
                                                         usr_datecrtd = serverDate,
                                                         usr_crtdby = loggedin_user.userId
                                                     });
-
-
-
+                                                    
                                                     obj.SaveChanges();
                                                     AddDefaultModuleLvl1();
                                                     MessageBox.Show("Successfully saved User.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -768,8 +767,6 @@ namespace wms.Forms.Administration.Users
                                                     textBox1.Text = "";
                                                     textBox1.Text = textBox3.Text.Trim();
                                                     disableAddControls();
-
-
                                                 }
                                                 else
                                                 {
@@ -847,7 +844,7 @@ namespace wms.Forms.Administration.Users
                                             DialogResult dialog = MessageBox.Show("Are you sure you want to update User?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                             if (dialog == DialogResult.Yes)
                                             {
-
+                                                isUpdate = true;
                                                 string xstatdesc = comboBox4.Text;
                                                 int? xstatid = null;
                                                 var statid = (from c in obj.WMS_TYPE_STAT
@@ -871,6 +868,7 @@ namespace wms.Forms.Administration.Users
                                                                     select c.grp_id).FirstOrDefault();
 
                                                 xusergroupid = xxusergroupid;
+                                                group_id = Convert.ToInt32(xusergroupid);
 
                                                 var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
                                                 DateTime serverDate = dateQuery.AsEnumerable().First();
@@ -891,120 +889,7 @@ namespace wms.Forms.Administration.Users
                                                 });
 
                                                 obj.SaveChanges();
-
-                                                //var GModule = (from m in obj.WMS_MSTR_UGRPLVL1
-                                                //               where m.grp_id == xstatid
-                                                //               select new
-                                                //               {
-                                                //                   m.mod_id,
-                                                              
-                                                //               }).ToList();
-
-                                            
-
-                                                //var AccessLvl1Module= obj.Set<WMS_MSTR_LVL1M>();
-                                                //foreach (var m in GModule)
-                                                //{
-                                                //    var AccessModuleFilter = (from d in obj.WMS_MSTR_LVL1M where !obj.WMS_MSTR_LVL1M.Any(lvl1 => lvl1.mod_id == m.mod_id && lvl1.usr_id == userid) select d).FirstOrDefault();
-                                                //    if (AccessModuleFilter != null)
-                                                //    {
-                                                //        AccessLvl1Module.Add(new WMS_MSTR_LVL1M
-                                                //        {
-                                                //            usr_id = userid,
-                                                //            date_added = serverDate,
-                                                //            added_by = loggedin_user.userId,
-                                                //            mod_id = m.mod_id
-                                                            
-
-                                                //        });
-                                                //    }
-                                                //}
-                                                //obj.SaveChanges();
-
-
-
-                                                //var G2Module = (from m in obj.WMS_MSTR_UGRPLVL2
-
-                                                //                where m.grp_id == xstatid
-                                                //                select new
-                                                //                {
-                                                //                    m.s1mod_id,
-
-                                                //                }).ToList();
-
-
-                                                //var AccessLvl2Module = obj.Set<WMS_MSTR_LVL2M>();
-                                                //foreach (var m in G2Module)
-                                                //{
-
-                                                // //   var AccessModuleFilter = (from d in obj.WMS_MSTR_LVL2M where !obj.WMS_MSTR_LVL2M.Any(lvl2 => lvl2.s1mod_id == m.s1mod_id && lvl2.usr_id == userid) select d).FirstOrDefault();
-                                                
-
-                                                //    var Lvl1ID = (from c in obj.WMS_MSTR_LVL1M
-                                                //                          join d in obj.WMS_MSTR_MODULE on c.mod_id equals d.mod_id
-                                                //                          where c.usr_id == userid &&
-                                                //                          c.mod_id == d.mod_id
-                                                //                          select new { c.usr_id, c.lvl1mod_id }).FirstOrDefault();
-                                                //    if (Lvl1ID != null)
-                                                //    {
-                                                //        AccessLvl2Module.Add(new WMS_MSTR_LVL2M
-                                                //        {
-                                                //            usr_id = userid,
-                                                //            date_added = serverDate,
-                                                //            added_by = loggedin_user.userId,
-                                                //            lvl1mod_id = Lvl1ID.lvl1mod_id,
-                                                //            s1mod_id=m.s1mod_id,
-
-                                                //        });
-                                                //    }
-                                                //}
-
-                                                //obj.SaveChanges();
-
-
-                                                //var G3Module = (from m in obj.WMS_MSTR_UGRPLVL3
-
-                                                //                where m.grp_id == xstatid
-                                                //                select new
-                                                //                {
-                                                //                    m.s2mod_id,
-
-                                                //                }).ToList();
-
-
-                                                //var AccessLvl3Module = obj.Set<WMS_MSTR_LVL3M>();
-                                                //foreach (var m in G2Module)
-                                                //{
-
-                                                //    //   var AccessModuleFilter = (from d in obj.WMS_MSTR_LVL2M where !obj.WMS_MSTR_LVL2M.Any(lvl2 => lvl2.s1mod_id == m.s1mod_id && lvl2.usr_id == userid) select d).FirstOrDefault();
-
-
-                                                //    var Lvl3ID = (from c in obj.WMS_MSTR_LVL2M
-                                                //                  join d in obj.WMS_MSTR_MODULE on  equals d.mod_id
-                                                //                  where c.usr_id == userid &&
-                                                //                  c.mod_id == d.mod_id
-                                                //                  select new { c.usr_id, c.lvl1mod_id }).FirstOrDefault();
-                                                //    if (Lvl1ID != null)
-                                                //    {
-                                                //        AccessLvl2Module.Add(new WMS_MSTR_LVL2M
-                                                //        {
-                                                //            usr_id = userid,
-                                                //            date_added = serverDate,
-                                                //            added_by = loggedin_user.userId,
-                                                //            lvl1mod_id = Lvl1ID.lvl1mod_id,
-                                                //            s1mod_id = m.s1mod_id,
-
-                                                //        });
-                                                //    }
-                                                //}
-
-                                                //obj.SaveChanges();
-
-
-
-
-
-
+                                                AddDefaultModuleLvl1();
                                                 MessageBox.Show("Successfully updated User.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                 comboBox1.Text = "User ID";
                                                 textBox1.Text = "";
@@ -1069,6 +954,11 @@ namespace wms.Forms.Administration.Users
             var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
             DateTime serverDate = dateQuery.AsEnumerable().First();
 
+            if (isUpdate == true) {
+                obj.WMS_MSTR_LVL1M.RemoveRange(obj.WMS_MSTR_LVL1M.Where(x => x.usr_id == userid));
+                obj.WMS_MSTR_LVL2M.RemoveRange(obj.WMS_MSTR_LVL2M.Where(y => y.usr_id == userid));
+                obj.WMS_MSTR_LVL3M.RemoveRange(obj.WMS_MSTR_LVL3M.Where(z => z.usr_id == userid));
+            }
             var lvl1GrpMod = (from m in obj.WMS_GRPLVL1_VIEW where m.grp_id == group_id select new { m.mod_id, m.stat_desc });
             foreach (var mod in lvl1GrpMod)
             {
@@ -1140,6 +1030,7 @@ namespace wms.Forms.Administration.Users
             lvl2IdArray.Clear();
             MessageBox.Show("Successfully Added Default User Module.");
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
             US_Upload_Data usup = new US_Upload_Data();
