@@ -30,6 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.custid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel56 = new System.Windows.Forms.Panel();
@@ -43,10 +47,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.custid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel20.SuspendLayout();
             this.panel56.SuspendLayout();
@@ -80,6 +80,41 @@
             this.dataGridView1.Size = new System.Drawing.Size(441, 318);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // custid
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.custid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.custid.HeaderText = "ID";
+            this.custid.Name = "custid";
+            this.custid.ReadOnly = true;
+            this.custid.Visible = false;
+            this.custid.Width = 5;
+            // 
+            // moduleName
+            // 
+            this.moduleName.HeaderText = "Module Name";
+            this.moduleName.Name = "moduleName";
+            this.moduleName.ReadOnly = true;
+            this.moduleName.Width = 5;
+            // 
+            // address
+            // 
+            this.address.HeaderText = "Date Created";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Width = 5;
+            // 
+            // Add
+            // 
+            this.Add.HeaderText = "Action";
+            this.Add.Name = "Add";
+            this.Add.ReadOnly = true;
+            this.Add.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Add.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Add.Text = "Add";
+            this.Add.UseColumnTextForButtonValue = true;
+            this.Add.Width = 5;
             // 
             // panel20
             // 
@@ -204,41 +239,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(441, 10);
             this.panel2.TabIndex = 31;
-            // 
-            // custid
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.custid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.custid.HeaderText = "ID";
-            this.custid.Name = "custid";
-            this.custid.ReadOnly = true;
-            this.custid.Visible = false;
-            this.custid.Width = 5;
-            // 
-            // moduleName
-            // 
-            this.moduleName.HeaderText = "Module Name";
-            this.moduleName.Name = "moduleName";
-            this.moduleName.ReadOnly = true;
-            this.moduleName.Width = 5;
-            // 
-            // address
-            // 
-            this.address.HeaderText = "Date Created";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            this.address.Width = 5;
-            // 
-            // Add
-            // 
-            this.Add.HeaderText = "Action";
-            this.Add.Name = "Add";
-            this.Add.ReadOnly = true;
-            this.Add.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Add.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Add.Text = "Add";
-            this.Add.UseColumnTextForButtonValue = true;
-            this.Add.Width = 5;
             // 
             // Add_Lvl1_Module
             // 
