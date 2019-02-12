@@ -12,11 +12,11 @@ namespace wms.Entity_Class
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using wms.Forms;
     public partial class wmsdb : DbContext
     {
         public wmsdb()
-            : base("name=wmsdb")
+            : base(Select_Server_Form.dbconn)
         {
         }
     
