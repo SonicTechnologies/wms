@@ -14,8 +14,7 @@ namespace wms.Forms.Administration.Users.Authorizations
 {
     public partial class Add_Lv2_Module : Form
     {
-        private Dictionary<int, string> dict = new Dictionary<int, string>();
-        US_Authorization_Form uaf = (US_Authorization_Form)Application.OpenForms["US_Authorization_Form"];
+         US_Authorization_Form uaf = (US_Authorization_Form)Application.OpenForms["US_Authorization_Form"];
         wmsdb obj = new wmsdb();
 
         public Add_Lv2_Module()
@@ -23,30 +22,11 @@ namespace wms.Forms.Administration.Users.Authorizations
             InitializeComponent();
         }
 
-        public void Combobox()
-        {
-            var userId = US_Authorization_Form.userId;
-
-         
-            var list = (from c in obj.WMS_MSTR_MODULE
-                             join o in obj.WMS_MSTR_LVL1M on c.mod_id equals o.mod_id
-                            where o.usr_id == userId && c.stat_id == 1
-                            select new { c.mod_id, c.mod_name }).ToList();
-
-           foreach (var rec in list)
-
-            comboBox1.ValueMember = "mod_id";
-            comboBox1.DisplayMember = "mod_name";
-            comboBox1.DataSource = list;
-
-
-        }
-     
+       
         private void Add_Lv2_Module_Load(object sender, EventArgs e)
         {
             Main_Form.GetInstance().Enabled = false;
-            Combobox();
-
+            GetModuleData();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,7 +40,6 @@ namespace wms.Forms.Administration.Users.Authorizations
                                           where c.usr_id == userId &&
                                           c.mod_id == modId
                                           select new { c.usr_id ,c.lvl1mod_id}).FirstOrDefault();
-
 
                     if (UserValidation != null)
                     {
@@ -83,18 +62,15 @@ namespace wms.Forms.Administration.Users.Authorizations
                                     s1mod_id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString()),
                                     date_added = serverDate,
                                     added_by = loggedin_user.userId
-                                
-                               
 
                                  });
                                 obj.SaveChanges();
                                 MessageBox.Show("Successfully saved " + dataGridView1.CurrentRow.Cells[3].Value.ToString() + ".", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                 uaf.listItem();
+                                 uaf.ViewAccessModule();
                                  GetModuleData();
 
                             }
-                     
-                     
+
                     }
                     else
                     {
@@ -105,16 +81,19 @@ namespace wms.Forms.Administration.Users.Authorizations
         }
         private void  GetModuleData()
         {
-            int ID = Convert.ToInt32(comboBox1.SelectedValue.ToString());
-
-           
+      
             var userId = US_Authorization_Form.userId;
+
+            var getModuleId = (from c in obj.WMS_MSTR_MODULE
+                               where uaf.moduleNamelvl2 == c.mod_name && c.stat_id == 1
+                               select new { c.mod_id });
+
+            foreach (var id in getModuleId)
+            {
+                var items = (from c in obj.WMS_MSTR_S1MODULE
+                             join m in obj.WMS_MSTR_MODULE on c.mod_id equals m.mod_id
+                             where !obj.WMS_MSTR_LVL2M.Any(lvl2 => lvl2.s1mod_id == c.s1mod_id && lvl2.usr_id == userId) && c.stat_id == 1 && m.mod_id == id.mod_id
     
-
-            var items = (from c in obj.WMS_MSTR_S1MODULE
-                         join m in obj.WMS_MSTR_MODULE on c.mod_id equals m.mod_id
-                         where !obj.WMS_MSTR_LVL2M.Any(lvl2 => lvl2.s1mod_id == c.s1mod_id && lvl2.usr_id == userId) && c.stat_id == 1 && m.stat_id == 1 && m.mod_id == ID
-
                          select new
                          {
                              c.s1mod_id,
@@ -125,36 +104,32 @@ namespace wms.Forms.Administration.Users.Authorizations
 
                          }).OrderBy(c => new { c.s1mod_id }).ToList();
 
-            dataGridView1.Rows.Clear();
+                dataGridView1.Rows.Clear();
 
-            if (items.Count != 0)
-            {
-                dataGridView1.ColumnHeadersVisible = true;
-                foreach (var row in items)
+                if (items.Count != 0)
+                {
+                    dataGridView1.ColumnHeadersVisible = true;
+                    foreach (var row in items)
+                    {
+
+                        dataGridView1.Rows.Add(
+                                 row.s1mod_id,
+                                 row.mod_id,
+                                 row.mod_name,
+                                 row.s1mod_name,
+                                 row.s1mod_datecrtd);
+
+                    }
+                }
+                else
                 {
 
-                    dataGridView1.Rows.Add(
-                             row.s1mod_id,
-                             row.mod_id,
-                             row.mod_name,
-                             row.s1mod_name,
-                             row.s1mod_datecrtd);
-
+                    dataGridView1.ColumnHeadersVisible = false;
                 }
             }
-            else
-            {
-                dataGridView1.ColumnHeadersVisible = false;
-            }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            GetModuleData();
-          
-
-        }
+ 
 
         private void Add_Lv2_Module_FormClosing(object sender, FormClosingEventArgs e)
         {

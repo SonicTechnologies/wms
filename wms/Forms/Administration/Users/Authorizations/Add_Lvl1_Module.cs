@@ -92,7 +92,7 @@ namespace wms.Forms.Administration.Users.Authorizations
 
                     getModule();
                     var uaf = Application.OpenForms.OfType<US_Authorization_Form>().Single();
-                    uaf.listItem();
+                    uaf.ViewAccessModule();
 
 
                 }

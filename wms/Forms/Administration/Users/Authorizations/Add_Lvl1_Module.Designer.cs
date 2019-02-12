@@ -30,10 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.custid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel56 = new System.Windows.Forms.Panel();
@@ -47,6 +43,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.custid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Add = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel20.SuspendLayout();
             this.panel56.SuspendLayout();
@@ -77,44 +77,9 @@
             this.dataGridView1.RowHeadersWidth = 27;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(359, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(441, 318);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // custid
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.custid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.custid.HeaderText = "ID";
-            this.custid.Name = "custid";
-            this.custid.ReadOnly = true;
-            this.custid.Visible = false;
-            this.custid.Width = 5;
-            // 
-            // moduleName
-            // 
-            this.moduleName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.moduleName.HeaderText = "Module Name";
-            this.moduleName.Name = "moduleName";
-            this.moduleName.ReadOnly = true;
-            // 
-            // address
-            // 
-            this.address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.address.HeaderText = "Date Created";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            // 
-            // Add
-            // 
-            this.Add.HeaderText = "Action";
-            this.Add.Name = "Add";
-            this.Add.ReadOnly = true;
-            this.Add.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Add.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Add.Text = "Add";
-            this.Add.UseColumnTextForButtonValue = true;
-            this.Add.Width = 5;
             // 
             // panel20
             // 
@@ -125,7 +90,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(14, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(359, 42);
+            this.panel20.Size = new System.Drawing.Size(441, 42);
             this.panel20.TabIndex = 27;
             // 
             // panel14
@@ -134,7 +99,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(0, 31);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(357, 10);
+            this.panel14.Size = new System.Drawing.Size(439, 10);
             this.panel14.TabIndex = 28;
             // 
             // panel56
@@ -145,7 +110,7 @@
             this.panel56.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel56.Location = new System.Drawing.Point(0, 0);
             this.panel56.Name = "panel56";
-            this.panel56.Size = new System.Drawing.Size(357, 31);
+            this.panel56.Size = new System.Drawing.Size(439, 31);
             this.panel56.TabIndex = 27;
             // 
             // panel59
@@ -209,9 +174,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(373, 0);
+            this.panel3.Location = new System.Drawing.Point(455, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(14, 302);
+            this.panel3.Size = new System.Drawing.Size(14, 384);
             this.panel3.TabIndex = 28;
             // 
             // panel1
@@ -220,15 +185,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(14, 302);
+            this.panel1.Size = new System.Drawing.Size(14, 384);
             this.panel1.TabIndex = 29;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(14, 288);
+            this.panel4.Location = new System.Drawing.Point(14, 370);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(359, 14);
+            this.panel4.Size = new System.Drawing.Size(441, 14);
             this.panel4.TabIndex = 30;
             // 
             // panel2
@@ -237,14 +202,49 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(14, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(359, 10);
+            this.panel2.Size = new System.Drawing.Size(441, 10);
             this.panel2.TabIndex = 31;
+            // 
+            // custid
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.custid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.custid.HeaderText = "ID";
+            this.custid.Name = "custid";
+            this.custid.ReadOnly = true;
+            this.custid.Visible = false;
+            this.custid.Width = 5;
+            // 
+            // moduleName
+            // 
+            this.moduleName.HeaderText = "Module Name";
+            this.moduleName.Name = "moduleName";
+            this.moduleName.ReadOnly = true;
+            this.moduleName.Width = 5;
+            // 
+            // address
+            // 
+            this.address.HeaderText = "Date Created";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Width = 5;
+            // 
+            // Add
+            // 
+            this.Add.HeaderText = "Action";
+            this.Add.Name = "Add";
+            this.Add.ReadOnly = true;
+            this.Add.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Add.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Add.Text = "Add";
+            this.Add.UseColumnTextForButtonValue = true;
+            this.Add.Width = 5;
             // 
             // Add_Lvl1_Module
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 302);
+            this.ClientSize = new System.Drawing.Size(469, 384);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
