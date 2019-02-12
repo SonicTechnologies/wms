@@ -57,6 +57,8 @@ namespace wms.Forms.Administration.Users.Authorizations
             {
                 dataGridView1.ColumnHeadersVisible = false;
             }
+
+            dataGridView1.ClearSelection();
         }
 
         private void Add_Lvl1_Module_Load(object sender, EventArgs e)
@@ -115,7 +117,7 @@ namespace wms.Forms.Administration.Users.Authorizations
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells["moduleName"].Value.ToString().ToLower().StartsWith(textBox7.Text.ToLower()))
+                if (row.Cells[1].Value.ToString().ToLower().StartsWith(textBox7.Text.ToLower()))
                 {
                     row.Visible = true;
                     row.Selected = true;
@@ -126,6 +128,7 @@ namespace wms.Forms.Administration.Users.Authorizations
                 }
             }
 
+            dataGridView1.ClearSelection();
         }
     }
 }

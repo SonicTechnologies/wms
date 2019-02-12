@@ -126,6 +126,8 @@ namespace wms.Forms.Administration.Users.Authorizations
 
                     dataGridView1.ColumnHeadersVisible = false;
                 }
+
+                dataGridView1.ClearSelection();
             }
         }
 
@@ -142,7 +144,7 @@ namespace wms.Forms.Administration.Users.Authorizations
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells["AccessModuleLevel2"].Value.ToString().ToLower().StartsWith(textBox7.Text.ToLower()))
+                if (row.Cells[3].Value.ToString().ToLower().StartsWith(textBox7.Text.ToLower()))
                 {
                     row.Visible = true;
                     row.Selected = true;
@@ -152,6 +154,8 @@ namespace wms.Forms.Administration.Users.Authorizations
                     row.Visible = false;
                 }
             }
+
+            dataGridView1.ClearSelection();
         }
     }
 }

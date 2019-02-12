@@ -13,7 +13,6 @@ namespace wms.Entity_Class
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using wms.Forms;
-    
     public partial class wmsdb : DbContext
     {
         public wmsdb()

@@ -312,135 +312,137 @@ namespace wms.Forms.Administration.Users.Authorizations
 
         public void ViewAccessModule()
         {
+            if (textBox1.Text.Trim() == "")
+            {
 
-            moduleNamelvl2 = textBox8.Text.Trim();
-            moduleNamelvl3 = textBox9.Text.Trim();
+            }
+            else
+            {
+                moduleNamelvl2 = textBox8.Text.Trim();
+                moduleNamelvl3 = textBox9.Text.Trim();
 
-            userId = Convert.ToInt32(textBox1.Text.Trim());
+                userId = Convert.ToInt32(textBox1.Text.Trim());
 
-                    var ViewAccess= (from c in obj.WMS_MSTR_LVL1M
-                                 join m in obj.WMS_MSTR_MODULE on c.mod_id equals m.mod_id
-                                 where c.usr_id == userId && m.stat_id == 1
-
-                                 select new
-                                 {
-                                     m.mod_id,
-                                     m.mod_name,
-                                     m.mod_datecrtd,
-                               
-
-
-                                 }).OrderBy(c => new { c.mod_id }).ToList();
-
-                    dataGridView1.Rows.Clear();
-
-                    if (ViewAccess.Count != 0)
-                    {
-                        dataGridView1.ColumnHeadersVisible = true;
-                        foreach (var row in ViewAccess)
-                        {
-
-                            dataGridView1.Rows.Add(row.mod_id,
-                                                   row.mod_name,
-                                                   row.mod_datecrtd
-                                                  );
-
-                        }
-               
-                    }
-                    else
-                    {
-                        dataGridView1.ColumnHeadersVisible = false;
-                    }
-
-
-                    var ViewAccess2 = (from c in obj.WMS_MSTR_S1MODULE
-                                 join o in obj.WMS_MSTR_LVL2M on c.s1mod_id equals o.s1mod_id
-                                 join m in obj.WMS_MSTR_MODULE on c.mod_id equals m.mod_id
-                                 where o.usr_id == userId && c.stat_id==1 && m.stat_id==1 && m.mod_name== moduleNamelvl2
-
+                var ViewAccess = (from c in obj.WMS_MSTR_LVL1M
+                                  join m in obj.WMS_MSTR_MODULE on c.mod_id equals m.mod_id
+                                  where c.usr_id == userId
 
                                   select new
-                                 {
-                                     c.s1mod_id,
-                                     m.mod_id,
-                                     m.mod_name,
-                                     c.s1mod_name,
-                                     c.s1mod_datecrtd,
-                                 
+                                  {
+                                      m.mod_id,
+                                      m.mod_name,
+                                      m.mod_datecrtd
 
+                                  }).OrderBy(c => new { c.mod_id }).ToList();
 
-                                 }).OrderBy(c => new { c.s1mod_id }).ToList();
+                dataGridView1.Rows.Clear();
 
-                    dataGridView2.Rows.Clear();
-
-                    if (ViewAccess2.Count != 0)
+                if (ViewAccess.Count != 0)
+                {
+                    dataGridView1.ColumnHeadersVisible = true;
+                    foreach (var row in ViewAccess)
                     {
-                        dataGridView2.ColumnHeadersVisible = true;
-                        foreach (var row in ViewAccess2)
-                        {
 
-                            dataGridView2.Rows.Add(
-                                     row.s1mod_id,
-                                     row.mod_id,
-                                     row.mod_name,
-                                     row.s1mod_name,
-                                     row.s1mod_datecrtd
-                                  );
+                        dataGridView1.Rows.Add(row.mod_id,
+                               row.mod_name,
+                               row.mod_datecrtd
+                              );
 
-                        }
-                    }
-                    else
-                    {
-                        dataGridView2.ColumnHeadersVisible = false;
                     }
 
+                }
+                else
+                {
+                    dataGridView1.ColumnHeadersVisible = false;
+                }
 
 
-                    var ViewAccess3 = (from m in obj.WMS_MSTR_LVL3M
-                                 join c in obj.WMS_MSTR_S2MODULE on  m.s2mod_id equals c.s2mod_id
-                                 join o in obj.WMS_MSTR_S1MODULE on c.s1mod_id equals o.s1mod_id
-                                 join module1 in obj.WMS_MSTR_MODULE on o.mod_id equals module1.mod_id
-                                 where m.usr_id == userId &&  c.stat_id==1 && o.stat_id==1 && module1.stat_id==1 && o.s1mod_name ==moduleNamelvl3
+                var ViewAccess2 = (from c in obj.WMS_MSTR_S1MODULE
+                                   join o in obj.WMS_MSTR_LVL2M on c.s1mod_id equals o.s1mod_id
+                                   join m in obj.WMS_MSTR_MODULE on c.mod_id equals m.mod_id
+                                   where o.usr_id == userId && c.stat_id == 1 && m.mod_name == moduleNamelvl2
+                               
 
-                                 select new
-                                 {
-                                     c.s2mod_id,
-                                     o.s1mod_id,
-                                     o.s1mod_name,
-                                     c.s2mod_name,
-                                     c.s2mod_form_name,
-                                     c.s2mod_datecrtd,
-                                    
+                                   select new
+                                   {
+                                       c.s1mod_id,
+                                       m.mod_id,
+                                       m.mod_name,
+                                       c.s1mod_name,
+                                       c.s1mod_datecrtd
 
-                                 }).OrderBy(c => new { c.s2mod_id }).ToList();
+                                   }).OrderBy(c => new { c.s1mod_id }).ToList();
 
-                    dataGridView3.Rows.Clear();
+                dataGridView2.Rows.Clear();
 
-                    if (ViewAccess3.Count != 0)
+                if (ViewAccess2.Count != 0)
+                {
+                    dataGridView2.ColumnHeadersVisible = true;
+                    foreach (var row in ViewAccess2)
                     {
-                        dataGridView3.ColumnHeadersVisible = true;
-                        foreach (var row in ViewAccess3)
-                        {
 
-                            dataGridView3.Rows.Add(
-                                     row.s2mod_id,
-                                     row.s1mod_id,
-                                     row.s1mod_name,
-                                     row.s2mod_name,
-                                     row.s2mod_form_name,
-                                     row.s2mod_datecrtd
-                                   );
+                        dataGridView2.Rows.Add(
+                                 row.s1mod_id,
+                                 row.mod_id,
+                                 row.mod_name,
+                                 row.s1mod_name,
+                                 row.s1mod_datecrtd
+                              );
 
-                        }
                     }
-                    else
+                }
+                else
+                {
+                    dataGridView2.ColumnHeadersVisible = false;
+                }
+
+
+
+                var ViewAccess3 = (from m in obj.WMS_MSTR_LVL3M
+                                   join c in obj.WMS_MSTR_S2MODULE on m.s2mod_id equals c.s2mod_id
+                                   join o in obj.WMS_MSTR_S1MODULE on c.s1mod_id equals o.s1mod_id
+                                   join module1 in obj.WMS_MSTR_MODULE on o.mod_id equals module1.mod_id
+                                   where m.usr_id == userId && o.s1mod_name == moduleNamelvl3
+
+                                   select new
+                                   {
+                                       c.s2mod_id,
+                                       o.s1mod_id,
+                                       o.s1mod_name,
+                                       c.s2mod_name,
+                                       c.s2mod_form_name,
+                                       c.s2mod_datecrtd,
+
+
+                                   }).OrderBy(c => new { c.s2mod_id }).ToList();
+
+                dataGridView3.Rows.Clear();
+
+                if (ViewAccess3.Count != 0)
+                {
+                    dataGridView3.ColumnHeadersVisible = true;
+                    foreach (var row in ViewAccess3)
                     {
-                        dataGridView3.ColumnHeadersVisible = false;
-                    }
-   
-                tabControl1.Refresh();  
 
+                        dataGridView3.Rows.Add(
+                                 row.s2mod_id,
+                                 row.s1mod_id,
+                                 row.s1mod_name,
+                                 row.s2mod_name,
+                                 row.s2mod_form_name,
+                                 row.s2mod_datecrtd
+                               );
+
+                    }
+                }
+                else
+                {
+                    dataGridView3.ColumnHeadersVisible = false;
+                }
+
+                tabControl1.Refresh();
+            }
+            
         }
 
 
@@ -513,21 +515,43 @@ namespace wms.Forms.Administration.Users.Authorizations
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text.Trim() == "")
+            {
 
-            Add_Lvl1_Module alm = new Add_Lvl1_Module();
-            alm.Show();
+            }
+            else
+            {
+                Add_Lvl1_Module alm = new Add_Lvl1_Module();
+                alm.Show();
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            Add_Lv2_Module Addlvl2 = new Add_Lv2_Module();
-            Addlvl2.Show();
+        {        
+            if (textBox8.Text.Trim() == "")
+            {
+
+            }
+            else
+            {
+                Add_Lv2_Module Addlvl2 = new Add_Lv2_Module();
+                Addlvl2.Show();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Add_Lv3_Module Addlvl3 = new Add_Lv3_Module();
-            Addlvl3.Show();
+            if (textBox9.Text.Trim() == "")
+            {
+
+            }
+            else
+            {
+                Add_Lv3_Module Addlvl3 = new Add_Lv3_Module();
+                Addlvl3.Show();
+
+            }           
         }
 
 
