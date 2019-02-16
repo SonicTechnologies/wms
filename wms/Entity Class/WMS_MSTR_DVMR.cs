@@ -17,6 +17,7 @@ namespace wms.Entity_Class
         public int dvmr_id { get; set; }
         public System.DateTime dvmr_load_date { get; set; }
         public string site_code { get; set; }
+        public string dvmr_customer { get; set; }
         public System.DateTime dvmr_rdd { get; set; }
         public string dvmr_shipment { get; set; }
         public string dvmr_shipping_line { get; set; }
@@ -29,7 +30,6 @@ namespace wms.Entity_Class
         public string invty_id { get; set; }
         public int dvmr_qty { get; set; }
         public Nullable<System.DateTime> dvmr_date_added { get; set; }
-        public string dvmr_customer { get; set; }
         public Nullable<System.DateTime> dvmr_schedule_date { get; set; }
     }
 }

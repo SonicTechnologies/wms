@@ -223,7 +223,6 @@ namespace wms.Forms.Administration.Users
                                            row.crtdby,
                                            row.usr_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
                                            row.uptdby);
-
                 }
             }
             else
@@ -290,7 +289,6 @@ namespace wms.Forms.Administration.Users
                                                    row.crtdby,
                                                    row.usr_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
                                                    row.uptdby);
-
                         }
                     }
                     else
@@ -321,7 +319,6 @@ namespace wms.Forms.Administration.Users
                                      c.crtdby,
                                      c.usr_dateuptd,
                                      c.uptdby
-
                                  }).OrderBy(c => new { c.usr_id }).ToList();
 
                     dataGridView1.Rows.Clear();
@@ -388,7 +385,6 @@ namespace wms.Forms.Administration.Users
                         dataGridView1.ColumnHeadersVisible = true;
                         foreach (var row in users)
                         {
-
                             dataGridView1.Rows.Add(row.usr_id,
                                                    row.usr_username,
                                                    row.usr_password,
@@ -404,7 +400,6 @@ namespace wms.Forms.Administration.Users
                                                    row.crtdby,
                                                    row.usr_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
                                                    row.uptdby);
-
                         }
                     }
                     else
