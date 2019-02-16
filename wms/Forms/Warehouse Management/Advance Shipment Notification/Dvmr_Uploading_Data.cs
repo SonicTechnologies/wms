@@ -6,17 +6,19 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using Excel = Microsoft.Office.Interop.Excel;
 using System.Threading.Tasks;
+using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
+using wms.Class;
 using wms.Entity_Class;
 using System.IO;
-using wms.Class;
+using wms.Forms;
 
-namespace wms.Forms.Administration.Customer
+namespace wms.Forms.Warehouse_Management
 {
-    public partial class CM_Upload_Data : Form
+    public partial class Dvmr_Uploading_Data : Form
     {
+
         OleDbCommand cmd1 = new OleDbCommand();
         OleDbConnection con1 = new OleDbConnection();
 
@@ -45,18 +47,20 @@ namespace wms.Forms.Administration.Customer
         object misValue1 = System.Reflection.Missing.Value;
         object misValue2 = System.Reflection.Missing.Value;
 
-        int SlsmanNotRegistered;
+        int ItemNotRegistered;
         int SiteNotRegistered;
 
         int TotalError;
 
         int a;
         int b;
-        public CM_Upload_Data()
+
+        public Dvmr_Uploading_Data()
         {
             InitializeComponent();
         }
 
+    
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.FileName = "";
@@ -71,13 +75,13 @@ namespace wms.Forms.Administration.Customer
             }
         }
 
-        public void getMaxLineSlsman()
+        public void getMaxLineItem()
         {
             progressBar1.Value = 0;
             strConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + textBox1.Text + ";Extended Properties='Excel 12.0 Xml;HDR=YES'";
             con1.ConnectionString = strConnectionString;
             con1.Open();
-            cmd1.CommandText = "select DISTINCT [Salesman],[Salesman Name] from [Sheet1$] WHERE [Salesman]<>'' ORDER BY [Salesman]";
+            cmd1.CommandText = "select DISTINCT [Material],[Customer Name] from [Sheet1$] WHERE [Material] <>  null  ORDER BY [Material]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
 
@@ -88,7 +92,6 @@ namespace wms.Forms.Administration.Customer
                 dr1.Close();
                 adapt1.SelectCommand = cmd1;
                 adapt1.Fill(dt1);
-                //dataGridView1.Rows.Clear();
                 if (dt1.Rows.Count > 0)
                 {
 
@@ -115,7 +118,7 @@ namespace wms.Forms.Administration.Customer
             progressBar1.Value = 0;
 
             con1.Open();
-            cmd1.CommandText = "select DISTINCT [Delivering Site] from [Sheet1$] WHERE [Salesman]<>'' ORDER BY [Delivering Site]";
+            cmd1.CommandText = "select DISTINCT [Ship-to] from [Sheet1$] WHERE [Material]<> null  ORDER BY [Ship-to]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
             if (dr1.Read() == true)
@@ -123,8 +126,7 @@ namespace wms.Forms.Administration.Customer
                 dt1.Reset();
                 dr1.Close();
                 adapt1.SelectCommand = cmd1;
-                adapt1.Fill(dt1);
-                //dataGridView1.Rows.Clear();
+                adapt1.Fill(dt1);   
                 if (dt1.Rows.Count > 0)
                 {
 
@@ -150,7 +152,7 @@ namespace wms.Forms.Administration.Customer
         {
             progressBar1.Value = 0;
             con1.Open();
-            cmd1.CommandText = "select * from [Sheet1$] WHERE [Salesman]<>'' ORDER BY [Name1]";
+            cmd1.CommandText = "select * from [Sheet1$] WHERE [Material]<> null ORDER BY [Customer Name]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
 
@@ -184,7 +186,7 @@ namespace wms.Forms.Administration.Customer
         private void Execute1()
         {
 
-            label2.Text = "Validating Salesman..";
+            label2.Text = "Validating Item..";
             label2.Visible = true;
             backgroundWorker1.WorkerReportsProgress = true;
             backgroundWorker1.RunWorkerAsync();
@@ -201,7 +203,7 @@ namespace wms.Forms.Administration.Customer
         private void Execute3()
         {
 
-            label2.Text = "Uploading 0 out of " + max.ToString() + " Customer(s)";
+            label2.Text = "Uploading 0 out of " + max.ToString() + " Dvmr(s)";
             label1.Text = "0% Completed";
             backgroundWorker3.WorkerReportsProgress = true;
             backgroundWorker3.RunWorkerAsync();
@@ -217,7 +219,7 @@ namespace wms.Forms.Administration.Customer
                 textBox1.Enabled = false;
                 button1.Enabled = false;
                 button2.Enabled = false;
-                getMaxLineSlsman();
+                getMaxLineItem();
                 Execute1();
 
             }
@@ -229,11 +231,11 @@ namespace wms.Forms.Administration.Customer
             Workbook1 = Excel1.Workbooks.Add(misValue1);
             Worksheet1 = Workbook1.Sheets["Sheet1"];
 
-            SlsmanNotRegistered = 0;
+            ItemNotRegistered = 0;
             TranCounter1 = 0;
             a = 0;
             con1.Open();
-            cmd1.CommandText = "select DISTINCT [Salesman],[Salesman Name] from [Sheet1$] WHERE [Salesman]<>'' ORDER BY [Salesman]";
+            cmd1.CommandText = "select DISTINCT [Material],[Customer Name] from [Sheet1$] WHERE [Material]<> null ORDER BY [Material]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
 
@@ -247,21 +249,21 @@ namespace wms.Forms.Administration.Customer
                 foreach (DataRow i in dt1.Rows)
                 {
 
-                    string xsalesman = i["Salesman"].ToString().Replace("/", "");
-                    var salesman = (from c in obj.WMS_SLSMAN_VIEW
-                                    where c.salesman_id == xsalesman
-                                    select c.salesman_id).FirstOrDefault();
-                    if (salesman == null)
+                    string xItem = i["Material"].ToString();
+                    var Item = (from c in obj.WMS_MSTR_INVTY
+                                    where c.invty_id == xItem
+                                    select c.invty_id).FirstOrDefault();
+                    if (Item == null)
                     {
-                        Worksheet1.Cells[1, 1] = "Salesman";
-                        Worksheet1.Cells[1, 2] = "Salesman Name";
+                        Worksheet1.Cells[1, 1] = "Material";
+                        Worksheet1.Cells[1, 2] = "Customer Name";
 
-                        Worksheet1.Cells[2 + a, 1] = i["Salesman"].ToString().Replace("/", "");
-                        Worksheet1.Cells[2 + a, 2] = i["Salesman Name"].ToString().Replace("/", "");
+                        Worksheet1.Cells[2 + a, 1] = i["Material"].ToString();
+                        Worksheet1.Cells[2 + a, 2] = i["Customer Name"].ToString();
 
                         a = a + 1;
 
-                        SlsmanNotRegistered = SlsmanNotRegistered + 1;
+                        ItemNotRegistered = ItemNotRegistered + 1;
                     }
                     else
                     {
@@ -270,7 +272,7 @@ namespace wms.Forms.Administration.Customer
 
                     TranCounter1 = TranCounter1 + 1;
 
-                    backgroundWorker1.ReportProgress(Convert.ToInt32(100 * TranCounter1 / max), "Checking " + TranCounter1.ToString() + " out of " + max.ToString() + " Salesman");
+                    backgroundWorker1.ReportProgress(Convert.ToInt32(100 * TranCounter1 / max), "Checking " + TranCounter1.ToString() + " out of " + max.ToString() + " Item(s)");
 
                     if (backgroundWorker1.CancellationPending)
                     {
@@ -304,7 +306,7 @@ namespace wms.Forms.Administration.Customer
             b = 0;
 
             con1.Open();
-            cmd1.CommandText = "select DISTINCT [Delivering Site] from [Sheet1$] WHERE [Salesman]<>'' ORDER BY [Delivering Site]";
+            cmd1.CommandText = "select DISTINCT [Ship-to] from [Sheet1$] WHERE [Material]<> null ORDER BY [Ship-to]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
 
@@ -318,16 +320,16 @@ namespace wms.Forms.Administration.Customer
                 foreach (DataRow i in dt1.Rows)
                 {
 
-                    string xsite = i["Delivering Site"].ToString();
+                    string xsite = i["Ship-to"].ToString();
                     var site = (from c in obj.WMS_MSTR_SITE
-                                where c.site_id == xsite
-                                select c.site_id).FirstOrDefault();
+                                where c.site_code == xsite
+                                select c.site_code).ToList();
                     if (site == null)
                     {
 
-                        Worksheet2.Cells[1, 1] = "Delivering Site";
+                        Worksheet2.Cells[1, 1] = "Ship-to";
 
-                        Worksheet2.Cells[2 + b, 1] = i["Delivering Site"].ToString();
+                        Worksheet2.Cells[2 + b, 1] = i["Ship-to"].ToString();
 
                         b = b + 1;
 
@@ -340,7 +342,7 @@ namespace wms.Forms.Administration.Customer
 
                     TranCounter2 = TranCounter2 + 1;
 
-                    backgroundWorker2.ReportProgress(Convert.ToInt32(100 * TranCounter2 / max), "Initiated " + TranCounter2.ToString() + " out of " + max.ToString() + " Order(s)");
+                    backgroundWorker2.ReportProgress(Convert.ToInt32(100 * TranCounter2 / max), "Initiated " + TranCounter2.ToString() + " out of " + max.ToString() + " Dvmr(s)");
 
                     if (backgroundWorker2.CancellationPending)
                     {
@@ -366,7 +368,7 @@ namespace wms.Forms.Administration.Customer
 
             con1.Open();
 
-            cmd1.CommandText = "select * from [Sheet1$] WHERE [Salesman]<>'' ORDER BY [Name1]";
+            cmd1.CommandText = "select * from [Sheet1$] WHERE [Material]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
 
@@ -379,39 +381,37 @@ namespace wms.Forms.Administration.Customer
 
                 foreach (DataRow i in dt1.Rows)
                 {
-                    int stat = 0;
+               
 
-                    if (i["Status"].ToString() == "Active")
-                    {
-                        stat = 1;
-                    }
-                    else
-                    {
-                        stat = 2;
-                    }
-
-                    string xcustomer = i["Outlet Code"].ToString();
-                    var customer = (from c in obj.WMS_CUST_VIEW
-                                    where c.cust_id == xcustomer
-                                    select c.cust_id).FirstOrDefault();
-                    if (customer == null)
+                    string xItem = i["Material"].ToString();
+                    var Item = (from c in obj.WMS_MSTR_INVTY
+                                    where c.invty_id == xItem
+                                select c.invty_id).FirstOrDefault();
+                    if (Item != null)
                     {
                         var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
                         DateTime serverDate = dateQuery.AsEnumerable().First();
 
-                        var customers = obj.Set<WMS_MSTR_CUST>();
-                        customers.Add(new WMS_MSTR_CUST
+                        var dvmr = obj.Set<WMS_MSTR_DVMR>();
+                        dvmr.Add(new WMS_MSTR_DVMR
                         {
-                            cust_id = i["Outlet Code"].ToString().ToUpper(),
-                            cust_name = i["Name1"].ToString().ToUpper(),
-                            cust_address = i["Street"].ToString().ToUpper(),
-                            salesman_id = i["Salesman"].ToString().Replace("/", "").ToUpper(),
-                            site_id = i["Delivering Site"].ToString().ToUpper(),
-                            cust_latitude = Convert.ToDouble(i["Latitude"]),
-                            cust_longitude = Convert.ToDouble(i["Longitude"]),
-                            stat_id = stat,
-                            cust_datecrtd = serverDate,
-                            cust_crtdby = loggedin_user.userId
+                          dvmr_load_date = Convert.ToDateTime(i["Load Date"]),
+                            site_code = i["Ship-to"].ToString().ToUpper(),
+                            dvmr_customer = i["Customer Name"].ToString().ToUpper(),
+                            dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString()),
+                            dvmr_shipment = i["Shipment"].ToString().ToUpper(),
+                            dvmr_shipping_line = i["Shipping Line"].ToString(),
+                            dvmr_truck_no = i["Truck No"].ToString(),
+                            dvmr_cvan = i["CVAN"].ToString(),
+                            dvmr_salesdoc=i["Sales Doc#"].ToString(),
+                            dvmr_po_number=i["PO number"].ToString(),
+                            dvmr_billdoc=i["Bill#Doc#"].ToString(),
+                            dvmr_category=i["Category"].ToString(),
+                            invty_id=i["Material"].ToString(),
+                            dvmr_qty=Convert.ToInt32(i["Qty"]),                     
+                            dvmr_date_added = serverDate,
+                        
+
 
                         });
                         obj.SaveChanges();
@@ -423,17 +423,23 @@ namespace wms.Forms.Administration.Customer
                         var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
                         DateTime serverDate = dateQuery.AsEnumerable().First();
 
-                        obj.WMS_MSTR_CUST.Where(c => c.cust_id == xcustomer).ToList().ForEach(x =>
+                        obj.WMS_MSTR_DVMR.Where(c => c.invty_id == xItem).ToList().ForEach(x =>
                         {
-                            x.cust_name = i["Name1"].ToString().ToUpper();
-                            x.cust_address = i["Street"].ToString().ToUpper();
-                            x.salesman_id = i["Salesman"].ToString().Replace("/", "").ToUpper();
-                            x.site_id = i["Delivering Site"].ToString().ToUpper();
-                            x.cust_latitude = Convert.ToDouble(i["Latitude"]);
-                            x.cust_longitude = Convert.ToDouble(i["Longitude"]);
-                            x.stat_id = stat;
-                            x.cust_dateuptd = serverDate;
-                            x.cust_uptdby = loggedin_user.userId;
+                            x.dvmr_load_date = Convert.ToDateTime(i["Load Date"]);
+                            x.site_code = i["Ship-to"].ToString().ToUpper();
+                            x.dvmr_customer = i["Customer Name"].ToString().ToUpper();
+                            x.dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString());
+                            x.dvmr_shipment = i["Shipment"].ToString().ToUpper();
+                            x.dvmr_shipping_line = i["Shipping Line"].ToString();
+                            x.dvmr_truck_no = i["Truck No"].ToString();
+                            x.dvmr_cvan = i["CVAN"].ToString();
+                            x.dvmr_salesdoc = i["Sales Doc#"].ToString();
+                            x.dvmr_po_number = i["PO number"].ToString();
+                            x.dvmr_billdoc = i["Bill#Doc#"].ToString();
+                            x.dvmr_category = i["Category"].ToString();
+                            x.invty_id = i["Material"].ToString();
+                           x. dvmr_qty = Convert.ToInt32(i["Qty"]);
+                           x.dvmr_date_added = serverDate;
 
                         });
                         obj.SaveChanges();
@@ -442,7 +448,7 @@ namespace wms.Forms.Administration.Customer
 
                     TranCounter3 = TranCounter3 + 1;
 
-                    backgroundWorker3.ReportProgress(Convert.ToInt32(100 * TranCounter3 / max), "Uploading " + TranCounter3.ToString() + " out of " + max.ToString() + " Customer(s)");
+                    backgroundWorker3.ReportProgress(Convert.ToInt32(100 * TranCounter3 / max), "Uploading " + TranCounter3.ToString() + " out of " + max.ToString() + " Dvmr(s)");
 
                     if (backgroundWorker3.CancellationPending)
                     {
@@ -513,12 +519,12 @@ namespace wms.Forms.Administration.Customer
                 Excel1.DisplayAlerts = false;
                 Excel2.DisplayAlerts = false;
 
-                TotalError = SlsmanNotRegistered + SiteNotRegistered;
+                TotalError = ItemNotRegistered + SiteNotRegistered;
 
                 if (TotalError > 0)
                 {
 
-                    if (SlsmanNotRegistered > 0)
+                    if (ItemNotRegistered > 0)
                     {
                         Worksheet1.Activate();
                         Excel.Range myRange;
@@ -526,14 +532,14 @@ namespace wms.Forms.Administration.Customer
                         myRange.Select();
                         myRange.Sort(Key1: myRange.Range["A2"], Order1: Microsoft.Office.Interop.Excel.XlSortOrder.xlAscending, Orientation: Microsoft.Office.Interop.Excel.XlSortOrientation.xlSortColumns);
 
-                        if (File.Exists(Path.GetDirectoryName(openFileDialog1.FileName).ToString() + @"\" + Path.GetFileNameWithoutExtension(openFileDialog1.SafeFileName).ToString() + " - Salesman Not Found" + Path.GetExtension(openFileDialog1.FileName)))
+                        if (File.Exists(Path.GetDirectoryName(openFileDialog1.FileName).ToString() + @"\" + Path.GetFileNameWithoutExtension(openFileDialog1.SafeFileName).ToString() + " - Item Not Found" + Path.GetExtension(openFileDialog1.FileName)))
                         {
-                            File.Delete(Path.GetDirectoryName(openFileDialog1.FileName).ToString() + @"\" + Path.GetFileNameWithoutExtension(openFileDialog1.SafeFileName).ToString() + " - Salesman Not Found" + Path.GetExtension(openFileDialog1.FileName));
-                            Worksheet1.SaveAs(Path.GetDirectoryName(openFileDialog1.FileName).ToString() + @"\" + Path.GetFileNameWithoutExtension(openFileDialog1.SafeFileName).ToString() + " - Salesman Not Found" + Path.GetExtension(openFileDialog1.FileName));
+                            File.Delete(Path.GetDirectoryName(openFileDialog1.FileName).ToString() + @"\" + Path.GetFileNameWithoutExtension(openFileDialog1.SafeFileName).ToString() + " - Item Not Found" + Path.GetExtension(openFileDialog1.FileName));
+                            Worksheet1.SaveAs(Path.GetDirectoryName(openFileDialog1.FileName).ToString() + @"\" + Path.GetFileNameWithoutExtension(openFileDialog1.SafeFileName).ToString() + " - Item Not Found" + Path.GetExtension(openFileDialog1.FileName));
                         }
                         else
                         {
-                            Worksheet1.SaveAs(Path.GetDirectoryName(openFileDialog1.FileName).ToString() + @"\" + Path.GetFileNameWithoutExtension(openFileDialog1.SafeFileName).ToString() + " - Salesman Not Found" + Path.GetExtension(openFileDialog1.FileName));
+                            Worksheet1.SaveAs(Path.GetDirectoryName(openFileDialog1.FileName).ToString() + @"\" + Path.GetFileNameWithoutExtension(openFileDialog1.SafeFileName).ToString() + " - Item Not Found" + Path.GetExtension(openFileDialog1.FileName));
                         }
 
                     }
@@ -619,7 +625,7 @@ namespace wms.Forms.Administration.Customer
             }
             else
             {
-                MessageBox.Show("Successfully Uploaded " + TranCounter3.ToString() + " out of " + max.ToString() + " Customer(s)", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Successfully Uploaded " + TranCounter3.ToString() + " out of " + max.ToString() + " Dvmr(s)", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
 
             }

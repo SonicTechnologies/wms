@@ -638,7 +638,7 @@ namespace wms.Forms.Administration.Users.Authorizations
             if(e.ColumnIndex==4)
             {
 
-                DialogResult dialog = MessageBox.Show("Are you sure you want to remove " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + "? \n\nThis process will also remove its Level 2 and 3 Sub-Module(s)", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dialog = MessageBox.Show("Are you sure you want to remove " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + "?" , "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialog == DialogResult.Yes)
                 {
 
@@ -658,7 +658,7 @@ namespace wms.Forms.Administration.Users.Authorizations
         {
             if(e.ColumnIndex==5)
             {
-                DialogResult dialog = MessageBox.Show("Are you sure you want to remove " + dataGridView2.CurrentRow.Cells[3].Value.ToString() + "?\n\nThis process will also remove its Level 3 Sub-Module(s) ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dialog = MessageBox.Show("Are you sure you want to remove " + dataGridView2.CurrentRow.Cells[3].Value.ToString() + "? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialog == DialogResult.Yes)
                 {
 
