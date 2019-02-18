@@ -15,10 +15,12 @@ namespace wms.Entity_Class
     public partial class WMS_MSTR_SITE
     {
         public string site_id { get; set; }
+        public string site_code { get; set; }
         public string site_name { get; set; }
         public System.DateTime site_datecrtd { get; set; }
         public Nullable<System.DateTime> site_dateuptd { get; set; }
         public int site_crtdby { get; set; }
         public Nullable<int> site_uptdby { get; set; }
+        public string site_code { get; set; }
     }
 }

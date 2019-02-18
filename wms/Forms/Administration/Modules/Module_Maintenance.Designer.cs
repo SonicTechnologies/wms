@@ -39,6 +39,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.modid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xaction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -78,6 +82,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idlvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smodulenamelvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statuslvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actionslvl2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel60 = new System.Windows.Forms.Panel();
             this.panel46 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -121,6 +129,11 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel92 = new System.Windows.Forms.Panel();
             this.panel42 = new System.Windows.Forms.Panel();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -173,19 +186,6 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.modid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xaction = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idlvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.smodulenamelvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statuslvl2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actionslvl2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel21.SuspendLayout();
@@ -247,7 +247,7 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1446, 0);
+            this.panel2.Location = new System.Drawing.Point(1356, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(14, 693);
             this.panel2.TabIndex = 1;
@@ -257,7 +257,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(14, 679);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1432, 14);
+            this.panel4.Size = new System.Drawing.Size(1342, 14);
             this.panel4.TabIndex = 3;
             // 
             // panel12
@@ -305,6 +305,38 @@
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // modid
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.modid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.modid.HeaderText = "ID";
+            this.modid.Name = "modid";
+            this.modid.ReadOnly = true;
+            this.modid.Width = 5;
+            // 
+            // modname
+            // 
+            this.modname.HeaderText = "Module Name";
+            this.modname.Name = "modname";
+            this.modname.ReadOnly = true;
+            this.modname.Width = 5;
+            // 
+            // status
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.status.DefaultCellStyle = dataGridViewCellStyle2;
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 5;
+            // 
+            // xaction
+            // 
+            this.xaction.HeaderText = "Actions";
+            this.xaction.Name = "xaction";
+            this.xaction.ReadOnly = true;
+            this.xaction.Width = 5;
             // 
             // panel10
             // 
@@ -689,7 +721,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(14, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1432, 14);
+            this.panel6.Size = new System.Drawing.Size(1342, 14);
             this.panel6.TabIndex = 6;
             // 
             // panel5
@@ -737,6 +769,38 @@
             this.dataGridView2.TabIndex = 29;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
+            // 
+            // idlvl2
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idlvl2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.idlvl2.HeaderText = "ID";
+            this.idlvl2.Name = "idlvl2";
+            this.idlvl2.ReadOnly = true;
+            this.idlvl2.Width = 5;
+            // 
+            // smodulenamelvl2
+            // 
+            this.smodulenamelvl2.HeaderText = "Sub-Module Name";
+            this.smodulenamelvl2.Name = "smodulenamelvl2";
+            this.smodulenamelvl2.ReadOnly = true;
+            this.smodulenamelvl2.Width = 5;
+            // 
+            // statuslvl2
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.statuslvl2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.statuslvl2.HeaderText = "Status";
+            this.statuslvl2.Name = "statuslvl2";
+            this.statuslvl2.ReadOnly = true;
+            this.statuslvl2.Width = 5;
+            // 
+            // actionslvl2
+            // 
+            this.actionslvl2.HeaderText = "Actions";
+            this.actionslvl2.Name = "actionslvl2";
+            this.actionslvl2.ReadOnly = true;
+            this.actionslvl2.Width = 5;
             // 
             // panel60
             // 
@@ -1211,6 +1275,45 @@
             this.dataGridView3.Size = new System.Drawing.Size(497, 493);
             this.dataGridView3.TabIndex = 30;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Sub-Module Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 5;
+            // 
+            // formname
+            // 
+            this.formname.HeaderText = "Form Name";
+            this.formname.Name = "formname";
+            this.formname.ReadOnly = true;
+            this.formname.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 5;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.HeaderText = "Actions";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Width = 5;
             // 
             // panel92
             // 
@@ -1753,114 +1856,11 @@
             this.panel24.Size = new System.Drawing.Size(495, 6);
             this.panel24.TabIndex = 11;
             // 
-            // modid
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.modid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.modid.HeaderText = "ID";
-            this.modid.Name = "modid";
-            this.modid.ReadOnly = true;
-            this.modid.Width = 5;
-            // 
-            // modname
-            // 
-            this.modname.HeaderText = "Module Name";
-            this.modname.Name = "modname";
-            this.modname.ReadOnly = true;
-            this.modname.Width = 5;
-            // 
-            // status
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.status.DefaultCellStyle = dataGridViewCellStyle2;
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 5;
-            // 
-            // xaction
-            // 
-            this.xaction.HeaderText = "Actions";
-            this.xaction.Name = "xaction";
-            this.xaction.ReadOnly = true;
-            this.xaction.Width = 5;
-            // 
-            // idlvl2
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idlvl2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.idlvl2.HeaderText = "ID";
-            this.idlvl2.Name = "idlvl2";
-            this.idlvl2.ReadOnly = true;
-            this.idlvl2.Width = 5;
-            // 
-            // smodulenamelvl2
-            // 
-            this.smodulenamelvl2.HeaderText = "Sub-Module Name";
-            this.smodulenamelvl2.Name = "smodulenamelvl2";
-            this.smodulenamelvl2.ReadOnly = true;
-            this.smodulenamelvl2.Width = 5;
-            // 
-            // statuslvl2
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.statuslvl2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.statuslvl2.HeaderText = "Status";
-            this.statuslvl2.Name = "statuslvl2";
-            this.statuslvl2.ReadOnly = true;
-            this.statuslvl2.Width = 5;
-            // 
-            // actionslvl2
-            // 
-            this.actionslvl2.HeaderText = "Actions";
-            this.actionslvl2.Name = "actionslvl2";
-            this.actionslvl2.ReadOnly = true;
-            this.actionslvl2.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Sub-Module Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 5;
-            // 
-            // formname
-            // 
-            this.formname.HeaderText = "Form Name";
-            this.formname.Name = "formname";
-            this.formname.ReadOnly = true;
-            this.formname.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 5;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "Actions";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Width = 5;
-            // 
             // Module_Maintenance
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1460, 693);
+            this.ClientSize = new System.Drawing.Size(1370, 693);
             this.Controls.Add(this.panel22);
             this.Controls.Add(this.panel17);
             this.Controls.Add(this.panel5);

@@ -22,6 +22,28 @@
           <Property Name="cust_crtdby" Type="int" Nullable="false" />
           <Property Name="cust_uptdby" Type="int" />
         </EntityType>
+        <EntityType Name="WMS_MSTR_DVMR">
+          <Key>
+            <PropertyRef Name="dvmr_id" />
+          </Key>
+          <Property Name="dvmr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dvmr_load_date" Type="datetime" Nullable="false" />
+          <Property Name="site_code" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="dvmr_customer" Type="nvarchar" MaxLength="50" />
+          <Property Name="dvmr_rdd" Type="datetime" Nullable="false" />
+          <Property Name="dvmr_shipment" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dvmr_shipping_line" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dvmr_truck_no" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dvmr_cvan" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dvmr_salesdoc" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dvmr_po_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dvmr_billdoc" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dvmr_category" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="invty_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dvmr_qty" Type="int" Nullable="false" />
+          <Property Name="dvmr_date_added" Type="datetime" />
+          <Property Name="dvmr_schedule_date" Type="datetime" />
+        </EntityType>
         <EntityType Name="WMS_MSTR_INVTY">
           <Key>
             <PropertyRef Name="invty_id" />
@@ -131,6 +153,7 @@
             <PropertyRef Name="site_id" />
           </Key>
           <Property Name="site_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="site_code" Type="nvarchar" MaxLength="26" />
           <Property Name="site_name" Type="nvarchar" MaxLength="26" Nullable="false" />
           <Property Name="site_datecrtd" Type="datetime" Nullable="false" />
           <Property Name="site_dateuptd" Type="datetime" />
@@ -439,6 +462,49 @@ warning 6002: The table/view 'WMS.dbo.WMS_LVL3M_VIEW' does not have a primary ke
           <Property Name="xadded_by" Type="nvarchar" MaxLength="53" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'WMS.dbo.WMS_RECEIVINGPLAN_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WMS_RECEIVINGPLAN_VIEW">
+          <Key>
+            <PropertyRef Name="site_name" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="dvmr_id" />
+            <PropertyRef Name="dvmr_load_date" />
+            <PropertyRef Name="dvmr_rdd" />
+            <PropertyRef Name="dvmr_shipment" />
+            <PropertyRef Name="dvmr_shipping_line" />
+            <PropertyRef Name="dvmr_truck_no" />
+            <PropertyRef Name="dvmr_cvan" />
+            <PropertyRef Name="dvmr_salesdoc" />
+            <PropertyRef Name="dvmr_po_number" />
+            <PropertyRef Name="dvmr_billdoc" />
+            <PropertyRef Name="dvmr_category" />
+            <PropertyRef Name="dvmr_qty" />
+            <PropertyRef Name="invty_desc" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="invty_id" />
+          </Key>
+          <Property Name="site_name" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="site_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dvmr_id" Type="int" Nullable="false" />
+          <Property Name="dvmr_load_date" Type="datetime" Nullable="false" />
+          <Property Name="dvmr_customer" Type="nvarchar" MaxLength="50" />
+          <Property Name="dvmr_rdd" Type="datetime" Nullable="false" />
+          <Property Name="dvmr_shipment" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dvmr_shipping_line" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dvmr_truck_no" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dvmr_cvan" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dvmr_salesdoc" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dvmr_po_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dvmr_billdoc" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="dvmr_category" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dvmr_qty" Type="int" Nullable="false" />
+          <Property Name="dvmr_date_added" Type="datetime" />
+          <Property Name="dvmr_schedule_date" Type="datetime" />
+          <Property Name="invty_desc" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Expr2" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="invty_id" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'WMS.dbo.WMS_SITE_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="WMS_SITE_VIEW">
           <Key>
@@ -521,6 +587,7 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
         </EntityType>
         <EntityContainer Name="wmsdbmodelStoreContainer">
           <EntitySet Name="WMS_MSTR_CUST" EntityType="Self.WMS_MSTR_CUST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_DVMR" EntityType="Self.WMS_MSTR_DVMR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_INVTY" EntityType="Self.WMS_MSTR_INVTY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_JRSLSMAN" EntityType="Self.WMS_MSTR_JRSLSMAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_LVL1M" EntityType="Self.WMS_MSTR_LVL1M" Schema="dbo" store:Type="Tables" />
@@ -671,6 +738,30 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
     [WMS_LVL3M_VIEW].[xadded_by] AS [xadded_by]
     FROM [dbo].[WMS_LVL3M_VIEW] AS [WMS_LVL3M_VIEW]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="WMS_RECEIVINGPLAN_VIEW" EntityType="Self.WMS_RECEIVINGPLAN_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WMS_RECEIVINGPLAN_VIEW].[site_name] AS [site_name], 
+    [WMS_RECEIVINGPLAN_VIEW].[site_id] AS [site_id], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_id] AS [dvmr_id], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_load_date] AS [dvmr_load_date], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_customer] AS [dvmr_customer], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_rdd] AS [dvmr_rdd], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_shipment] AS [dvmr_shipment], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_shipping_line] AS [dvmr_shipping_line], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_truck_no] AS [dvmr_truck_no], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_cvan] AS [dvmr_cvan], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_salesdoc] AS [dvmr_salesdoc], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_po_number] AS [dvmr_po_number], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_billdoc] AS [dvmr_billdoc], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_category] AS [dvmr_category], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_qty] AS [dvmr_qty], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_date_added] AS [dvmr_date_added], 
+    [WMS_RECEIVINGPLAN_VIEW].[dvmr_schedule_date] AS [dvmr_schedule_date], 
+    [WMS_RECEIVINGPLAN_VIEW].[invty_desc] AS [invty_desc], 
+    [WMS_RECEIVINGPLAN_VIEW].[Expr2] AS [Expr2], 
+    [WMS_RECEIVINGPLAN_VIEW].[invty_id] AS [invty_id]
+    FROM [dbo].[WMS_RECEIVINGPLAN_VIEW] AS [WMS_RECEIVINGPLAN_VIEW]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="WMS_SITE_VIEW" EntityType="Self.WMS_SITE_VIEW" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [WMS_SITE_VIEW].[site_id] AS [site_id], 
@@ -772,6 +863,7 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="site_dateuptd" Type="DateTime" Precision="3" />
           <Property Name="site_crtdby" Type="Int32" Nullable="false" />
           <Property Name="site_uptdby" Type="Int32" />
+          <Property Name="site_code" Type="String" MaxLength="26" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="WMS_MSTR_SLSMAN">
           <Key>
@@ -849,6 +941,8 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySet Name="WMS_USRS_VIEW" EntityType="wmsdbmodel.WMS_USRS_VIEW" />
           <EntitySet Name="WMS_MSTR_LVL2M" EntityType="wmsdbmodel.WMS_MSTR_LVL2M" />
           <EntitySet Name="WMS_MSTR_LVL3M" EntityType="wmsdbmodel.WMS_MSTR_LVL3M" />
+          <EntitySet Name="WMS_MSTR_DVMR" EntityType="wmsdbmodel.WMS_MSTR_DVMR" />
+          <EntitySet Name="WMS_RECEIVINGPLAN_VIEW" EntityType="wmsdbmodel.WMS_RECEIVINGPLAN_VIEW" />
         </EntityContainer>
         <EntityType Name="WMS_TYPE_STAT">
           <Key>
@@ -1248,6 +1342,69 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="date_added" Type="DateTime" Precision="3" />
           <Property Name="added_by" Type="Int32" />
         </EntityType>
+        <EntityType Name="WMS_MSTR_DVMR">
+          <Key>
+            <PropertyRef Name="dvmr_id" />
+          </Key>
+          <Property Name="dvmr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dvmr_load_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="site_code" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_customer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_rdd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dvmr_shipment" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_shipping_line" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_truck_no" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_cvan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_salesdoc" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_po_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_billdoc" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invty_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_qty" Type="Int32" Nullable="false" />
+          <Property Name="dvmr_date_added" Type="DateTime" Precision="3" />
+          <Property Name="dvmr_schedule_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="WMS_RECEIVINGPLAN_VIEW">
+          <Key>
+            <PropertyRef Name="site_name" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="dvmr_id" />
+            <PropertyRef Name="dvmr_load_date" />
+            <PropertyRef Name="dvmr_rdd" />
+            <PropertyRef Name="dvmr_shipment" />
+            <PropertyRef Name="dvmr_shipping_line" />
+            <PropertyRef Name="dvmr_truck_no" />
+            <PropertyRef Name="dvmr_cvan" />
+            <PropertyRef Name="dvmr_salesdoc" />
+            <PropertyRef Name="dvmr_po_number" />
+            <PropertyRef Name="dvmr_billdoc" />
+            <PropertyRef Name="dvmr_category" />
+            <PropertyRef Name="dvmr_qty" />
+            <PropertyRef Name="invty_desc" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="invty_id" />
+          </Key>
+          <Property Name="site_name" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="site_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_id" Type="Int32" Nullable="false" />
+          <Property Name="dvmr_load_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dvmr_customer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_rdd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dvmr_shipment" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_shipping_line" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_truck_no" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_cvan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_salesdoc" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_po_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_billdoc" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dvmr_qty" Type="Int32" Nullable="false" />
+          <Property Name="dvmr_date_added" Type="DateTime" Precision="3" />
+          <Property Name="dvmr_schedule_date" Type="DateTime" Precision="3" />
+          <Property Name="invty_desc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Expr2" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="invty_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1296,6 +1453,7 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySetMapping Name="WMS_MSTR_SITE">
             <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_SITE">
               <MappingFragment StoreEntitySet="WMS_MSTR_SITE">
+                <ScalarProperty Name="site_code" ColumnName="site_code" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
                 <ScalarProperty Name="site_name" ColumnName="site_name" />
                 <ScalarProperty Name="site_datecrtd" ColumnName="site_datecrtd" />
@@ -1694,6 +1852,55 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
                 <ScalarProperty Name="usr_id" ColumnName="usr_id" />
                 <ScalarProperty Name="s2mod_id" ColumnName="s2mod_id" />
                 <ScalarProperty Name="lvl3mod_id" ColumnName="lvl3mod_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_DVMR">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_DVMR">
+              <MappingFragment StoreEntitySet="WMS_MSTR_DVMR">
+                <ScalarProperty Name="dvmr_schedule_date" ColumnName="dvmr_schedule_date" />
+                <ScalarProperty Name="dvmr_date_added" ColumnName="dvmr_date_added" />
+                <ScalarProperty Name="dvmr_qty" ColumnName="dvmr_qty" />
+                <ScalarProperty Name="invty_id" ColumnName="invty_id" />
+                <ScalarProperty Name="dvmr_category" ColumnName="dvmr_category" />
+                <ScalarProperty Name="dvmr_billdoc" ColumnName="dvmr_billdoc" />
+                <ScalarProperty Name="dvmr_po_number" ColumnName="dvmr_po_number" />
+                <ScalarProperty Name="dvmr_salesdoc" ColumnName="dvmr_salesdoc" />
+                <ScalarProperty Name="dvmr_cvan" ColumnName="dvmr_cvan" />
+                <ScalarProperty Name="dvmr_truck_no" ColumnName="dvmr_truck_no" />
+                <ScalarProperty Name="dvmr_shipping_line" ColumnName="dvmr_shipping_line" />
+                <ScalarProperty Name="dvmr_shipment" ColumnName="dvmr_shipment" />
+                <ScalarProperty Name="dvmr_rdd" ColumnName="dvmr_rdd" />
+                <ScalarProperty Name="dvmr_customer" ColumnName="dvmr_customer" />
+                <ScalarProperty Name="site_code" ColumnName="site_code" />
+                <ScalarProperty Name="dvmr_load_date" ColumnName="dvmr_load_date" />
+                <ScalarProperty Name="dvmr_id" ColumnName="dvmr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_RECEIVINGPLAN_VIEW">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_RECEIVINGPLAN_VIEW">
+              <MappingFragment StoreEntitySet="WMS_RECEIVINGPLAN_VIEW">
+                <ScalarProperty Name="invty_id" ColumnName="invty_id" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="invty_desc" ColumnName="invty_desc" />
+                <ScalarProperty Name="dvmr_schedule_date" ColumnName="dvmr_schedule_date" />
+                <ScalarProperty Name="dvmr_date_added" ColumnName="dvmr_date_added" />
+                <ScalarProperty Name="dvmr_qty" ColumnName="dvmr_qty" />
+                <ScalarProperty Name="dvmr_category" ColumnName="dvmr_category" />
+                <ScalarProperty Name="dvmr_billdoc" ColumnName="dvmr_billdoc" />
+                <ScalarProperty Name="dvmr_po_number" ColumnName="dvmr_po_number" />
+                <ScalarProperty Name="dvmr_salesdoc" ColumnName="dvmr_salesdoc" />
+                <ScalarProperty Name="dvmr_cvan" ColumnName="dvmr_cvan" />
+                <ScalarProperty Name="dvmr_truck_no" ColumnName="dvmr_truck_no" />
+                <ScalarProperty Name="dvmr_shipping_line" ColumnName="dvmr_shipping_line" />
+                <ScalarProperty Name="dvmr_shipment" ColumnName="dvmr_shipment" />
+                <ScalarProperty Name="dvmr_rdd" ColumnName="dvmr_rdd" />
+                <ScalarProperty Name="dvmr_customer" ColumnName="dvmr_customer" />
+                <ScalarProperty Name="dvmr_load_date" ColumnName="dvmr_load_date" />
+                <ScalarProperty Name="dvmr_id" ColumnName="dvmr_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="site_name" ColumnName="site_name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -117,6 +117,9 @@
     <Compile Include="Entity Class\WMS_MSTR_CUST.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_DVMR.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_MSTR_INVTY.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
@@ -160,6 +163,9 @@
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_USRS.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_RECEIVINGPLAN_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_SITE_VIEW.cs">
@@ -318,6 +324,12 @@
     <Compile Include="Forms\Select_Server_Form.Designer.cs">
       <DependentUpon>Select_Server_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Warehouse Management\Stock Receiving Plan\Receiving_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse Management\Stock Receiving Plan\Receiving_Plan.Designer.cs">
+      <DependentUpon>Receiving_Plan.cs</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -391,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Select_Server_Form.resx">
       <DependentUpon>Select_Server_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse Management\Stock Receiving Plan\Receiving_Plan.resx">
+      <DependentUpon>Receiving_Plan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Customer.CM_Upload_Data.resources" />
     <EmbeddedResource Include="obj\Debug\wms.Forms.Administration.Customer.Customer_Maintenance.resources" />
