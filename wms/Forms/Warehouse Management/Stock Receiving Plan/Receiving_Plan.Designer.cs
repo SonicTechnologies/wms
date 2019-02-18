@@ -31,17 +31,6 @@
             this.DatePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.DatePickerTo = new System.Windows.Forms.DateTimePicker();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.DataGridView4 = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridView3 = new System.Windows.Forms.DataGridView();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateTimeSchedule = new System.Windows.Forms.DateTimePicker();
             this.DataGridView5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,14 +52,25 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).BeginInit();
+            this.BillDocGridView = new System.Windows.Forms.DataGridView();
+            this.BillDocsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiteBillDocColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siteGridView = new System.Windows.Forms.DataGridView();
+            this.SiteCodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiteNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CasesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridView3 = new System.Windows.Forms.DataGridView();
+            this.InventoryIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vanDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillDocGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // DatePickerFrom
@@ -98,85 +98,6 @@
             this.AddBtn.Text = "ADD SCHEDULE";
             this.AddBtn.UseVisualStyleBackColor = true;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
-            // 
-            // DataGridView4
-            // 
-            this.DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.Column5});
-            this.DataGridView4.Location = new System.Drawing.Point(12, 587);
-            this.DataGridView4.Name = "DataGridView4";
-            this.DataGridView4.Size = new System.Drawing.Size(591, 150);
-            this.DataGridView4.TabIndex = 6;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Billdocs";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Site_Name";
-            this.Column5.Name = "Column5";
-            // 
-            // DataGridView3
-            // 
-            this.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column9,
-            this.Column10,
-            this.Column11});
-            this.DataGridView3.Location = new System.Drawing.Point(12, 431);
-            this.DataGridView3.Name = "DataGridView3";
-            this.DataGridView3.Size = new System.Drawing.Size(591, 150);
-            this.DataGridView3.TabIndex = 8;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Inventory ID";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Description";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Quantity";
-            this.Column11.Name = "Column11";
-            // 
-            // DataGridView2
-            // 
-            this.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column8,
-            this.Column6,
-            this.Column7});
-            this.DataGridView2.Location = new System.Drawing.Point(12, 275);
-            this.DataGridView2.Name = "DataGridView2";
-            this.DataGridView2.Size = new System.Drawing.Size(591, 150);
-            this.DataGridView2.TabIndex = 9;
-            this.DataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentDoubleClick);
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "SiteCode";
-            this.Column8.Name = "Column8";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Site Name";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Cases";
-            this.Column7.Name = "Column7";
             // 
             // DateTimeSchedule
             // 
@@ -333,11 +254,90 @@
             this.Column3.HeaderText = "Scheduled Date";
             this.Column3.Name = "Column3";
             // 
+            // BillDocGridView
+            // 
+            this.BillDocGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BillDocGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BillDocsColumn,
+            this.SiteBillDocColumn});
+            this.BillDocGridView.Location = new System.Drawing.Point(12, 587);
+            this.BillDocGridView.Name = "BillDocGridView";
+            this.BillDocGridView.Size = new System.Drawing.Size(591, 150);
+            this.BillDocGridView.TabIndex = 17;
+            // 
+            // BillDocsColumn
+            // 
+            this.BillDocsColumn.HeaderText = "BillDocs";
+            this.BillDocsColumn.Name = "BillDocsColumn";
+            // 
+            // SiteBillDocColumn
+            // 
+            this.SiteBillDocColumn.HeaderText = "SiteName";
+            this.SiteBillDocColumn.Name = "SiteBillDocColumn";
+            // 
+            // siteGridView
+            // 
+            this.siteGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.siteGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SiteCodeColumn,
+            this.SiteNameColumn,
+            this.CasesColumn});
+            this.siteGridView.Location = new System.Drawing.Point(12, 275);
+            this.siteGridView.Name = "siteGridView";
+            this.siteGridView.Size = new System.Drawing.Size(591, 150);
+            this.siteGridView.TabIndex = 18;
+            this.siteGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.siteGridView_CellContentDoubleClick);
+            // 
+            // SiteCodeColumn
+            // 
+            this.SiteCodeColumn.HeaderText = "SiteCode";
+            this.SiteCodeColumn.Name = "SiteCodeColumn";
+            // 
+            // SiteNameColumn
+            // 
+            this.SiteNameColumn.HeaderText = "SiteName";
+            this.SiteNameColumn.Name = "SiteNameColumn";
+            // 
+            // CasesColumn
+            // 
+            this.CasesColumn.HeaderText = "Cases";
+            this.CasesColumn.Name = "CasesColumn";
+            // 
+            // DataGridView3
+            // 
+            this.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.InventoryIdColumn,
+            this.DescriptionColumn,
+            this.QuantityColumn});
+            this.DataGridView3.Location = new System.Drawing.Point(12, 431);
+            this.DataGridView3.Name = "DataGridView3";
+            this.DataGridView3.Size = new System.Drawing.Size(591, 150);
+            this.DataGridView3.TabIndex = 19;
+            // 
+            // InventoryIdColumn
+            // 
+            this.InventoryIdColumn.HeaderText = "InventoryId";
+            this.InventoryIdColumn.Name = "InventoryIdColumn";
+            // 
+            // DescriptionColumn
+            // 
+            this.DescriptionColumn.HeaderText = "Description";
+            this.DescriptionColumn.Name = "DescriptionColumn";
+            // 
+            // QuantityColumn
+            // 
+            this.QuantityColumn.HeaderText = "Quantity";
+            this.QuantityColumn.Name = "QuantityColumn";
+            // 
             // Receiving_Plan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1253, 757);
+            this.Controls.Add(this.DataGridView3);
+            this.Controls.Add(this.siteGridView);
+            this.Controls.Add(this.BillDocGridView);
             this.Controls.Add(this.vanDataGrid);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DataGridView8);
@@ -345,23 +345,20 @@
             this.Controls.Add(this.DataGridView6);
             this.Controls.Add(this.DataGridView5);
             this.Controls.Add(this.DateTimeSchedule);
-            this.Controls.Add(this.DataGridView2);
-            this.Controls.Add(this.DataGridView3);
-            this.Controls.Add(this.DataGridView4);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.DatePickerTo);
             this.Controls.Add(this.DatePickerFrom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Receiving_Plan";
             this.Text = "Receiving_Plan";
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vanDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillDocGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,18 +369,7 @@
         private System.Windows.Forms.DateTimePicker DatePickerFrom;
         private System.Windows.Forms.DateTimePicker DatePickerTo;
         private System.Windows.Forms.Button AddBtn;
-        private System.Windows.Forms.DataGridView DataGridView4;
-        private System.Windows.Forms.DataGridView DataGridView3;
-        private System.Windows.Forms.DataGridView DataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DateTimePicker DateTimeSchedule;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridView DataGridView5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -404,5 +390,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridView BillDocGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BillDocsColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SiteBillDocColumn;
+        private System.Windows.Forms.DataGridView siteGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SiteCodeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SiteNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CasesColumn;
+        private System.Windows.Forms.DataGridView DataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InventoryIdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantityColumn;
     }
 }

@@ -13,14 +13,15 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
 {
     public partial class Receiving_Plan : Form
     {
-        wmsdb obj = new wmsdb();
         object sCode, vanCode;
-
+        private wmsdb obj;
         public Receiving_Plan()
         {
+            obj = new wmsdb();
             InitializeComponent();
             InitializeTable1();
         }
+
         public void InitializeTable1()
         {
             vanDataGrid.Rows.Clear();
@@ -123,34 +124,31 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
                 DataGridView7.Rows.Add(items.invtyId, items.invtyDesc, qty.ToString());
             }
         }
-
-        public void Table1Clicked(DataGridViewCellEventArgs e)
+        
+        public void vanTableClicked(DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("HOOOOYYYYYY2");
-            DataGridView4.Rows.Clear();
-            DataGridView2.Rows.Clear();
+            BillDocGridView.Rows.Clear();
+            siteGridView.Rows.Clear();
             int qty = 0;
-            var van = vanDataGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-            var query = (from d in obj.WMS_MSTR_DVMR
-                         join s in obj.WMS_MSTR_SITE on d.site_code equals s.site_code
-                         where d.dvmr_cvan == van && d.dvmr_rdd >= DatePickerFrom.Value && d.dvmr_rdd <= DatePickerTo.Value
+            var van = vanDataGrid.Rows[e.RowIndex].Cells[0].Value;
+            var query = (from r in obj.WMS_MSTR_DVMR
+                         where r.dvmr_cvan == van.ToString() && r.dvmr_rdd >= DatePickerFrom.Value && r.dvmr_rdd <= DatePickerTo.Value
                          select new
                          {
-                             BillDoc = d.dvmr_billdoc,
-                             SiteName = s.site_name
+                             BillDoc = r.dvmr_billdoc,
+                             SiteCode = r.site_code
                          }).Distinct().ToList();
             foreach (var billdoc in query)
             {
-                DataGridView4.Rows.Add(billdoc.BillDoc, billdoc.SiteName);
+                var siteName = obj.WMS_MSTR_SITE.Where(s => s.site_code == billdoc.SiteCode).Select(s => s.site_name).SingleOrDefault();
+                BillDocGridView.Rows.Add(billdoc.BillDoc, siteName);
             }
+
             var query2 = (from d in obj.WMS_MSTR_DVMR
-                          join s in obj.WMS_MSTR_SITE on d.site_code equals s.site_code
-                          join i in obj.WMS_MSTR_INVTY on d.invty_id equals i.invty_id
                           where d.dvmr_cvan == van.ToString() && d.dvmr_rdd >= DatePickerFrom.Value && d.dvmr_rdd <= DatePickerTo.Value
                           select new
                           {
-                              SiteCode = d.site_code,
-                              SiteName = s.site_name
+                              SiteCode = d.site_code
                           }).Distinct().ToList();
             foreach (var items in query2)
             {
@@ -159,38 +157,42 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
                 {
                     qty += x;
                 }
-                DataGridView2.Rows.Add(items.SiteCode, items.SiteName, qty.ToString());
-                
+                var siteName = obj.WMS_MSTR_SITE.Where(s => s.site_code == items.SiteCode).Select(d => d.site_name).SingleOrDefault();
+                siteGridView.Rows.Add(items.SiteCode, siteName, qty.ToString());
             }
         }
 
-        public void Table2Clicked(DataGridViewCellEventArgs e)
+        public void siteTableClicked(DataGridViewCellEventArgs e)
         {
             DataGridView3.Rows.Clear();
             int qty = 0;
-            var siteCode = DataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+            var siteCode = siteGridView.Rows[e.RowIndex].Cells[0].Value;
             var query = (from d in obj.WMS_MSTR_DVMR
-                         join i in obj.WMS_MSTR_INVTY on d.invty_id equals i.invty_id
                          where d.site_code == siteCode.ToString()
                          select new
                          {
-                             invtyId = d.invty_id,
-                             invtyDesc = i.invty_desc
+                             invtyId = d.invty_id
                          }).Distinct();
             foreach (var items in query)
             {
+                var desc = obj.WMS_MSTR_INVTY.Where(i => i.invty_id == items.invtyId).Select(i => i.invty_desc).SingleOrDefault();
                 var qtyPerItem = obj.WMS_MSTR_DVMR.Where(d => d.invty_id == items.invtyId).Select(d => d.dvmr_qty).ToList();
                 foreach (var x in qtyPerItem)
                 {
                     qty += x;
                 }
-                DataGridView3.Rows.Add(items.invtyId, items.invtyDesc, qty.ToString());
+                DataGridView3.Rows.Add(items.invtyId, desc.ToString(), qty.ToString());
             }
         }
 
         private void vanDataGrid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Table1Clicked(e);
+            vanTableClicked(e);
+        }
+
+        private void siteGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            siteTableClicked(e);
         }
 
         private void DataGridView5_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -201,12 +203,6 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
         private void DataGridView6_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Table6Clicked(e);
-        }
-        
-        
-        private void DataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Table2Clicked(e);
         }
 
         private void DatePickerFrom_ValueChanged(object sender, EventArgs e)
@@ -236,6 +232,7 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
                     item.dvmr_schedule_date = DateTimeSchedule.Value;
                     obj.SaveChanges();
                 }
+                MessageBox.Show("Schedule Saved.", "Success!");
             }
             else
             {
@@ -263,7 +260,6 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
             }
         }
 
-        
 
         private class PInfo
         {
