@@ -21,6 +21,6 @@ namespace wms.Entity_Class
         public Nullable<System.DateTime> site_dateuptd { get; set; }
         public int site_crtdby { get; set; }
         public Nullable<int> site_uptdby { get; set; }
-        public string site_code { get; set; }
+        
     }
 }
