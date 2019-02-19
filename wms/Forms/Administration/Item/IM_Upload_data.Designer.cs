@@ -64,7 +64,7 @@
             // progressBar
             // 
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressBar.Location = new System.Drawing.Point(14, 127);
+            this.progressBar.Location = new System.Drawing.Point(14, 135);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(682, 23);
             this.progressBar.TabIndex = 30;
@@ -72,7 +72,7 @@
             // panel10
             // 
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(14, 84);
+            this.panel10.Location = new System.Drawing.Point(14, 92);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(682, 14);
             this.panel10.TabIndex = 31;
@@ -86,7 +86,7 @@
             this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.uploadBtn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(14, 54);
+            this.panel5.Location = new System.Drawing.Point(14, 62);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(682, 30);
             this.panel5.TabIndex = 29;
@@ -269,7 +269,7 @@
             this.panel11.Controls.Add(this.progressLabel);
             this.panel11.Controls.Add(this.itemLabel);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(14, 98);
+            this.panel11.Location = new System.Drawing.Point(14, 106);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(682, 29);
             this.panel11.TabIndex = 32;
@@ -292,7 +292,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(0, 3);
+            this.label1.Location = new System.Drawing.Point(0, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(279, 21);
             this.label1.TabIndex = 8;
@@ -301,9 +301,9 @@
             // panel18
             // 
             this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel18.Location = new System.Drawing.Point(0, 24);
+            this.panel18.Location = new System.Drawing.Point(0, 26);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(680, 8);
+            this.panel18.Size = new System.Drawing.Size(680, 6);
             this.panel18.TabIndex = 9;
             // 
             // panel12
@@ -311,7 +311,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(14, 48);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(682, 6);
+            this.panel12.Size = new System.Drawing.Size(682, 14);
             this.panel12.TabIndex = 34;
             // 
             // IM_Upload_data

@@ -7,7 +7,6 @@
       <Diagram DiagramId="4020876911f34124afcf19da2cf841b8" Name="Diagram1" ZoomLevel="65">
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_CUST" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_INVTY" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_SITE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_SLSMAN" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_USRS" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_SLSMAN" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
@@ -45,6 +44,7 @@
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL3M" Width="1.5" PointX="16.75" PointY="12.75" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_DVMR" Width="1.5" PointX="0.75" PointY="17.75" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_RECEIVINGPLAN_VIEW" Width="1.5" PointX="8.7489063035458816" PointY="25.569261607513418" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_SITE" Width="1.5" PointX="4.1453070510855445" PointY="0.1903927029065754" />
         
         
         

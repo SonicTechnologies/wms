@@ -719,6 +719,9 @@ namespace wms.Forms.Administration.Users.Authorizations
             tabControl1.SelectedTab = tabpage3;
         }
 
-       
+        private void panel56_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

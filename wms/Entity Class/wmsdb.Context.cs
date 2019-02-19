@@ -12,11 +12,11 @@ namespace wms.Entity_Class
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using wms.Forms;
     public partial class wmsdb : DbContext
     {
         public wmsdb()
-            : base("name=wmsdb")
+            : base(Select_Server_Form.dbconn)
         {
         }
     
@@ -27,7 +27,6 @@ namespace wms.Entity_Class
     
         public virtual DbSet<WMS_MSTR_CUST> WMS_MSTR_CUST { get; set; }
         public virtual DbSet<WMS_MSTR_INVTY> WMS_MSTR_INVTY { get; set; }
-        public virtual DbSet<WMS_MSTR_SITE> WMS_MSTR_SITE { get; set; }
         public virtual DbSet<WMS_MSTR_SLSMAN> WMS_MSTR_SLSMAN { get; set; }
         public virtual DbSet<WMS_MSTR_USRS> WMS_MSTR_USRS { get; set; }
         public virtual DbSet<WMS_TYPE_SLSMAN> WMS_TYPE_SLSMAN { get; set; }
@@ -58,5 +57,6 @@ namespace wms.Entity_Class
         public virtual DbSet<WMS_MSTR_LVL3M> WMS_MSTR_LVL3M { get; set; }
         public virtual DbSet<WMS_MSTR_DVMR> WMS_MSTR_DVMR { get; set; }
         public virtual DbSet<WMS_RECEIVINGPLAN_VIEW> WMS_RECEIVINGPLAN_VIEW { get; set; }
+        public virtual DbSet<WMS_MSTR_SITE> WMS_MSTR_SITE { get; set; }
     }
 }
