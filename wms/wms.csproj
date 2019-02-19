@@ -165,6 +165,9 @@
     <Compile Include="Entity Class\WMS_MSTR_USRS.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_RECEIVINGPLAN_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_SITE_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>

@@ -58,5 +58,6 @@ namespace wms.Entity_Class
         public virtual DbSet<WMS_MSTR_LVL2M> WMS_MSTR_LVL2M { get; set; }
         public virtual DbSet<WMS_MSTR_LVL3M> WMS_MSTR_LVL3M { get; set; }
         public virtual DbSet<WMS_MSTR_DVMR> WMS_MSTR_DVMR { get; set; }
+        public virtual DbSet<WMS_RECEIVINGPLAN_VIEW> WMS_RECEIVINGPLAN_VIEW { get; set; }
     }
 }
