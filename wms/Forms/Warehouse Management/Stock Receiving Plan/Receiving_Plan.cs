@@ -19,7 +19,6 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
         {
             obj = new wmsdb();
             InitializeComponent();
-            InitializeTable1();
         }
 
         public void InitializeTable1()

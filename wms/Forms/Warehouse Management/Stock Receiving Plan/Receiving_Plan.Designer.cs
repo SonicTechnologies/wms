@@ -63,6 +63,8 @@
             this.InventoryIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuantityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView7)).BeginInit();
@@ -75,7 +77,7 @@
             // 
             // DatePickerFrom
             // 
-            this.DatePickerFrom.Location = new System.Drawing.Point(12, 12);
+            this.DatePickerFrom.Location = new System.Drawing.Point(111, 12);
             this.DatePickerFrom.Name = "DatePickerFrom";
             this.DatePickerFrom.Size = new System.Drawing.Size(200, 20);
             this.DatePickerFrom.TabIndex = 0;
@@ -83,7 +85,7 @@
             // 
             // DatePickerTo
             // 
-            this.DatePickerTo.Location = new System.Drawing.Point(218, 12);
+            this.DatePickerTo.Location = new System.Drawing.Point(342, 12);
             this.DatePickerTo.Name = "DatePickerTo";
             this.DatePickerTo.Size = new System.Drawing.Size(200, 20);
             this.DatePickerTo.TabIndex = 2;
@@ -330,11 +332,33 @@
             this.QuantityColumn.HeaderText = "Quantity";
             this.QuantityColumn.Name = "QuantityColumn";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Select Date:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(317, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "--";
+            // 
             // Receiving_Plan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1253, 757);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.DataGridView3);
             this.Controls.Add(this.siteGridView);
             this.Controls.Add(this.BillDocGridView);
@@ -401,5 +425,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryIdColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantityColumn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
