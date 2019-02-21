@@ -71,7 +71,7 @@ namespace wms.Forms.Warehouse_Management
             {
                 textBox1.Text = "";
                 textBox1.Text = openFileDialog1.FileName;
-                this.Height = 177;
+               
             }
         }
 
@@ -368,7 +368,7 @@ namespace wms.Forms.Warehouse_Management
 
             con1.Open();
 
-            cmd1.CommandText = "select * from [Sheet1$] WHERE [Material]";
+            cmd1.CommandText = "select * from [Sheet1$] WHERE [Material]<>NULL ";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
 
@@ -395,7 +395,7 @@ namespace wms.Forms.Warehouse_Management
                         var dvmr = obj.Set<WMS_MSTR_DVMR>();
                         dvmr.Add(new WMS_MSTR_DVMR
                         {
-                          dvmr_load_date = Convert.ToDateTime(i["Load Date"]),
+                            dvmr_load_date = Convert.ToDateTime(i["Load Date"]),
                             site_code = i["Ship-to"].ToString().ToUpper(),
                             dvmr_customer = i["Customer Name"].ToString().ToUpper(),
                             dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString()),
@@ -409,10 +409,8 @@ namespace wms.Forms.Warehouse_Management
                             dvmr_category=i["Category"].ToString(),
                             invty_id=i["Material"].ToString(),
                             dvmr_qty=Convert.ToInt32(i["Qty"]),                     
-                            dvmr_date_added = serverDate,
+                            dvmr_date_added = serverDate
                         
-
-
                         });
                         obj.SaveChanges();
 
@@ -420,29 +418,29 @@ namespace wms.Forms.Warehouse_Management
                     else
                     {
 
-                        var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
-                        DateTime serverDate = dateQuery.AsEnumerable().First();
+                        //var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
+                        //DateTime serverDate = dateQuery.AsEnumerable().First();
 
-                        obj.WMS_MSTR_DVMR.Where(c => c.invty_id == xItem).ToList().ForEach(x =>
-                        {
-                            x.dvmr_load_date = Convert.ToDateTime(i["Load Date"]);
-                            x.site_code = i["Ship-to"].ToString().ToUpper();
-                            x.dvmr_customer = i["Customer Name"].ToString().ToUpper();
-                            x.dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString());
-                            x.dvmr_shipment = i["Shipment"].ToString().ToUpper();
-                            x.dvmr_shipping_line = i["Shipping Line"].ToString();
-                            x.dvmr_truck_no = i["Truck No"].ToString();
-                            x.dvmr_cvan = i["CVAN"].ToString();
-                            x.dvmr_salesdoc = i["Sales Doc#"].ToString();
-                            x.dvmr_po_number = i["PO number"].ToString();
-                            x.dvmr_billdoc = i["Bill#Doc#"].ToString();
-                            x.dvmr_category = i["Category"].ToString();
-                            x.invty_id = i["Material"].ToString();
-                           x. dvmr_qty = Convert.ToInt32(i["Qty"]);
-                           x.dvmr_date_added = serverDate;
+                        //obj.WMS_MSTR_DVMR.Where(c => c.invty_id == xItem).ToList().ForEach(x =>
+                        //{
+                            //x.dvmr_load_date = Convert.ToDateTime(i["Load Date"]);
+                            //x.site_code = i["Ship-to"].ToString().ToUpper();
+                            //x.dvmr_customer = i["Customer Name"].ToString().ToUpper();
+                            //x.dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString());
+                            //x.dvmr_shipment = i["Shipment"].ToString().ToUpper();
+                            //x.dvmr_shipping_line = i["Shipping Line"].ToString();
+                            //x.dvmr_truck_no = i["Truck No"].ToString();
+                            //x.dvmr_cvan = i["CVAN"].ToString();
+                            //x.dvmr_salesdoc = i["Sales Doc#"].ToString();
+                            //x.dvmr_po_number = i["PO number"].ToString();
+                            //x.dvmr_billdoc = i["Bill#Doc#"].ToString();
+                            //x.dvmr_category = i["Category"].ToString();
+                            //x.invty_id = i["Material"].ToString();
+                            //x. dvmr_qty = Convert.ToInt32(i["Qty"]);
+                            //x.dvmr_date_added = serverDate;
 
-                        });
-                        obj.SaveChanges();
+                        //});
+                        //obj.SaveChanges();
 
                     }
 
