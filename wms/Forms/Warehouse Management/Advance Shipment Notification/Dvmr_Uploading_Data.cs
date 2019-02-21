@@ -71,7 +71,7 @@ namespace wms.Forms.Warehouse_Management
             {
                 textBox1.Text = "";
                 textBox1.Text = openFileDialog1.FileName;
-                this.Height = 177;
+               
             }
         }
 
@@ -118,7 +118,7 @@ namespace wms.Forms.Warehouse_Management
             progressBar1.Value = 0;
 
             con1.Open();
-            cmd1.CommandText = "select DISTINCT [Ship-to] from [Sheet1$] WHERE [Material]<> null ORDER BY [Ship-to]";
+            cmd1.CommandText = "select DISTINCT [Ship-to] from [Sheet1$] WHERE [Material]<> null  ORDER BY [Ship-to]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
             if (dr1.Read() == true)
@@ -126,9 +126,8 @@ namespace wms.Forms.Warehouse_Management
                 dt1.Reset();
                 dr1.Close();
                 adapt1.SelectCommand = cmd1;
-                adapt1.Fill(dt1);
-            
-                if (dt1.Rows.Count > 0) 
+                adapt1.Fill(dt1);   
+                if (dt1.Rows.Count > 0)
                 {
 
                     max = dt1.Rows.Count;
@@ -149,7 +148,7 @@ namespace wms.Forms.Warehouse_Management
 
         }
 
-        public void getMaxLineDvmr()
+        public void getMaxLineCustomers()
         {
             progressBar1.Value = 0;
             con1.Open();
@@ -307,7 +306,7 @@ namespace wms.Forms.Warehouse_Management
             b = 0;
 
             con1.Open();
-            cmd1.CommandText = "select DISTINCT [Ship-to],[Material]  from [Sheet1$]";
+            cmd1.CommandText = "select DISTINCT [Ship-to] from [Sheet1$] WHERE [Material]<> null ORDER BY [Ship-to]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
 
@@ -320,12 +319,11 @@ namespace wms.Forms.Warehouse_Management
 
                 foreach (DataRow i in dt1.Rows)
                 {
-                    string xsite = i["Ship-to"].ToString();
-                    string material = i["Material"].ToString();
 
+                    string xsite = i["Ship-to"].ToString();
                     var site = (from c in obj.WMS_MSTR_SITE
-                                where c.site_code == xsite || xsite == "" || material == ""
-                                select c.site_code).FirstOrDefault();
+                                where c.site_code == xsite
+                                select c.site_code).ToList();
                     if (site == null)
                     {
 
@@ -349,7 +347,7 @@ namespace wms.Forms.Warehouse_Management
                     if (backgroundWorker2.CancellationPending)
                     {
                         backgroundWorker2.ReportProgress(Convert.ToInt32(100 * TranCounter2 / max), "Cancelling...");
-                    
+                        //    e.Cancel = true;
                         backgroundWorker2.ReportProgress(100, "Cancelled!");
                         break;
                     }
@@ -370,7 +368,7 @@ namespace wms.Forms.Warehouse_Management
 
             con1.Open();
 
-            cmd1.CommandText = "select * from [Sheet1$] WHERE [Material]";
+            cmd1.CommandText = "select * from [Sheet1$] WHERE [Material]<>NULL ";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
 
@@ -383,384 +381,63 @@ namespace wms.Forms.Warehouse_Management
 
                 foreach (DataRow i in dt1.Rows)
                 {
+               
 
-                    if (i != null)
-                    {
-                        string xItem = i["Material"].ToString();
-                        var Item = (from c in obj.WMS_MSTR_INVTY
+                    string xItem = i["Material"].ToString();
+                    var Item = (from c in obj.WMS_MSTR_INVTY
                                     where c.invty_id == xItem
-                                    select c.invty_id).FirstOrDefault();
+                                select c.invty_id).FirstOrDefault();
+                    if (Item != null)
+                    {
+                        var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
+                        DateTime serverDate = dateQuery.AsEnumerable().First();
 
-
-                   
-                        if (Item != null)
+                        var dvmr = obj.Set<WMS_MSTR_DVMR>();
+                        dvmr.Add(new WMS_MSTR_DVMR
                         {
+                            dvmr_load_date = Convert.ToDateTime(i["Load Date"]),
+                            site_code = i["Ship-to"].ToString().ToUpper(),
+                            dvmr_customer = i["Customer Name"].ToString().ToUpper(),
+                            dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString()),
+                            dvmr_shipment = i["Shipment"].ToString().ToUpper(),
+                            dvmr_shipping_line = i["Shipping Line"].ToString(),
+                            dvmr_truck_no = i["Truck No"].ToString(),
+                            dvmr_cvan = i["CVAN"].ToString(),
+                            dvmr_salesdoc=i["Sales Doc#"].ToString(),
+                            dvmr_po_number=i["PO number"].ToString(),
+                            dvmr_billdoc=i["Bill#Doc#"].ToString(),
+                            dvmr_category=i["Category"].ToString(),
+                            invty_id=i["Material"].ToString(),
+                            dvmr_qty=Convert.ToInt32(i["Qty"]),                     
+                            dvmr_date_added = serverDate
+                        
+                        });
+                        obj.SaveChanges();
 
-
-                            string xSite = i["Ship-to"].ToString();
-                            var Site = (from c in obj.WMS_MSTR_SITE
-                                        where c.site_code == xSite
-                                        select c.site_code).FirstOrDefault();
-                            string loadDate = "";
-                            if (i["Load Date"].ToString().ToUpper() == "")
-                            {
-                                loadDate = null;
-                            }
-                            else
-                            {
-                                loadDate = i["Load Date"].ToString().ToUpper();
-                            }
-                            string shipTo = "";
-                            if (i["Ship-to"].ToString().ToUpper() == "")
-                            {
-                                shipTo = null;
-                            }
-                            else
-                            {
-                                shipTo = i["Ship-to"].ToString().ToUpper();
-                            }
-                            string Customer = "";
-                            if (i["Customer Name"].ToString().ToUpper() == "")
-                            {
-                                Customer = null;
-                            }
-                            else
-                            {
-                                Customer = i["Customer Name"].ToString().ToUpper();
-                            }
-                            string rdd = "";
-                            if (i["RDD"].ToString().ToUpper() == "")
-                            {
-                                rdd = null;
-                            }
-                            else
-                            {
-                                rdd = i["RDD"].ToString().ToUpper();
-                            }
-                            string shipment = "";
-                            if (i["Shipment"].ToString().ToUpper() == "")
-                            {
-                                shipment = null;
-                            }
-                            else
-                            {
-                                shipment = i["Shipment"].ToString().ToUpper();
-                            }
-
-                            string shippingLine = "";
-                            if (i["Shipping Line"].ToString().ToUpper() == "")
-                            {
-                                shippingLine = null;
-                            }
-                            else
-                            {
-                                shippingLine = i["Shipping Line"].ToString().ToUpper();
-                            }
-
-                         
-
-                            string truck = "";
-                            if (i["Truck No"].ToString().ToUpper() == "")
-                            {
-                                truck = null;
-                            }
-                            else
-                            {
-                                truck = i["Truck No"].ToString().ToUpper();
-                            }
-
-                            string cvan = "";
-                            if (i["CVAN"].ToString().ToUpper() == "")
-                            {
-                                cvan = null;
-                            }
-                            else
-                            {
-                                cvan = i["CVAN"].ToString().ToUpper();
-                            }
-
-                            string sales = "";
-                            if (i["Sales Doc#"].ToString().ToUpper() == "")
-                            {
-                                sales = null;
-                            }
-                            else
-                            {
-                                sales = i["Sales Doc#"].ToString().ToUpper();
-                            }
-
-                            string po = "";
-                            if (i["PO number"].ToString().ToUpper() == "")
-                            {
-                                po = null;
-                            }
-                            else
-                            {
-                                po = i["PO number"].ToString().ToUpper();
-                            }
-
-                            string bill = "";
-                            if (i["Bill#Doc#"].ToString().ToUpper() == "")
-                            {
-                                bill = null;
-                            }
-                            else
-                            {
-                                bill = i["Bill#Doc#"].ToString().ToUpper();
-                            }
-
-                            string category = "";
-                            if (i["Category"].ToString().ToUpper() == "")
-                            {
-                                category = null;
-                            }
-                            else
-                            {
-                                category = i["Category"].ToString().ToUpper();
-                            }
-
-                            string material = "";
-                            if (i["Material"].ToString().ToUpper() == "")
-                            {
-                                material = null;
-                            }
-                            else
-                            {
-                                material = i["Material"].ToString().ToUpper();
-                            }
-
-
-                            string qty = "";
-                            if (i["Qty"].ToString().ToUpper() == "")
-                            {
-                                qty = null;
-                            }
-                            else
-                            {
-                                qty = i["Qty"].ToString().ToUpper();
-                            }
-
-
-                            if (Site != null)
-                            {
-
-                                var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
-                                DateTime serverDate = dateQuery.AsEnumerable().First();
-
-                                var dvmr = obj.Set<WMS_MSTR_DVMR>();
-                                dvmr.Add(new WMS_MSTR_DVMR
-                                {
-                                    dvmr_load_date = Convert.ToDateTime(loadDate),
-                                    site_code =shipTo,
-                                    dvmr_customer = Customer,
-                                    dvmr_rdd = Convert.ToDateTime(rdd),
-                                    dvmr_shipment = shipment,
-                                    dvmr_shipping_line = shippingLine,
-                                    dvmr_truck_no = truck,
-                                    dvmr_cvan = cvan,
-                                    dvmr_salesdoc = sales,
-                                    dvmr_po_number = po,
-                                    dvmr_billdoc = bill,
-                                    dvmr_category = category,
-                                    invty_id = material,
-                                    dvmr_qty = Convert.ToInt32(qty),
-                                    dvmr_date_added = serverDate,
-
-
-
-                                });
-
-                                if (obj.SaveChanges() > 0)
-                                {
-
-                                }
-                                else
-                                {
-
-                                }
-                            }
-                           
-                        }
-                        else
-                        {
-
-                        }
                     }
-
-
                     else
                     {
-                        
-                        //string xItem = i["Material"].ToString();
-                        //var Item = (from c in obj.WMS_MSTR_INVTY
-                        //            where c.invty_id == xItem
-                        //            select c.invty_id).FirstOrDefault();
-
-
-                        //    string xSite = i["Ship-to"].ToString();
-                        //    var Site = (from c in obj.WMS_MSTR_SITE
-                        //                where c.site_code == xSite
-                        //                select c.site_code).FirstOrDefault();
-                        //    string loadDate = "";
-                        //    if (i["Load Date"].ToString().ToUpper() == "")
-                        //    {
-                        //        loadDate = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        loadDate = i["Load Date"].ToString().ToUpper();
-                        //    }
-                        //    string shipTo = "";
-                        //    if (i["Ship-to"].ToString().ToUpper() == "")
-                        //    {
-                        //        shipTo = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        shipTo = i["Ship-to"].ToString().ToUpper();
-                        //    }
-                        //    string Customer = "";
-                        //    if (i["Customer Name"].ToString().ToUpper() == "")
-                        //    {
-                        //        Customer = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        Customer = i["Customer Name"].ToString().ToUpper();
-                        //    }
-                        //    string rdd = "";
-                        //    if (i["RDD"].ToString().ToUpper() == "")
-                        //    {
-                        //        rdd = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        rdd = i["RDD"].ToString().ToUpper();
-                        //    }
-                        //    string shipment = "";
-                        //    if (i["Shipment"].ToString().ToUpper() == "")
-                        //    {
-                        //        shipment = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        shipment = i["Shipment"].ToString().ToUpper();
-                        //    }
-
-                        //    string shippingLine = "";
-                        //    if (i["Shipping Line"].ToString().ToUpper() == "")
-                        //    {
-                        //        shippingLine = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        shippingLine = i["Shipping Line"].ToString().ToUpper();
-                        //    }
-
-
-
-                        //    string truck = "";
-                        //    if (i["Truck No"].ToString().ToUpper() == "")
-                        //    {
-                        //        truck = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        truck = i["Truck No"].ToString().ToUpper();
-                        //    }
-
-                        //    string cvan = "";
-                        //    if (i["CVAN"].ToString().ToUpper() == "")
-                        //    {
-                        //        cvan = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        cvan = i["CVAN"].ToString().ToUpper();
-                        //    }
-
-                        //    string sales = "";
-                        //    if (i["Sales Doc#"].ToString().ToUpper() == "")
-                        //    {
-                        //        sales = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        sales = i["Sales Doc#"].ToString().ToUpper();
-                        //    }
-
-                        //    string po = "";
-                        //    if (i["PO number"].ToString().ToUpper() == "")
-                        //    {
-                        //        po = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        po = i["PO number"].ToString().ToUpper();
-                        //    }
-
-                        //    string bill = "";
-                        //    if (i["Bill#Doc#"].ToString().ToUpper() == "")
-                        //    {
-                        //        bill = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        bill = i["Bill#Doc#"].ToString().ToUpper();
-                        //    }
-
-                        //    string category = "";
-                        //    if (i["Category"].ToString().ToUpper() == "")
-                        //    {
-                        //        category = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        category = i["Category"].ToString().ToUpper();
-                        //    }
-
-                        //    string material = "";
-                        //    if (i["Material"].ToString().ToUpper() == "")
-                        //    {
-                        //        material = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        material = i["Material"].ToString().ToUpper();
-                        //    }
-
-
-                        //    string qty = "";
-                        //    if (i["Qty"].ToString().ToUpper() == "")
-                        //    {
-                        //        qty = null;
-                        //    }
-                        //    else
-                        //    {
-                        //        qty = i["Qty"].ToString().ToUpper();
-                        //    }
-
 
                         //var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
                         //DateTime serverDate = dateQuery.AsEnumerable().First();
 
                         //obj.WMS_MSTR_DVMR.Where(c => c.invty_id == xItem).ToList().ForEach(x =>
                         //{
-                        //    x.dvmr_load_date = Convert.ToDateTime(loadDate);
-                        //    x.site_code = shipTo;
-                        //    x.dvmr_customer = Customer;
-                        //    x.dvmr_rdd = Convert.ToDateTime(rdd);
-                        //    x.dvmr_shipment = shipment;
-                        //    x.dvmr_shipping_line = shippingLine;
-                        //    x.dvmr_truck_no = truck;
-                        //    x.dvmr_cvan = cvan;
-                        //    x.dvmr_salesdoc = sales;
-                        //    x.dvmr_po_number = po;
-                        //    x.dvmr_billdoc = bill;
-                        //    x.dvmr_category = category;
-                        //    x.invty_id = material;
-                        //    x.dvmr_qty = Convert.ToInt32(qty);
-                        //    x.dvmr_date_added = serverDate;
+                            //x.dvmr_load_date = Convert.ToDateTime(i["Load Date"]);
+                            //x.site_code = i["Ship-to"].ToString().ToUpper();
+                            //x.dvmr_customer = i["Customer Name"].ToString().ToUpper();
+                            //x.dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString());
+                            //x.dvmr_shipment = i["Shipment"].ToString().ToUpper();
+                            //x.dvmr_shipping_line = i["Shipping Line"].ToString();
+                            //x.dvmr_truck_no = i["Truck No"].ToString();
+                            //x.dvmr_cvan = i["CVAN"].ToString();
+                            //x.dvmr_salesdoc = i["Sales Doc#"].ToString();
+                            //x.dvmr_po_number = i["PO number"].ToString();
+                            //x.dvmr_billdoc = i["Bill#Doc#"].ToString();
+                            //x.dvmr_category = i["Category"].ToString();
+                            //x.invty_id = i["Material"].ToString();
+                            //x. dvmr_qty = Convert.ToInt32(i["Qty"]);
+                            //x.dvmr_date_added = serverDate;
 
                         //});
                         //obj.SaveChanges();
@@ -774,7 +451,7 @@ namespace wms.Forms.Warehouse_Management
                     if (backgroundWorker3.CancellationPending)
                     {
                         backgroundWorker3.ReportProgress(Convert.ToInt32(100 * TranCounter3 / max), "Cancelling...");
-               
+                        //    e.Cancel = true;
                         backgroundWorker3.ReportProgress(100, "Cancelled!");
                         break;
                     }
@@ -815,7 +492,7 @@ namespace wms.Forms.Warehouse_Management
                 MessageBox.Show(e.Error.Message, " Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (e.Cancelled)
             {
-              
+                //  cnnOLEDBx.Close();
                 MessageBox.Show("Task Cancelled by User!", " Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -832,7 +509,7 @@ namespace wms.Forms.Warehouse_Management
                 MessageBox.Show(e.Error.Message, " Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (e.Cancelled)
             {
-      
+                //  cnnOLEDBx.Close();
                 MessageBox.Show("Task Cancelled by User!", " Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -891,7 +568,7 @@ namespace wms.Forms.Warehouse_Management
                 else
                 {
 
-                    getMaxLineDvmr();
+                    getMaxLineCustomers();
                     Execute3();
 
                 }
@@ -941,7 +618,7 @@ namespace wms.Forms.Warehouse_Management
                 MessageBox.Show(e.Error.Message, " Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (e.Cancelled)
             {
-        
+                //  cnnOLEDBx.Close();
                 MessageBox.Show("Task Cancelled by User!", " Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

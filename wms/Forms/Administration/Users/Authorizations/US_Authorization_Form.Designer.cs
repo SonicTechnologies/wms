@@ -1092,7 +1092,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(460, 5);
-            this.panel6.TabIndex = 16;
+            this.panel6.TabIndex = 29;
             // 
             // panel7
             // 
@@ -1657,7 +1657,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "US_Authorization_Form";
             this.ShowIcon = false;
-            this.Text = "US_Authorization";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1801,7 +1801,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Panel panel11;
@@ -1859,5 +1858,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.Panel panel6;
     }
 }
