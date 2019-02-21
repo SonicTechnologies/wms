@@ -28,32 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DatePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.DatePickerTo = new System.Windows.Forms.DateTimePicker();
             this.AddBtn = new System.Windows.Forms.Button();
             this.DateTimeSchedule = new System.Windows.Forms.DateTimePicker();
             this.DataGridView5 = new System.Windows.Forms.DataGridView();
+            this.chck2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridView6 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.snum2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sitecode2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sitename2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cat2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cases2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vanNum2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridView8 = new System.Windows.Forms.DataGridView();
+            this.srs2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vanNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vanDataGrid = new System.Windows.Forms.DataGridView();
             this.chck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -147,6 +153,9 @@
             this.panel31 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView8)).BeginInit();
@@ -239,6 +248,7 @@
             this.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView5.ColumnHeadersVisible = false;
             this.DataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chck2,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
@@ -249,23 +259,29 @@
             this.DataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView5.Size = new System.Drawing.Size(548, 188);
             this.DataGridView5.TabIndex = 11;
-            this.DataGridView5.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView5_CellDoubleClick);
+            this.DataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView5_CellClick);
+            // 
+            // chck2
+            // 
+            this.chck2.HeaderText = "";
+            this.chck2.Name = "chck2";
+            this.chck2.Width = 5;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Van";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Van No.";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 5;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Loaded";
+            this.dataGridViewTextBoxColumn2.HeaderText = "RDD";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 5;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Added Date";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Schedule";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 5;
             // 
@@ -280,9 +296,12 @@
             this.DataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView6.ColumnHeadersVisible = false;
             this.DataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+            this.snum2,
+            this.sitecode2,
+            this.sitename2,
+            this.cat2,
+            this.cases2,
+            this.vanNum2});
             this.DataGridView6.Dock = System.Windows.Forms.DockStyle.Top;
             this.DataGridView6.Location = new System.Drawing.Point(0, 338);
             this.DataGridView6.Name = "DataGridView6";
@@ -291,28 +310,48 @@
             this.DataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView6.Size = new System.Drawing.Size(548, 150);
             this.DataGridView6.TabIndex = 12;
-            this.DataGridView6.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView6_CellDoubleClick);
             // 
-            // dataGridViewTextBoxColumn4
+            // snum2
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "SiteCode";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 5;
+            this.snum2.HeaderText = "num";
+            this.snum2.Name = "snum2";
+            this.snum2.ReadOnly = true;
+            this.snum2.Width = 5;
             // 
-            // dataGridViewTextBoxColumn5
+            // sitecode2
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Site Name";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 5;
+            this.sitecode2.HeaderText = "Site Code";
+            this.sitecode2.Name = "sitecode2";
+            this.sitecode2.ReadOnly = true;
+            this.sitecode2.Width = 5;
             // 
-            // dataGridViewTextBoxColumn6
+            // sitename2
             // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Cases";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 5;
+            this.sitename2.HeaderText = "Site Name";
+            this.sitename2.Name = "sitename2";
+            this.sitename2.ReadOnly = true;
+            this.sitename2.Width = 5;
+            // 
+            // cat2
+            // 
+            this.cat2.HeaderText = "Category";
+            this.cat2.Name = "cat2";
+            this.cat2.ReadOnly = true;
+            this.cat2.Width = 5;
+            // 
+            // cases2
+            // 
+            this.cases2.HeaderText = "Cases";
+            this.cases2.Name = "cases2";
+            this.cases2.ReadOnly = true;
+            this.cases2.Width = 5;
+            // 
+            // vanNum2
+            // 
+            this.vanNum2.HeaderText = "Van No";
+            this.vanNum2.Name = "vanNum2";
+            this.vanNum2.ReadOnly = true;
+            this.vanNum2.Width = 5;
             // 
             // DataGridView8
             // 
@@ -325,8 +364,10 @@
             this.DataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView8.ColumnHeadersVisible = false;
             this.DataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.srs2,
             this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
+            this.dataGridViewTextBoxColumn11,
+            this.vanNum});
             this.DataGridView8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridView8.Location = new System.Drawing.Point(0, 527);
             this.DataGridView8.Name = "DataGridView8";
@@ -335,6 +376,13 @@
             this.DataGridView8.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView8.Size = new System.Drawing.Size(548, 194);
             this.DataGridView8.TabIndex = 14;
+            // 
+            // srs2
+            // 
+            this.srs2.HeaderText = "srs";
+            this.srs2.Name = "srs2";
+            this.srs2.ReadOnly = true;
+            this.srs2.Width = 5;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -345,10 +393,17 @@
             // 
             // dataGridViewTextBoxColumn11
             // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Site_Name";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Site Name";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Width = 5;
+            // 
+            // vanNum
+            // 
+            this.vanNum.HeaderText = "Van No";
+            this.vanNum.Name = "vanNum";
+            this.vanNum.ReadOnly = true;
+            this.vanNum.Width = 5;
             // 
             // vanDataGrid
             // 
@@ -378,11 +433,11 @@
             // 
             // chck
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = false;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.chck.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.NullValue = false;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.Black;
+            this.chck.DefaultCellStyle = dataGridViewCellStyle34;
             this.chck.HeaderText = "";
             this.chck.Name = "chck";
             this.chck.ReadOnly = true;
@@ -390,10 +445,10 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle35;
             this.Column1.HeaderText = "Van No.";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -401,10 +456,10 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle36;
             this.Column2.HeaderText = "RDD";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -412,10 +467,10 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle37;
             this.Column3.HeaderText = "Schedule";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -455,8 +510,8 @@
             // 
             // BillDocsColumn
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BillDocsColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BillDocsColumn.DefaultCellStyle = dataGridViewCellStyle38;
             this.BillDocsColumn.HeaderText = "Billdoc";
             this.BillDocsColumn.Name = "BillDocsColumn";
             this.BillDocsColumn.ReadOnly = true;
@@ -464,8 +519,8 @@
             // 
             // SiteBillDocColumn
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiteBillDocColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiteBillDocColumn.DefaultCellStyle = dataGridViewCellStyle39;
             this.SiteBillDocColumn.HeaderText = "Site Name";
             this.SiteBillDocColumn.Name = "SiteBillDocColumn";
             this.SiteBillDocColumn.ReadOnly = true;
@@ -473,8 +528,8 @@
             // 
             // vanno2
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.vanno2.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.vanno2.DefaultCellStyle = dataGridViewCellStyle40;
             this.vanno2.HeaderText = "Van No";
             this.vanno2.Name = "vanno2";
             this.vanno2.ReadOnly = true;
@@ -505,7 +560,6 @@
             this.siteGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.siteGridView.Size = new System.Drawing.Size(548, 150);
             this.siteGridView.TabIndex = 18;
-            this.siteGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.siteGridView_CellDoubleClick);
             // 
             // snum
             // 
@@ -517,8 +571,8 @@
             // 
             // SiteCodeColumn
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiteCodeColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiteCodeColumn.DefaultCellStyle = dataGridViewCellStyle41;
             this.SiteCodeColumn.HeaderText = "Site Code";
             this.SiteCodeColumn.Name = "SiteCodeColumn";
             this.SiteCodeColumn.ReadOnly = true;
@@ -527,8 +581,8 @@
             // 
             // SiteNameColumn
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiteNameColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiteNameColumn.DefaultCellStyle = dataGridViewCellStyle42;
             this.SiteNameColumn.HeaderText = "Site Name";
             this.SiteNameColumn.Name = "SiteNameColumn";
             this.SiteNameColumn.ReadOnly = true;
@@ -543,8 +597,8 @@
             // 
             // CasesColumn
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CasesColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CasesColumn.DefaultCellStyle = dataGridViewCellStyle43;
             this.CasesColumn.HeaderText = "Cases";
             this.CasesColumn.Name = "CasesColumn";
             this.CasesColumn.ReadOnly = true;
@@ -552,8 +606,8 @@
             // 
             // vanno
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.vanno.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.vanno.DefaultCellStyle = dataGridViewCellStyle44;
             this.vanno.HeaderText = "Van No";
             this.vanno.Name = "vanno";
             this.vanno.ReadOnly = true;
@@ -1132,6 +1186,7 @@
             // 
             // panel44
             // 
+            this.panel44.Controls.Add(this.label15);
             this.panel44.Controls.Add(this.label1);
             this.panel44.Controls.Add(this.panel57);
             this.panel44.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1216,6 +1271,8 @@
             // 
             // panel36
             // 
+            this.panel36.Controls.Add(this.label17);
+            this.panel36.Controls.Add(this.label16);
             this.panel36.Controls.Add(this.panel38);
             this.panel36.Controls.Add(this.DateTimeSchedule);
             this.panel36.Controls.Add(this.panel37);
@@ -1302,6 +1359,39 @@
             this.panel32.Size = new System.Drawing.Size(546, 6);
             this.panel32.TabIndex = 9;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(75, 1);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 17);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "0";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label16.Location = new System.Drawing.Point(0, 5);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(70, 17);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "Van Count:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(70, 5);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(15, 17);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "0";
+            // 
             // Receiving_Plan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1361,6 +1451,7 @@
             this.panel44.PerformLayout();
             this.panel41.ResumeLayout(false);
             this.panel36.ResumeLayout(false);
+            this.panel36.PerformLayout();
             this.panel38.ResumeLayout(false);
             this.panel38.PerformLayout();
             this.panel31.ResumeLayout(false);
@@ -1376,16 +1467,8 @@
         private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.DateTimePicker DateTimeSchedule;
         private System.Windows.Forms.DataGridView DataGridView5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridView DataGridView6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridView DataGridView8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridView vanDataGrid;
         private System.Windows.Forms.DataGridView BillDocGridView;
         private System.Windows.Forms.DataGridView siteGridView;
@@ -1479,5 +1562,22 @@
         private System.Windows.Forms.Panel panel60;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel61;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chck2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn snum2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sitecode2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sitename2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cat2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cases2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vanNum2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn srs2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vanNum;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }

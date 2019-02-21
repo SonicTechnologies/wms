@@ -24,15 +24,15 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
 
         private void Receiving_Plan_Load(object sender, EventArgs e)
         {
-            GetVanList();
+            GetVanList(vanDataGrid, siteGridView, BillDocGridView, label9);
         }
 
-        public void GetVanList()
+        public void GetVanList(DataGridView vanDataGrid, DataGridView siteGridView, DataGridView BillDocGridView, Label label)
         {
-            //DateTime datefrm = DatePickerFrom.Value;
-            //DateTime dateto = DatePickerTo.Value;
+            DateTime datefrm = DatePickerFrom.Value;
+            DateTime dateto = DatePickerTo.Value;
             var vans = (from c in obj.WMS_MSTR_DVMR
-                        //where c.dvmr_rdd >= datefrm.Date && c.dvmr_rdd <= dateto.Date
+                        where c.dvmr_rdd >= datefrm.Date && c.dvmr_rdd <= dateto.Date
                         select new 
                             {
                                 c.dvmr_cvan,
@@ -42,7 +42,7 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
                             }).OrderBy(c => new { c.dvmr_schedule_date }).ThenBy(c => c.dvmr_cvan).Distinct().ToList();
 
             vanDataGrid.Rows.Clear();
-            label9.Text = vans.Count.ToString();
+            label.Text = vans.Count.ToString();
             if (vans.Count != 0)
             {
                 vanDataGrid.ColumnHeadersVisible = true;
@@ -61,50 +61,9 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
             siteGridView.Rows.Clear();
             BillDocGridView.Rows.Clear();
         }
-
-       
-        public void Table5Clicked(DataGridViewCellEventArgs e)
-        {
-            DataGridView8.Rows.Clear();
-            DataGridView6.Rows.Clear();
-            int qty = 0;
-            vanCode = DataGridView5.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-            var query = (from d in obj.WMS_MSTR_DVMR
-                         join s in obj.WMS_MSTR_SITE on d.site_code equals s.site_code
-                         where d.dvmr_rdd >= DatePickerFrom.Value && d.dvmr_rdd <= DatePickerTo.Value && d.dvmr_cvan == vanCode.ToString()
-                         select new
-                         {
-                             BillDoc = d.dvmr_billdoc,
-                             SiteName = s.site_name
-                         }).OrderBy(d => new { d.BillDoc }).Distinct();
-            foreach (var billdoc in query)
-            {
-                DataGridView8.Rows.Add(billdoc.BillDoc, billdoc.SiteName);
-            }
-
-            var query2 = (from d in obj.WMS_MSTR_DVMR
-                          join s in obj.WMS_MSTR_SITE on d.site_code equals s.site_code
-                          join i in obj.WMS_MSTR_INVTY on d.invty_id equals i.invty_id
-                          where d.dvmr_cvan == vanCode.ToString() && d.dvmr_rdd >= DatePickerFrom.Value && d.dvmr_rdd <= DatePickerTo.Value
-                          select new
-                          {
-                              SiteCode = d.site_code,
-                              SiteName = s.site_name
-                          }).OrderBy(d => new { d.SiteCode }).Distinct();
-            foreach (var items in query2)
-            {
-                var insideQuery = obj.WMS_MSTR_DVMR.Where(d => d.site_code == items.SiteCode).Select(d => d.dvmr_qty).ToList();
-                foreach (var x in insideQuery)
-                {
-                    qty += x;
-                }
-                DataGridView6.Rows.Add(items.SiteCode, items.SiteName, qty.ToString());
-            }
-        }
         
         public void vanTableClicked(string van_no)
         {
-            
             //siteGridView.Rows.Clear();
             var query1 = (from a in obj.WMS_MSTR_DVMR
                           join b in obj.WMS_MSTR_SITE on a.site_code equals b.site_code
@@ -134,7 +93,7 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
                 siteGridView.ColumnHeadersVisible = false;
             }
             siteGridView.ClearSelection();
-            label14.Text = TotalCases().ToString();
+            label14.Text = TotalCases(siteGridView).ToString();
 
             //BillDocGridView.Rows.Clear();
             var query2 = (from r in obj.WMS_MSTR_DVMR
@@ -165,29 +124,78 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
 
             label7.Text = BillDocGridView.Rows.Count.ToString();
         }
-        
 
-        private void siteGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        public void vanTableClicked2(string van_no)
         {
-        }
+            //siteGridView.Rows.Clear();
+            var query1 = (from a in obj.WMS_MSTR_DVMR
+                          join b in obj.WMS_MSTR_SITE on a.site_code equals b.site_code
+                          where a.dvmr_cvan == van_no
+                          group a by new { a.site_code, b.site_name, a.dvmr_category, a.dvmr_cvan } into c
+                          select new
+                          {
+                              c.Key.site_code,
+                              c.Key.site_name,
+                              c.Key.dvmr_category,
+                              c.Key.dvmr_cvan,
+                              tqty = c.Sum(d => d.dvmr_qty),
 
-        private void DataGridView5_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Table5Clicked(e);
-        }
+                          }).Distinct().ToList();
+            if (query1.Count != 0)
+            {
+                DataGridView6.ColumnHeadersVisible = true;
+                int a = 0;
+                foreach (var rows in query1)
+                {
+                    a = a + 1;
+                    DataGridView6.Rows.Add(a.ToString() + rows.dvmr_cvan, rows.site_code, rows.site_name, rows.dvmr_category, rows.tqty.ToString(), rows.dvmr_cvan);
+                }
+            }
+            else
+            {
+                DataGridView6.ColumnHeadersVisible = false;
+            }
+            DataGridView6.ClearSelection();
+            label15.Text = TotalCases(DataGridView6).ToString();
 
-        private void DataGridView6_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
+            //BillDocGridView.Rows.Clear();
+            var query2 = (from r in obj.WMS_MSTR_DVMR
+                          where r.dvmr_cvan == van_no
+                          select new
+                          {
+                              BillDoc = r.dvmr_billdoc,
+                              SiteCode = r.site_code,
+                              Cvan = r.dvmr_cvan
+
+                          }).Distinct().ToList();
+            if (query2.Count != 0)
+            {
+                DataGridView8.ColumnHeadersVisible = true;
+                int b = 0;
+                foreach (var billdoc in query2)
+                {
+                    b = b + 1;
+                    var siteName = obj.WMS_MSTR_SITE.Where(s => s.site_code == billdoc.SiteCode).Select(s => s.site_name).SingleOrDefault();
+                    DataGridView8.Rows.Add(b.ToString() + billdoc.Cvan, billdoc.BillDoc, siteName, billdoc.Cvan);
+                }
+            }
+            else
+            {
+                DataGridView8.ColumnHeadersVisible = false;
+            }
+            DataGridView8.ClearSelection();
+
+            label13.Text = BillDocGridView.Rows.Count.ToString();
         }
 
         private void DatePickerFrom_ValueChanged(object sender, EventArgs e)
         {
-            GetVanList();
+            GetVanList(vanDataGrid, siteGridView, BillDocGridView, label9);
         }
 
         private void DatePickerTo_ValueChanged(object sender, EventArgs e)
         {
-            GetVanList();
+            GetVanList(vanDataGrid, siteGridView, BillDocGridView, label9);
         }
 
         private void DateTimeSchedule_ValueChanged(object sender, EventArgs e)
@@ -217,22 +225,7 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
         private void AddBtn_Click(object sender, EventArgs e)
         {
             DateTimeSchedule.Enabled = true;
-            DataGridView5.Rows.Clear();
-            var vans = obj.WMS_MSTR_DVMR.Where(v => v.dvmr_rdd >= DatePickerFrom.Value && v.dvmr_rdd <= DatePickerTo.Value)
-                .Select(v => new PInfo
-                {
-                    VanName = v.dvmr_cvan,
-                    Rdd = v.dvmr_rdd,
-                    Schedule = v.dvmr_schedule_date
-                }).Distinct();
-            foreach (var van in vans)
-            {
-                string loadedString = "";
-                if (van.Schedule == null)
-                { loadedString = "False"; }
-                else { loadedString = "True"; }
-                DataGridView5.Rows.Add(van.VanName, loadedString, van.Schedule);
-            }
+            GetVanList(DataGridView5, DataGridView6, DataGridView8, label17);
         }
 
         private void vanDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -243,19 +236,12 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
             dgv.ClearSelection();
             if (e.RowIndex == -1 && e.ColumnIndex == 0)
             {
-
-                    allchecked1();
-
+                allchecked1(vanDataGrid);
             }
             else
             {
-
-                //if (e.ColumnIndex == 0)
-                //{
-                   
                     if (Convert.ToBoolean(dgv.CurrentRow.Cells[0].Value) == true)
                     {
-
                         dgv.CurrentRow.Cells[0].Value = false;
                         dgv.CurrentRow.Cells[0].Style.BackColor = Color.White;
                         dgv.CurrentRow.Cells[1].Style.BackColor = Color.White;
@@ -266,7 +252,7 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
                         dgv.CurrentRow.Cells[2].Style.ForeColor = Color.Black;
                         dgv.CurrentRow.Cells[3].Style.ForeColor = Color.Black;
 
-                        remVan(dgv.CurrentRow.Cells[1].Value.ToString());
+                        remVan(dgv.CurrentRow.Cells[1].Value.ToString(), siteGridView, BillDocGridView, label7);
                     }
                     else
                     {
@@ -284,18 +270,11 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
 
                         vanTableClicked(dgv.CurrentRow.Cells[1].Value.ToString());
                     }
-
-                //}
-                //else
-                //{
-
-                //}
-
             }
         }
 
 
-        private void allchecked1()
+        private void allchecked1(DataGridView vanDataGrid)
         {
             int a;
             int c;
@@ -338,12 +317,10 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
                         xrow.Cells[1].Style.BackColor = Color.FromArgb(20, 104, 179);
                         xrow.Cells[2].Style.BackColor = Color.FromArgb(20, 104, 179);
                         xrow.Cells[3].Style.BackColor = Color.FromArgb(20, 104, 179);
-
                         xrow.Cells[0].Style.ForeColor = Color.White;
                         xrow.Cells[1].Style.ForeColor = Color.White;
                         xrow.Cells[2].Style.ForeColor = Color.White;
                         xrow.Cells[3].Style.ForeColor = Color.White;
-
                     }
                 }
             }
@@ -373,7 +350,8 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
             }
 
         }
-        private int TotalCases()
+
+        private int TotalCases(DataGridView siteGridView)
         {
             int a = 0;
 
@@ -385,7 +363,7 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
             return a;
         }
 
-        private void remVan(string vanno)
+        private void remVan(string vanno, DataGridView siteGridView, DataGridView BillDocGridView, Label label)
         {
             List<string> listnum1 = new List<string>();
             List<string> listnum2 = new List<string>();
@@ -449,7 +427,50 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
                 }
 
             }
-            label7.Text = BillDocGridView.Rows.Count.ToString();
+            label.Text = BillDocGridView.Rows.Count.ToString();
+        }
+
+        private void DataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dgv = sender as DataGridView;
+            dgv.ClearSelection();
+            if (e.RowIndex == -1 && e.ColumnIndex == 0)
+            {
+                allchecked1(DataGridView5);
+            }
+            else
+            {
+                if (Convert.ToBoolean(dgv.CurrentRow.Cells[0].Value) == true)
+                {
+                    dgv.CurrentRow.Cells[0].Value = false;
+                    dgv.CurrentRow.Cells[0].Style.BackColor = Color.White;
+                    dgv.CurrentRow.Cells[1].Style.BackColor = Color.White;
+                    dgv.CurrentRow.Cells[2].Style.BackColor = Color.White;
+                    dgv.CurrentRow.Cells[3].Style.BackColor = Color.White;
+                    dgv.CurrentRow.Cells[0].Style.ForeColor = Color.Black;
+                    dgv.CurrentRow.Cells[1].Style.ForeColor = Color.Black;
+                    dgv.CurrentRow.Cells[2].Style.ForeColor = Color.Black;
+                    dgv.CurrentRow.Cells[3].Style.ForeColor = Color.Black;
+
+                    remVan(dgv.CurrentRow.Cells[1].Value.ToString(), DataGridView6, DataGridView8, label13);
+                }
+                else
+                {
+
+                    dgv.CurrentRow.Cells[0].Value = true;
+                    dgv.CurrentRow.Cells[0].Style.BackColor = Color.FromArgb(20, 104, 179);
+                    dgv.CurrentRow.Cells[1].Style.BackColor = Color.FromArgb(20, 104, 179);
+                    dgv.CurrentRow.Cells[2].Style.BackColor = Color.FromArgb(20, 104, 179);
+                    dgv.CurrentRow.Cells[3].Style.BackColor = Color.FromArgb(20, 104, 179);
+
+                    dgv.CurrentRow.Cells[0].Style.ForeColor = Color.White;
+                    dgv.CurrentRow.Cells[1].Style.ForeColor = Color.White;
+                    dgv.CurrentRow.Cells[2].Style.ForeColor = Color.White;
+                    dgv.CurrentRow.Cells[3].Style.ForeColor = Color.White;
+
+                    vanTableClicked2(dgv.CurrentRow.Cells[1].Value.ToString());
+                }
+            }
         }
 
         private class PInfo
