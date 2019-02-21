@@ -118,7 +118,7 @@ namespace wms.Forms.Warehouse_Management
             progressBar1.Value = 0;
 
             con1.Open();
-            cmd1.CommandText = "select DISTINCT [Ship-to] from [Sheet1$] WHERE [Material]<> null  ORDER BY [Ship-to]";
+            cmd1.CommandText = "select DISTINCT [Ship-to] from [Sheet1$] WHERE [Material]<> null ORDER BY [Ship-to]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
             if (dr1.Read() == true)
@@ -126,8 +126,9 @@ namespace wms.Forms.Warehouse_Management
                 dt1.Reset();
                 dr1.Close();
                 adapt1.SelectCommand = cmd1;
-                adapt1.Fill(dt1);   
-                if (dt1.Rows.Count > 0)
+                adapt1.Fill(dt1);
+            
+                if (dt1.Rows.Count > 0) 
                 {
 
                     max = dt1.Rows.Count;
@@ -319,11 +320,11 @@ namespace wms.Forms.Warehouse_Management
 
                 foreach (DataRow i in dt1.Rows)
                 {
-
                     string xsite = i["Ship-to"].ToString();
                     string material = i["Material"].ToString();
+
                     var site = (from c in obj.WMS_MSTR_SITE
-                                where c.site_code == xsite || xsite=="" || material ==""
+                                where c.site_code == xsite || xsite == "" || material == ""
                                 select c.site_code).FirstOrDefault();
                     if (site == null)
                     {
