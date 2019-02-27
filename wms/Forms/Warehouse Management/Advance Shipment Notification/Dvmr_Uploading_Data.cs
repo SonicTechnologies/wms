@@ -34,6 +34,8 @@ namespace wms.Forms.Warehouse_Management
         int TranCounter2;
         int TranCounter3;
 
+        int updated;
+        int inserted;
 
 
         Excel.Application Excel1;
@@ -81,7 +83,7 @@ namespace wms.Forms.Warehouse_Management
             strConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + textBox1.Text + ";Extended Properties='Excel 12.0 Xml;HDR=YES'";
             con1.ConnectionString = strConnectionString;
             con1.Open();
-            cmd1.CommandText = "select DISTINCT [Material],[Customer Name] from [Sheet1$] WHERE [Material] <>  null  ORDER BY [Material]";
+            cmd1.CommandText = "select DISTINCT [Material] from [Sheet1$] WHERE [Material] <>  null  ORDER BY [Material]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
 
@@ -148,7 +150,7 @@ namespace wms.Forms.Warehouse_Management
 
         }
 
-        public void getMaxLineCustomers()
+        public void getMaxLineDvmr()
         {
             progressBar1.Value = 0;
             con1.Open();
@@ -235,7 +237,7 @@ namespace wms.Forms.Warehouse_Management
             TranCounter1 = 0;
             a = 0;
             con1.Open();
-            cmd1.CommandText = "select DISTINCT [Material],[Customer Name] from [Sheet1$] WHERE [Material]<> null ORDER BY [Material]";
+            cmd1.CommandText = "select DISTINCT [Material] from [Sheet1$] WHERE [Material]<> null ORDER BY [Material]";
             cmd1.Connection = con1;
             OleDbDataReader dr1 = cmd1.ExecuteReader();
 
@@ -251,23 +253,25 @@ namespace wms.Forms.Warehouse_Management
 
                     string xItem = i["Material"].ToString();
                     var Item = (from c in obj.WMS_MSTR_INVTY
-                                    where c.invty_id == xItem
-                                    select c.invty_id).FirstOrDefault();
-                    if (Item == null)
+                                where c.invty_id == xItem
+                                select c.invty_id).ToList();
+                    if (Item.Count > 0)
                     {
-                        Worksheet1.Cells[1, 1] = "Material";
-                        Worksheet1.Cells[1, 2] = "Customer Name";
 
-                        Worksheet1.Cells[2 + a, 1] = i["Material"].ToString();
-                        Worksheet1.Cells[2 + a, 2] = i["Customer Name"].ToString();
 
-                        a = a + 1;
-
-                        ItemNotRegistered = ItemNotRegistered + 1;
                     }
                     else
                     {
 
+                        Worksheet1.Cells[1, 1] = "Material";
+
+
+                        Worksheet1.Cells[2 + a, 1] = i["Material"].ToString();
+
+
+                        a = a + 1;
+
+                        ItemNotRegistered = ItemNotRegistered + 1;
                     }
 
                     TranCounter1 = TranCounter1 + 1;
@@ -324,9 +328,13 @@ namespace wms.Forms.Warehouse_Management
                     var site = (from c in obj.WMS_MSTR_SITE
                                 where c.site_code == xsite
                                 select c.site_code).ToList();
-                    if (site == null)
+                    if (site.Count > 0)
                     {
 
+                    
+                    }
+                    else
+                    {
                         Worksheet2.Cells[1, 1] = "Ship-to";
 
                         Worksheet2.Cells[2 + b, 1] = i["Ship-to"].ToString();
@@ -334,9 +342,6 @@ namespace wms.Forms.Warehouse_Management
                         b = b + 1;
 
                         SiteNotRegistered = SiteNotRegistered + 1;
-                    }
-                    else
-                    {
 
                     }
 
@@ -365,7 +370,8 @@ namespace wms.Forms.Warehouse_Management
         {
 
             TranCounter3 = 0;
-
+            inserted = 0;
+            updated = 0;
             con1.Open();
 
             cmd1.CommandText = "select * from [Sheet1$] WHERE [Material]<>NULL ";
@@ -383,64 +389,87 @@ namespace wms.Forms.Warehouse_Management
                 {
                
 
-                    string xItem = i["Material"].ToString();
-                    var Item = (from c in obj.WMS_MSTR_INVTY
-                                    where c.invty_id == xItem
-                                select c.invty_id).FirstOrDefault();
-                    if (Item != null)
-                    {
-                        var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
-                        DateTime serverDate = dateQuery.AsEnumerable().First();
+                    string xItem = i["Material"].ToString();         
+                    string xBillDoc = i["Bill#Doc#"].ToString();
 
-                        var dvmr = obj.Set<WMS_MSTR_DVMR>();
-                        dvmr.Add(new WMS_MSTR_DVMR
-                        {
-                            dvmr_load_date = Convert.ToDateTime(i["Load Date"]),
-                            site_code = i["Ship-to"].ToString().ToUpper(),
-                            dvmr_customer = i["Customer Name"].ToString().ToUpper(),
-                            dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString()),
-                            dvmr_shipment = i["Shipment"].ToString().ToUpper(),
-                            dvmr_shipping_line = i["Shipping Line"].ToString(),
-                            dvmr_truck_no = i["Truck No"].ToString(),
-                            dvmr_cvan = i["CVAN"].ToString(),
-                            dvmr_salesdoc=i["Sales Doc#"].ToString(),
-                            dvmr_po_number=i["PO number"].ToString(),
-                            dvmr_billdoc=i["Bill#Doc#"].ToString(),
-                            dvmr_category=i["Category"].ToString(),
-                            invty_id=i["Material"].ToString(),
-                            dvmr_qty=Convert.ToInt32(i["Qty"]),                     
-                            dvmr_date_added = serverDate
-                        
-                        });
+                    var Item = (from c in obj.WMS_MSTR_DVMR
+                                    where c.dvmr_billdoc == xBillDoc
+                                 && c.invty_id == xItem
+                                select c.invty_id).FirstOrDefault();
+
+                 
+                    if (Item == null)
+                    {
+
+                            var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
+                            DateTime serverDate = dateQuery.AsEnumerable().First();
+
+                            var dvmr = obj.Set<WMS_MSTR_DVMR>();
+                            dvmr.Add(new WMS_MSTR_DVMR
+                            {
+                                dvmr_load_date = Convert.ToDateTime(i["Load Date"]),
+                                site_code = i["Ship-to"].ToString().ToUpper(),
+                                dvmr_customer = i["Customer Name"].ToString().ToUpper(),
+                                dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString()),
+                                dvmr_shipment = i["Shipment"].ToString().ToUpper(),
+                                dvmr_shipping_line = i["Shipping Line"].ToString(),
+                                dvmr_truck_no = i["Truck No"].ToString(),
+                                dvmr_cvan = i["CVAN"].ToString(),
+                                dvmr_salesdoc = i["Sales Doc#"].ToString(),
+                                dvmr_po_number = i["PO number"].ToString(),
+                                dvmr_billdoc = i["Bill#Doc#"].ToString(),
+                                dvmr_category = i["Category"].ToString(),
+                                invty_id = i["Material"].ToString(),
+                                dvmr_qty = Convert.ToInt32(i["Qty"]),
+                                dvmr_date_added = serverDate
+
+                            });
+
                         obj.SaveChanges();
+                        
+
+
+                        inserted = inserted + 1;
 
                     }
                     else
                     {
 
-                        //var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
-                        //DateTime serverDate = dateQuery.AsEnumerable().First();
+                        string xItem2 = i["Material"].ToString();
+                        string xBillDoc2 = i["Bill#Doc#"].ToString();
 
-                        //obj.WMS_MSTR_DVMR.Where(c => c.invty_id == xItem).ToList().ForEach(x =>
-                        //{
-                            //x.dvmr_load_date = Convert.ToDateTime(i["Load Date"]);
-                            //x.site_code = i["Ship-to"].ToString().ToUpper();
-                            //x.dvmr_customer = i["Customer Name"].ToString().ToUpper();
-                            //x.dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString());
-                            //x.dvmr_shipment = i["Shipment"].ToString().ToUpper();
-                            //x.dvmr_shipping_line = i["Shipping Line"].ToString();
-                            //x.dvmr_truck_no = i["Truck No"].ToString();
-                            //x.dvmr_cvan = i["CVAN"].ToString();
-                            //x.dvmr_salesdoc = i["Sales Doc#"].ToString();
-                            //x.dvmr_po_number = i["PO number"].ToString();
-                            //x.dvmr_billdoc = i["Bill#Doc#"].ToString();
-                            //x.dvmr_category = i["Category"].ToString();
-                            //x.invty_id = i["Material"].ToString();
-                            //x. dvmr_qty = Convert.ToInt32(i["Qty"]);
-                            //x.dvmr_date_added = serverDate;
+                        var Item2 = (from c in obj.WMS_MSTR_DVMR
+                                    where c.dvmr_billdoc == xBillDoc2
+                                 && c.invty_id == xItem2
+                                    select c.invty_id).FirstOrDefault();
 
-                        //});
-                        //obj.SaveChanges();
+                        var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
+                        DateTime serverDate = dateQuery.AsEnumerable().First();
+
+                        obj.WMS_MSTR_DVMR.Where(c => c.invty_id == Item2).ToList().ForEach(x =>
+                        {
+                            x.dvmr_load_date = Convert.ToDateTime(i["Load Date"]);
+                            x.site_code = i["Ship-to"].ToString().ToUpper();
+                            x.dvmr_customer = i["Customer Name"].ToString().ToUpper();
+                            x.dvmr_rdd = Convert.ToDateTime(i["RDD"].ToString());
+                            x.dvmr_shipment = i["Shipment"].ToString().ToUpper();
+                            x.dvmr_shipping_line = i["Shipping Line"].ToString();
+                            x.dvmr_truck_no = i["Truck No"].ToString();
+                            x.dvmr_cvan = i["CVAN"].ToString();
+                            x.dvmr_salesdoc = i["Sales Doc#"].ToString();
+                            x.dvmr_po_number = i["PO number"].ToString();
+                            x.dvmr_billdoc = i["Bill#Doc#"].ToString();
+                            x.dvmr_category = i["Category"].ToString();
+                            x.invty_id = i["Material"].ToString();
+                            x.dvmr_qty = Convert.ToInt32(i["Qty"]);
+                            x.dvmr_date_added = serverDate;
+
+                        });
+       
+                  
+
+                        updated = updated + 1;
+
 
                     }
 
@@ -568,7 +597,7 @@ namespace wms.Forms.Warehouse_Management
                 else
                 {
 
-                    getMaxLineCustomers();
+                    getMaxLineDvmr();
                     Execute3();
 
                 }
@@ -623,7 +652,7 @@ namespace wms.Forms.Warehouse_Management
             }
             else
             {
-                MessageBox.Show("Successfully Uploaded " + TranCounter3.ToString() + " out of " + max.ToString() + " Dvmr(s)", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Successfully Uploaded " + TranCounter3.ToString() + " out of " + max.ToString() + "\n" + "New: " + inserted.ToString() + "\n" + "Updated: " + updated.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
 
             }

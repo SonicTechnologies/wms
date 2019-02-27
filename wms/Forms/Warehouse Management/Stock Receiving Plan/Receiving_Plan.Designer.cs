@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DatePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.DatePickerTo = new System.Windows.Forms.DateTimePicker();
             this.AddBtn = new System.Windows.Forms.Button();
@@ -60,7 +60,17 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BillDocGridView = new System.Windows.Forms.DataGridView();
+            this.srs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BillDocsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiteBillDocColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vanno2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteGridView = new System.Windows.Forms.DataGridView();
+            this.snum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiteCodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SiteNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CasesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vanno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -78,6 +88,9 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.panel60 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel61 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -134,19 +147,6 @@
             this.panel31 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
-            this.srs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BillDocsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiteBillDocColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vanno2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.snum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiteCodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SiteNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CasesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vanno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel60 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel61 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView8)).BeginInit();
@@ -158,6 +158,7 @@
             this.panel26.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panel60.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -176,7 +177,6 @@
             this.panel36.SuspendLayout();
             this.panel38.SuspendLayout();
             this.panel31.SuspendLayout();
-            this.panel60.SuspendLayout();
             this.SuspendLayout();
             // 
             // DatePickerFrom
@@ -333,7 +333,7 @@
             this.DataGridView8.ReadOnly = true;
             this.DataGridView8.RowHeadersVisible = false;
             this.DataGridView8.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView8.Size = new System.Drawing.Size(548, 341);
+            this.DataGridView8.Size = new System.Drawing.Size(548, 326);
             this.DataGridView8.TabIndex = 14;
             // 
             // dataGridViewTextBoxColumn10
@@ -378,11 +378,11 @@
             // 
             // chck
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.NullValue = false;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.chck.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = false;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.chck.DefaultCellStyle = dataGridViewCellStyle1;
             this.chck.HeaderText = "";
             this.chck.Name = "chck";
             this.chck.ReadOnly = true;
@@ -390,10 +390,10 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "Van No.";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -401,10 +401,10 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.HeaderText = "RDD";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -412,10 +412,10 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column3.HeaderText = "Schedule";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -442,8 +442,43 @@
             this.BillDocGridView.ReadOnly = true;
             this.BillDocGridView.RowHeadersVisible = false;
             this.BillDocGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.BillDocGridView.Size = new System.Drawing.Size(548, 341);
+            this.BillDocGridView.Size = new System.Drawing.Size(548, 326);
             this.BillDocGridView.TabIndex = 17;
+            // 
+            // srs
+            // 
+            this.srs.HeaderText = "srs";
+            this.srs.Name = "srs";
+            this.srs.ReadOnly = true;
+            this.srs.Visible = false;
+            this.srs.Width = 5;
+            // 
+            // BillDocsColumn
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BillDocsColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.BillDocsColumn.HeaderText = "Billdoc";
+            this.BillDocsColumn.Name = "BillDocsColumn";
+            this.BillDocsColumn.ReadOnly = true;
+            this.BillDocsColumn.Width = 5;
+            // 
+            // SiteBillDocColumn
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiteBillDocColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.SiteBillDocColumn.HeaderText = "Site Name";
+            this.SiteBillDocColumn.Name = "SiteBillDocColumn";
+            this.SiteBillDocColumn.ReadOnly = true;
+            this.SiteBillDocColumn.Width = 5;
+            // 
+            // vanno2
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.vanno2.DefaultCellStyle = dataGridViewCellStyle7;
+            this.vanno2.HeaderText = "Van No";
+            this.vanno2.Name = "vanno2";
+            this.vanno2.ReadOnly = true;
+            this.vanno2.Width = 5;
             // 
             // siteGridView
             // 
@@ -472,20 +507,72 @@
             this.siteGridView.TabIndex = 18;
             this.siteGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.siteGridView_CellDoubleClick);
             // 
+            // snum
+            // 
+            this.snum.HeaderText = "num";
+            this.snum.Name = "snum";
+            this.snum.ReadOnly = true;
+            this.snum.Visible = false;
+            this.snum.Width = 5;
+            // 
+            // SiteCodeColumn
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiteCodeColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.SiteCodeColumn.HeaderText = "Site Code";
+            this.SiteCodeColumn.Name = "SiteCodeColumn";
+            this.SiteCodeColumn.ReadOnly = true;
+            this.SiteCodeColumn.Visible = false;
+            this.SiteCodeColumn.Width = 5;
+            // 
+            // SiteNameColumn
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiteNameColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.SiteNameColumn.HeaderText = "Site Name";
+            this.SiteNameColumn.Name = "SiteNameColumn";
+            this.SiteNameColumn.ReadOnly = true;
+            this.SiteNameColumn.Width = 5;
+            // 
+            // cat
+            // 
+            this.cat.HeaderText = "Category";
+            this.cat.Name = "cat";
+            this.cat.ReadOnly = true;
+            this.cat.Width = 5;
+            // 
+            // CasesColumn
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CasesColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            this.CasesColumn.HeaderText = "Cases";
+            this.CasesColumn.Name = "CasesColumn";
+            this.CasesColumn.ReadOnly = true;
+            this.CasesColumn.Width = 5;
+            // 
+            // vanno
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.vanno.DefaultCellStyle = dataGridViewCellStyle11;
+            this.vanno.HeaderText = "Van No";
+            this.vanno.Name = "vanno";
+            this.vanno.ReadOnly = true;
+            this.vanno.Width = 5;
+            // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(14, 896);
+            this.panel1.Size = new System.Drawing.Size(14, 881);
             this.panel1.TabIndex = 20;
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1737, 0);
+            this.panel2.Location = new System.Drawing.Point(1590, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(14, 896);
+            this.panel2.Size = new System.Drawing.Size(14, 881);
             this.panel2.TabIndex = 21;
             // 
             // panel3
@@ -493,15 +580,15 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(14, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1723, 14);
+            this.panel3.Size = new System.Drawing.Size(1576, 14);
             this.panel3.TabIndex = 22;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(14, 882);
+            this.panel4.Location = new System.Drawing.Point(14, 867);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1723, 14);
+            this.panel4.Size = new System.Drawing.Size(1576, 14);
             this.panel4.TabIndex = 23;
             // 
             // panel5
@@ -525,7 +612,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(14, 14);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(548, 868);
+            this.panel5.Size = new System.Drawing.Size(548, 853);
             this.panel5.TabIndex = 24;
             // 
             // panel25
@@ -639,6 +726,35 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(548, 28);
             this.panel13.TabIndex = 53;
+            // 
+            // panel60
+            // 
+            this.panel60.Controls.Add(this.label14);
+            this.panel60.Controls.Add(this.panel61);
+            this.panel60.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel60.Location = new System.Drawing.Point(80, 5);
+            this.panel60.Name = "panel60";
+            this.panel60.Size = new System.Drawing.Size(43, 23);
+            this.panel60.TabIndex = 17;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(0, 1);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 17);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "0";
+            // 
+            // panel61
+            // 
+            this.panel61.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel61.Location = new System.Drawing.Point(0, 0);
+            this.panel61.Name = "panel61";
+            this.panel61.Size = new System.Drawing.Size(43, 1);
+            this.panel61.TabIndex = 15;
             // 
             // panel16
             // 
@@ -876,7 +992,7 @@
             this.panel27.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel27.Location = new System.Drawing.Point(562, 14);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(14, 868);
+            this.panel27.Size = new System.Drawing.Size(14, 853);
             this.panel27.TabIndex = 25;
             // 
             // panel30
@@ -900,7 +1016,7 @@
             this.panel30.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel30.Location = new System.Drawing.Point(576, 14);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(548, 868);
+            this.panel30.Size = new System.Drawing.Size(548, 853);
             this.panel30.TabIndex = 26;
             // 
             // panel53
@@ -1186,127 +1302,11 @@
             this.panel32.Size = new System.Drawing.Size(546, 6);
             this.panel32.TabIndex = 9;
             // 
-            // srs
-            // 
-            this.srs.HeaderText = "srs";
-            this.srs.Name = "srs";
-            this.srs.ReadOnly = true;
-            this.srs.Visible = false;
-            this.srs.Width = 5;
-            // 
-            // BillDocsColumn
-            // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BillDocsColumn.DefaultCellStyle = dataGridViewCellStyle16;
-            this.BillDocsColumn.HeaderText = "Billdoc";
-            this.BillDocsColumn.Name = "BillDocsColumn";
-            this.BillDocsColumn.ReadOnly = true;
-            this.BillDocsColumn.Width = 5;
-            // 
-            // SiteBillDocColumn
-            // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiteBillDocColumn.DefaultCellStyle = dataGridViewCellStyle17;
-            this.SiteBillDocColumn.HeaderText = "Site Name";
-            this.SiteBillDocColumn.Name = "SiteBillDocColumn";
-            this.SiteBillDocColumn.ReadOnly = true;
-            this.SiteBillDocColumn.Width = 5;
-            // 
-            // vanno2
-            // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.vanno2.DefaultCellStyle = dataGridViewCellStyle18;
-            this.vanno2.HeaderText = "Van No";
-            this.vanno2.Name = "vanno2";
-            this.vanno2.ReadOnly = true;
-            this.vanno2.Width = 5;
-            // 
-            // snum
-            // 
-            this.snum.HeaderText = "num";
-            this.snum.Name = "snum";
-            this.snum.ReadOnly = true;
-            this.snum.Visible = false;
-            this.snum.Width = 5;
-            // 
-            // SiteCodeColumn
-            // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiteCodeColumn.DefaultCellStyle = dataGridViewCellStyle19;
-            this.SiteCodeColumn.HeaderText = "Site Code";
-            this.SiteCodeColumn.Name = "SiteCodeColumn";
-            this.SiteCodeColumn.ReadOnly = true;
-            this.SiteCodeColumn.Visible = false;
-            this.SiteCodeColumn.Width = 5;
-            // 
-            // SiteNameColumn
-            // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiteNameColumn.DefaultCellStyle = dataGridViewCellStyle20;
-            this.SiteNameColumn.HeaderText = "Site Name";
-            this.SiteNameColumn.Name = "SiteNameColumn";
-            this.SiteNameColumn.ReadOnly = true;
-            this.SiteNameColumn.Width = 5;
-            // 
-            // cat
-            // 
-            this.cat.HeaderText = "Category";
-            this.cat.Name = "cat";
-            this.cat.ReadOnly = true;
-            this.cat.Width = 5;
-            // 
-            // CasesColumn
-            // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CasesColumn.DefaultCellStyle = dataGridViewCellStyle21;
-            this.CasesColumn.HeaderText = "Cases";
-            this.CasesColumn.Name = "CasesColumn";
-            this.CasesColumn.ReadOnly = true;
-            this.CasesColumn.Width = 5;
-            // 
-            // vanno
-            // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.vanno.DefaultCellStyle = dataGridViewCellStyle22;
-            this.vanno.HeaderText = "Van No";
-            this.vanno.Name = "vanno";
-            this.vanno.ReadOnly = true;
-            this.vanno.Width = 5;
-            // 
-            // panel60
-            // 
-            this.panel60.Controls.Add(this.label14);
-            this.panel60.Controls.Add(this.panel61);
-            this.panel60.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel60.Location = new System.Drawing.Point(80, 5);
-            this.panel60.Name = "panel60";
-            this.panel60.Size = new System.Drawing.Size(43, 23);
-            this.panel60.TabIndex = 17;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(0, 1);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(15, 17);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "0";
-            // 
-            // panel61
-            // 
-            this.panel61.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel61.Location = new System.Drawing.Point(0, 0);
-            this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(43, 1);
-            this.panel61.TabIndex = 15;
-            // 
             // Receiving_Plan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1751, 896);
+            this.ClientSize = new System.Drawing.Size(1604, 881);
             this.Controls.Add(this.panel30);
             this.Controls.Add(this.panel27);
             this.Controls.Add(this.panel5);
@@ -1334,6 +1334,8 @@
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             this.panel13.ResumeLayout(false);
+            this.panel60.ResumeLayout(false);
+            this.panel60.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -1363,8 +1365,6 @@
             this.panel38.PerformLayout();
             this.panel31.ResumeLayout(false);
             this.panel31.PerformLayout();
-            this.panel60.ResumeLayout(false);
-            this.panel60.PerformLayout();
             this.ResumeLayout(false);
 
         }
