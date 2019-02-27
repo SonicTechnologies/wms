@@ -29,7 +29,7 @@ namespace wms.Entity_Class
         public string dvmr_category { get; set; }
         public string invty_id { get; set; }
         public int dvmr_qty { get; set; }
-        public System.DateTime dvmr_date_added { get; set; }
+        public Nullable<System.DateTime> dvmr_date_added { get; set; }
         public Nullable<System.DateTime> dvmr_schedule_date { get; set; }
     }
 }

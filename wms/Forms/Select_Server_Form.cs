@@ -34,42 +34,36 @@ namespace wms.Forms
         {
             get { return xip; }
             set { xip = value; }
-
         }
 
         private static string x_servername
         {
             get { return xserver_name; }
             set { xserver_name = value; }
-
         }
 
         private static string x_dbname
         {
             get { return xdbname; }
             set { xdbname = value; }
-
         }
 
         private static string x_user
         {
             get { return xuser; }
             set { xuser = value; }
-
         }
 
         private static string x_xpass
         {
             get { return xpass; }
             set { xpass = value; }
-
         }
 
         private static string x_dbconn
         {
             get { return dbconn; }
             set { dbconn = value; }
-
         }
         public Select_Server_Form()
         {

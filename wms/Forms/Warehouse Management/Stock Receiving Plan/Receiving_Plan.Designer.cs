@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,24 +35,26 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.DatePickerFrom = new System.Windows.Forms.DateTimePicker();
-            this.DatePickerTo = new System.Windows.Forms.DateTimePicker();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.AddBtn = new System.Windows.Forms.Button();
             this.DateTimeSchedule = new System.Windows.Forms.DateTimePicker();
             this.DataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataGridView6 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridView8 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vanDataGrid = new System.Windows.Forms.DataGridView();
             this.chck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sitename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BillDocGridView = new System.Windows.Forms.DataGridView();
@@ -99,17 +97,15 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel33 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel20 = new System.Windows.Forms.Panel();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel34 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel47 = new System.Windows.Forms.Panel();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -129,6 +125,9 @@
             this.panel48 = new System.Windows.Forms.Panel();
             this.panel46 = new System.Windows.Forms.Panel();
             this.panel43 = new System.Windows.Forms.Panel();
+            this.panel62 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel63 = new System.Windows.Forms.Panel();
             this.panel44 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel57 = new System.Windows.Forms.Panel();
@@ -139,6 +138,10 @@
             this.panel40 = new System.Windows.Forms.Panel();
             this.panel39 = new System.Windows.Forms.Panel();
             this.panel36 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel33 = new System.Windows.Forms.Panel();
             this.panel38 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel56 = new System.Windows.Forms.Panel();
@@ -147,9 +150,21 @@
             this.panel31 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
+            this.num2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cat2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.van2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chck1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vanDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BillDocGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siteGridView)).BeginInit();
@@ -162,44 +177,23 @@
             this.panel16.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel28.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel33.SuspendLayout();
             this.panel34.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel30.SuspendLayout();
             this.panel49.SuspendLayout();
             this.panel51.SuspendLayout();
             this.panel50.SuspendLayout();
             this.panel43.SuspendLayout();
+            this.panel62.SuspendLayout();
             this.panel44.SuspendLayout();
             this.panel41.SuspendLayout();
             this.panel36.SuspendLayout();
+            this.panel28.SuspendLayout();
             this.panel38.SuspendLayout();
             this.panel31.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DatePickerFrom
-            // 
-            this.DatePickerFrom.CustomFormat = "yyyy-MM-dd";
-            this.DatePickerFrom.Dock = System.Windows.Forms.DockStyle.Right;
-            this.DatePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatePickerFrom.Location = new System.Drawing.Point(336, 5);
-            this.DatePickerFrom.Name = "DatePickerFrom";
-            this.DatePickerFrom.Size = new System.Drawing.Size(100, 22);
-            this.DatePickerFrom.TabIndex = 0;
-            this.DatePickerFrom.ValueChanged += new System.EventHandler(this.DatePickerFrom_ValueChanged);
-            // 
-            // DatePickerTo
-            // 
-            this.DatePickerTo.CustomFormat = "yyyy-MM-dd";
-            this.DatePickerTo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.DatePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatePickerTo.Location = new System.Drawing.Point(448, 5);
-            this.DatePickerTo.Name = "DatePickerTo";
-            this.DatePickerTo.Size = new System.Drawing.Size(100, 22);
-            this.DatePickerTo.TabIndex = 2;
-            this.DatePickerTo.ValueChanged += new System.EventHandler(this.DatePickerTo_ValueChanged);
             // 
             // AddBtn
             // 
@@ -208,7 +202,7 @@
             this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.AddBtn.ForeColor = System.Drawing.Color.White;
-            this.AddBtn.Location = new System.Drawing.Point(478, 0);
+            this.AddBtn.Location = new System.Drawing.Point(402, 0);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(70, 30);
             this.AddBtn.TabIndex = 4;
@@ -220,9 +214,8 @@
             // 
             this.DateTimeSchedule.CustomFormat = "yyyy-MM-dd";
             this.DateTimeSchedule.Dock = System.Windows.Forms.DockStyle.Right;
-            this.DateTimeSchedule.Enabled = false;
             this.DateTimeSchedule.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimeSchedule.Location = new System.Drawing.Point(448, 5);
+            this.DateTimeSchedule.Location = new System.Drawing.Point(372, 5);
             this.DateTimeSchedule.Name = "DateTimeSchedule";
             this.DateTimeSchedule.Size = new System.Drawing.Size(100, 22);
             this.DateTimeSchedule.TabIndex = 10;
@@ -236,38 +229,21 @@
             this.DataGridView5.AllowUserToResizeRows = false;
             this.DataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.DataGridView5.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.DataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView5.ColumnHeadersVisible = false;
             this.DataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.chck1,
+            this.dataGridViewTextBoxColumn1});
             this.DataGridView5.Dock = System.Windows.Forms.DockStyle.Top;
             this.DataGridView5.Location = new System.Drawing.Point(0, 73);
             this.DataGridView5.Name = "DataGridView5";
+            this.DataGridView5.ReadOnly = true;
             this.DataGridView5.RowHeadersVisible = false;
             this.DataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView5.Size = new System.Drawing.Size(548, 188);
+            this.DataGridView5.Size = new System.Drawing.Size(472, 188);
             this.DataGridView5.TabIndex = 11;
-            this.DataGridView5.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView5_CellDoubleClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Van";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Loaded";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Added Date";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 5;
+            this.DataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView5_CellClick);
             // 
             // DataGridView6
             // 
@@ -277,78 +253,25 @@
             this.DataGridView6.AllowUserToResizeRows = false;
             this.DataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.DataGridView6.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.DataGridView6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView6.ColumnHeadersVisible = false;
             this.DataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.num2,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+            this.cat2,
+            this.dataGridViewTextBoxColumn6,
+            this.van2});
             this.DataGridView6.Dock = System.Windows.Forms.DockStyle.Top;
             this.DataGridView6.Location = new System.Drawing.Point(0, 338);
             this.DataGridView6.Name = "DataGridView6";
             this.DataGridView6.ReadOnly = true;
             this.DataGridView6.RowHeadersVisible = false;
             this.DataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView6.Size = new System.Drawing.Size(548, 150);
+            this.DataGridView6.Size = new System.Drawing.Size(472, 150);
             this.DataGridView6.TabIndex = 12;
             this.DataGridView6.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView6_CellDoubleClick);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "SiteCode";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Site Name";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Cases";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 5;
-            // 
-            // DataGridView8
-            // 
-            this.DataGridView8.AllowUserToAddRows = false;
-            this.DataGridView8.AllowUserToDeleteRows = false;
-            this.DataGridView8.AllowUserToOrderColumns = true;
-            this.DataGridView8.AllowUserToResizeRows = false;
-            this.DataGridView8.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.DataGridView8.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.DataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView8.ColumnHeadersVisible = false;
-            this.DataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.DataGridView8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridView8.Location = new System.Drawing.Point(0, 527);
-            this.DataGridView8.Name = "DataGridView8";
-            this.DataGridView8.ReadOnly = true;
-            this.DataGridView8.RowHeadersVisible = false;
-            this.DataGridView8.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView8.Size = new System.Drawing.Size(548, 326);
-            this.DataGridView8.TabIndex = 14;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Billdocs";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 5;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Site_Name";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 5;
             // 
             // vanDataGrid
             // 
@@ -358,11 +281,13 @@
             this.vanDataGrid.AllowUserToResizeRows = false;
             this.vanDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.vanDataGrid.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.vanDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.vanDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vanDataGrid.ColumnHeadersVisible = false;
             this.vanDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chck,
             this.Column1,
+            this.sitename,
             this.Column2,
             this.Column3});
             this.vanDataGrid.Dock = System.Windows.Forms.DockStyle.Top;
@@ -372,17 +297,17 @@
             this.vanDataGrid.ReadOnly = true;
             this.vanDataGrid.RowHeadersVisible = false;
             this.vanDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.vanDataGrid.Size = new System.Drawing.Size(548, 188);
+            this.vanDataGrid.Size = new System.Drawing.Size(472, 188);
             this.vanDataGrid.TabIndex = 16;
             this.vanDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vanDataGrid_CellClick);
             // 
             // chck
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = false;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.chck.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.NullValue = false;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.chck.DefaultCellStyle = dataGridViewCellStyle5;
             this.chck.HeaderText = "";
             this.chck.Name = "chck";
             this.chck.ReadOnly = true;
@@ -390,21 +315,31 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column1.HeaderText = "Van No.";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Width = 5;
             // 
+            // sitename
+            // 
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.sitename.DefaultCellStyle = dataGridViewCellStyle7;
+            this.sitename.HeaderText = "Site";
+            this.sitename.Name = "sitename";
+            this.sitename.ReadOnly = true;
+            this.sitename.Width = 5;
+            // 
             // Column2
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column2.HeaderText = "RDD";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -412,10 +347,10 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column3.HeaderText = "Schedule";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -429,6 +364,7 @@
             this.BillDocGridView.AllowUserToResizeRows = false;
             this.BillDocGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.BillDocGridView.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.BillDocGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.BillDocGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BillDocGridView.ColumnHeadersVisible = false;
             this.BillDocGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -442,7 +378,7 @@
             this.BillDocGridView.ReadOnly = true;
             this.BillDocGridView.RowHeadersVisible = false;
             this.BillDocGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.BillDocGridView.Size = new System.Drawing.Size(548, 326);
+            this.BillDocGridView.Size = new System.Drawing.Size(472, 341);
             this.BillDocGridView.TabIndex = 17;
             // 
             // srs
@@ -455,8 +391,8 @@
             // 
             // BillDocsColumn
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BillDocsColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BillDocsColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.BillDocsColumn.HeaderText = "Billdoc";
             this.BillDocsColumn.Name = "BillDocsColumn";
             this.BillDocsColumn.ReadOnly = true;
@@ -464,8 +400,8 @@
             // 
             // SiteBillDocColumn
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiteBillDocColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiteBillDocColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.SiteBillDocColumn.HeaderText = "Site Name";
             this.SiteBillDocColumn.Name = "SiteBillDocColumn";
             this.SiteBillDocColumn.ReadOnly = true;
@@ -473,9 +409,9 @@
             // 
             // vanno2
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.vanno2.DefaultCellStyle = dataGridViewCellStyle7;
-            this.vanno2.HeaderText = "Van No";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.vanno2.DefaultCellStyle = dataGridViewCellStyle12;
+            this.vanno2.HeaderText = "Van No.";
             this.vanno2.Name = "vanno2";
             this.vanno2.ReadOnly = true;
             this.vanno2.Width = 5;
@@ -488,6 +424,7 @@
             this.siteGridView.AllowUserToResizeRows = false;
             this.siteGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.siteGridView.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.siteGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.siteGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.siteGridView.ColumnHeadersVisible = false;
             this.siteGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -503,7 +440,7 @@
             this.siteGridView.ReadOnly = true;
             this.siteGridView.RowHeadersVisible = false;
             this.siteGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.siteGridView.Size = new System.Drawing.Size(548, 150);
+            this.siteGridView.Size = new System.Drawing.Size(472, 150);
             this.siteGridView.TabIndex = 18;
             this.siteGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.siteGridView_CellDoubleClick);
             // 
@@ -517,8 +454,8 @@
             // 
             // SiteCodeColumn
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiteCodeColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiteCodeColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.SiteCodeColumn.HeaderText = "Site Code";
             this.SiteCodeColumn.Name = "SiteCodeColumn";
             this.SiteCodeColumn.ReadOnly = true;
@@ -527,8 +464,8 @@
             // 
             // SiteNameColumn
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SiteNameColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SiteNameColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.SiteNameColumn.HeaderText = "Site Name";
             this.SiteNameColumn.Name = "SiteNameColumn";
             this.SiteNameColumn.ReadOnly = true;
@@ -543,8 +480,8 @@
             // 
             // CasesColumn
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CasesColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CasesColumn.DefaultCellStyle = dataGridViewCellStyle15;
             this.CasesColumn.HeaderText = "Cases";
             this.CasesColumn.Name = "CasesColumn";
             this.CasesColumn.ReadOnly = true;
@@ -552,9 +489,9 @@
             // 
             // vanno
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.vanno.DefaultCellStyle = dataGridViewCellStyle11;
-            this.vanno.HeaderText = "Van No";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.vanno.DefaultCellStyle = dataGridViewCellStyle16;
+            this.vanno.HeaderText = "Van No.";
             this.vanno.Name = "vanno";
             this.vanno.ReadOnly = true;
             this.vanno.Width = 5;
@@ -564,15 +501,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(14, 881);
+            this.panel1.Size = new System.Drawing.Size(14, 896);
             this.panel1.TabIndex = 20;
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1590, 0);
+            this.panel2.Location = new System.Drawing.Point(1737, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(14, 881);
+            this.panel2.Size = new System.Drawing.Size(14, 896);
             this.panel2.TabIndex = 21;
             // 
             // panel3
@@ -580,15 +517,15 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(14, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1576, 14);
+            this.panel3.Size = new System.Drawing.Size(1723, 14);
             this.panel3.TabIndex = 22;
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(14, 867);
+            this.panel4.Location = new System.Drawing.Point(14, 882);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1576, 14);
+            this.panel4.Size = new System.Drawing.Size(1723, 14);
             this.panel4.TabIndex = 23;
             // 
             // panel5
@@ -612,7 +549,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(14, 14);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(548, 853);
+            this.panel5.Size = new System.Drawing.Size(472, 868);
             this.panel5.TabIndex = 24;
             // 
             // panel25
@@ -620,7 +557,7 @@
             this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel25.Location = new System.Drawing.Point(0, 519);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(548, 8);
+            this.panel25.Size = new System.Drawing.Size(472, 8);
             this.panel25.TabIndex = 58;
             // 
             // panel22
@@ -631,7 +568,7 @@
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel22.Location = new System.Drawing.Point(0, 491);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(548, 28);
+            this.panel22.Size = new System.Drawing.Size(472, 28);
             this.panel22.TabIndex = 57;
             // 
             // panel26
@@ -697,7 +634,7 @@
             this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel24.Location = new System.Drawing.Point(0, 0);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(548, 5);
+            this.panel24.Size = new System.Drawing.Size(472, 5);
             this.panel24.TabIndex = 14;
             // 
             // panel21
@@ -705,7 +642,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel21.Location = new System.Drawing.Point(0, 488);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(548, 3);
+            this.panel21.Size = new System.Drawing.Size(472, 3);
             this.panel21.TabIndex = 56;
             // 
             // panel19
@@ -713,7 +650,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(0, 330);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(548, 8);
+            this.panel19.Size = new System.Drawing.Size(472, 8);
             this.panel19.TabIndex = 54;
             // 
             // panel13
@@ -724,7 +661,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 302);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(548, 28);
+            this.panel13.Size = new System.Drawing.Size(472, 28);
             this.panel13.TabIndex = 53;
             // 
             // panel60
@@ -781,7 +718,7 @@
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(548, 5);
+            this.panel15.Size = new System.Drawing.Size(472, 5);
             this.panel15.TabIndex = 14;
             // 
             // panel12
@@ -789,7 +726,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(0, 299);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(548, 3);
+            this.panel12.Size = new System.Drawing.Size(472, 3);
             this.panel12.TabIndex = 52;
             // 
             // panel11
@@ -798,7 +735,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 269);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(548, 30);
+            this.panel11.Size = new System.Drawing.Size(472, 30);
             this.panel11.TabIndex = 51;
             // 
             // panel10
@@ -806,7 +743,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 261);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(548, 8);
+            this.panel10.Size = new System.Drawing.Size(472, 8);
             this.panel10.TabIndex = 50;
             // 
             // panel9
@@ -814,110 +751,44 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 65);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(548, 8);
+            this.panel9.Size = new System.Drawing.Size(472, 8);
             this.panel9.TabIndex = 49;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.panel28);
-            this.panel6.Controls.Add(this.DatePickerFrom);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.DatePickerTo);
-            this.panel6.Controls.Add(this.panel33);
+            this.panel6.Controls.Add(this.textBox7);
             this.panel6.Controls.Add(this.panel34);
+            this.panel6.Controls.Add(this.panel29);
+            this.panel6.Controls.Add(this.comboBox3);
+            this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 37);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(548, 28);
+            this.panel6.Size = new System.Drawing.Size(472, 28);
             this.panel6.TabIndex = 48;
             // 
-            // panel28
+            // textBox7
             // 
-            this.panel28.Controls.Add(this.label2);
-            this.panel28.Controls.Add(this.panel29);
-            this.panel28.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel28.Location = new System.Drawing.Point(295, 5);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(41, 23);
-            this.panel28.TabIndex = 12;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label2.Location = new System.Drawing.Point(0, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "RDD:";
-            // 
-            // panel29
-            // 
-            this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel29.Location = new System.Drawing.Point(0, 0);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(41, 1);
-            this.panel29.TabIndex = 11;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.label4);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(436, 5);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(12, 23);
-            this.panel8.TabIndex = 21;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "-";
-            // 
-            // panel33
-            // 
-            this.panel33.Controls.Add(this.label9);
-            this.panel33.Controls.Add(this.panel20);
-            this.panel33.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel33.Location = new System.Drawing.Point(72, 5);
-            this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(43, 23);
-            this.panel33.TabIndex = 22;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(0, 1);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(15, 17);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "0";
-            // 
-            // panel20
-            // 
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(0, 0);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(43, 1);
-            this.panel20.TabIndex = 14;
+            this.textBox7.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(232, 5);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(132, 22);
+            this.textBox7.TabIndex = 29;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBox7.Enter += new System.EventHandler(this.textBox_Enter);
+            this.textBox7.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // panel34
             // 
             this.panel34.Controls.Add(this.label10);
             this.panel34.Controls.Add(this.panel47);
             this.panel34.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel34.Location = new System.Drawing.Point(0, 5);
+            this.panel34.Location = new System.Drawing.Point(174, 5);
             this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(72, 23);
+            this.panel34.Size = new System.Drawing.Size(58, 23);
             this.panel34.TabIndex = 23;
             // 
             // label10
@@ -927,24 +798,73 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label10.Location = new System.Drawing.Point(0, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 17);
+            this.label10.Size = new System.Drawing.Size(54, 17);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Van Count:";
+            this.label10.Text = "Van No:";
             // 
             // panel47
             // 
             this.panel47.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel47.Location = new System.Drawing.Point(0, 0);
             this.panel47.Name = "panel47";
-            this.panel47.Size = new System.Drawing.Size(72, 1);
+            this.panel47.Size = new System.Drawing.Size(58, 1);
             this.panel47.TabIndex = 14;
+            // 
+            // panel29
+            // 
+            this.panel29.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel29.Location = new System.Drawing.Point(169, 5);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(5, 23);
+            this.panel29.TabIndex = 33;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.Color.Orange;
+            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(37, 5);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(132, 21);
+            this.comboBox3.TabIndex = 30;
+            this.comboBox3.SelectedValueChanged += new System.EventHandler(this.comboBox3_SelectedValueChanged);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.label2);
+            this.panel8.Controls.Add(this.panel20);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 5);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(37, 23);
+            this.panel8.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label2.Location = new System.Drawing.Point(0, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Site:";
+            // 
+            // panel20
+            // 
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(0, 0);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(37, 1);
+            this.panel20.TabIndex = 14;
             // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(548, 5);
+            this.panel7.Size = new System.Drawing.Size(472, 5);
             this.panel7.TabIndex = 13;
             // 
             // panel14
@@ -952,7 +872,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(0, 34);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(548, 3);
+            this.panel14.Size = new System.Drawing.Size(472, 3);
             this.panel14.TabIndex = 47;
             // 
             // panel17
@@ -964,7 +884,7 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel17.Location = new System.Drawing.Point(0, 0);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(548, 34);
+            this.panel17.Size = new System.Drawing.Size(472, 34);
             this.panel17.TabIndex = 45;
             // 
             // label3
@@ -984,21 +904,21 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel18.Location = new System.Drawing.Point(0, 26);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(546, 6);
+            this.panel18.Size = new System.Drawing.Size(470, 6);
             this.panel18.TabIndex = 9;
             // 
             // panel27
             // 
             this.panel27.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel27.Location = new System.Drawing.Point(562, 14);
+            this.panel27.Location = new System.Drawing.Point(486, 14);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(14, 853);
+            this.panel27.Size = new System.Drawing.Size(14, 868);
             this.panel27.TabIndex = 25;
             // 
             // panel30
             // 
             this.panel30.AutoScroll = true;
-            this.panel30.Controls.Add(this.DataGridView8);
+            this.panel30.Controls.Add(this.dataGridView8);
             this.panel30.Controls.Add(this.panel53);
             this.panel30.Controls.Add(this.panel49);
             this.panel30.Controls.Add(this.panel48);
@@ -1014,9 +934,9 @@
             this.panel30.Controls.Add(this.panel35);
             this.panel30.Controls.Add(this.panel31);
             this.panel30.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel30.Location = new System.Drawing.Point(576, 14);
+            this.panel30.Location = new System.Drawing.Point(500, 14);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(548, 853);
+            this.panel30.Size = new System.Drawing.Size(472, 868);
             this.panel30.TabIndex = 26;
             // 
             // panel53
@@ -1024,7 +944,7 @@
             this.panel53.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel53.Location = new System.Drawing.Point(0, 519);
             this.panel53.Name = "panel53";
-            this.panel53.Size = new System.Drawing.Size(548, 8);
+            this.panel53.Size = new System.Drawing.Size(472, 8);
             this.panel53.TabIndex = 59;
             // 
             // panel49
@@ -1035,7 +955,7 @@
             this.panel49.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel49.Location = new System.Drawing.Point(0, 491);
             this.panel49.Name = "panel49";
-            this.panel49.Size = new System.Drawing.Size(548, 28);
+            this.panel49.Size = new System.Drawing.Size(472, 28);
             this.panel49.TabIndex = 58;
             // 
             // panel51
@@ -1101,7 +1021,7 @@
             this.panel52.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel52.Location = new System.Drawing.Point(0, 0);
             this.panel52.Name = "panel52";
-            this.panel52.Size = new System.Drawing.Size(548, 5);
+            this.panel52.Size = new System.Drawing.Size(472, 5);
             this.panel52.TabIndex = 14;
             // 
             // panel48
@@ -1109,7 +1029,7 @@
             this.panel48.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel48.Location = new System.Drawing.Point(0, 488);
             this.panel48.Name = "panel48";
-            this.panel48.Size = new System.Drawing.Size(548, 3);
+            this.panel48.Size = new System.Drawing.Size(472, 3);
             this.panel48.TabIndex = 57;
             // 
             // panel46
@@ -1117,18 +1037,48 @@
             this.panel46.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel46.Location = new System.Drawing.Point(0, 330);
             this.panel46.Name = "panel46";
-            this.panel46.Size = new System.Drawing.Size(548, 8);
+            this.panel46.Size = new System.Drawing.Size(472, 8);
             this.panel46.TabIndex = 55;
             // 
             // panel43
             // 
+            this.panel43.Controls.Add(this.panel62);
             this.panel43.Controls.Add(this.panel44);
             this.panel43.Controls.Add(this.panel45);
             this.panel43.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel43.Location = new System.Drawing.Point(0, 302);
             this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(548, 28);
+            this.panel43.Size = new System.Drawing.Size(472, 28);
             this.panel43.TabIndex = 54;
+            // 
+            // panel62
+            // 
+            this.panel62.Controls.Add(this.label9);
+            this.panel62.Controls.Add(this.panel63);
+            this.panel62.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel62.Location = new System.Drawing.Point(80, 5);
+            this.panel62.Name = "panel62";
+            this.panel62.Size = new System.Drawing.Size(43, 23);
+            this.panel62.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(0, 1);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(15, 17);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "0";
+            // 
+            // panel63
+            // 
+            this.panel63.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel63.Location = new System.Drawing.Point(0, 0);
+            this.panel63.Name = "panel63";
+            this.panel63.Size = new System.Drawing.Size(43, 1);
+            this.panel63.TabIndex = 15;
             // 
             // panel44
             // 
@@ -1137,7 +1087,7 @@
             this.panel44.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel44.Location = new System.Drawing.Point(0, 5);
             this.panel44.Name = "panel44";
-            this.panel44.Size = new System.Drawing.Size(122, 23);
+            this.panel44.Size = new System.Drawing.Size(80, 23);
             this.panel44.TabIndex = 15;
             // 
             // label1
@@ -1147,16 +1097,16 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.label1.Location = new System.Drawing.Point(0, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Van Details:";
+            this.label1.Text = "Total Cases:";
             // 
             // panel57
             // 
             this.panel57.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel57.Location = new System.Drawing.Point(0, 0);
             this.panel57.Name = "panel57";
-            this.panel57.Size = new System.Drawing.Size(122, 1);
+            this.panel57.Size = new System.Drawing.Size(80, 1);
             this.panel57.TabIndex = 15;
             // 
             // panel45
@@ -1164,7 +1114,7 @@
             this.panel45.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel45.Location = new System.Drawing.Point(0, 0);
             this.panel45.Name = "panel45";
-            this.panel45.Size = new System.Drawing.Size(548, 5);
+            this.panel45.Size = new System.Drawing.Size(472, 5);
             this.panel45.TabIndex = 14;
             // 
             // panel42
@@ -1172,7 +1122,7 @@
             this.panel42.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel42.Location = new System.Drawing.Point(0, 299);
             this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(548, 3);
+            this.panel42.Size = new System.Drawing.Size(472, 3);
             this.panel42.TabIndex = 53;
             // 
             // panel41
@@ -1181,7 +1131,7 @@
             this.panel41.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel41.Location = new System.Drawing.Point(0, 269);
             this.panel41.Name = "panel41";
-            this.panel41.Size = new System.Drawing.Size(548, 30);
+            this.panel41.Size = new System.Drawing.Size(472, 30);
             this.panel41.TabIndex = 52;
             // 
             // button1
@@ -1197,13 +1147,14 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "<<";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel40
             // 
             this.panel40.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel40.Location = new System.Drawing.Point(0, 261);
             this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(548, 8);
+            this.panel40.Size = new System.Drawing.Size(472, 8);
             this.panel40.TabIndex = 51;
             // 
             // panel39
@@ -1211,26 +1162,68 @@
             this.panel39.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel39.Location = new System.Drawing.Point(0, 65);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(548, 8);
+            this.panel39.Size = new System.Drawing.Size(472, 8);
             this.panel39.TabIndex = 50;
             // 
             // panel36
             // 
+            this.panel36.Controls.Add(this.textBox1);
+            this.panel36.Controls.Add(this.panel28);
             this.panel36.Controls.Add(this.panel38);
             this.panel36.Controls.Add(this.DateTimeSchedule);
             this.panel36.Controls.Add(this.panel37);
             this.panel36.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel36.Location = new System.Drawing.Point(0, 37);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(548, 28);
+            this.panel36.Size = new System.Drawing.Size(472, 28);
             this.panel36.TabIndex = 49;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(37, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
+            this.textBox1.TabIndex = 33;
+            // 
+            // panel28
+            // 
+            this.panel28.Controls.Add(this.label4);
+            this.panel28.Controls.Add(this.panel33);
+            this.panel28.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel28.Location = new System.Drawing.Point(0, 5);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(37, 23);
+            this.panel28.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label4.Location = new System.Drawing.Point(0, 1);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Site:";
+            // 
+            // panel33
+            // 
+            this.panel33.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel33.Location = new System.Drawing.Point(0, 0);
+            this.panel33.Name = "panel33";
+            this.panel33.Size = new System.Drawing.Size(37, 1);
+            this.panel33.TabIndex = 14;
             // 
             // panel38
             // 
             this.panel38.Controls.Add(this.label11);
             this.panel38.Controls.Add(this.panel56);
             this.panel38.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel38.Location = new System.Drawing.Point(407, 5);
+            this.panel38.Location = new System.Drawing.Point(331, 5);
             this.panel38.Name = "panel38";
             this.panel38.Size = new System.Drawing.Size(41, 23);
             this.panel38.TabIndex = 15;
@@ -1259,7 +1252,7 @@
             this.panel37.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel37.Location = new System.Drawing.Point(0, 0);
             this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(548, 5);
+            this.panel37.Size = new System.Drawing.Size(472, 5);
             this.panel37.TabIndex = 14;
             // 
             // panel35
@@ -1267,7 +1260,7 @@
             this.panel35.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel35.Location = new System.Drawing.Point(0, 34);
             this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(548, 3);
+            this.panel35.Size = new System.Drawing.Size(472, 3);
             this.panel35.TabIndex = 48;
             // 
             // panel31
@@ -1279,7 +1272,7 @@
             this.panel31.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel31.Location = new System.Drawing.Point(0, 0);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(548, 34);
+            this.panel31.Size = new System.Drawing.Size(472, 34);
             this.panel31.TabIndex = 46;
             // 
             // label8
@@ -1299,14 +1292,140 @@
             this.panel32.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel32.Location = new System.Drawing.Point(0, 26);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(546, 6);
+            this.panel32.Size = new System.Drawing.Size(470, 6);
             this.panel32.TabIndex = 9;
+            // 
+            // num2
+            // 
+            this.num2.HeaderText = "num";
+            this.num2.Name = "num2";
+            this.num2.ReadOnly = true;
+            this.num2.Visible = false;
+            this.num2.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Site Code";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            this.dataGridViewTextBoxColumn4.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Site Name";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 5;
+            // 
+            // cat2
+            // 
+            this.cat2.HeaderText = "Category";
+            this.cat2.Name = "cat2";
+            this.cat2.ReadOnly = true;
+            this.cat2.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Cases";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 5;
+            // 
+            // van2
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.van2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.van2.HeaderText = "Van No.";
+            this.van2.Name = "van2";
+            this.van2.ReadOnly = true;
+            this.van2.Width = 5;
+            // 
+            // dataGridView8
+            // 
+            this.dataGridView8.AllowUserToAddRows = false;
+            this.dataGridView8.AllowUserToDeleteRows = false;
+            this.dataGridView8.AllowUserToOrderColumns = true;
+            this.dataGridView8.AllowUserToResizeRows = false;
+            this.dataGridView8.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView8.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridView8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.ColumnHeadersVisible = false;
+            this.dataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.dataGridView8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView8.Location = new System.Drawing.Point(0, 527);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.ReadOnly = true;
+            this.dataGridView8.RowHeadersVisible = false;
+            this.dataGridView8.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView8.Size = new System.Drawing.Size(472, 341);
+            this.dataGridView8.TabIndex = 27;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "srs";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dataGridViewTextBoxColumn2.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Billdoc";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Site Name";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle19;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Van No.";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 5;
+            // 
+            // chck1
+            // 
+            this.chck1.HeaderText = "";
+            this.chck1.Name = "chck1";
+            this.chck1.ReadOnly = true;
+            this.chck1.Width = 5;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Van";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 5;
             // 
             // Receiving_Plan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1604, 881);
+            this.ClientSize = new System.Drawing.Size(1751, 896);
             this.Controls.Add(this.panel30);
             this.Controls.Add(this.panel27);
             this.Controls.Add(this.panel5);
@@ -1323,7 +1442,6 @@
             this.Load += new System.EventHandler(this.Receiving_Plan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vanDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BillDocGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siteGridView)).EndInit();
@@ -1340,14 +1458,11 @@
             this.panel16.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel28.ResumeLayout(false);
-            this.panel28.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel33.ResumeLayout(false);
-            this.panel33.PerformLayout();
+            this.panel6.PerformLayout();
             this.panel34.ResumeLayout(false);
             this.panel34.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel30.ResumeLayout(false);
@@ -1357,35 +1472,29 @@
             this.panel50.ResumeLayout(false);
             this.panel50.PerformLayout();
             this.panel43.ResumeLayout(false);
+            this.panel62.ResumeLayout(false);
+            this.panel62.PerformLayout();
             this.panel44.ResumeLayout(false);
             this.panel44.PerformLayout();
             this.panel41.ResumeLayout(false);
             this.panel36.ResumeLayout(false);
+            this.panel36.PerformLayout();
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
             this.panel38.ResumeLayout(false);
             this.panel38.PerformLayout();
             this.panel31.ResumeLayout(false);
             this.panel31.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker DatePickerFrom;
-        private System.Windows.Forms.DateTimePicker DatePickerTo;
         private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.DateTimePicker DateTimeSchedule;
         private System.Windows.Forms.DataGridView DataGridView5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridView DataGridView6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridView DataGridView8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridView vanDataGrid;
         private System.Windows.Forms.DataGridView BillDocGridView;
         private System.Windows.Forms.DataGridView siteGridView;
@@ -1400,10 +1509,6 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel11;
@@ -1419,8 +1524,6 @@
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.Panel panel33;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.Label label8;
@@ -1450,8 +1553,6 @@
         private System.Windows.Forms.Panel panel41;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel40;
-        private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel47;
         private System.Windows.Forms.Panel panel54;
         private System.Windows.Forms.Panel panel55;
@@ -1459,25 +1560,52 @@
         private System.Windows.Forms.Panel panel59;
         private System.Windows.Forms.Panel panel57;
         private System.Windows.Forms.Panel panel56;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn chck;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn srs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BillDocsColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SiteBillDocColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vanno2;
+        private System.Windows.Forms.Panel panel60;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel61;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Panel panel29;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chck;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sitename;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel33;
         private System.Windows.Forms.DataGridViewTextBoxColumn snum;
         private System.Windows.Forms.DataGridViewTextBoxColumn SiteCodeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SiteNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cat;
         private System.Windows.Forms.DataGridViewTextBoxColumn CasesColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vanno;
-        private System.Windows.Forms.Panel panel60;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel61;
+        private System.Windows.Forms.DataGridViewTextBoxColumn srs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BillDocsColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SiteBillDocColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vanno2;
+        private System.Windows.Forms.Panel panel62;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel63;
+        private System.Windows.Forms.DataGridViewTextBoxColumn num2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cat2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn van2;
+        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chck1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }
