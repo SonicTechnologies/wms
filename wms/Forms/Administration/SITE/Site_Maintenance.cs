@@ -26,6 +26,7 @@ namespace wms.Forms.Administration.SITE
 
             textBox2.Text = "";
             textBox3.Text = "";
+            textBox4.Text = "";
             textBox9.Text = "";
             textBox10.Text = "";
             textBox11.Text = "";
@@ -33,6 +34,7 @@ namespace wms.Forms.Administration.SITE
 
             textBox2.Enabled = true;
             textBox3.Enabled = true;
+            textBox4.Enabled = true;
             panel77.Visible = true;
 
         }
@@ -42,6 +44,7 @@ namespace wms.Forms.Administration.SITE
 
             textBox2.Text = "";
             textBox3.Text = "";
+            textBox4.Text = "";
             textBox9.Text = "";
             textBox10.Text = "";
             textBox11.Text = "";
@@ -49,6 +52,7 @@ namespace wms.Forms.Administration.SITE
 
             textBox2.Enabled = false;
             textBox3.Enabled = false;
+            textBox4.Enabled = false;
             panel77.Visible = false;
         }
 
@@ -90,6 +94,7 @@ namespace wms.Forms.Administration.SITE
                          {
                              c.site_id,
                              c.site_name,
+                             c.site_code,
                              c.site_datecrtd,
                              c.crtdby,
                              c.site_dateuptd,
@@ -107,6 +112,7 @@ namespace wms.Forms.Administration.SITE
 
                     dataGridView1.Rows.Add(row.site_id,
                                                    row.site_name,
+                                                   row.site_code,
                                                    row.site_datecrtd.ToString("yyyy-MM-dd hh:mm:ss tt"),
                                                    row.crtdby,
                                                    row.site_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
@@ -140,6 +146,7 @@ namespace wms.Forms.Administration.SITE
                                    {
                                        c.site_id,
                                        c.site_name,
+                                       c.site_code,
                                        c.site_datecrtd,
                                        c.crtdby,
                                        c.site_dateuptd,
@@ -157,6 +164,7 @@ namespace wms.Forms.Administration.SITE
 
                             dataGridView1.Rows.Add(row.site_id,
                                                    row.site_name,
+                                                   row.site_code,
                                                    row.site_datecrtd.ToString("yyyy-MM-dd hh:mm:ss tt"),
                                                    row.crtdby,
                                                    row.site_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
@@ -179,6 +187,7 @@ namespace wms.Forms.Administration.SITE
                                      {
                                          c.site_id,
                                          c.site_name,
+                                         c.site_code,
                                          c.site_datecrtd,
                                          c.crtdby,
                                          c.site_dateuptd,
@@ -196,6 +205,48 @@ namespace wms.Forms.Administration.SITE
 
                             dataGridView1.Rows.Add(row.site_id,
                                                    row.site_name,
+                                                   row.site_code,
+                                                   row.site_datecrtd.ToString("yyyy-MM-dd hh:mm:ss tt"),
+                                                   row.crtdby,
+                                                   row.site_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
+                                                   row.uptdby);
+
+                        }
+                    }
+                    else
+                    {
+                        dataGridView1.ColumnHeadersVisible = false;
+                    }
+
+                }
+                else if (comboBox1.Text == "Site Code")
+                {
+                    var sitecode = textBox1.Text.Trim();
+                    var xsitecode = (from c in obj.WMS_SITE_VIEW
+                                     where c.site_code == sitecode
+                                     select new
+                                     {
+                                         c.site_id,
+                                         c.site_name,
+                                         c.site_code,
+                                         c.site_datecrtd,
+                                         c.crtdby,
+                                         c.site_dateuptd,
+                                         c.uptdby
+
+                                     }).OrderBy(c => new { c.site_name }).ToList();
+
+                    dataGridView1.Rows.Clear();
+
+                    if (xsitecode.Count != 0)
+                    {
+                        dataGridView1.ColumnHeadersVisible = true;
+                        foreach (var row in xsitecode)
+                        {
+
+                            dataGridView1.Rows.Add(row.site_id,
+                                                   row.site_name,
+                                                   row.site_code,
                                                    row.site_datecrtd.ToString("yyyy-MM-dd hh:mm:ss tt"),
                                                    row.crtdby,
                                                    row.site_dateuptd?.ToString("yyyy-MM-dd hh:mm:ss tt"),
@@ -240,46 +291,53 @@ namespace wms.Forms.Administration.SITE
                 {
                     if (textBox3.Text.Trim() != "")
                     {
-
-                        DialogResult dialog = MessageBox.Show("Are you sure you want to save Site?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (dialog == DialogResult.Yes)
+                        if (textBox4.Text.Trim() != "")
                         {
-
-                            var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
-                            DateTime serverDate = dateQuery.AsEnumerable().First();
-
-                            var xsite = (from c in obj.WMS_MSTR_SITE
-                                         where c.site_id == textBox2.Text.Trim()
-                                         select c.site_id).ToList();
-                            if (xsite.Count == 0)
+                            DialogResult dialog = MessageBox.Show("Are you sure you want to save Site?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialog == DialogResult.Yes)
                             {
-                                var salesman = obj.Set<WMS_MSTR_SITE>();
-                                salesman.Add(new WMS_MSTR_SITE
+
+                                var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
+                                DateTime serverDate = dateQuery.AsEnumerable().First();
+
+                                var xsite = (from c in obj.WMS_MSTR_SITE
+                                             where c.site_id == textBox2.Text.Trim()
+                                             select c.site_id).ToList();
+                                if (xsite.Count == 0)
                                 {
-                                    site_id = textBox2.Text.Trim(),
-                                    site_name = textBox3.Text.Trim(),
-                                    site_datecrtd = serverDate,
-                                    site_crtdby = loggedin_user.userId
-                                });
-                                obj.SaveChanges();
-                                MessageBox.Show("Successfully saved Site.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                comboBox1.Text = "Site ID";
-                                textBox1.Text = textBox2.Text.Trim();
-                                disableAddControls();
+                                    var salesman = obj.Set<WMS_MSTR_SITE>();
+                                    salesman.Add(new WMS_MSTR_SITE
+                                    {
+                                        site_id = textBox2.Text.Trim(),
+                                        site_name = textBox3.Text.Trim(),
+                                        site_code = textBox4.Text.Trim(),
+                                        site_datecrtd = serverDate,
+                                        site_crtdby = loggedin_user.userId
+                                    });
+                                    obj.SaveChanges();
+                                    MessageBox.Show("Successfully saved Site.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    comboBox1.Text = "Site ID";
+                                    textBox1.Text = textBox2.Text.Trim();
+                                    disableAddControls();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("'Site ID' already exist.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    comboBox1.Text = "Site ID";
+                                    textBox1.Text = textBox2.Text.Trim();
+                                }
+
                             }
-                            else
+                            else if (dialog == DialogResult.No)
                             {
-                                MessageBox.Show("'Site ID' already exist.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                comboBox1.Text = "Site ID";
-                                textBox1.Text = textBox2.Text.Trim();
+
                             }
-
                         }
-                        else if (dialog == DialogResult.No)
+                        else
                         {
-
-                        }
-
+                            MessageBox.Show("Please fill up 'Site Code'.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            textBox4.Focus();
+                        }                         
                     }
                     else
                     {
@@ -309,6 +367,7 @@ namespace wms.Forms.Administration.SITE
                             obj.WMS_MSTR_SITE.Where(c => c.site_id == textBox2.Text.Trim()).ToList().ForEach(x =>
                             {
                                 x.site_name = textBox3.Text.Trim();
+                                x.site_code = textBox4.Text.Trim();
                                 x.site_dateuptd = serverDate;
                                 x.site_uptdby = loggedin_user.userId;
                             });
@@ -366,25 +425,26 @@ namespace wms.Forms.Administration.SITE
             enableAddControls();
             textBox2.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             textBox3.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBox9.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            textBox10.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            textBox4.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textBox9.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            textBox10.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
 
-            if (Convert.ToString(dataGridView1.CurrentRow.Cells[4].Value) == string.Empty)
+            if (Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value) == string.Empty)
             {
                 textBox11.Text = "";
             }
             else
             {
-                textBox11.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                textBox11.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             }
 
-            if (Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value) == string.Empty)
+            if (Convert.ToString(dataGridView1.CurrentRow.Cells[6].Value) == string.Empty)
             {
                 textBox12.Text = "";
             }
             else
             {
-                textBox12.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                textBox12.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             }
         }
 
@@ -394,6 +454,7 @@ namespace wms.Forms.Administration.SITE
             stup.Show();
         }
 
+       
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

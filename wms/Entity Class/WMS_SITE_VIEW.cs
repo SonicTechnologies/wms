@@ -22,5 +22,6 @@ namespace wms.Entity_Class
         public Nullable<int> site_uptdby { get; set; }
         public string crtdby { get; set; }
         public string uptdby { get; set; }
+        public string site_code { get; set; }
     }
 }
