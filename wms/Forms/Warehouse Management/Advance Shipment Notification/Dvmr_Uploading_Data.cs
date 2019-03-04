@@ -394,7 +394,7 @@ namespace wms.Forms.Warehouse_Management
 
                     var Item = (from c in obj.WMS_MSTR_DVMR
                                     where c.dvmr_billdoc == xBillDoc
-                                 && c.invty_id == xItem
+                                 && c.invty_id == xItem 
                                 select c.invty_id).FirstOrDefault();
 
                  
@@ -425,11 +425,12 @@ namespace wms.Forms.Warehouse_Management
 
                             });
 
+
+                   
+
                         obj.SaveChanges();
-                        
-
-
                         inserted = inserted + 1;
+
 
                     }
                     else
@@ -446,7 +447,7 @@ namespace wms.Forms.Warehouse_Management
                         var dateQuery = obj.Database.SqlQuery<DateTime>("SELECT getdate()");
                         DateTime serverDate = dateQuery.AsEnumerable().First();
 
-                        obj.WMS_MSTR_DVMR.Where(c => c.invty_id == Item2).ToList().ForEach(x =>
+                        obj.WMS_MSTR_DVMR.Where(c => c.invty_id == Item2 && c.dvmr_schedule_date == null).ToList().ForEach(x =>
                         {
                             x.dvmr_load_date = Convert.ToDateTime(i["Load Date"]);
                             x.site_code = i["Ship-to"].ToString().ToUpper();
@@ -683,6 +684,16 @@ namespace wms.Forms.Warehouse_Management
             {
                 tb.BackColor = System.Drawing.SystemColors.Info;
             }
+        }
+
+        private void Dvmr_Uploading_Data_Load(object sender, EventArgs e)
+        {
+            Main_Form.GetInstance().Enabled = false;
+        }
+
+        private void Dvmr_Uploading_Data_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main_Form.GetInstance().Enabled = true;
         }
     }
 }

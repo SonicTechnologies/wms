@@ -345,6 +345,8 @@
             this.Name = "Dvmr_Uploading_Data";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dvmr_Uploading_Data_FormClosing);
+            this.Load += new System.EventHandler(this.Dvmr_Uploading_Data_Load);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel6.ResumeLayout(false);

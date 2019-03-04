@@ -324,6 +324,24 @@
     <Compile Include="Forms\Select_Server_Form.Designer.cs">
       <DependentUpon>Select_Server_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Warehouse Management\Advance Shipment Notification\Add_DVMR_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse Management\Advance Shipment Notification\Add_DVMR_Item.Designer.cs">
+      <DependentUpon>Add_DVMR_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse Management\Advance Shipment Notification\Add_Qty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse Management\Advance Shipment Notification\Add_Qty.Designer.cs">
+      <DependentUpon>Add_Qty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Warehouse Management\Advance Shipment Notification\DVMR_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse Management\Advance Shipment Notification\DVMR_Data.Designer.cs">
+      <DependentUpon>DVMR_Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Warehouse Management\Advance Shipment Notification\Dvmr_Uploading_Data.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +433,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Select_Server_Form.resx">
       <DependentUpon>Select_Server_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse Management\Advance Shipment Notification\Add_DVMR_Item.resx">
+      <DependentUpon>Add_DVMR_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse Management\Advance Shipment Notification\Add_Qty.resx">
+      <DependentUpon>Add_Qty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse Management\Advance Shipment Notification\DVMR_Data.resx">
+      <DependentUpon>DVMR_Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Warehouse Management\Advance Shipment Notification\Dvmr_Uploading_Data.resx">
       <DependentUpon>Dvmr_Uploading_Data.cs</DependentUpon>
