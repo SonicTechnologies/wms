@@ -29,6 +29,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
         private void Add_Qty_Load(object sender, EventArgs e)
         {
             GetData();
+            getUnit();
             Main_Form.GetInstance().Enabled = false;
         }
 
@@ -58,12 +59,23 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
                 tb.BackColor = System.Drawing.SystemColors.Info;
             }
         }
+        private void getUnit()
+        {
+            comboBox1.ValueMember = "uom_id";
+            comboBox1.DisplayMember = "uom_desc";
+            comboBox1.DataSource = obj.WMS_TYPE_UOM.ToList();
 
+        }
         private void saveBtn_Click_1(object sender, EventArgs e)
         {
             if (textBox4.Text == "")
             {
                 MessageBox.Show("Input Quantity", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            else if( textBox4.Text =="0")
+            {
+                MessageBox.Show("Cannot input 0 quantity", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -76,10 +88,8 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
                     if (result != null)
                     {
 
-
-
-
                         result.dvmr_qty = Convert.ToInt32(textBox4.Text);
+                        result.uom_id =Convert.ToInt32( comboBox1.SelectedValue);
                         obj.SaveChanges();
 
                         var uaf = Application.OpenForms.OfType<DVMR_Data>().Single();

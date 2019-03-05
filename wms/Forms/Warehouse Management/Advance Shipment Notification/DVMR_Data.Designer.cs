@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label14 = new System.Windows.Forms.Label();
             this.panel81 = new System.Windows.Forms.Panel();
-            this.panel82 = new System.Windows.Forms.Panel();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.panel83 = new System.Windows.Forms.Panel();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.panel80 = new System.Windows.Forms.Panel();
             this.panel49 = new System.Windows.Forms.Panel();
             this.panel77 = new System.Windows.Forms.Panel();
@@ -93,9 +89,10 @@
             this.itemcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Remove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel33 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel34 = new System.Windows.Forms.Panel();
@@ -133,21 +130,22 @@
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.addBtn = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel90 = new System.Windows.Forms.Panel();
+            this.uploadBtn = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel87 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.panel89 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.panel91 = new System.Windows.Forms.Panel();
             this.panel88 = new System.Windows.Forms.Panel();
-            this.panel90 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
@@ -157,10 +155,16 @@
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
             this.panel84 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.uploadBtn = new System.Windows.Forms.Button();
-            this.panel82.SuspendLayout();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel80.SuspendLayout();
             this.panel77.SuspendLayout();
             this.panel78.SuspendLayout();
@@ -200,14 +204,17 @@
             this.panel32.SuspendLayout();
             this.panel30.SuspendLayout();
             this.panel28.SuspendLayout();
-            this.panel20.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel90.SuspendLayout();
             this.panel87.SuspendLayout();
             this.panel89.SuspendLayout();
-            this.panel90.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel26.SuspendLayout();
             this.SuspendLayout();
             // 
             // label14
@@ -229,56 +236,6 @@
             this.panel81.Name = "panel81";
             this.panel81.Size = new System.Drawing.Size(90, 5);
             this.panel81.TabIndex = 11;
-            // 
-            // panel82
-            // 
-            this.panel82.BackColor = System.Drawing.Color.White;
-            this.panel82.Controls.Add(this.cancelBtn);
-            this.panel82.Controls.Add(this.panel83);
-            this.panel82.Controls.Add(this.saveBtn);
-            this.panel82.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel82.Location = new System.Drawing.Point(14, 430);
-            this.panel82.Name = "panel82";
-            this.panel82.Size = new System.Drawing.Size(377, 30);
-            this.panel82.TabIndex = 25;
-            this.panel82.Visible = false;
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.cancelBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.Location = new System.Drawing.Point(172, 0);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(100, 30);
-            this.cancelBtn.TabIndex = 9;
-            this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = false;
-            // 
-            // panel83
-            // 
-            this.panel83.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel83.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel83.Location = new System.Drawing.Point(272, 0);
-            this.panel83.Name = "panel83";
-            this.panel83.Size = new System.Drawing.Size(5, 30);
-            this.panel83.TabIndex = 10;
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.saveBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBtn.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(277, 0);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(100, 30);
-            this.saveBtn.TabIndex = 7;
-            this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = false;
             // 
             // panel80
             // 
@@ -833,9 +790,10 @@
             this.itemcode,
             this.description,
             this.bcode,
+            this.Column3,
             this.Column1,
-            this.Remove,
-            this.Column2});
+            this.Column2,
+            this.Remove});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(399, 92);
             this.dataGridView1.Name = "dataGridView1";
@@ -850,8 +808,8 @@
             // 
             // itemcode
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.itemcode.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.itemcode.DefaultCellStyle = dataGridViewCellStyle4;
             this.itemcode.HeaderText = "Inventory ID";
             this.itemcode.Name = "itemcode";
             this.itemcode.ReadOnly = true;
@@ -871,23 +829,19 @@
             this.bcode.ReadOnly = true;
             this.bcode.Width = 5;
             // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Unit";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 5;
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "Scheduled Date";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Width = 5;
-            // 
-            // Remove
-            // 
-            this.Remove.HeaderText = "Action";
-            this.Remove.Name = "Remove";
-            this.Remove.ReadOnly = true;
-            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Remove.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Remove.Text = "Remove";
-            this.Remove.UseColumnTextForButtonValue = true;
-            this.Remove.Width = 5;
             // 
             // Column2
             // 
@@ -899,6 +853,17 @@
             this.Column2.Text = "Edit";
             this.Column2.UseColumnTextForButtonValue = true;
             this.Column2.Width = 5;
+            // 
+            // Remove
+            // 
+            this.Remove.HeaderText = "Action";
+            this.Remove.Name = "Remove";
+            this.Remove.ReadOnly = true;
+            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Remove.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Remove.Text = "Remove";
+            this.Remove.UseColumnTextForButtonValue = true;
+            this.Remove.Width = 5;
             // 
             // panel33
             // 
@@ -1260,26 +1225,11 @@
             // panel20
             // 
             this.panel20.BackColor = System.Drawing.Color.White;
-            this.panel20.Controls.Add(this.addBtn);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(14, 56);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(377, 30);
             this.panel20.TabIndex = 10;
-            // 
-            // addBtn
-            // 
-            this.addBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.addBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addBtn.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.addBtn.ForeColor = System.Drawing.Color.White;
-            this.addBtn.Location = new System.Drawing.Point(0, 0);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(100, 30);
-            this.addBtn.TabIndex = 6;
-            this.addBtn.Text = "+ Add New";
-            this.addBtn.UseVisualStyleBackColor = false;
             // 
             // panel19
             // 
@@ -1343,6 +1293,57 @@
             this.panel5.Size = new System.Drawing.Size(1150, 30);
             this.panel5.TabIndex = 27;
             // 
+            // panel90
+            // 
+            this.panel90.BackColor = System.Drawing.Color.White;
+            this.panel90.Controls.Add(this.uploadBtn);
+            this.panel90.Controls.Add(this.panel8);
+            this.panel90.Controls.Add(this.button1);
+            this.panel90.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel90.Location = new System.Drawing.Point(857, 0);
+            this.panel90.Name = "panel90";
+            this.panel90.Size = new System.Drawing.Size(293, 30);
+            this.panel90.TabIndex = 11;
+            // 
+            // uploadBtn
+            // 
+            this.uploadBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.uploadBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uploadBtn.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.uploadBtn.ForeColor = System.Drawing.Color.White;
+            this.uploadBtn.Location = new System.Drawing.Point(140, 0);
+            this.uploadBtn.Name = "uploadBtn";
+            this.uploadBtn.Size = new System.Drawing.Size(143, 30);
+            this.uploadBtn.TabIndex = 24;
+            this.uploadBtn.Text = "Upload Excel File";
+            this.uploadBtn.UseVisualStyleBackColor = false;
+            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click_1);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(283, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(10, 30);
+            this.panel8.TabIndex = 22;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 30);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "+ Add New Item";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // panel87
             // 
             this.panel87.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -1405,33 +1406,6 @@
             this.panel88.Name = "panel88";
             this.panel88.Size = new System.Drawing.Size(849, 10);
             this.panel88.TabIndex = 9;
-            // 
-            // panel90
-            // 
-            this.panel90.BackColor = System.Drawing.Color.White;
-            this.panel90.Controls.Add(this.uploadBtn);
-            this.panel90.Controls.Add(this.panel8);
-            this.panel90.Controls.Add(this.button1);
-            this.panel90.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel90.Location = new System.Drawing.Point(857, 0);
-            this.panel90.Name = "panel90";
-            this.panel90.Size = new System.Drawing.Size(293, 30);
-            this.panel90.TabIndex = 11;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "+ Add New Item";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel12
             // 
@@ -1513,7 +1487,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel82);
+            this.panel1.Controls.Add(this.panel26);
+            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel100);
             this.panel1.Controls.Add(this.panel77);
             this.panel1.Controls.Add(this.panel72);
@@ -1540,6 +1515,75 @@
             this.panel1.Size = new System.Drawing.Size(399, 742);
             this.panel1.TabIndex = 22;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.panel11);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(14, 430);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(377, 28);
+            this.panel6.TabIndex = 28;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.textBox13);
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(90, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(161, 28);
+            this.panel7.TabIndex = 15;
+            // 
+            // textBox13
+            // 
+            this.textBox13.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox13.Enabled = false;
+            this.textBox13.Location = new System.Drawing.Point(0, 5);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(161, 20);
+            this.textBox13.TabIndex = 14;
+            // 
+            // panel9
+            // 
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(161, 5);
+            this.panel9.TabIndex = 13;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label2);
+            this.panel11.Controls.Add(this.panel23);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(90, 28);
+            this.panel11.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(0, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Schedule Date:";
+            // 
+            // panel23
+            // 
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel23.Location = new System.Drawing.Point(0, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(90, 5);
+            this.panel23.TabIndex = 11;
+            // 
             // panel84
             // 
             this.panel84.BackColor = System.Drawing.Color.White;
@@ -1549,29 +1593,30 @@
             this.panel84.Size = new System.Drawing.Size(10, 636);
             this.panel84.TabIndex = 32;
             // 
-            // panel8
+            // panel26
             // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(283, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 30);
-            this.panel8.TabIndex = 22;
+            this.panel26.BackColor = System.Drawing.Color.White;
+            this.panel26.Controls.Add(this.button2);
+            this.panel26.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel26.Location = new System.Drawing.Point(14, 458);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(377, 29);
+            this.panel26.TabIndex = 30;
             // 
-            // uploadBtn
+            // button2
             // 
-            this.uploadBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.uploadBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uploadBtn.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.uploadBtn.ForeColor = System.Drawing.Color.White;
-            this.uploadBtn.Location = new System.Drawing.Point(140, 0);
-            this.uploadBtn.Name = "uploadBtn";
-            this.uploadBtn.Size = new System.Drawing.Size(143, 30);
-            this.uploadBtn.TabIndex = 24;
-            this.uploadBtn.Text = "Upload Excel File";
-            this.uploadBtn.UseVisualStyleBackColor = false;
-            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click_1);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(277, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 29);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // DVMR_Data
             // 
@@ -1589,7 +1634,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "DVMR_Data";
             this.Text = "DVMR_Data";
-            this.panel82.ResumeLayout(false);
             this.panel80.ResumeLayout(false);
             this.panel80.PerformLayout();
             this.panel77.ResumeLayout(false);
@@ -1655,18 +1699,23 @@
             this.panel30.PerformLayout();
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
-            this.panel20.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel90.ResumeLayout(false);
             this.panel87.ResumeLayout(false);
             this.panel87.PerformLayout();
             this.panel89.ResumeLayout(false);
             this.panel89.PerformLayout();
-            this.panel90.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel26.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1675,10 +1724,6 @@
 
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel81;
-        private System.Windows.Forms.Panel panel82;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Panel panel83;
-        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Panel panel80;
         private System.Windows.Forms.Panel panel49;
         private System.Windows.Forms.Panel panel77;
@@ -1766,7 +1811,6 @@
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label1;
@@ -1794,15 +1838,25 @@
         private System.Windows.Forms.Panel panel95;
         private System.Windows.Forms.Panel panel96;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewButtonColumn Remove;
-        private System.Windows.Forms.DataGridViewButtonColumn Column2;
         private System.Windows.Forms.Panel panel90;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button uploadBtn;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewButtonColumn Column2;
+        private System.Windows.Forms.DataGridViewButtonColumn Remove;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Button button2;
     }
 }
