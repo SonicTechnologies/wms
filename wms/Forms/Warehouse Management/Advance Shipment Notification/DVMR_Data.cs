@@ -34,6 +34,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
         public static string Invty = "";
         public static string Desc = "";
         public static string Qty = "";
+        public static DateTime scheduleDate;
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -44,25 +45,31 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
 
 
         }
+
+        public void ClearItems()
+        {
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            textBox8.Text = "";
+            textBox9.Text = "";
+            textBox10.Text = "";
+            textBox11.Text = "";
+            textBox1.Text = "";
+            textBox15.Text = "";
+            label19.Text = "";
+            textBox13.Text = "";
+            textBox12.Text = "";
+            dataGridView1.ColumnHeadersVisible = false;
+            dataGridView1.Rows.Clear();
+        }
         public void searchItem()
         {
             if (textBox2.Text.Trim() == "")
             {
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
-                textBox8.Text = "";
-                textBox9.Text = "";
-                textBox10.Text = "";
-                textBox11.Text = "";
-                textBox1.Text = "";
-                textBox15.Text = "";
-                label19.Text="";
-
-                dataGridView1.ColumnHeadersVisible = false;
-                dataGridView1.Rows.Clear();
+                ClearItems();
             }
             else
             {              
@@ -103,6 +110,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
                         textBox12.Text = row.site_code;
                         textBox5.Text = row.dvmr_customer;
                         textBox6.Text = row.dvmr_rdd.ToString("yyyy-MM-dd");
+                        textBox13.Text = row.dvmr_schedule_date.ToString();
                         textBox7.Text = row.dvmr_shipment;
                         textBox8.Text = row.dvmr_shipping_line;
                         textBox9.Text = row.dvmr_truck_no;
@@ -110,6 +118,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
                         textBox11.Text = row.dvmr_salesdoc;
                         textBox1.Text = row.dvmr_po_number;
                         textBox15.Text = row.dvmr_category;
+                       
 
 
                          }
@@ -119,6 +128,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
 
                 var xdvmrDGV = (from c in obj.WMS_MSTR_DVMR
                                 join d in obj.WMS_MSTR_INVTY on c.invty_id equals d.invty_id
+                                join b in obj.WMS_TYPE_UOM on c.uom_id equals b.uom_id
                                  where c.dvmr_billdoc == dvmr
                              select new
                              {
@@ -138,7 +148,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
                                  c.dvmr_date_added,
                                  d.invty_desc,
                                  c.dvmr_schedule_date,
-
+                                 b.uom_desc,
                              }).OrderBy(c => new { c.dvmr_load_date }).ToList();
                 dataGridView1.Rows.Clear();
                 if (xdvmrDGV.Count != 0)
@@ -150,6 +160,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
                         dataGridView1.Rows.Add(row.invty_id,
                                             row.invty_desc,
                                             row.dvmr_qty,
+                                            row.uom_desc,
                                           row.dvmr_schedule_date.ToString()
                                           );
 
@@ -165,10 +176,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
      
         }
       
-        private void uploadBtn_Click(object sender, EventArgs e)
-        {
-        
-        }
+
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -184,7 +192,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 6)
             {
 
                 DialogResult dialog = MessageBox.Show("Are you sure you want to remove " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + "?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -278,12 +286,21 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
             Category = textBox15.Text;
             Invty = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             Desc = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            scheduleDate =Convert.ToDateTime(textBox13.Text);
         }
 
         private void uploadBtn_Click_1(object sender, EventArgs e)
         {
             Dvmr_Uploading_Data upload = new Dvmr_Uploading_Data();
             upload.Show();
+        }
+
+    
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ClearItems();
+            textBox2.Text = "";
         }
     }
 }

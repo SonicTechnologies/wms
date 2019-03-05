@@ -31,5 +31,6 @@ namespace wms.Entity_Class
         public int dvmr_qty { get; set; }
         public Nullable<System.DateTime> dvmr_date_added { get; set; }
         public Nullable<System.DateTime> dvmr_schedule_date { get; set; }
+        public int uom_id { get; set; }
     }
 }

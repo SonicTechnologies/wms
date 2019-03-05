@@ -13,6 +13,7 @@ namespace wms.Entity_Class
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using wms.Forms;
+    
     public partial class wmsdb : DbContext
     {
         public wmsdb()
@@ -58,5 +59,8 @@ namespace wms.Entity_Class
         public virtual DbSet<WMS_SITE_VIEW> WMS_SITE_VIEW { get; set; }
         public virtual DbSet<WMS_MSTR_DVMR> WMS_MSTR_DVMR { get; set; }
         public virtual DbSet<WMS_RECEIVINGPLAN_VIEW> WMS_RECEIVINGPLAN_VIEW { get; set; }
+        public virtual DbSet<WMS_MSTR_DEV> WMS_MSTR_DEV { get; set; }
+        public virtual DbSet<WMS_TYPE_UOM> WMS_TYPE_UOM { get; set; }
+        public virtual DbSet<WMS_DEV_VIEW> WMS_DEV_VIEW { get; set; }
     }
 }

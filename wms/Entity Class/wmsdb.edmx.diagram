@@ -45,6 +45,9 @@
         <EntityTypeShape EntityType="wmsdbmodel.WMS_SITE_VIEW" Width="1.5" PointX="12" PointY="16.375" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_DVMR" Width="2.375" PointX="1.25" PointY="0.5" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_RECEIVINGPLAN_VIEW" Width="1.5" PointX="2.0438097929786005" PointY="30.559886141940897" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_DEV" Width="1.5" PointX="7.1579895201874848" PointY="23.255391519169972" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_UOM" Width="1.5" PointX="3.1814583927306623" PointY="21.596828843279198" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_DEV_VIEW" Width="1.5" PointX="0.86078705678730594" PointY="14.062192968121821" />
         
         
         

@@ -421,7 +421,9 @@ namespace wms.Forms.Warehouse_Management
                                 dvmr_category = i["Category"].ToString(),
                                 invty_id = i["Material"].ToString(),
                                 dvmr_qty = Convert.ToInt32(i["Qty"]),
-                                dvmr_date_added = serverDate
+                                dvmr_date_added = serverDate,
+                                uom_id=1
+                                
 
                             });
 
@@ -464,6 +466,7 @@ namespace wms.Forms.Warehouse_Management
                             x.invty_id = i["Material"].ToString();
                             x.dvmr_qty = Convert.ToInt32(i["Qty"]);
                             x.dvmr_date_added = serverDate;
+                            x.uom_id = 1;
 
                         });
        

@@ -22,6 +22,22 @@
           <Property Name="cust_crtdby" Type="int" Nullable="false" />
           <Property Name="cust_uptdby" Type="int" />
         </EntityType>
+        <EntityType Name="WMS_MSTR_DEV">
+          <Key>
+            <PropertyRef Name="dev_id" />
+          </Key>
+          <Property Name="dev_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dev_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="dev_model" Type="nvarchar" MaxLength="100" />
+          <Property Name="dev_serial" Type="nvarchar" MaxLength="100" />
+          <Property Name="stat_id" Type="int" Nullable="false" />
+          <Property Name="dev_firstsynced" Type="datetime" />
+          <Property Name="dev_lastsynced" Type="datetime" />
+          <Property Name="dev_registered" Type="datetime" />
+          <Property Name="dev_rgstrdby" Type="int" />
+          <Property Name="dev_dateuptd" Type="datetime" />
+          <Property Name="dev_uptdby" Type="int" />
+        </EntityType>
         <EntityType Name="WMS_MSTR_DVMR">
           <Key>
             <PropertyRef Name="dvmr_id" />
@@ -43,6 +59,7 @@
           <Property Name="dvmr_qty" Type="int" Nullable="false" />
           <Property Name="dvmr_date_added" Type="datetime" />
           <Property Name="dvmr_schedule_date" Type="date" />
+          <Property Name="uom_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="WMS_MSTR_INVTY">
           <Key>
@@ -240,6 +257,13 @@
           <Property Name="stat_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="stat_desc" Type="nvarchar" MaxLength="26" Nullable="false" />
         </EntityType>
+        <EntityType Name="WMS_TYPE_UOM">
+          <Key>
+            <PropertyRef Name="uom_id" />
+          </Key>
+          <Property Name="uom_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uom_desc" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="WMS_TYPE_USRS">
           <Key>
             <PropertyRef Name="usr_type_id" />
@@ -281,6 +305,30 @@ warning 6002: The table/view 'WMS.dbo.WMS_CUST_VIEW' does not have a primary key
           <Property Name="cust_uptdby" Type="int" />
           <Property Name="crtdby" Type="nvarchar" MaxLength="26" Nullable="false" />
           <Property Name="uptdby" Type="nvarchar" MaxLength="26" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WMS.dbo.WMS_DEV_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WMS_DEV_VIEW">
+          <Key>
+            <PropertyRef Name="dev_id" />
+            <PropertyRef Name="stat_id" />
+            <PropertyRef Name="stat_desc" />
+          </Key>
+          <Property Name="dev_id" Type="int" Nullable="false" />
+          <Property Name="dev_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="dev_model" Type="nvarchar" MaxLength="100" />
+          <Property Name="dev_serial" Type="nvarchar" MaxLength="100" />
+          <Property Name="stat_id" Type="int" Nullable="false" />
+          <Property Name="dev_firstsynced" Type="datetime" />
+          <Property Name="dev_lastsynced" Type="datetime" />
+          <Property Name="dev_registered" Type="datetime" />
+          <Property Name="stat_desc" Type="nvarchar" MaxLength="26" Nullable="false" />
+          <Property Name="stat_desc2" Type="nvarchar" MaxLength="1" />
+          <Property Name="dev_rgstrdby" Type="int" />
+          <Property Name="dev_dateuptd" Type="datetime" />
+          <Property Name="dev_uptdby" Type="int" />
+          <Property Name="regby" Type="nvarchar" MaxLength="53" />
+          <Property Name="updby" Type="nvarchar" MaxLength="53" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'WMS.dbo.WMS_GRPLVL1_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -588,6 +636,7 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
         </EntityType>
         <EntityContainer Name="wmsdbmodelStoreContainer">
           <EntitySet Name="WMS_MSTR_CUST" EntityType="Self.WMS_MSTR_CUST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_MSTR_DEV" EntityType="Self.WMS_MSTR_DEV" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_DVMR" EntityType="Self.WMS_MSTR_DVMR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_INVTY" EntityType="Self.WMS_MSTR_INVTY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_MSTR_JRSLSMAN" EntityType="Self.WMS_MSTR_JRSLSMAN" Schema="dbo" store:Type="Tables" />
@@ -606,6 +655,7 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySet Name="WMS_MSTR_USRS" EntityType="Self.WMS_MSTR_USRS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_TYPE_SLSMAN" EntityType="Self.WMS_TYPE_SLSMAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_TYPE_STAT" EntityType="Self.WMS_TYPE_STAT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WMS_TYPE_UOM" EntityType="Self.WMS_TYPE_UOM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_TYPE_USRS" EntityType="Self.WMS_TYPE_USRS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WMS_CUST_VIEW" EntityType="Self.WMS_CUST_VIEW" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -627,6 +677,25 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
     [WMS_CUST_VIEW].[crtdby] AS [crtdby], 
     [WMS_CUST_VIEW].[uptdby] AS [uptdby]
     FROM [dbo].[WMS_CUST_VIEW] AS [WMS_CUST_VIEW]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WMS_DEV_VIEW" EntityType="Self.WMS_DEV_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WMS_DEV_VIEW].[dev_id] AS [dev_id], 
+    [WMS_DEV_VIEW].[dev_name] AS [dev_name], 
+    [WMS_DEV_VIEW].[dev_model] AS [dev_model], 
+    [WMS_DEV_VIEW].[dev_serial] AS [dev_serial], 
+    [WMS_DEV_VIEW].[stat_id] AS [stat_id], 
+    [WMS_DEV_VIEW].[dev_firstsynced] AS [dev_firstsynced], 
+    [WMS_DEV_VIEW].[dev_lastsynced] AS [dev_lastsynced], 
+    [WMS_DEV_VIEW].[dev_registered] AS [dev_registered], 
+    [WMS_DEV_VIEW].[stat_desc] AS [stat_desc], 
+    [WMS_DEV_VIEW].[stat_desc2] AS [stat_desc2], 
+    [WMS_DEV_VIEW].[dev_rgstrdby] AS [dev_rgstrdby], 
+    [WMS_DEV_VIEW].[dev_dateuptd] AS [dev_dateuptd], 
+    [WMS_DEV_VIEW].[dev_uptdby] AS [dev_uptdby], 
+    [WMS_DEV_VIEW].[regby] AS [regby], 
+    [WMS_DEV_VIEW].[updby] AS [updby]
+    FROM [dbo].[WMS_DEV_VIEW] AS [WMS_DEV_VIEW]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="WMS_GRPLVL1_VIEW" EntityType="Self.WMS_GRPLVL1_VIEW" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -933,6 +1002,9 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySet Name="WMS_SITE_VIEW" EntityType="wmsdbmodel.WMS_SITE_VIEW" />
           <EntitySet Name="WMS_MSTR_DVMR" EntityType="wmsdbmodel.WMS_MSTR_DVMR" />
           <EntitySet Name="WMS_RECEIVINGPLAN_VIEW" EntityType="wmsdbmodel.WMS_RECEIVINGPLAN_VIEW" />
+          <EntitySet Name="WMS_MSTR_DEV" EntityType="wmsdbmodel.WMS_MSTR_DEV" />
+          <EntitySet Name="WMS_TYPE_UOM" EntityType="wmsdbmodel.WMS_TYPE_UOM" />
+          <EntitySet Name="WMS_DEV_VIEW" EntityType="wmsdbmodel.WMS_DEV_VIEW" />
         </EntityContainer>
         <EntityType Name="WMS_TYPE_STAT">
           <Key>
@@ -1366,6 +1438,7 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="dvmr_qty" Type="Int32" Nullable="false" />
           <Property Name="dvmr_date_added" Type="DateTime" Precision="3" />
           <Property Name="dvmr_schedule_date" Type="DateTime" Precision="0" />
+          <Property Name="uom_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="WMS_RECEIVINGPLAN_VIEW">
           <Key>
@@ -1407,6 +1480,51 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <Property Name="invty_desc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Expr2" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
           <Property Name="invty_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_MSTR_DEV">
+          <Key>
+            <PropertyRef Name="dev_id" />
+          </Key>
+          <Property Name="dev_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dev_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dev_model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dev_serial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
+          <Property Name="dev_firstsynced" Type="DateTime" Precision="3" />
+          <Property Name="dev_lastsynced" Type="DateTime" Precision="3" />
+          <Property Name="dev_registered" Type="DateTime" Precision="3" />
+          <Property Name="dev_rgstrdby" Type="Int32" />
+          <Property Name="dev_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="dev_uptdby" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WMS_TYPE_UOM">
+          <Key>
+            <PropertyRef Name="uom_id" />
+          </Key>
+          <Property Name="uom_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uom_desc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WMS_DEV_VIEW">
+          <Key>
+            <PropertyRef Name="dev_id" />
+            <PropertyRef Name="stat_id" />
+            <PropertyRef Name="stat_desc" />
+          </Key>
+          <Property Name="dev_id" Type="Int32" Nullable="false" />
+          <Property Name="dev_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dev_model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dev_serial" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="stat_id" Type="Int32" Nullable="false" />
+          <Property Name="dev_firstsynced" Type="DateTime" Precision="3" />
+          <Property Name="dev_lastsynced" Type="DateTime" Precision="3" />
+          <Property Name="dev_registered" Type="DateTime" Precision="3" />
+          <Property Name="stat_desc" Type="String" Nullable="false" MaxLength="26" FixedLength="false" Unicode="true" />
+          <Property Name="stat_desc2" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="dev_rgstrdby" Type="Int32" />
+          <Property Name="dev_dateuptd" Type="DateTime" Precision="3" />
+          <Property Name="dev_uptdby" Type="Int32" />
+          <Property Name="regby" Type="String" MaxLength="53" FixedLength="false" Unicode="true" />
+          <Property Name="updby" Type="String" MaxLength="53" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1862,6 +1980,7 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
           <EntitySetMapping Name="WMS_MSTR_DVMR">
             <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_DVMR">
               <MappingFragment StoreEntitySet="WMS_MSTR_DVMR">
+                <ScalarProperty Name="uom_id" ColumnName="uom_id" />
                 <ScalarProperty Name="dvmr_schedule_date" ColumnName="dvmr_schedule_date" />
                 <ScalarProperty Name="dvmr_date_added" ColumnName="dvmr_date_added" />
                 <ScalarProperty Name="dvmr_qty" ColumnName="dvmr_qty" />
@@ -1905,6 +2024,52 @@ warning 6002: The table/view 'WMS.dbo.WMS_USRS_VIEW' does not have a primary key
                 <ScalarProperty Name="dvmr_id" ColumnName="dvmr_id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
                 <ScalarProperty Name="site_name" ColumnName="site_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_MSTR_DEV">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_MSTR_DEV">
+              <MappingFragment StoreEntitySet="WMS_MSTR_DEV">
+                <ScalarProperty Name="dev_uptdby" ColumnName="dev_uptdby" />
+                <ScalarProperty Name="dev_dateuptd" ColumnName="dev_dateuptd" />
+                <ScalarProperty Name="dev_rgstrdby" ColumnName="dev_rgstrdby" />
+                <ScalarProperty Name="dev_registered" ColumnName="dev_registered" />
+                <ScalarProperty Name="dev_lastsynced" ColumnName="dev_lastsynced" />
+                <ScalarProperty Name="dev_firstsynced" ColumnName="dev_firstsynced" />
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="dev_serial" ColumnName="dev_serial" />
+                <ScalarProperty Name="dev_model" ColumnName="dev_model" />
+                <ScalarProperty Name="dev_name" ColumnName="dev_name" />
+                <ScalarProperty Name="dev_id" ColumnName="dev_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_TYPE_UOM">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_TYPE_UOM">
+              <MappingFragment StoreEntitySet="WMS_TYPE_UOM">
+                <ScalarProperty Name="uom_desc" ColumnName="uom_desc" />
+                <ScalarProperty Name="uom_id" ColumnName="uom_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WMS_DEV_VIEW">
+            <EntityTypeMapping TypeName="wmsdbmodel.WMS_DEV_VIEW">
+              <MappingFragment StoreEntitySet="WMS_DEV_VIEW">
+                <ScalarProperty Name="updby" ColumnName="updby" />
+                <ScalarProperty Name="regby" ColumnName="regby" />
+                <ScalarProperty Name="dev_uptdby" ColumnName="dev_uptdby" />
+                <ScalarProperty Name="dev_dateuptd" ColumnName="dev_dateuptd" />
+                <ScalarProperty Name="dev_rgstrdby" ColumnName="dev_rgstrdby" />
+                <ScalarProperty Name="stat_desc2" ColumnName="stat_desc2" />
+                <ScalarProperty Name="stat_desc" ColumnName="stat_desc" />
+                <ScalarProperty Name="dev_registered" ColumnName="dev_registered" />
+                <ScalarProperty Name="dev_lastsynced" ColumnName="dev_lastsynced" />
+                <ScalarProperty Name="dev_firstsynced" ColumnName="dev_firstsynced" />
+                <ScalarProperty Name="stat_id" ColumnName="stat_id" />
+                <ScalarProperty Name="dev_serial" ColumnName="dev_serial" />
+                <ScalarProperty Name="dev_model" ColumnName="dev_model" />
+                <ScalarProperty Name="dev_name" ColumnName="dev_name" />
+                <ScalarProperty Name="dev_id" ColumnName="dev_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

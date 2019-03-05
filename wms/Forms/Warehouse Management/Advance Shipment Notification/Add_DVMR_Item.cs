@@ -48,6 +48,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
             textBox3.Focus();
             if (comboBox1.Text == "Inventory ID")
             {
+                getUnit();
                 var invtyID = textBox3.Text.Trim();
                 var invty = (from c in obj.WMS_MSTR_INVTY
 
@@ -92,6 +93,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
 
             else if (comboBox1.Text == "Inventory Description")
             {
+                getUnit();
                 var invtyDesc = textBox3.Text.Trim();
                 var invty1 = (from c in obj.WMS_MSTR_INVTY
 
@@ -137,6 +139,8 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
             }
             else if (comboBox1.Text == "ALL" && textBox3.Text=="")
             {
+
+                getUnit();
                 var invtyDesc = textBox3.Text.Trim();
                 var invty2 = (from c in obj.WMS_MSTR_INVTY
 
@@ -198,8 +202,12 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
             searchUser();
         }
 
-        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        { 
+    private void getUnit()
+        {
+            comboBox2.ValueMember = "uom_id";
+            comboBox2.DisplayMember = "uom_desc";
+            comboBox2.DataSource = obj.WMS_TYPE_UOM.ToList();
+
         }
 
         private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -218,6 +226,11 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
             if (textBox13.Text == "" || textBox9.Text == "")
             {
                 MessageBox.Show("Please fill in the empty box", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (textBox9.Text=="0")
+
+            {
+                MessageBox.Show("Cannot Insert 0 Quantity", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -263,6 +276,8 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
                             invty_id = textBox13.Text,
                             dvmr_qty = Convert.ToInt32(textBox9.Text),
                             dvmr_date_added = serverDate,
+                            dvmr_schedule_date = Convert.ToDateTime(DVMR_Data.scheduleDate),
+                        uom_id = Convert.ToInt32(comboBox2.SelectedValue),
 
 
 

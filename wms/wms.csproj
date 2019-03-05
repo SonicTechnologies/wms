@@ -90,6 +90,9 @@
     <Compile Include="Entity Class\WMS_CUST_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_DEV_VIEW.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_GRPLVL1_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
@@ -115,6 +118,9 @@
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_CUST.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_MSTR_DEV.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_MSTR_DVMR.cs">
@@ -178,6 +184,9 @@
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_TYPE_STAT.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_TYPE_UOM.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity Class\WMS_TYPE_USRS.cs">
