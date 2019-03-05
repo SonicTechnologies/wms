@@ -348,6 +348,12 @@
     <Compile Include="Forms\Warehouse Management\Advance Shipment Notification\Dvmr_Uploading_Data.Designer.cs">
       <DependentUpon>Dvmr_Uploading_Data.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Warehouse Management\Incoming Shipment\Incoming_Shipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Warehouse Management\Incoming Shipment\Incoming_Shipment.Designer.cs">
+      <DependentUpon>Incoming_Shipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Warehouse Management\Stock Receiving Plan\Receiving_Plan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,6 +451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Warehouse Management\Advance Shipment Notification\Dvmr_Uploading_Data.resx">
       <DependentUpon>Dvmr_Uploading_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Warehouse Management\Incoming Shipment\Incoming_Shipment.resx">
+      <DependentUpon>Incoming_Shipment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Warehouse Management\Stock Receiving Plan\Receiving_Plan.resx">
       <DependentUpon>Receiving_Plan.cs</DependentUpon>
