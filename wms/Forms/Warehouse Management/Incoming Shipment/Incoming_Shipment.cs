@@ -90,8 +90,7 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
         {
             GetBilldocs();
         }
-
-
+        
         private void GetItems()
         {
 
@@ -101,6 +100,22 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
         {
             var dgv = sender as DataGridView;
             dgv.ClearSelection();
+            foreach (DataGridViewRow row in billdocsDataGrid.Rows)
+            {
+                row.Cells[0].Value = false;
+                row.Cells[0].Style.BackColor = Color.White;
+                row.Cells[1].Style.BackColor = Color.White;
+                row.Cells[2].Style.BackColor = Color.White;
+                row.Cells[3].Style.BackColor = Color.White;
+                row.Cells[4].Style.BackColor = Color.White;
+
+                row.Cells[0].Style.ForeColor = Color.Black;
+                row.Cells[1].Style.ForeColor = Color.Black;
+                row.Cells[2].Style.ForeColor = Color.Black;
+                row.Cells[3].Style.ForeColor = Color.Black;
+                row.Cells[4].Style.ForeColor = Color.Black;
+            }
+
             if (Convert.ToBoolean(dgv.CurrentRow.Cells[0].Value) == true)
             {
                 dgv.CurrentRow.Cells[0].Value = false;
@@ -130,7 +145,44 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
                 dgv.CurrentRow.Cells[2].Style.ForeColor = Color.White;
                 dgv.CurrentRow.Cells[3].Style.ForeColor = Color.White;
                 dgv.CurrentRow.Cells[4].Style.ForeColor = Color.White;
+
+                billdocTableClicked(dgv.CurrentRow.Cells[1].Value.ToString());
             }
+        }
+
+        private void billdocTableClicked(string billdocs)
+        {
+            var sitename = siteComboBox.Text;
+            textBox1.Text = billdocs;
+
+            var items = (from d in obj.WMS_MSTR_DVMR
+                         join s in obj.WMS_MSTR_SITE on d.site_code equals s.site_code
+                         join i in obj.WMS_MSTR_INVTY on d.invty_id equals i.invty_id
+                         where s.site_name == sitename && d.dvmr_billdoc == billdocs
+                         select new
+                         {
+                             d.invty_id,
+                             i.invty_desc,
+                             d.dvmr_qty
+                         }).OrderBy(c => c.invty_id).ToList();
+            itemsGridView.Rows.Clear();
+            if (items.Count != 0)
+            {
+                itemsGridView.ColumnHeadersVisible = true;
+                foreach (var item in items)
+                {
+                    itemsGridView.Rows.Add(false, item.invty_id, item.invty_desc, item.dvmr_qty);
+                }
+            }
+            else
+            {
+                itemsGridView.ColumnHeadersVisible = false;
+            }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

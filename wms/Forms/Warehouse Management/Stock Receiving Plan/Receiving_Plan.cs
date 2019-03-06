@@ -164,8 +164,6 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
             }
             BillDocGridView.ClearSelection();
             label7.Text = BillDocGridView.Rows.Count.ToString();
-
-
         }
 
         public void vanTableClicked2(string van_no)
