@@ -320,8 +320,7 @@ namespace wms.Forms.Warehouse_Management.Stock_Receiving_Plan
             DataGridView6.ColumnHeadersVisible = false;
             dataGridView8.Rows.Clear();
             dataGridView8.ColumnHeadersVisible = false;
-
-
+            
         }
 
         private void vanDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)

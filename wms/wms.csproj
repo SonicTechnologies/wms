@@ -102,6 +102,12 @@
     <Compile Include="Entity Class\WMS_GRPLVL3_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity Class\WMS_INC_HEADER.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity Class\WMS_INC_LINES.cs">
+      <DependentUpon>wmsdb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity Class\WMS_INVTY_VIEW.cs">
       <DependentUpon>wmsdb.tt</DependentUpon>
     </Compile>

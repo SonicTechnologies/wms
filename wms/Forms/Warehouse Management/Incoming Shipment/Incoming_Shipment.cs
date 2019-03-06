@@ -91,15 +91,8 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
             GetBilldocs();
         }
         
-        private void GetItems()
+        private void billdocsDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void billdocsDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var dgv = sender as DataGridView;
-            dgv.ClearSelection();
             foreach (DataGridViewRow row in billdocsDataGrid.Rows)
             {
                 row.Cells[0].Value = false;
@@ -116,6 +109,8 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
                 row.Cells[4].Style.ForeColor = Color.Black;
             }
 
+            var dgv = sender as DataGridView;
+            dgv.ClearSelection();
             if (Convert.ToBoolean(dgv.CurrentRow.Cells[0].Value) == true)
             {
                 dgv.CurrentRow.Cells[0].Value = false;
@@ -154,7 +149,7 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
         {
             var sitename = siteComboBox.Text;
             textBox1.Text = billdocs;
-
+            
             var items = (from d in obj.WMS_MSTR_DVMR
                          join s in obj.WMS_MSTR_SITE on d.site_code equals s.site_code
                          join i in obj.WMS_MSTR_INVTY on d.invty_id equals i.invty_id
@@ -178,11 +173,58 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
             {
                 itemsGridView.ColumnHeadersVisible = false;
             }
+
+            SaveToHeader(billdocs);
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void statBtn_Click(object sender, EventArgs e)
         {
-
+            var header = obj.WMS_INC_HEADER.Where(c => c.billdoc == textBox1.Text).SingleOrDefault();
+            if (header.stat_id.Equals(1))
+            {
+                header.stat_id = 2;
+                statusLabel.Text = "Closed";
+                obj.SaveChanges();
+            }
+            else if (header.stat_id.Equals(2))
+            {
+                header.stat_id = 1;
+                statusLabel.Text = "Open";
+                obj.SaveChanges();
+            }
         }
+
+        private void SaveToHeader(string billdoc)
+        {
+            bool checker = CheckIfRecordExists(billdoc);
+
+            if (checker.Equals(false))
+            {
+                var rcvd = DateTime.Now;
+                var header = obj.Set<WMS_INC_HEADER>();
+                header.Add(new WMS_INC_HEADER { billdoc = billdoc, date_rcvd = rcvd.ToString("yyyy/MM/dd"), stat_id = 1 });
+                obj.SaveChanges();
+                MessageBox.Show("Billdoc Recorded to Table.");
+            }
+        }
+
+        private bool CheckIfRecordExists(string bill)
+        {
+            var header = obj.WMS_INC_HEADER.Where(h => h.billdoc == bill).SingleOrDefault();
+            if (header == null)
+            {
+                return false;
+            }
+            else
+            {
+                if (header.stat_id.Equals(1))
+                { statusLabel.Text = "Open"; }
+                else if (header.stat_id.Equals(2))
+                { statusLabel.Text = "Closed"; }
+                return true;
+            }
+        }
+
+        
     }
 }

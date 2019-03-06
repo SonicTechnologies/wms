@@ -4,50 +4,52 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4020876911f34124afcf19da2cf841b8" Name="Diagram1" ZoomLevel="113">
+      <Diagram DiagramId="4020876911f34124afcf19da2cf841b8" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_CUST" Width="2.875" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_INVTY" Width="2.125" PointX="2.625" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_SLSMAN" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_USRS" Width="2.375" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_SLSMAN" Width="1.875" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_USRS" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_STAT" Width="1.5" PointX="6.75" PointY="6.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_INVTY_VIEW" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_CUST_VIEW" Width="1.5" PointX="2.75" PointY="8.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_JRSLSMAN_VIEW" Width="1.5" PointX="8.75" PointY="6.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_SLSMAN_VIEW" Width="1.5" PointX="10.75" PointY="0.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_JRSLSMAN" Width="1.5" PointX="10.75" PointY="5.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_INVTY" Width="2.125" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_SLSMAN" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_USRS" Width="2.375" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_SLSMAN" Width="1.875" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_USRS" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_STAT" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_INVTY_VIEW" Width="1.5" PointX="5.75" PointY="8.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_CUST_VIEW" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_JRSLSMAN_VIEW" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_SLSMAN_VIEW" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_JRSLSMAN" Width="1.5" PointX="2.75" PointY="10.75" />
 <<<<<<< HEAD
         
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_MODULE" Width="2.25" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_MODULE" Width="2.25" PointX="10.75" PointY="5.75" />
 =======
         
         
         
         
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_S1MODULE" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_S1MODULE" Width="1.5" PointX="10.75" PointY="9.75" />
         <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_S2MODULE" Width="1.5" PointX="12.75" PointY="0.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL1M_VIEW" Width="2.5" PointX="12.75" PointY="4.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL2M_VIEW" Width="2.125" PointX="13.75" PointY="8.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL3M_VIEW" Width="2.25" PointX="8.75" PointY="13.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRP" Width="2" PointX="11.75" PointY="13.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL1" Width="1.5" PointX="14.75" PointY="0.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL2" Width="2" PointX="0.75" PointY="14.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL3" Width="1.5" PointX="3.75" PointY="14.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL1M" Width="1.5" PointX="14.75" PointY="12.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL1_VIEW" Width="2.5" PointX="15.75" PointY="3.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL2_VIEW" Width="2.5" PointX="14.75" PointY="15.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL3_VIEW" Width="1.5" PointX="5.75" PointY="15.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_USRS_VIEW" Width="1.5" PointX="16.75" PointY="6.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL2M" Width="1.5" PointX="16.75" PointY="0.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL3M" Width="1.5" PointX="16.75" PointY="12.75" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_SITE" Width="2.125" PointX="4.75" PointY="0.875" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_SITE_VIEW" Width="1.5" PointX="12" PointY="16.375" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_DVMR" Width="2.375" PointX="1.25" PointY="0.5" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_RECEIVINGPLAN_VIEW" Width="1.5" PointX="2.0438097929786005" PointY="30.559886141940897" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_DEV" Width="1.5" PointX="7.1579895201874848" PointY="23.255391519169972" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_UOM" Width="1.5" PointX="3.1814583927306623" PointY="21.596828843279198" />
-        <EntityTypeShape EntityType="wmsdbmodel.WMS_DEV_VIEW" Width="1.5" PointX="0.86078705678730594" PointY="14.062192968121821" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL1M_VIEW" Width="2.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL2M_VIEW" Width="2.125" PointX="13.75" PointY="4.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_LVL3M_VIEW" Width="2.25" PointX="7.75" PointY="13.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRP" Width="2" PointX="10.75" PointY="13.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL1" Width="1.5" PointX="13.75" PointY="13.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL2" Width="2" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_UGRPLVL3" Width="1.5" PointX="2.75" PointY="14.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL1M" Width="1.5" PointX="4.75" PointY="14.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL1_VIEW" Width="2.5" PointX="15.75" PointY="8.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL2_VIEW" Width="2.5" PointX="15.75" PointY="11.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_GRPLVL3_VIEW" Width="1.5" PointX="15.75" PointY="15.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_USRS_VIEW" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL2M" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_LVL3M" Width="1.5" PointX="2.75" PointY="17.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_SITE" Width="2.125" PointX="4.75" PointY="17.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_SITE_VIEW" Width="1.5" PointX="7.75" PointY="17.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_DVMR" Width="2.375" PointX="9.75" PointY="17.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_RECEIVINGPLAN_VIEW" Width="1.5" PointX="12.75" PointY="17.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_MSTR_DEV" Width="1.5" PointX="17.75" PointY="15.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_TYPE_UOM" Width="1.5" PointX="18.75" PointY="6.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_DEV_VIEW" Width="1.5" PointX="18.75" PointY="9.75" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_INC_HEADER" Width="1.5" PointX="11.033109889846811" PointY="15.128606311571135" />
+        <EntityTypeShape EntityType="wmsdbmodel.WMS_INC_LINES" Width="1.5" PointX="11.10727542224679" PointY="4.3067053725508533" />
         
         
         
