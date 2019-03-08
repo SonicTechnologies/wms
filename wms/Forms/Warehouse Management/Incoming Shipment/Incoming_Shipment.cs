@@ -148,8 +148,8 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
         private void billdocTableClicked(string billdocs)
         {
             var sitename = siteComboBox.Text;
-            textBox1.Text = billdocs;
-            
+            billdocTextBox.Text = billdocs;
+
             var items = (from d in obj.WMS_MSTR_DVMR
                          join s in obj.WMS_MSTR_SITE on d.site_code equals s.site_code
                          join i in obj.WMS_MSTR_INVTY on d.invty_id equals i.invty_id
@@ -173,13 +173,12 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
             {
                 itemsGridView.ColumnHeadersVisible = false;
             }
-
             SaveToHeader(billdocs);
         }
 
         private void statBtn_Click(object sender, EventArgs e)
         {
-            var header = obj.WMS_INC_HEADER.Where(c => c.billdoc == textBox1.Text).SingleOrDefault();
+            var header = obj.WMS_INC_HEADER.Where(c => c.billdoc == billdocTextBox.Text).SingleOrDefault();
             if (header.stat_id.Equals(1))
             {
                 header.stat_id = 2;
@@ -204,6 +203,7 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
                 var header = obj.Set<WMS_INC_HEADER>();
                 header.Add(new WMS_INC_HEADER { billdoc = billdoc, date_rcvd = rcvd.ToString("yyyy/MM/dd"), stat_id = 1 });
                 obj.SaveChanges();
+                statusLabel.Text = "Open";
                 MessageBox.Show("Billdoc Recorded to Table.");
             }
         }
@@ -225,6 +225,44 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
             }
         }
 
-        
+        private bool CheckIfLineExists(string casecode)
+        {
+            var line = (from lines in obj.WMS_INC_LINES
+                        join items in obj.WMS_MSTR_INVTY on lines.invty_id equals items.invty_id
+                        where items.invty_casecode == casecode
+                        select lines).SingleOrDefault();
+            if (line == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void ScanItemsInLine()
+        {
+            if (statusLabel.Text.Equals("Open"))
+            {
+                
+            }
+            else if (statusLabel.Text.Equals("Closed"))
+            {
+                MessageBox.Show("Header is already closed.");
+            }
+        }
+
+        private void barcodeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (CheckIfLineExists(barcodeTextBox.Text).Equals(true))
+            {
+                MessageBox.Show("Casecode exists.");
+            }
+            else
+            {
+                MessageBox.Show("Casecode does not exists.");
+            }
+        }
     }
 }

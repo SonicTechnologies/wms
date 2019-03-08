@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.billdocsDataGrid = new System.Windows.Forms.DataGridView();
             this.chck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -67,7 +67,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.barcodeTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -76,7 +76,7 @@
             this.statusLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.billdocTextBox = new System.Windows.Forms.TextBox();
             this.statBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -136,11 +136,11 @@
             // 
             // chck
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = false;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.chck.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.NullValue = false;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.chck.DefaultCellStyle = dataGridViewCellStyle12;
             this.chck.HeaderText = "";
             this.chck.Name = "chck";
             this.chck.ReadOnly = true;
@@ -148,10 +148,10 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle13;
             this.Column1.HeaderText = "Billdoc";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -159,9 +159,9 @@
             // 
             // sitename
             // 
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.sitename.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            this.sitename.DefaultCellStyle = dataGridViewCellStyle14;
             this.sitename.HeaderText = "Site";
             this.sitename.Name = "sitename";
             this.sitename.ReadOnly = true;
@@ -169,10 +169,10 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle15;
             this.Column2.HeaderText = "RDD";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -282,7 +282,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(360, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(949, 561);
+            this.panel4.Size = new System.Drawing.Size(996, 561);
             this.panel4.TabIndex = 2;
             // 
             // panel10
@@ -291,7 +291,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(502, 48);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(447, 487);
+            this.panel10.Size = new System.Drawing.Size(494, 487);
             this.panel10.TabIndex = 22;
             // 
             // scannedDataGrid
@@ -317,15 +317,15 @@
             this.scannedDataGrid.ReadOnly = true;
             this.scannedDataGrid.RowHeadersVisible = false;
             this.scannedDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.scannedDataGrid.Size = new System.Drawing.Size(447, 487);
+            this.scannedDataGrid.Size = new System.Drawing.Size(494, 487);
             this.scannedDataGrid.TabIndex = 20;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewTextBoxColumn4.HeaderText = "Inventory ID";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -333,9 +333,9 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridViewTextBoxColumn5.HeaderText = "Desc";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -343,10 +343,10 @@
             // 
             // dataGridViewTextBoxColumn6
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewTextBoxColumn6.HeaderText = "Qty";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -390,11 +390,11 @@
             // 
             // dataGridViewCheckBoxColumn1
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = false;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.NullValue = false;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewCheckBoxColumn1.HeaderText = "";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
@@ -402,10 +402,10 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewTextBoxColumn1.HeaderText = "Inventory ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -413,9 +413,9 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewTextBoxColumn2.HeaderText = "Desc";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -423,10 +423,10 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewTextBoxColumn3.HeaderText = "Qty";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -434,23 +434,24 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.textBox2);
+            this.panel7.Controls.Add(this.barcodeTextBox);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel7.Location = new System.Drawing.Point(0, 535);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(949, 26);
+            this.panel7.Size = new System.Drawing.Size(996, 26);
             this.panel7.TabIndex = 20;
             // 
-            // textBox2
+            // barcodeTextBox
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(71, 0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(660, 25);
-            this.textBox2.TabIndex = 5;
+            this.barcodeTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.barcodeTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barcodeTextBox.Location = new System.Drawing.Point(71, 0);
+            this.barcodeTextBox.Name = "barcodeTextBox";
+            this.barcodeTextBox.Size = new System.Drawing.Size(707, 25);
+            this.barcodeTextBox.TabIndex = 5;
+            this.barcodeTextBox.TextChanged += new System.EventHandler(this.barcodeTextBox_TextChanged);
             // 
             // label6
             // 
@@ -468,7 +469,7 @@
             this.panel8.Controls.Add(this.button3);
             this.panel8.Controls.Add(this.button2);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(731, 0);
+            this.panel8.Location = new System.Drawing.Point(778, 0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(218, 26);
             this.panel8.TabIndex = 6;
@@ -508,7 +509,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 26);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(949, 22);
+            this.panel6.Size = new System.Drawing.Size(996, 22);
             this.panel6.TabIndex = 1;
             // 
             // statusLabel
@@ -535,23 +536,23 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.billdocTextBox);
             this.panel5.Controls.Add(this.statBtn);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(949, 26);
+            this.panel5.Size = new System.Drawing.Size(996, 26);
             this.panel5.TabIndex = 0;
             // 
-            // textBox1
+            // billdocTextBox
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBox1.Location = new System.Drawing.Point(54, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(241, 20);
-            this.textBox1.TabIndex = 7;
+            this.billdocTextBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.billdocTextBox.Location = new System.Drawing.Point(54, 0);
+            this.billdocTextBox.Name = "billdocTextBox";
+            this.billdocTextBox.ReadOnly = true;
+            this.billdocTextBox.Size = new System.Drawing.Size(241, 20);
+            this.billdocTextBox.TabIndex = 7;
             // 
             // statBtn
             // 
@@ -560,7 +561,7 @@
             this.statBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.statBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statBtn.ForeColor = System.Drawing.Color.White;
-            this.statBtn.Location = new System.Drawing.Point(841, 0);
+            this.statBtn.Location = new System.Drawing.Point(888, 0);
             this.statBtn.Name = "statBtn";
             this.statBtn.Size = new System.Drawing.Size(108, 26);
             this.statBtn.TabIndex = 6;
@@ -583,7 +584,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1309, 561);
+            this.ClientSize = new System.Drawing.Size(1356, 561);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Name = "Incoming_Shipment";
@@ -639,14 +640,14 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox barcodeTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox billdocTextBox;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridView scannedDataGrid;
         private System.Windows.Forms.Panel panel9;
