@@ -28,82 +28,118 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.billdocsDataGrid = new System.Windows.Forms.DataGridView();
             this.chck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sitename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.rddToPicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.rddFromPicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.siteComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.scannedDataGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.itemsGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.billdocTextBox = new System.Windows.Forms.TextBox();
+            this.statBtn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.barcodeTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.statusLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.billdocTextBox = new System.Windows.Forms.TextBox();
-            this.statBtn = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.billdocsDataGrid)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.billdocsDataGrid)).BeginInit();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scannedDataGrid)).BeginInit();
-            this.panel9.SuspendLayout();
+            this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).BeginInit();
+            this.panel9.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.billdocsDataGrid);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 561);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(14, 634);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1370, 14);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(14, 634);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1356, 14);
+            this.panel3.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(1356, 14);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(14, 620);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.billdocsDataGrid);
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Controls.Add(this.panel12);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(14, 14);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(369, 620);
+            this.panel10.TabIndex = 4;
             // 
             // billdocsDataGrid
             // 
@@ -124,23 +160,23 @@
             this.Column2,
             this.Column3});
             this.billdocsDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.billdocsDataGrid.Location = new System.Drawing.Point(0, 48);
+            this.billdocsDataGrid.Location = new System.Drawing.Point(0, 45);
             this.billdocsDataGrid.MultiSelect = false;
             this.billdocsDataGrid.Name = "billdocsDataGrid";
             this.billdocsDataGrid.ReadOnly = true;
             this.billdocsDataGrid.RowHeadersVisible = false;
             this.billdocsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.billdocsDataGrid.Size = new System.Drawing.Size(360, 513);
+            this.billdocsDataGrid.Size = new System.Drawing.Size(369, 575);
             this.billdocsDataGrid.TabIndex = 17;
-            this.billdocsDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.billdocsDataGrid_CellDoubleClick);
+            this.billdocsDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.billdocsDataGrid_CellDoubleClick_1);
             // 
             // chck
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.NullValue = false;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.chck.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = false;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.chck.DefaultCellStyle = dataGridViewCellStyle1;
             this.chck.HeaderText = "";
             this.chck.Name = "chck";
             this.chck.ReadOnly = true;
@@ -148,10 +184,10 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "Billdoc";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -159,9 +195,9 @@
             // 
             // sitename
             // 
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            this.sitename.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.sitename.DefaultCellStyle = dataGridViewCellStyle3;
             this.sitename.HeaderText = "Site";
             this.sitename.Name = "sitename";
             this.sitename.ReadOnly = true;
@@ -169,10 +205,10 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column2.HeaderText = "RDD";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -185,17 +221,17 @@
             this.Column3.ReadOnly = true;
             this.Column3.Width = 5;
             // 
-            // panel3
+            // panel11
             // 
-            this.panel3.Controls.Add(this.rddToPicker);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.rddFromPicker);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 26);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(360, 22);
-            this.panel3.TabIndex = 3;
+            this.panel11.Controls.Add(this.rddToPicker);
+            this.panel11.Controls.Add(this.label3);
+            this.panel11.Controls.Add(this.rddFromPicker);
+            this.panel11.Controls.Add(this.label2);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(0, 23);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(369, 22);
+            this.panel11.TabIndex = 3;
             // 
             // rddToPicker
             // 
@@ -241,15 +277,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "RDD:";
             // 
-            // panel2
+            // panel12
             // 
-            this.panel2.Controls.Add(this.siteComboBox);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(360, 26);
-            this.panel2.TabIndex = 2;
+            this.panel12.Controls.Add(this.siteComboBox);
+            this.panel12.Controls.Add(this.label1);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(369, 23);
+            this.panel12.TabIndex = 2;
             // 
             // siteComboBox
             // 
@@ -272,27 +308,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Site:";
             // 
-            // panel4
+            // panel5
             // 
-            this.panel4.Controls.Add(this.panel10);
-            this.panel4.Controls.Add(this.panel9);
-            this.panel4.Controls.Add(this.panel7);
-            this.panel4.Controls.Add(this.panel6);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(360, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(996, 561);
-            this.panel4.TabIndex = 2;
+            this.panel5.Controls.Add(this.panel14);
+            this.panel5.Controls.Add(this.panel13);
+            this.panel5.Controls.Add(this.panel9);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(383, 14);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(973, 620);
+            this.panel5.TabIndex = 5;
             // 
-            // panel10
+            // panel14
             // 
-            this.panel10.Controls.Add(this.scannedDataGrid);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(502, 48);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(494, 487);
-            this.panel10.TabIndex = 22;
+            this.panel14.Controls.Add(this.scannedDataGrid);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(487, 45);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(486, 549);
+            this.panel14.TabIndex = 27;
             // 
             // scannedDataGrid
             // 
@@ -317,15 +353,15 @@
             this.scannedDataGrid.ReadOnly = true;
             this.scannedDataGrid.RowHeadersVisible = false;
             this.scannedDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.scannedDataGrid.Size = new System.Drawing.Size(494, 487);
+            this.scannedDataGrid.Size = new System.Drawing.Size(486, 549);
             this.scannedDataGrid.TabIndex = 20;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn4.HeaderText = "Inventory ID";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -333,9 +369,9 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn5.HeaderText = "Desc";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -343,23 +379,23 @@
             // 
             // dataGridViewTextBoxColumn6
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn6.HeaderText = "Qty";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 5;
             // 
-            // panel9
+            // panel13
             // 
-            this.panel9.Controls.Add(this.itemsGridView);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(0, 48);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(502, 487);
-            this.panel9.TabIndex = 21;
+            this.panel13.Controls.Add(this.itemsGridView);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel13.Location = new System.Drawing.Point(0, 45);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(487, 549);
+            this.panel13.TabIndex = 26;
             // 
             // itemsGridView
             // 
@@ -385,16 +421,16 @@
             this.itemsGridView.ReadOnly = true;
             this.itemsGridView.RowHeadersVisible = false;
             this.itemsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.itemsGridView.Size = new System.Drawing.Size(502, 487);
+            this.itemsGridView.Size = new System.Drawing.Size(487, 549);
             this.itemsGridView.TabIndex = 19;
             // 
             // dataGridViewCheckBoxColumn1
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.NullValue = false;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = false;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewCheckBoxColumn1.HeaderText = "";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
@@ -402,10 +438,10 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn1.HeaderText = "Inventory ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -413,9 +449,9 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn2.HeaderText = "Desc";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -423,14 +459,92 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn3.HeaderText = "Qty";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 5;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.statusLabel);
+            this.panel9.Controls.Add(this.label5);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 23);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(973, 22);
+            this.panel9.TabIndex = 24;
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.statusLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.statusLabel.Location = new System.Drawing.Point(50, 0);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(17, 17);
+            this.statusLabel.TabIndex = 4;
+            this.statusLabel.Text = "...";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 17);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Status: ";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.billdocTextBox);
+            this.panel6.Controls.Add(this.statBtn);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(973, 23);
+            this.panel6.TabIndex = 23;
+            // 
+            // billdocTextBox
+            // 
+            this.billdocTextBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.billdocTextBox.Location = new System.Drawing.Point(54, 0);
+            this.billdocTextBox.Name = "billdocTextBox";
+            this.billdocTextBox.ReadOnly = true;
+            this.billdocTextBox.Size = new System.Drawing.Size(241, 20);
+            this.billdocTextBox.TabIndex = 7;
+            // 
+            // statBtn
+            // 
+            this.statBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.statBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.statBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.statBtn.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.statBtn.ForeColor = System.Drawing.Color.White;
+            this.statBtn.Location = new System.Drawing.Point(865, 0);
+            this.statBtn.Name = "statBtn";
+            this.statBtn.Size = new System.Drawing.Size(108, 23);
+            this.statBtn.TabIndex = 6;
+            this.statBtn.Text = "Change Stat";
+            this.statBtn.UseVisualStyleBackColor = false;
+            this.statBtn.Click += new System.EventHandler(this.statBtn_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "BillDoc: ";
             // 
             // panel7
             // 
@@ -438,10 +552,10 @@
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 535);
+            this.panel7.Location = new System.Drawing.Point(0, 594);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(996, 26);
-            this.panel7.TabIndex = 20;
+            this.panel7.Size = new System.Drawing.Size(973, 26);
+            this.panel7.TabIndex = 25;
             // 
             // barcodeTextBox
             // 
@@ -449,7 +563,7 @@
             this.barcodeTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barcodeTextBox.Location = new System.Drawing.Point(71, 0);
             this.barcodeTextBox.Name = "barcodeTextBox";
-            this.barcodeTextBox.Size = new System.Drawing.Size(707, 25);
+            this.barcodeTextBox.Size = new System.Drawing.Size(684, 25);
             this.barcodeTextBox.TabIndex = 5;
             this.barcodeTextBox.TextChanged += new System.EventHandler(this.barcodeTextBox_TextChanged);
             // 
@@ -469,7 +583,7 @@
             this.panel8.Controls.Add(this.button3);
             this.panel8.Controls.Add(this.button2);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(778, 0);
+            this.panel8.Location = new System.Drawing.Point(755, 0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(218, 26);
             this.panel8.TabIndex = 6;
@@ -502,112 +616,38 @@
             this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.statusLabel);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 26);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(996, 22);
-            this.panel6.TabIndex = 1;
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.AutoSize = true;
-            this.statusLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.statusLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.statusLabel.Location = new System.Drawing.Point(50, 0);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(17, 17);
-            this.statusLabel.TabIndex = 4;
-            this.statusLabel.Text = "...";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 17);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Status: ";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.billdocTextBox);
-            this.panel5.Controls.Add(this.statBtn);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(996, 26);
-            this.panel5.TabIndex = 0;
-            // 
-            // billdocTextBox
-            // 
-            this.billdocTextBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.billdocTextBox.Location = new System.Drawing.Point(54, 0);
-            this.billdocTextBox.Name = "billdocTextBox";
-            this.billdocTextBox.ReadOnly = true;
-            this.billdocTextBox.Size = new System.Drawing.Size(241, 20);
-            this.billdocTextBox.TabIndex = 7;
-            // 
-            // statBtn
-            // 
-            this.statBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.statBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.statBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.statBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statBtn.ForeColor = System.Drawing.Color.White;
-            this.statBtn.Location = new System.Drawing.Point(888, 0);
-            this.statBtn.Name = "statBtn";
-            this.statBtn.Size = new System.Drawing.Size(108, 26);
-            this.statBtn.TabIndex = 6;
-            this.statBtn.Text = "Change Stat";
-            this.statBtn.UseVisualStyleBackColor = false;
-            this.statBtn.Click += new System.EventHandler(this.statBtn_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "BillDoc: ";
-            // 
             // Incoming_Shipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 561);
+            this.ClientSize = new System.Drawing.Size(1370, 648);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Name = "Incoming_Shipment";
             this.Text = "Incoming_Shipment";
             this.Load += new System.EventHandler(this.Incoming_Shipment_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.billdocsDataGrid)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.billdocsDataGrid)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scannedDataGrid)).EndInit();
-            this.panel9.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.itemsGridView)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -615,44 +655,48 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView billdocsDataGrid;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DateTimePicker rddToPicker;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker rddFromPicker;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox siteComboBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.DataGridView billdocsDataGrid;
         private System.Windows.Forms.DataGridViewCheckBoxColumn chck;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sitename;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.DateTimePicker rddToPicker;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker rddFromPicker;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.ComboBox siteComboBox;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label statusLabel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.DataGridView scannedDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.DataGridView itemsGridView;
-        private System.Windows.Forms.Button statBtn;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox barcodeTextBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.TextBox billdocTextBox;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.DataGridView scannedDataGrid;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox billdocTextBox;
+        private System.Windows.Forms.Button statBtn;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox barcodeTextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
