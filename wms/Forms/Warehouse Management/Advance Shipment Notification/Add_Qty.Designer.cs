@@ -62,11 +62,11 @@
             this.saveBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel17.SuspendLayout();
             this.panel41.SuspendLayout();
             this.panel37.SuspendLayout();
@@ -429,6 +429,16 @@
             this.panel6.Size = new System.Drawing.Size(95, 28);
             this.panel6.TabIndex = 17;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 5);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(95, 21);
+            this.comboBox1.TabIndex = 12;
+            // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -467,16 +477,6 @@
             this.panel9.Size = new System.Drawing.Size(90, 5);
             this.panel9.TabIndex = 11;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(95, 21);
-            this.comboBox1.TabIndex = 12;
-            // 
             // Add_Qty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,6 +494,7 @@
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel17);
             this.Name = "Add_Qty";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_Qty_FormClosing);
             this.Load += new System.EventHandler(this.Add_Qty_Load);

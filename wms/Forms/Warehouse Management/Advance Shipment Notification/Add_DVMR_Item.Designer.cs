@@ -1228,9 +1228,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel1);
+            this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Name = "Add_DVMR_Item";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add_DVMR_Item";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_DVMR_Item_FormClosing);
             this.Load += new System.EventHandler(this.Add_DVMR_Item_Load);
             this.panel5.ResumeLayout(false);
