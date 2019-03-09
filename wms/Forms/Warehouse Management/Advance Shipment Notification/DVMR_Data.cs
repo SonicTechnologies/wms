@@ -105,12 +105,12 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
                         foreach (var row in xdvmr)
                         {
 
-                        textBox3.Text = row.dvmr_load_date.ToString("yyyy-MM-dd");
+                        textBox3.Text = row.dvmr_load_date.ToString("MM-dd-yyyy");
                         textBox4.Text = row.site_name;
                         textBox12.Text = row.site_code;
                         textBox5.Text = row.dvmr_customer;
-                        textBox6.Text = row.dvmr_rdd.ToString("yyyy-MM-dd");
-                        textBox13.Text = row.dvmr_schedule_date.ToString();
+                        textBox6.Text = row.dvmr_rdd.ToString("MM-dd-yyyy");
+                        textBox13.Text = row.dvmr_schedule_date?.ToString("MM-dd-yyyy") ?? "";
                         textBox7.Text = row.dvmr_shipment;
                         textBox8.Text = row.dvmr_shipping_line;
                         textBox9.Text = row.dvmr_truck_no;
@@ -161,7 +161,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
                                             row.invty_desc,
                                             row.dvmr_qty,
                                             row.uom_desc,
-                                          row.dvmr_schedule_date.ToString()
+                                          row.dvmr_schedule_date?.ToString("MM-dd-yyyy") ?? ""
                                           );
 
                     }
