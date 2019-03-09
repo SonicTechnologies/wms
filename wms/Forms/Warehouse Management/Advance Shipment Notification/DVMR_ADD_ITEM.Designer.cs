@@ -1,6 +1,6 @@
 ﻿namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
 {
-    partial class Add_DVMR_Item
+    partial class DVMR_Add_Item
     {
         /// <summary>
         /// Required designer variable.
@@ -1202,7 +1202,7 @@
             this.panel24.Size = new System.Drawing.Size(90, 5);
             this.panel24.TabIndex = 11;
             // 
-            // Add_DVMR_Item
+            // DVMR_Add_Item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1229,7 +1229,7 @@
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel1);
             this.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.Name = "Add_DVMR_Item";
+            this.Name = "DVMR_Add_Item";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_DVMR_Item_FormClosing);

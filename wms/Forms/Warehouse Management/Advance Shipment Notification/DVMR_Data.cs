@@ -34,7 +34,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
         public static string Invty = "";
         public static string Desc = "";
         public static string Qty = "";
-        public static DateTime scheduleDate;
+        public static DateTime? scheduleDate ;
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -185,9 +185,21 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SetData();
-            Add_DVMR_Item upload = new Add_DVMR_Item();
-            upload.Show();
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("Provide Bill Doc to Add Item(s)", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(textBox7.Text=="")
+            {
+                MessageBox.Show("Bill Doc is not existed in Database", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                SetData();
+
+                DVMR_Add_Item upload = new DVMR_Add_Item();
+                upload.Show();
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -213,7 +225,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
             if (e.ColumnIndex == 5)
             {
                 SetData();
-                Add_Qty aq = new Add_Qty();
+                DVMR_Add_Qty aq = new DVMR_Add_Qty();
                 aq.Show();
             }
         }
@@ -286,7 +298,16 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
             Category = textBox15.Text;
             Invty = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             Desc = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            scheduleDate =Convert.ToDateTime(textBox13.Text);
+
+            if (textBox13.Text == "")
+            {
+                   scheduleDate = null;
+    }
+            else
+            {
+
+                scheduleDate = Convert.ToDateTime(textBox13.Text.ToString());
+            }
         }
 
         private void uploadBtn_Click_1(object sender, EventArgs e)
@@ -301,6 +322,11 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
         {
             ClearItems();
             textBox2.Text = "";
+        }
+
+        private void DVMR_Data_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

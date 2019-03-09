@@ -1,6 +1,6 @@
 ﻿namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
 {
-    partial class Add_Qty
+    partial class DVMR_Add_Qty
     {
         /// <summary>
         /// Required designer variable.
@@ -477,7 +477,7 @@
             this.panel9.Size = new System.Drawing.Size(90, 5);
             this.panel9.TabIndex = 11;
             // 
-            // Add_Qty
+            // DVMR_Add_Qty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -493,7 +493,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel17);
-            this.Name = "Add_Qty";
+            this.Name = "DVMR_Add_Qty";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_Qty_FormClosing);

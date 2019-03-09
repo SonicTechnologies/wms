@@ -11,11 +11,11 @@ using wms.Entity_Class;
 
 namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
 {
-    public partial class Add_DVMR_Item : Form
+    public partial class DVMR_Add_Item : Form
     {
      
         wmsdb obj = new wmsdb();
-        public Add_DVMR_Item()
+        public DVMR_Add_Item()
         { 
             InitializeComponent();
           
@@ -30,12 +30,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
 
         }
 
-        public void getDetails()
-        {
-            DVMR_Data dvmr = new DVMR_Data();
-
-          
-        }
+   
 
         private void Add_DVMR_Item_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -276,8 +271,8 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
                             invty_id = textBox13.Text,
                             dvmr_qty = Convert.ToInt32(textBox9.Text),
                             dvmr_date_added = serverDate,
-                            dvmr_schedule_date = Convert.ToDateTime(DVMR_Data.scheduleDate),
-                        uom_id = Convert.ToInt32(comboBox2.SelectedValue),
+                            dvmr_schedule_date = DVMR_Data.scheduleDate,
+                            uom_id = Convert.ToInt32(comboBox2.SelectedValue),
 
 
 

@@ -11,10 +11,10 @@ using wms.Entity_Class;
 
 namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
 {
-    public partial class Add_Qty : Form
+    public partial class DVMR_Add_Qty : Form
     {
         wmsdb obj = new wmsdb();
-        public Add_Qty()
+        public DVMR_Add_Qty()
         {
             InitializeComponent();
         }

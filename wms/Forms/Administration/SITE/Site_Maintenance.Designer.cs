@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -57,6 +58,13 @@
             this.panel28 = new System.Windows.Forms.Panel();
             this.panel31 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.slsmanid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slsmanname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sitecode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.crtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.crtdby = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uptd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uptdby = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
@@ -104,13 +112,6 @@
             this.panel83 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel84 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel37 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -118,13 +119,12 @@
             this.panel39 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel40 = new System.Windows.Forms.Panel();
-            this.slsmanid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slsmanname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sitecode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.crtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.crtdby = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uptd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uptdby = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -152,10 +152,10 @@
             this.panel80.SuspendLayout();
             this.panel81.SuspendLayout();
             this.panel83.SuspendLayout();
-            this.panel21.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel37.SuspendLayout();
             this.panel39.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
@@ -173,44 +173,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(957, 30);
             this.panel6.TabIndex = 25;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(796, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 30);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Upload Excel File";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(698, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 30);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel11
-            // 
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel11.Location = new System.Drawing.Point(693, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(5, 30);
-            this.panel11.TabIndex = 27;
             // 
             // panel8
             // 
@@ -241,6 +203,52 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(456, 5);
             this.panel9.TabIndex = 13;
+            // 
+            // panel11
+            // 
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel11.Location = new System.Drawing.Point(693, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(5, 30);
+            this.panel11.TabIndex = 27;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(698, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 30);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel10.Location = new System.Drawing.Point(791, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(5, 30);
+            this.panel10.TabIndex = 30;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(104)))), ((int)(((byte)(179)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(796, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 30);
+            this.button2.TabIndex = 29;
+            this.button2.Text = "Upload Excel File";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel7
             // 
@@ -467,6 +475,63 @@
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // slsmanid
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.slsmanid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.slsmanid.HeaderText = "ID";
+            this.slsmanid.Name = "slsmanid";
+            this.slsmanid.ReadOnly = true;
+            this.slsmanid.Width = 5;
+            // 
+            // slsmanname
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.slsmanname.DefaultCellStyle = dataGridViewCellStyle2;
+            this.slsmanname.HeaderText = "Name";
+            this.slsmanname.Name = "slsmanname";
+            this.slsmanname.ReadOnly = true;
+            this.slsmanname.Width = 5;
+            // 
+            // sitecode
+            // 
+            this.sitecode.HeaderText = "Code";
+            this.sitecode.Name = "sitecode";
+            this.sitecode.ReadOnly = true;
+            this.sitecode.Width = 5;
+            // 
+            // crtd
+            // 
+            this.crtd.HeaderText = "Created";
+            this.crtd.Name = "crtd";
+            this.crtd.ReadOnly = true;
+            this.crtd.Visible = false;
+            this.crtd.Width = 5;
+            // 
+            // crtdby
+            // 
+            this.crtdby.HeaderText = "Created By";
+            this.crtdby.Name = "crtdby";
+            this.crtdby.ReadOnly = true;
+            this.crtdby.Visible = false;
+            this.crtdby.Width = 5;
+            // 
+            // uptd
+            // 
+            this.uptd.HeaderText = "Updated";
+            this.uptd.Name = "uptd";
+            this.uptd.ReadOnly = true;
+            this.uptd.Visible = false;
+            this.uptd.Width = 5;
+            // 
+            // uptdby
+            // 
+            this.uptdby.HeaderText = "Updated By";
+            this.uptdby.Name = "uptdby";
+            this.uptdby.ReadOnly = true;
+            this.uptdby.Visible = false;
+            this.uptdby.Width = 5;
             // 
             // textBox2
             // 
@@ -952,67 +1017,6 @@
             this.panel84.Size = new System.Drawing.Size(90, 5);
             this.panel84.TabIndex = 11;
             // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.White;
-            this.panel21.Controls.Add(this.panel33);
-            this.panel21.Controls.Add(this.panel35);
-            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(0, 108);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(377, 28);
-            this.panel21.TabIndex = 18;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(14, 650);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1342, 14);
-            this.panel4.TabIndex = 20;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.White;
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(14, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1342, 14);
-            this.panel13.TabIndex = 19;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1356, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(14, 664);
-            this.panel2.TabIndex = 18;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.White;
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel12.Location = new System.Drawing.Point(0, 0);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(14, 664);
-            this.panel12.TabIndex = 17;
-            // 
-            // panel10
-            // 
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(791, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 30);
-            this.panel10.TabIndex = 30;
-            // 
-            // panel14
-            // 
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(399, 86);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(957, 8);
-            this.panel14.TabIndex = 28;
-            // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.White;
@@ -1086,62 +1090,58 @@
             this.panel40.Size = new System.Drawing.Size(90, 5);
             this.panel40.TabIndex = 11;
             // 
-            // slsmanid
+            // panel21
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.slsmanid.DefaultCellStyle = dataGridViewCellStyle13;
-            this.slsmanid.HeaderText = "ID";
-            this.slsmanid.Name = "slsmanid";
-            this.slsmanid.ReadOnly = true;
-            this.slsmanid.Width = 5;
+            this.panel21.BackColor = System.Drawing.Color.White;
+            this.panel21.Controls.Add(this.panel33);
+            this.panel21.Controls.Add(this.panel35);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(0, 108);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(377, 28);
+            this.panel21.TabIndex = 18;
             // 
-            // slsmanname
+            // panel4
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.slsmanname.DefaultCellStyle = dataGridViewCellStyle14;
-            this.slsmanname.HeaderText = "Name";
-            this.slsmanname.Name = "slsmanname";
-            this.slsmanname.ReadOnly = true;
-            this.slsmanname.Width = 5;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(14, 650);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1342, 14);
+            this.panel4.TabIndex = 20;
             // 
-            // sitecode
+            // panel13
             // 
-            this.sitecode.HeaderText = "Code";
-            this.sitecode.Name = "sitecode";
-            this.sitecode.ReadOnly = true;
-            this.sitecode.Width = 5;
+            this.panel13.BackColor = System.Drawing.Color.White;
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(14, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(1342, 14);
+            this.panel13.TabIndex = 19;
             // 
-            // crtd
+            // panel2
             // 
-            this.crtd.HeaderText = "Created";
-            this.crtd.Name = "crtd";
-            this.crtd.ReadOnly = true;
-            this.crtd.Visible = false;
-            this.crtd.Width = 5;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(1356, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(14, 664);
+            this.panel2.TabIndex = 18;
             // 
-            // crtdby
+            // panel12
             // 
-            this.crtdby.HeaderText = "Created By";
-            this.crtdby.Name = "crtdby";
-            this.crtdby.ReadOnly = true;
-            this.crtdby.Visible = false;
-            this.crtdby.Width = 5;
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(14, 664);
+            this.panel12.TabIndex = 17;
             // 
-            // uptd
+            // panel14
             // 
-            this.uptd.HeaderText = "Updated";
-            this.uptd.Name = "uptd";
-            this.uptd.ReadOnly = true;
-            this.uptd.Visible = false;
-            this.uptd.Width = 5;
-            // 
-            // uptdby
-            // 
-            this.uptdby.HeaderText = "Updated By";
-            this.uptdby.Name = "uptdby";
-            this.uptdby.ReadOnly = true;
-            this.uptdby.Visible = false;
-            this.uptdby.Width = 5;
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(399, 86);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(957, 8);
+            this.panel14.TabIndex = 28;
             // 
             // Site_Maintenance
             // 
@@ -1208,12 +1208,12 @@
             this.panel81.PerformLayout();
             this.panel83.ResumeLayout(false);
             this.panel83.PerformLayout();
-            this.panel21.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel37.ResumeLayout(false);
             this.panel37.PerformLayout();
             this.panel39.ResumeLayout(false);
             this.panel39.PerformLayout();
+            this.panel21.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
