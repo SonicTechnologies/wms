@@ -75,76 +75,7 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
             }
             billdocsDataGrid.ClearSelection();
         }
-
-        private void siteComboBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            GetBilldocs();
-        }
-
-        private void rddFromPicker_ValueChanged(object sender, EventArgs e)
-        {
-            GetBilldocs();
-        }
-
-        private void rddToPicker_ValueChanged(object sender, EventArgs e)
-        {
-            GetBilldocs();
-        }
         
-        private void billdocsDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            foreach (DataGridViewRow row in billdocsDataGrid.Rows)
-            {
-                row.Cells[0].Value = false;
-                row.Cells[0].Style.BackColor = Color.White;
-                row.Cells[1].Style.BackColor = Color.White;
-                row.Cells[2].Style.BackColor = Color.White;
-                row.Cells[3].Style.BackColor = Color.White;
-                row.Cells[4].Style.BackColor = Color.White;
-
-                row.Cells[0].Style.ForeColor = Color.Black;
-                row.Cells[1].Style.ForeColor = Color.Black;
-                row.Cells[2].Style.ForeColor = Color.Black;
-                row.Cells[3].Style.ForeColor = Color.Black;
-                row.Cells[4].Style.ForeColor = Color.Black;
-            }
-
-            var dgv = sender as DataGridView;
-            dgv.ClearSelection();
-            if (Convert.ToBoolean(dgv.CurrentRow.Cells[0].Value) == true)
-            {
-                dgv.CurrentRow.Cells[0].Value = false;
-                dgv.CurrentRow.Cells[0].Style.BackColor = Color.White;
-                dgv.CurrentRow.Cells[1].Style.BackColor = Color.White;
-                dgv.CurrentRow.Cells[2].Style.BackColor = Color.White;
-                dgv.CurrentRow.Cells[3].Style.BackColor = Color.White;
-                dgv.CurrentRow.Cells[4].Style.BackColor = Color.White;
-
-                dgv.CurrentRow.Cells[0].Style.ForeColor = Color.Black;
-                dgv.CurrentRow.Cells[1].Style.ForeColor = Color.Black;
-                dgv.CurrentRow.Cells[2].Style.ForeColor = Color.Black;
-                dgv.CurrentRow.Cells[3].Style.ForeColor = Color.Black;
-                dgv.CurrentRow.Cells[4].Style.ForeColor = Color.Black;
-            }
-            else
-            {
-                dgv.CurrentRow.Cells[0].Value = true;
-                dgv.CurrentRow.Cells[0].Style.BackColor = Color.FromArgb(20, 104, 179);
-                dgv.CurrentRow.Cells[1].Style.BackColor = Color.FromArgb(20, 104, 179);
-                dgv.CurrentRow.Cells[2].Style.BackColor = Color.FromArgb(20, 104, 179);
-                dgv.CurrentRow.Cells[3].Style.BackColor = Color.FromArgb(20, 104, 179);
-                dgv.CurrentRow.Cells[4].Style.BackColor = Color.FromArgb(20, 104, 179);
-
-                dgv.CurrentRow.Cells[0].Style.ForeColor = Color.White;
-                dgv.CurrentRow.Cells[1].Style.ForeColor = Color.White;
-                dgv.CurrentRow.Cells[2].Style.ForeColor = Color.White;
-                dgv.CurrentRow.Cells[3].Style.ForeColor = Color.White;
-                dgv.CurrentRow.Cells[4].Style.ForeColor = Color.White;
-
-                billdocTableClicked(dgv.CurrentRow.Cells[1].Value.ToString());
-            }
-        }
-
         private void billdocTableClicked(string billdocs)
         {
             var sitename = siteComboBox.Text;
@@ -175,23 +106,7 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
             }
             SaveToHeader(billdocs);
         }
-
-        private void statBtn_Click(object sender, EventArgs e)
-        {
-            var header = obj.WMS_INC_HEADER.Where(c => c.billdoc == billdocTextBox.Text).SingleOrDefault();
-            if (header.stat_id.Equals(1))
-            {
-                header.stat_id = 2;
-                statusLabel.Text = "Closed";
-                obj.SaveChanges();
-            }
-            else if (header.stat_id.Equals(2))
-            {
-                header.stat_id = 1;
-                statusLabel.Text = "Open";
-                obj.SaveChanges();
-            }
-        }
+        
 
         private void SaveToHeader(string billdoc)
         {
@@ -253,6 +168,77 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
             }
         }
 
+        
+
+        private void billdocsDataGrid_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in billdocsDataGrid.Rows)
+            {
+                row.Cells[0].Value = false;
+                row.Cells[0].Style.BackColor = Color.White;
+                row.Cells[1].Style.BackColor = Color.White;
+                row.Cells[2].Style.BackColor = Color.White;
+                row.Cells[3].Style.BackColor = Color.White;
+                row.Cells[4].Style.BackColor = Color.White;
+
+                row.Cells[0].Style.ForeColor = Color.Black;
+                row.Cells[1].Style.ForeColor = Color.Black;
+                row.Cells[2].Style.ForeColor = Color.Black;
+                row.Cells[3].Style.ForeColor = Color.Black;
+                row.Cells[4].Style.ForeColor = Color.Black;
+            }
+
+            var dgv = sender as DataGridView;
+            dgv.ClearSelection();
+            if (Convert.ToBoolean(dgv.CurrentRow.Cells[0].Value) == true)
+            {
+                dgv.CurrentRow.Cells[0].Value = false;
+                dgv.CurrentRow.Cells[0].Style.BackColor = Color.White;
+                dgv.CurrentRow.Cells[1].Style.BackColor = Color.White;
+                dgv.CurrentRow.Cells[2].Style.BackColor = Color.White;
+                dgv.CurrentRow.Cells[3].Style.BackColor = Color.White;
+                dgv.CurrentRow.Cells[4].Style.BackColor = Color.White;
+
+                dgv.CurrentRow.Cells[0].Style.ForeColor = Color.Black;
+                dgv.CurrentRow.Cells[1].Style.ForeColor = Color.Black;
+                dgv.CurrentRow.Cells[2].Style.ForeColor = Color.Black;
+                dgv.CurrentRow.Cells[3].Style.ForeColor = Color.Black;
+                dgv.CurrentRow.Cells[4].Style.ForeColor = Color.Black;
+            }
+            else
+            {
+                dgv.CurrentRow.Cells[0].Value = true;
+                dgv.CurrentRow.Cells[0].Style.BackColor = Color.FromArgb(20, 104, 179);
+                dgv.CurrentRow.Cells[1].Style.BackColor = Color.FromArgb(20, 104, 179);
+                dgv.CurrentRow.Cells[2].Style.BackColor = Color.FromArgb(20, 104, 179);
+                dgv.CurrentRow.Cells[3].Style.BackColor = Color.FromArgb(20, 104, 179);
+                dgv.CurrentRow.Cells[4].Style.BackColor = Color.FromArgb(20, 104, 179);
+
+                dgv.CurrentRow.Cells[0].Style.ForeColor = Color.White;
+                dgv.CurrentRow.Cells[1].Style.ForeColor = Color.White;
+                dgv.CurrentRow.Cells[2].Style.ForeColor = Color.White;
+                dgv.CurrentRow.Cells[3].Style.ForeColor = Color.White;
+                dgv.CurrentRow.Cells[4].Style.ForeColor = Color.White;
+
+                billdocTableClicked(dgv.CurrentRow.Cells[1].Value.ToString());
+            }
+        }
+
+        private void siteComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            GetBilldocs();
+        }
+
+        private void rddFromPicker_ValueChanged(object sender, EventArgs e)
+        {
+            GetBilldocs();
+        }
+
+        private void rddToPicker_ValueChanged(object sender, EventArgs e)
+        {
+            GetBilldocs();
+        }
+
         private void barcodeTextBox_TextChanged(object sender, EventArgs e)
         {
             if (CheckIfLineExists(barcodeTextBox.Text).Equals(true))
@@ -264,5 +250,24 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
                 MessageBox.Show("Casecode does not exists.");
             }
         }
+
+        private void statBtn_Click(object sender, EventArgs e)
+        {
+            var header = obj.WMS_INC_HEADER.Where(c => c.billdoc == billdocTextBox.Text).SingleOrDefault();
+            if (header.stat_id.Equals(1))
+            {
+                header.stat_id = 2;
+                statusLabel.Text = "Closed";
+                obj.SaveChanges();
+            }
+            else if (header.stat_id.Equals(2))
+            {
+                header.stat_id = 1;
+                statusLabel.Text = "Open";
+                obj.SaveChanges();
+            }
+        }
+
+        
     }
 }
