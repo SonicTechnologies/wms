@@ -191,7 +191,7 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
             }
             else if(textBox7.Text=="")
             {
-                MessageBox.Show("Bill Doc is not existed in Database", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bill Doc doesn't exist in Database", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

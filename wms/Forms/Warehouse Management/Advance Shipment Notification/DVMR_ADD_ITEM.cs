@@ -26,12 +26,8 @@ namespace wms.Forms.Warehouse_Management.Advance_Shipment_Notification
             Main_Form.GetInstance().Enabled = false;
             searchUser();
 
-
-
         }
-
-   
-
+ 
         private void Add_DVMR_Item_FormClosing(object sender, FormClosingEventArgs e)
         {
             Main_Form.GetInstance().Enabled = true;
