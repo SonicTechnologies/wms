@@ -25,6 +25,21 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
             GetSites();
         }
 
+        private void siteComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            GetBilldocs();
+        }
+
+        private void rddFromPicker_ValueChanged(object sender, EventArgs e)
+        {
+            GetBilldocs();
+        }
+
+        private void rddToPicker_ValueChanged(object sender, EventArgs e)
+        {
+            GetBilldocs();
+        }
+
         private void GetSites()
         {
             var sites = (from s in obj.WMS_MSTR_SITE
@@ -107,7 +122,6 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
             SaveToHeader(billdocs);
         }
         
-
         private void SaveToHeader(string billdoc)
         {
             bool checker = CheckIfRecordExists(billdoc);
@@ -168,8 +182,6 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
             }
         }
 
-        
-
         private void billdocsDataGrid_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewRow row in billdocsDataGrid.Rows)
@@ -223,22 +235,7 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
                 billdocTableClicked(dgv.CurrentRow.Cells[1].Value.ToString());
             }
         }
-
-        private void siteComboBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            GetBilldocs();
-        }
-
-        private void rddFromPicker_ValueChanged(object sender, EventArgs e)
-        {
-            GetBilldocs();
-        }
-
-        private void rddToPicker_ValueChanged(object sender, EventArgs e)
-        {
-            GetBilldocs();
-        }
-
+        
         private void barcodeTextBox_TextChanged(object sender, EventArgs e)
         {
             if (CheckIfLineExists(barcodeTextBox.Text).Equals(true))
@@ -267,7 +264,5 @@ namespace wms.Forms.Warehouse_Management.Incoming_Shipment
                 obj.SaveChanges();
             }
         }
-
-        
     }
 }
